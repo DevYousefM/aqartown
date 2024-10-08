@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Info;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 
 class InfoController extends Controller
@@ -22,5 +23,11 @@ class InfoController extends Controller
             ];
         });
         return response()->json($products);
+    }
+
+    public function subcategories(Request $request)
+    {
+        $subcategories = Subcategory::where('status', 1)->get();
+        return response()->json($subcategories);
     }
 }

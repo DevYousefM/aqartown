@@ -300,4 +300,5 @@ Route::post('filterp', 'Api\FrontendController@filterp');
 Route::get('ordersp', 'Api\OrderController@ordersp')->middleware('auth:api');
 
 Route::get('info/products', 'Info\InfoController@products');
+Route::get('info/subcategories', 'Info\InfoController@subcategories');
 /* End Paginate*/
