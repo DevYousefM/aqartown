@@ -300,7 +300,7 @@
                                     {{ route('front.product', ['slug' => $productt->slug, 'lang' => $sign]) }} @endif          ">
 
                                                 <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('assets/images/products/' . $productt->photo) }}"
-                                                     alt="" class="bg-pro-i">
+                                                    alt="" class="bg-pro-i">
 
                                             </a>
 
@@ -375,8 +375,7 @@
                                         src="{{ asset('assets/images/categories/' . $category->photo) }}"
                                         alt="@if ($langg->rtl == 1) {{ $category->name_ar }}
                                         @else
-                                        {{ $category->name }} @endif "
-                                        >
+                                        {{ $category->name }} @endif ">
                                 </div>
                                 <div class="overlay">
                                     <div class="details">
@@ -407,7 +406,7 @@
 
                         <a href="{{ route('front.latestwork', $sign) }}"><img class="img-fluid thumb"
                                 src="{{ asset('/assets/images/ads/' . $image->photo) }}"
-                                alt="{{ $langg->rtl == 1 ? $image->title_ar : $image->title }} " ></a>
+                                alt="{{ $langg->rtl == 1 ? $image->title_ar : $image->title }} "></a>
                         <div class="details">
                             <a class="Font_01"
                                 href="{{ route('front.latestwork', $sign) }}">{{ $langg->rtl == 1 ? $image->title_ar : $image->title }}
