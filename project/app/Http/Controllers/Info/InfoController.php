@@ -12,7 +12,7 @@ class InfoController extends Controller
     public function products(Request $request)
     {
         $products = Product::where('status', 1)->latest()->limit(6)->get();
-        $products = $products->map(function ($product) {
+        $products = $products->map(function ($product) use ($request) {
             return [
                 'id' => $product->id,
                 'name' => $request->lang == 'ar' ? $product->name_ar : $product->name,
