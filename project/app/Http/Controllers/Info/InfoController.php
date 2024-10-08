@@ -27,7 +27,15 @@ class InfoController extends Controller
 
     public function subcategories(Request $request)
     {
-        $subcategories = Subcategory::where('status', 1)->get();
+        $subcategories = Subcategory::where('status', 1)->limit(4)->get();
+        $subcategories = $subcategories->map(function ($subcategory) use ($request) {
+            return [
+                'id' => $subcategory->id,
+                'name' => $request->lang == 'ar' ? $subcategory->name_ar : $subcategory->name,
+                'image' => url('assets/images/subcategories/' . $subcategory->photo),
+                'url' => route('front.subcategory', ['slug' => $request->lang == 'ar' ? $subcategory->slug_ar : $subcategory->slug, 'lang' => $request->lang])
+            ];
+        });
         return response()->json($subcategories);
     }
 }
