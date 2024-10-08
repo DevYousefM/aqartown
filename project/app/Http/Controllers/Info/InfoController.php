@@ -8,8 +8,6 @@ use App\Models\Product;
 class InfoController extends Controller
 {
 
-    use GetLang;
-
     public function products()
     {
         $products = Product::limit(6)->get();
