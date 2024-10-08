@@ -33,7 +33,7 @@ class InfoController extends Controller
                 'id' => $subcategory->id,
                 'name' => $request->lang == 'ar' ? $subcategory->name_ar : $subcategory->name,
                 'image' => url('assets/images/subcategories/' . $subcategory->photo),
-                'url' => route('front.category', ['slug' => $request->lang == 'ar' ? $subcategory->slug_ar : $subcategory->slug, 'lang' => $request->lang])
+                'url' => route('front.category', ['category' => $request->lang == 'en' ? $subcategory->category->slug : $subcategory->category->slug_ar, 'subcategory' => $request->lang == 'en' ? $subcategory->slug : $subcategory->slug_ar, 'lang' => $request->lang]),
             ];
         });
         return response()->json($subcategories);
