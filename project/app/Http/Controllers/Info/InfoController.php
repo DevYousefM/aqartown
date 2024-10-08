@@ -11,12 +11,12 @@ class InfoController extends Controller
     public function products()
     {
         $products = Product::where('status', 1)->latest()->limit(6)->get();
-        // asset('assets/images/products/' . $productt->photo)
         $products = $products->map(function ($product) {
             return [
                 'id' => $product->id,
                 'name' => $product->name,
                 'image' => url('assets/images/products/' . $product->photo),
+                'url' => route('front.product', ['slug' => $product->slug_ar, 'lang' => 'ar'])
             ];
         });
         return response()->json($products);
