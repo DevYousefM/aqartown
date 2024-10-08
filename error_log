@@ -1,0 +1,2 @@
+[20-Jun-2022 10:29:12 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 20480 bytes) in /home/aqartown/public_html/project/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 244
+[20-Jun-2022 10:29:12 UTC] PHP Fatal error:  Allowed memory size of 268435456 bytes exhausted (tried to allocate 32768 bytes) in /home/aqartown/public_html/project/vendor/symfony/error-handler/Error/FatalError.php on line 1
