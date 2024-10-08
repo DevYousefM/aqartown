@@ -16,7 +16,8 @@ class InfoController extends Controller
                 'id' => $product->id,
                 'name' => $product->name,
                 'image' => url('assets/images/products/' . $product->photo),
-                'url' => route('front.product', ['slug' => $product->slug_ar, 'lang' => 'ar'])
+                'url' => route('front.product', ['slug' => $product->slug_ar, 'lang' => 'ar']),
+                'price' => $product->price
             ];
         });
         return response()->json($products);
