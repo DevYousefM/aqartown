@@ -10,7 +10,7 @@ class InfoController extends Controller
 
     public function products()
     {
-        $products = Product::limit(6)->get();
+        $products = Product::where('status', 1)->latest()->limit(6)->get();
 
         return response()->json($products);
     }
