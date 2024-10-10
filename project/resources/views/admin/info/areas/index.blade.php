@@ -1,18 +1,18 @@
 @extends('layouts.admin')
 
 @section('content')
-    <input type="hidden" id="headerdata" value="{{ __('Category') }}">
+    <input type="hidden" id="headerdata" value="{{ __('Info') }}">
     <div class="content-area">
         <div class="mr-breadcrumb">
             <div class="row">
                 <div class="col-lg-12">
-                    <h4 class="heading">{{ __('Category') }}</h4>
+                    <h4 class="heading">{{ __('Info Areas') }}</h4>
                     <ul class="links">
                         <li>
                             <a href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }} </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin-country-index') }}">{{ __('Category') }}</a>
+                            <a href="{{ route('admin-info-areas-index') }}">{{ __('Info Areas') }}</a>
                         </li>
                     </ul>
                 </div>
@@ -33,64 +33,21 @@
                                             <div class="">
                                                 <label class="container">{{ __('Check All') }}
                                                     <input type="checkbox" name="checkall" id="checkall">
-
-
                                                     <span class="checkmark"></span>
                                                 </label>
                                             </div>
                                         </th>
                                         <th>{{ __('name') }}</th>
-
-
-
                                         <th>{{ __('Status') }}</th>
                                         <th>{{ __('Options') }}</th>
                                     </tr>
                                 </thead>
                             </table>
                         </div>
-                        <div class="row" style="margin-top: 31px;">
-                            <div class="col-lg-12" style="display:contents">
-
-                                <form action="{{ route('admin-country-all') }}" method="post"
-                                    enctype="multipart/form-data" id="mass_deactivate_form" style="margin-right: 5px;">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" id="selected_products" name="selected_products" value="">
-                                    <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit"
-                                        value="{{ __('deactivate Selected') }}">
-                                </form>
-
-                                <form action="{{ route('admin-country-activate') }}" method="post"
-                                    enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" id="selected_products_activate" name="selected_products_activate"
-                                        value="">
-                                    <input class="btn btn-xs btn-success" id="activate-selected" type="submit"
-                                        value="{{ __('activate Selected') }}">
-                                </form>
-
-                                <form action="{{ route('admin-country-deleted') }}" method="post"
-                                    enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" id="selected_products_delete" name="selected_products_delete"
-                                        value="">
-                                    <input class="btn btn-xs btn-danger" id="delete-selected" type="submit"
-                                        value="{{ __('Delete Selected') }}">
-                                </form>
-
-
-
-
-
-
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
 
 
@@ -166,23 +123,20 @@
             ordering: false,
             processing: true,
             serverSide: true,
-            ajax: '{{ route('admin-country-datatables') }}',
+            ajax: '{{ route('admin-info-areas-datatables') }}',
             columns: [{
                     data: 'checkbox',
                     name: 'checkbox'
                 },
                 {
-                    data: 'country_name',
-                    name: 'country_name'
+                    data: 'name',
+                    name: 'name'
                 },
-
-
                 {
                     data: 'status',
                     searchable: false,
                     orderable: false
                 },
-
                 {
                     data: 'action',
                     searchable: false,
@@ -200,8 +154,8 @@
 
         $(function() {
             $(".btn-area").append('<div class="col-sm-4 table-contents">' +
-                '<a class="add-btn" data-href="{{ route('admin-country-create') }}" id="add-data" data-toggle="modal" data-target="#modal1">' +
-                '<i class="fas fa-plus"></i> {{ __('Add New Category') }}' +
+                '<a class="add-btn" data-href="{{ route('admin-info-areas-create') }}" id="add-data" data-toggle="modal" data-target="#modal1">' +
+                '<i class="fas fa-plus"></i> {{ __('Add New Area') }}' +
                 '</a>' +
                 '</div>');
         });

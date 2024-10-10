@@ -21,7 +21,7 @@ use Validator;
 
 class CountryController extends Controller
 {
-   public function __construct()
+    public function __construct()
     {
         $this->middleware('auth:admin');
     }
@@ -29,66 +29,64 @@ class CountryController extends Controller
     //*** JSON Request
     public function datatables()
     {
-         $datas = Country::orderBy('id','desc')->get();
-         //--- Integrating This Collection Into Datatables
-         return Datatables::of($datas)
-                        
-                            ->addColumn('status', function(Country $data) {
-                                $class = $data->status == 1 ? 'drop-success' : 'drop-danger';
-                                $s = $data->status == 1 ? 'selected' : '';
-                                $ns = $data->status == 0 ? 'selected' : '';
-                                return '<div class="action-list"><select class="process select droplinks '.$class.'"><option data-val="1" value="'. route('admin-country-status',['id1' => $data->id, 'id2' => 1]).'" '.$s.'>'.__('Activated').'</option><<option data-val="0" value="'. route('admin-country-status',['id1' => $data->id, 'id2' => 0]).'" '.$ns.'>'.__('Deactivated').'</option>/select></div>';
-                        
-                            })   ->addColumn('default', function(Country $data) {
-                               
-                                  $default = $data->is_default == 1 ? '<a><i class="fa fa-check"></i> Default</a>' : '<a class="status" data-href="' . route('admin-country-default',['id1'=>$data->id,'id2'=>1]) . '">SetDefault</a>';
-                                 return '<div class="action-list">'.$default.'</div>';
-                            }) 
-                            
-                            
-                            
-                            ->addColumn('checkbox', function(Country $data) {
-                              
-                                return '<div class="">
+        $datas = Country::orderBy('id', 'desc')->get();
+        //--- Integrating This Collection Into Datatables
+        return Datatables::of($datas)
+
+            ->addColumn('status', function (Country $data) {
+                $class = $data->status == 1 ? 'drop-success' : 'drop-danger';
+                $s = $data->status == 1 ? 'selected' : '';
+                $ns = $data->status == 0 ? 'selected' : '';
+                return '<div class="action-list"><select class="process select droplinks ' . $class . '"><option data-val="1" value="' . route('admin-country-status', ['id1' => $data->id, 'id2' => 1]) . '" ' . $s . '>' . __('Activated') . '</option><<option data-val="0" value="' . route('admin-country-status', ['id1' => $data->id, 'id2' => 0]) . '" ' . $ns . '>' . __('Deactivated') . '</option>/select></div>';
+            })->addColumn('default', function (Country $data) {
+
+                $default = $data->is_default == 1 ? '<a><i class="fa fa-check"></i> Default</a>' : '<a class="status" data-href="' . route('admin-country-default', ['id1' => $data->id, 'id2' => 1]) . '">SetDefault</a>';
+                return '<div class="action-list">' . $default . '</div>';
+            })
+
+
+
+            ->addColumn('checkbox', function (Country $data) {
+
+                return '<div class="">
                                 <label class="container">
-                                <input type="checkbox" name="id['.$data->id.'][]" value="'.$data->id.'" class="all row-select">
+                                <input type="checkbox" name="id[' . $data->id . '][]" value="' . $data->id . '" class="all row-select">
                                  <span class="checkmark" style="top: -27px;"></span>
                                </label>
                                 </div>';
-                            })
-                            ->addColumn('action', function(Country $data) {
-                                return '<div class="action-list"><a data-href="' . route('admin-country-edit',$data->id) . '" class="edit" data-toggle="modal" data-target="#modal1"> <i class="fas fa-edit"></i>'.__('Edit').'</a><a href="javascript:;" data-href="' . route('admin-country-delete',$data->id) . '" data-toggle="modal" data-target="#confirm-delete" class="delete"><i class="fas fa-trash-alt"></i></a></div>';
-                            }) 
-                            ->rawColumns(['status','default','checkbox','action'])
-                            ->toJson(); //--- Returning Json Data To Client Side
+            })
+            ->addColumn('action', function (Country $data) {
+                return '<div class="action-list"><a data-href="' . route('admin-country-edit', $data->id) . '" class="edit" data-toggle="modal" data-target="#modal1"> <i class="fas fa-edit"></i>' . __('Edit') . '</a><a href="javascript:;" data-href="' . route('admin-country-delete', $data->id) . '" data-toggle="modal" data-target="#confirm-delete" class="delete"><i class="fas fa-trash-alt"></i></a></div>';
+            })
+            ->rawColumns(['status', 'default', 'checkbox', 'action'])
+            ->toJson(); //--- Returning Json Data To Client Side
     }
 
     //*** GET Request
     public function index()
     {
-        
+
         return view('admin.country.index');
     }
     public function home_about()
     {
-        
+
         return view('admin.country.home_about');
     }
-   //*** GET Request
+    //*** GET Request
     public function index2()
     {
-        
+
         return view('admin.country.index2');
     }
     public function management()
     {
-        
+
         return view('admin.generalsetting.management');
     }
     //*** GET Request
     public function create()
     {
-        
         return view('admin.country.create');
     }
 
@@ -97,64 +95,53 @@ class CountryController extends Controller
     {
         //--- Validation Section
         $rules = [
-            
-
-            'country_name'                           => 'required|unique:countries',
-
-            
-            
-            ];
+            'country_name' => 'required|unique:countries',
+        ];
         $messages = [
-            
-            'country_name.unique'                    => trans('nameUnique'),
-            'country_name.required'                  => trans('Country Name') . '    ' . trans('required'),
-
-            
-            
-            
+            'country_name.unique' => trans('nameUnique'),
+            'country_name.required' => trans('Country Name') . '    ' . trans('required'),
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-          return response()->json([
-              'status' =>false,
-              'errors' => $validator->messages(),
-              
-              ],200);
-        }   
+            return response()->json([
+                'status' => false,
+                'errors' => $validator->messages(),
+
+            ], 200);
+        }
         //--- Validation Section Ends
 
         //--- Logic Section
         $data = new Country();
         $input = $request->all();
-        if ($file = $request->file('photo'))
-            {
-                $name = time().$file->getClientOriginalName();
-                $data->upload($name,$file,$data->photo);
-                $input['photo'] = $name;
-            }
+        if ($file = $request->file('photo')) {
+            $name = time() . $file->getClientOriginalName();
+            $data->upload($name, $file, $data->photo);
+            $input['photo'] = $name;
+        }
 
         $data->fill($input)->save();
         //--- Logic Section Ends
 
         //--- Redirect Section        
-       $msg = trans('Add Success');
-        
-        
+        $msg = trans('Add Success');
+
+
         return response()->json([
             'status' => true,
             'msg'   => $msg
-            
-        ],200); 
+
+        ], 200);
         //--- Redirect Section Ends   
     }
 
     //*** GET Request
     public function edit($id)
     {
-        
+
         $data = Country::findOrFail($id);
-        return view('admin.country.edit',compact('data'));
+        return view('admin.country.edit', compact('data'));
     }
 
     //*** POST Request
@@ -163,178 +150,164 @@ class CountryController extends Controller
 
 
 
-         $rules = [
-            
+        $rules = [
 
-            'country_name'                           => 'unique:countries'. $id .'|required',
 
-            
-            
-            ];
+            'country_name'                           => 'unique:countries' . $id . '|required',
+
+
+
+        ];
         $messages = [
-            
+
             'country_name.unique'                    => trans('nameUnique'),
             'country_name.required'                  => trans('Country Name') . '    ' . trans('required'),
 
-            
-            
+
+
         ];
         //--- Validation Section Ends
 
         //--- Logic Section
         $data = Country::findOrFail($id);
         $input = $request->all();
-        if ($file = $request->file('photo'))
-            {
-                $name = time().$file->getClientOriginalName();
-                $data->upload($name,$file,$data->photo);
-                $input['photo'] = $name;
-            }
+        if ($file = $request->file('photo')) {
+            $name = time() . $file->getClientOriginalName();
+            $data->upload($name, $file, $data->photo);
+            $input['photo'] = $name;
+        }
 
         $data->update($input);
         //--- Logic Section Ends
 
         //--- Redirect Section     
-       $msg = trans('Update Success');
-        
-        
+        $msg = trans('Update Success');
+
+
         return response()->json([
-            
+
             'status'  => true,
             'msg'   =>   $msg
-            
-        ],200);    
+
+        ], 200);
         //--- Redirect Section Ends           
     }
-      //*** GET Request Status
-      public function status($id1,$id2)
-        {
-            $data = Country::findOrFail($id1);
-            $data->status = $id2;
-            $data->update();
-        }
+    //*** GET Request Status
+    public function status($id1, $id2)
+    {
+        $data = Country::findOrFail($id1);
+        $data->status = $id2;
+        $data->update();
+    }
 
 
     //*** GET Request Delete
     public function destroy($id)
     {
         $data = Country::findOrFail($id);
-        $child = Zone::where('country_id',$id)->get();
-        foreach($child as $z){
-          $sub_child = City::where('state_id',$z->id)->delete();
-         
-         
-         
-         }
-          $ch = Zone::where('country_id',$id)->delete();
+        $child = Zone::where('country_id', $id)->get();
+        foreach ($child as $z) {
+            $sub_child = City::where('state_id', $z->id)->delete();
+        }
+        $ch = Zone::where('country_id', $id)->delete();
         $data->delete();
         //--- Redirect Section     
-         $msg = trans('Delete Msg');
+        $msg = trans('Delete Msg');
         return response()->json([
             'status' => true,
             'msg'   =>  $msg
-            ],200);     
+        ], 200);
         //--- Redirect Section Ends   
     }
-    
 
-  public function ckeckactivate(Request $request) {
-        
-             if (!empty($request->input('selected_products_activate'))) {
-                
-    
-                    $selected_products = explode(',', $request->input('selected_products_activate'));
-    
-                  
-    
-                    $products = Country::whereIn('id', $selected_products)
-                                        ->update(['status' => 1]);
-                                        
-             $msg = 'Country activate Successfully.';
-           return redirect()->back()->with('success',$msg);
-         }else{
-             return redirect()->back(); 
-         }
-     
-   
-    }  
-      public function ckeckall(Request $request) {
-        
-             if (!empty($request->input('selected_products'))) {
-                
-    
-                    $selected_products = explode(',', $request->input('selected_products'));
-    
-                  
-    
-                    $products = Country::whereIn('id', $selected_products)
-                                        ->update(['status' => 0]);
-                                        
-              $msg = 'Country Deactivate Successfully.';                      
-             return redirect()->back()->with('success',$msg);
-                }else{
-             return redirect()->back(); 
-         }
-     
-   
-    }
-    
-    
-     public function ckeckdelete(Request $request) {
-        
-             if (!empty($request->input('selected_products_delete'))) {
-                
-    
-                    $selected_products = explode(',', $request->input('selected_products_delete'));
-    
-                  
-    
-                    $products = Country::whereIn('id', $selected_products)
-                                        ->get();
-                                        
-        foreach($products as $data){
-          $child = Zone::where('country_id',$data->id)->get();
-                foreach($child as $z){
-                    
-                  $sub_child = City::where('state_id',$z->id)->delete();
-                  
-                 
-                 }
-          $ch = Zone::where('country_id',$data->id)->delete();
-    
-      
-      
-              $data->delete();
-         }                      
-                                        
-          
-            
-          return redirect()->back()->with('success','Country deleted Successfully.');
-         }else{
-             return redirect()->back(); 
-         }
-     
-   
-    }
-    
-    
-    
-    
-    
-        public function Default($id1,$id2)
-        {
-            $data = Country::findOrFail($id1);
-            $data->is_default = $id2;
-            $data->update();
-            $data = Country::where('id','!=',$id1)->update(['is_default' => 0]);
-            //--- Redirect Section     
-               $msg = 'Data Updated Successfully';
-               return response()->json($msg); 
-            //--- Redirect Section Ends  
+
+    public function ckeckactivate(Request $request)
+    {
+
+        if (!empty($request->input('selected_products_activate'))) {
+
+
+            $selected_products = explode(',', $request->input('selected_products_activate'));
+
+
+
+            $products = Country::whereIn('id', $selected_products)
+                ->update(['status' => 1]);
+
+            $msg = 'Country activate Successfully.';
+            return redirect()->back()->with('success', $msg);
+        } else {
+            return redirect()->back();
         }
-    
-    
-    
-    
-    
+    }
+    public function ckeckall(Request $request)
+    {
+
+        if (!empty($request->input('selected_products'))) {
+
+
+            $selected_products = explode(',', $request->input('selected_products'));
+
+
+
+            $products = Country::whereIn('id', $selected_products)
+                ->update(['status' => 0]);
+
+            $msg = 'Country Deactivate Successfully.';
+            return redirect()->back()->with('success', $msg);
+        } else {
+            return redirect()->back();
+        }
+    }
+
+
+    public function ckeckdelete(Request $request)
+    {
+
+        if (!empty($request->input('selected_products_delete'))) {
+
+
+            $selected_products = explode(',', $request->input('selected_products_delete'));
+
+
+
+            $products = Country::whereIn('id', $selected_products)
+                ->get();
+
+            foreach ($products as $data) {
+                $child = Zone::where('country_id', $data->id)->get();
+                foreach ($child as $z) {
+
+                    $sub_child = City::where('state_id', $z->id)->delete();
+                }
+                $ch = Zone::where('country_id', $data->id)->delete();
+
+
+
+                $data->delete();
+            }
+
+
+
+            return redirect()->back()->with('success', 'Country deleted Successfully.');
+        } else {
+            return redirect()->back();
+        }
+    }
+
+
+
+
+
+    public function Default($id1, $id2)
+    {
+        $data = Country::findOrFail($id1);
+        $data->is_default = $id2;
+        $data->update();
+        $data = Country::where('id', '!=', $id1)->update(['is_default' => 0]);
+        //--- Redirect Section     
+        $msg = 'Data Updated Successfully';
+        return response()->json($msg);
+        //--- Redirect Section Ends  
+    }
 }
