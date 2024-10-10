@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class InfoController extends Controller
 {
@@ -37,5 +38,17 @@ class InfoController extends Controller
             ];
         });
         return response()->json($subcategories);
+    }
+    public function latestworks(Request $request)
+    {
+        $images = DB::table('ads')->orderby('id', 'desc')->get();
+        $images = $images->map(function ($image) use ($request) {
+            return [
+                'id' => $image->id,
+                'title' => $request->lang == 'ar' ? $image->title_ar : $image->title,
+                'image' => url('assets/images/ads/' . $image->photo),
+            ];
+        });
+        return response()->json($images);
     }
 }

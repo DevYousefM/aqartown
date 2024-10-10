@@ -304,6 +304,7 @@ Route::get('ordersp', 'Api\OrderController@ordersp')->middleware('auth:api');
 
 Route::get('info/products', 'Info\InfoController@products');
 Route::get('info/subcategories', 'Info\InfoController@subcategories');
+Route::get('info/latestwork', 'Info\InfoController@latestworks');
 
 Route::post('info/info-areas', [InfoRequestController::class, 'info_areas']);
 Route::post('info/info-budgets', [InfoRequestController::class, 'info_budgets']);
