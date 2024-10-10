@@ -932,14 +932,23 @@ Route::prefix('admin')->group(function () {
 
     //----------------- Info ----------------------------------
     // Areas
-    Route::get('/info/datatables', 'Admin\InfoController@datatables')->name('admin-info-areas-datatables');
-    Route::get('/info/areas', 'Admin\InfoController@index')->name('admin-info-areas-index');
-    Route::get('/info/areas/create', 'Admin\InfoController@create')->name('admin-info-areas-create');
-    Route::post('/info/create', 'Admin\InfoController@store')->name('admin-info-areas-store');
-    Route::get('/info/edit/{id}', 'Admin\InfoController@edit')->name('admin-info-areas-edit');
-    Route::post('/info/edit/{id}', 'Admin\InfoController@update')->name('admin-info-areas-update');
-    Route::get('/info/delete/{id}', 'Admin\InfoController@destroy')->name('admin-info-areas-delete');
-    Route::get('/info/status/{id1}/{id2}', 'Admin\InfoController@status')->name('admin-info-areas-status');
+    Route::get('/info/areas/datatables', 'Admin\Info\AreaController@datatables')->name('admin-info-areas-datatables');
+    Route::get('/info/areas', 'Admin\Info\AreaController@index')->name('admin-info-areas-index');
+    Route::get('/info/areas/create', 'Admin\Info\AreaController@create')->name('admin-info-areas-create');
+    Route::post('/info/areas/create', 'Admin\Info\AreaController@store')->name('admin-info-areas-store');
+    Route::get('/info/areas/edit/{id}', 'Admin\Info\AreaController@edit')->name('admin-info-areas-edit');
+    Route::post('/info/areas/edit/{id}', 'Admin\Info\AreaController@update')->name('admin-info-areas-update');
+    Route::get('/info/areas/delete/{id}', 'Admin\Info\AreaController@destroy')->name('admin-info-areas-delete');
+    Route::get('/info/areas/status/{id1}/{id2}', 'Admin\Info\AreaController@status')->name('admin-info-areas-status');
+    // Budgets
+    Route::get('/info/budgets/datatables', 'Admin\Info\BudgetController@datatables')->name('admin-info-budgets-datatables');
+    Route::get('/info/budgets', 'Admin\Info\BudgetController@index')->name('admin-info-budgets-index');
+    Route::get('/info/budgets/create', 'Admin\Info\BudgetController@create')->name('admin-info-budgets-create');
+    Route::post('/info/budgets/create', 'Admin\Info\BudgetController@store')->name('admin-info-budgets-store');
+    Route::get('/info/budgets/edit/{id}', 'Admin\Info\BudgetController@edit')->name('admin-info-budgets-edit');
+    Route::post('/info/budgets/edit/{id}', 'Admin\Info\BudgetController@update')->name('admin-info-budgets-update');
+    Route::get('/info/budgets/delete/{id}', 'Admin\Info\BudgetController@destroy')->name('admin-info-budgets-delete');
+    Route::get('/info/budgets/status/{id1}/{id2}', 'Admin\Info\BudgetController@status')->name('admin-info-budgets-status');
     //----------------- CITY ----------------------------------
 
     Route::get('/subgallery/datatables', 'Admin\CityController@datatables')->name('admin-city-datatables'); //JSON REQUEST

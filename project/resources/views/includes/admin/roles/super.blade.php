@@ -211,7 +211,7 @@
     </a>
     <ul class="collapse list-unstyled" id="menu9" data-parent="#accordion">
         <li><a href="{{ route('admin-info-areas-index') }}"><span>{{ __('Areas') }}</span></a></li>
-        <li><a href="{{ route('admin-city-index') }}"><span>{{ __('Budgets') }}</span></a></li>
+        <li><a href="{{ route('admin-info-budgets-index') }}"><span>{{ __('Budgets') }}</span></a></li>
     </ul>
 </li>
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Info;
 
 use App\Http\Controllers\Controller;
 use App\Models\InfoArea;
@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use DataTables;
 
-class InfoController extends Controller
+class AreaController extends Controller
 {
     public function index()
     {
