@@ -21,7 +21,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\HTTPSConnection::class,
-        \Fruitcake\Cors\HandleCors::class,
+        \Illuminate\Http\Middleware\HandleCors::class
     ];
 
     /**
@@ -69,6 +69,5 @@ class Kernel extends HttpKernel
         'maintenance' => \App\Http\Middleware\MaintenanceMode::class,
         'Subscribes' => \App\Http\Middleware\Subscribes::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
-
     ];
 }

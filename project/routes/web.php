@@ -1,15 +1,7 @@
 <?php
 
-use App\Exports\ProductsExport;
-use App\Exports\UsersExport;
-use App\Exports\OrdersExport;
-use App\Exports\Orders2Export;
-use App\Exports\CategoryExport;
-use App\Imports\ProductsImport;
-use App\Imports\OrdersImport;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Models\Gallery;
-use App\Models\Product;
+use Illuminate\Support\Facades\Route;
+
 
 // ************************************ ADMIN SECTION **********************************************
 
@@ -1417,19 +1409,6 @@ Route::prefix('vendor')->group(function () {
   });
 });
 Route::group(['middleware' => 'maintenance'], function () {
-
-  // ************************************ VENDOR SECTION **********************************************
-
-
-
-
-
-  // ************************************ VENDOR SECTION ENDS**********************************************
-
-  // ************************************ FRONT SECTION **********************************************
-
-
-
 
   Route::get('/', function () {
 

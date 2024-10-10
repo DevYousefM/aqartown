@@ -212,7 +212,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Nexmo\Laravel\NexmoServiceProvider::class,
+        
         Srmklive\PayPal\Providers\PayPalServiceProvider::class,
     ],
 
