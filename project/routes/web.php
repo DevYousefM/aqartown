@@ -1,6 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+
+
+
 
 
 // ************************************ ADMIN SECTION **********************************************
@@ -924,6 +930,16 @@ Route::prefix('admin')->group(function () {
     Route::post('/country/activate', 'Admin\CountryController@ckeckactivate')->name('admin-country-activate');
     Route::post('/country/deleted', 'Admin\CountryController@ckeckdelete')->name('admin-country-deleted');
 
+    //----------------- Info ----------------------------------
+    // Areas
+    Route::get('/info/datatables', 'Admin\InfoController@datatables')->name('admin-info-areas-datatables');
+    Route::get('/info/areas', 'Admin\InfoController@index')->name('admin-info-areas-index');
+    Route::get('/info/areas/create', 'Admin\InfoController@create')->name('admin-info-areas-create');
+    Route::post('/info/create', 'Admin\InfoController@store')->name('admin-info-areas-store');
+    Route::get('/info/edit/{id}', 'Admin\InfoController@edit')->name('admin-info-areas-edit');
+    Route::post('/info/edit/{id}', 'Admin\InfoController@update')->name('admin-info-areas-update');
+    Route::get('/info/delete/{id}', 'Admin\InfoController@destroy')->name('admin-info-areas-delete');
+    Route::get('/info/status/{id1}/{id2}', 'Admin\InfoController@status')->name('admin-info-areas-status');
     //----------------- CITY ----------------------------------
 
     Route::get('/subgallery/datatables', 'Admin\CityController@datatables')->name('admin-city-datatables'); //JSON REQUEST
@@ -1030,9 +1046,6 @@ Route::prefix('admin')->group(function () {
   // ------------ GLOBAL ENDS ----------------------
 
   Route::group(['middleware' => 'permissions:super'], function () {
-
-
-
     Route::get('/cache/clear', function () {
       Artisan::call('cache:clear');
       Artisan::call('config:clear');
@@ -1411,9 +1424,7 @@ Route::prefix('vendor')->group(function () {
 Route::group(['middleware' => 'maintenance'], function () {
 
   Route::get('/', function () {
-
     $data = DB::table('languages')->where('is_default', '=', 1)->first();
-
     return Redirect::to('/' . $data->sign);
   });
 

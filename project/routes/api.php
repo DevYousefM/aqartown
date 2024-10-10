@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Info\InfoRequestController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -301,4 +304,6 @@ Route::get('ordersp', 'Api\OrderController@ordersp')->middleware('auth:api');
 
 Route::get('info/products', 'Info\InfoController@products');
 Route::get('info/subcategories', 'Info\InfoController@subcategories');
+
+Route::post('info/info-areas', [InfoRequestController::class, 'info_areas']);
 /* End Paginate*/

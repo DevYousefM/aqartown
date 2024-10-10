@@ -1,7 +1,9 @@
 <?php
 
+use Barryvdh\DomPDF\PDF;
+
 return [
- 'debug_blacklist' => [
+    'debug_blacklist' => [
         '_ENV' => [
             'APP_KEY',
             'DB_PASSWORD',
@@ -10,7 +12,7 @@ return [
             'PUSHER_APP_KEY',
             'PUSHER_APP_SECRET',
         ],
-        '_SERVER' => [    
+        '_SERVER' => [
             'DB_PORT',
             'SERVER_PORT',
             'REDIS_PORT',
@@ -25,7 +27,7 @@ return [
         ],
         '_POST' => [
             'password',
-           
+
         ],
     ],
     /*
@@ -105,7 +107,7 @@ return [
     */
 
     'locale' => 'ar',
-    
+
     'locales' => ['ar', 'en'],
     'fallback_locale' => 'en',
 
@@ -200,19 +202,19 @@ return [
 
         /*
          * Application Service Providers... */
-         Laravel\Socialite\SocialiteServiceProvider::class,    
-        
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-      
-      
+
+
         Intervention\Image\ImageServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        
+
         Srmklive\PayPal\Providers\PayPalServiceProvider::class,
     ],
 
@@ -263,14 +265,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-        
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-          
-        'Image' => Intervention\Image\Facades\Image::class,
-        'PDF' => Barryvdh\DomPDF\Facade::class,
-        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class,
 
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+
+        'Image' => Intervention\Image\Facades\Image::class,
+        'PDF' => PDF::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];
