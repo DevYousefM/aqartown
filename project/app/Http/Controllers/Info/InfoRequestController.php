@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Info;
 
 use App\Http\Controllers\Controller;
 use App\Models\InfoArea;
+use App\Models\InfoBudget;
 use Illuminate\Http\Request;
 
 class InfoRequestController extends Controller
@@ -29,5 +30,10 @@ class InfoRequestController extends Controller
     {
         $info_areas = InfoArea::all();
         return response()->json($info_areas);
+    }
+    public function info_budgets(Request $request)
+    {
+        $info_budgets = InfoBudget::all();
+        return response()->json($info_budgets);
     }
 }

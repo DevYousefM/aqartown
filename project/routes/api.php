@@ -306,4 +306,5 @@ Route::get('info/products', 'Info\InfoController@products');
 Route::get('info/subcategories', 'Info\InfoController@subcategories');
 
 Route::post('info/info-areas', [InfoRequestController::class, 'info_areas']);
+Route::post('info/info-budgets', [InfoRequestController::class, 'info_budgets']);
 /* End Paginate*/
