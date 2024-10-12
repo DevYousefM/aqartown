@@ -103,6 +103,8 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'area_id' => 'area',
+        'budget_id' => 'budget',
     ],
 
     /*
@@ -116,6 +118,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'area_id' => 'area',
+        'budget_id' => 'budget',
+        
+    ],
 
 ];
