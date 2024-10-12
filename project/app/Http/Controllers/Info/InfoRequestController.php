@@ -18,10 +18,10 @@ class InfoRequestController extends Controller
         $lang = $request->lang ?? 'ar';
         App::setLocale($lang);
         $rules_ar = [
-            'area_id.required' => 'يجب تحديد المنطقة',
-            'budget_id.required' => 'يجب تحديد الميزانية',
-            'area_id.exists' => 'المنطقة غير موجودة',
-            'budget_id.exists' => 'الميزانية غير موجودة',
+            'area.required' => 'يجب تحديد المنطقة',
+            'budget.required' => 'يجب تحديد الميزانية',
+            'area.exists' => 'المنطقة غير موجودة',
+            'budget.exists' => 'الميزانية غير موجودة',
             'time_to_call.in' => 'يجب تحديد وقت التواصل',
             'phone.required' => 'يجب تحديد رقم الهاتف',
             'type.required' => 'يجب تحديد نوع الطلب',
@@ -30,16 +30,16 @@ class InfoRequestController extends Controller
             'name.max' => 'يجب الا يزيد الاسم عن 255 حرف',
         ];
         $rules_en = [
-            'area_id.required' => 'the area is required',
-            'budget_id.required' => 'the budget is required',
-            'area_id.exists' => 'the area not found',
-            'budget_id.exists' => 'the budget not found',
+            'area.required' => 'the area is required',
+            'budget.required' => 'the budget is required',
+            'area.exists' => 'the area not found',
+            'budget.exists' => 'the budget not found',
         ];
         $data = Validator::make($request->all(), [
             'type' => 'required|in:search,show',
             'name' => 'required|max:255',
-            'area_id' => 'required|exists:info_areas,id',
-            'budget_id' => 'required|exists:info_budgets,id',
+            'area' => 'required|exists:info_areas,id',
+            'budget' => 'required|exists:info_budgets,id',
             'time_to_call' => ['required', Rule::in(['من 1 الي 3', 'من 5 الي 8'])],
             'phone' => 'required',
             'notes' => 'nullable|max:1000',
@@ -49,8 +49,8 @@ class InfoRequestController extends Controller
             return response()->json(['status' => false, 'msg' => $data->errors()->first()], 200);
         }
 
-        $area = InfoArea::find($request->area_id);
-        $budget = InfoBudget::find($request->budget_id);
+        $area = InfoArea::find($request->area);
+        $budget = InfoBudget::find($request->budget);
         InfoRequests::create([
             'type' => $request->type,
             'name' => $request->name,
@@ -60,11 +60,17 @@ class InfoRequestController extends Controller
             'phone' => $request->phone,
             'notes' => $request->notes,
         ]);
-        return response()->json(['status' => true, 'msg' => 'تم الارسال بنجاح']);
+        return response()->json(['status' => true, 'msg' => $lang == 'ar' ? 'تم ارسال طلبك بنجاح' : 'Your request has been sent'], 200);
     }
     public function info_areas(Request $request)
     {
-        $info_areas = InfoArea::all();
+        $lang = $request->lang ?? 'ar';
+        $info_areas = InfoArea::all()->map(function ($area) use ($lang) {
+            return [
+                'id' => $area->id,
+                'name' => $lang === 'ar' ? $area->name_ar : $area->name,
+            ];
+        });
         return response()->json($info_areas);
     }
     public function info_budgets(Request $request)
