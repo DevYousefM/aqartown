@@ -75,7 +75,13 @@ class InfoRequestController extends Controller
     }
     public function info_budgets(Request $request)
     {
-        $info_budgets = InfoBudget::all();
+        $lang = $request->lang ?? 'ar';
+        $info_budgets = InfoBudget::all()->map(function ($budget) use ($lang) {
+            return [
+                'id' => $budget->id,
+                'name' => $lang === 'ar' ? $budget->name_ar : $budget->name,
+            ];
+        });
         return response()->json($info_budgets);
     }
 }
