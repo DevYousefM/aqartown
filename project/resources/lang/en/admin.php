@@ -14,6 +14,7 @@ return [
     */
 
     'photo'             => 'zaza photo.',
-   
+    'search' => 'Search',
+    'show' => 'Show',
 
 ];
