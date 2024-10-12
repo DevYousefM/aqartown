@@ -308,4 +308,5 @@ Route::get('info/latestwork', 'Info\InfoController@latestworks');
 
 Route::post('info/info-areas', [InfoRequestController::class, 'info_areas']);
 Route::post('info/info-budgets', [InfoRequestController::class, 'info_budgets']);
+Route::post('info/store-request', [InfoRequestController::class, 'store']);
 /* End Paginate*/
