@@ -952,7 +952,8 @@ Route::prefix('admin')->group(function () {
     // Requests
     Route::get('/info/requests', 'Admin\Info\RequestController@index')->name('admin-info-requests-index');
     Route::get('/info/requests/datatables', 'Admin\Info\RequestController@datatables')->name('admin-info-requests-datatables');
-    Route::get('/info/budgets/delete/{id}', 'Admin\Info\RequestController@destroy')->name('admin-info-requests-delete');
+    Route::get('/info/requests/delete/{id}', 'Admin\Info\RequestController@destroy')->name('admin-info-requests-delete');
+    Route::get('/info/requests/export', 'Admin\Info\RequestController@export')->name('admin-info-requests-export');
     //----------------- CITY ----------------------------------
 
     Route::get('/subgallery/datatables', 'Admin\CityController@datatables')->name('admin-city-datatables'); //JSON REQUEST

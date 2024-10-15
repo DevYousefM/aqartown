@@ -18,6 +18,9 @@
                 </div>
             </div>
         </div>
+        <div class="px-0 col-12 d-flex justify-content-end align-items-center">
+            <a href="{{ route('admin-info-requests-export') }}" class="btn btn-info mb-3">Export Excel</a>
+        </div>
         <div class="product-area">
             <div class="row">
                 <div class="col-lg-12">
