@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin\Info;
 
+use App\Exports\InfoRequestsExport;
 use App\Http\Controllers\Controller;
 use App\Models\InfoRequests;
-use Illuminate\Http\Request;
 use DataTables;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RequestController extends Controller
 {
@@ -49,5 +51,8 @@ class RequestController extends Controller
             'status' => true,
             'msg'   =>  $msg
         ], 200);
+    }
+    public function export() {
+        return Excel::download(new InfoRequestsExport, 'requests.xlsx');
     }
 }
