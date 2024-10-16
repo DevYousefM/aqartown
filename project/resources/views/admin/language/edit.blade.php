@@ -509,6 +509,30 @@
                                                    value="{{ $lang->lang39 }}">
                                         </div>
                                     </div>
+                                    <div class="row"  >
+                                        <div class="col-lg-4">
+                                            <div class="left-area">
+                                                <h4 class="heading">{{ $lang->lang831 }} *</h4>
+                                                <p class="sub-heading">(In Any Language)</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <input type="text" class="input-field" name="lang831" placeholder="Comments"  
+                                                   value="{{ $lang->lang831 }}">
+                                        </div>
+                                    </div>
+                                    <div class="row"  >
+                                        <div class="col-lg-4">
+                                            <div class="left-area">
+                                                <h4 class="heading">{{ $lang->lang832 }} *</h4>
+                                                <p class="sub-heading">(In Any Language)</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7">
+                                            <input type="text" class="input-field" name="lang832" placeholder="Comments"  
+                                                   value="{{ $lang->lang832 }}">
+                                        </div>
+                                    </div>
 
                                     <div class="row"  >
                                         <div class="col-lg-4">

@@ -103,7 +103,8 @@ class Product extends Model
         'map',
         'location_id',
         'type_id',
-        'range_id'
+        'range_id',
+        'is_available',
     ];
 
 

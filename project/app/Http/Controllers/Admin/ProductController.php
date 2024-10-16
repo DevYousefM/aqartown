@@ -55,21 +55,18 @@ class ProductController extends Controller
                 $photo = '<div class=""><img style="width: 85px;" src="' . url('assets/images/products', $data->hover_photo) . '"  ></div>';
                 return  $photo;
             })
-            ->editColumn('stock', function (Product $data) {
-                $stck = (string)$data->stock;
-                if ($stck == "0")
-                    return "Out Of Stock";
-                elseif ($stck == null)
-                    return "Unlimited";
-                else
-                    return $data->stock;
-            })
             ->addColumn('status', function (Product $data) {
                 $class = $data->status == 1 ? 'drop-success' : 'drop-danger';
                 $s = $data->status == 1 ? 'selected' : '';
                 $ns = $data->status == 0 ? 'selected' : '';
                 return '<div class="action-list"><select class="process select droplinks ' . $class . '"><option data-val="1" value="' . route('admin-prod-status', ['id1' => $data->id, 'id2' => 1]) . '" ' . $s . '>Activated</option><<option data-val="0" value="' . route('admin-prod-status', ['id1' => $data->id, 'id2' => 0]) . '" ' . $ns . '>Deactivated</option>/select></div>';
-            })->addColumn('checkbox', function (Product $data) {
+            })->addColumn('availability', function (Product $data) {
+                $class = $data->is_available == 1 ? 'drop-success' : 'drop-danger';
+                $s = $data->is_available == 1 ? 'selected' : '';
+                $ns = $data->is_available == 0 ? 'selected' : '';
+                return '<div class="action-list"><select class="process select droplinks ' . $class . '"><option data-val="1" value="' . route('admin-prod-availability', ['id1' => $data->id, 'id2' => 1]) . '" ' . $s . '>Available</option><<option data-val="0" value="' . route('admin-prod-availability', ['id1' => $data->id, 'id2' => 0]) . '" ' . $ns . '>Unavailable</option>/select></div>';
+            })
+            ->addColumn('checkbox', function (Product $data) {
 
                 return '<div class="">
                                 <label class="container">
@@ -86,7 +83,7 @@ class ProductController extends Controller
 
 <a href="javascript:;" data-href="' . route('admin-prod-delete', $data->id) . '" data-toggle="modal" data-target="#confirm-delete" class="delete"><i class="fas fa-trash-alt"></i> Delete</a></div></div>';
             })
-            ->rawColumns(['name', 'thumbnail', 'checkbox', 'status', 'action'])
+            ->rawColumns(['name', 'thumbnail', 'checkbox', 'availability', 'status', 'action'])
             ->toJson(); //--- Returning Json Data To Client Side
     }
 
@@ -174,16 +171,19 @@ class ProductController extends Controller
         return view('admin.product.create.physical', compact('cats', 'locations', 'types', 'works', 'sign', 'pro', 'brands'));
     }
 
-
-
-
-
     //*** GET Request
     public function status($id1, $id2)
     {
         $data = Product::findOrFail($id1);
         $data->status = $id2;
         $data->update();
+    }
+    public function availability($id1, $id2)
+    {
+        $data = Product::findOrFail($id1);
+        $data->is_available = $id2;
+        $data->update();
+        return response()->json(['status' => true]);
     }
 
     //*** GET Request

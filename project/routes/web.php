@@ -1039,6 +1039,7 @@ Route::prefix('admin')->group(function () {
   // STATUS SECTION
   Route::get('/products/status/{id1}/{id2}', 'Admin\ProductController@status')->name('admin-prod-status');
   // STATUS SECTION ENDS
+  Route::get('/products/availability/{id1}/{id2}', 'Admin\ProductController@availability')->name('admin-prod-availability');
 
   // FEATURE SECTION
   Route::get('/products/feature/{id}', 'Admin\ProductController@feature')->name('admin-prod-feature');

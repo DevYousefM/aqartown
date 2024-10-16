@@ -1663,7 +1663,7 @@ label {
 .play-s,
 .po-so,
 .social-team li,
-.tag-l,
+.tags-container,
 span.po-i-ab {
   position: absolute;
 }
@@ -1818,9 +1818,12 @@ ul.min-f-img {
   color: #fff;
   font-size: 18px;
 }
-.tag-l {
+.tags-container{
   top: 10px;
   right: 10px;
+
+}
+.tag-l {
   padding: 2px 8px;
   background: #72a3ce;
   border-radius: 3px;
