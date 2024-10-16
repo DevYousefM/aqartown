@@ -185,7 +185,7 @@ class FrontendController extends Controller
         $works =  Zone::where('status', 1)->get();
         $types =  City::where('status', 1)->get();
         $locations =  Country::where('status', 1)->get();
-
+        
         return view('front.index', compact('ps', 'sliders', 'locations', 'types', 'blogs', 'works', 'images', 'our_teams', 'counters', 'categoriess', 'subcategories', 'about_uss', 'categoriesss', 'services', 'reviews', 'partners', 'fix_banners'));
     }
 
