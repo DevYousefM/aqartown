@@ -29,7 +29,6 @@
       <!-- Fontawesome -->
       <link rel="stylesheet" href="{{ asset('assets/admin/css/fontawesome.css') }}">
       <link rel="stylesheet" href="{{ asset('assets/front/css/toastr.css') }}">
-
   </head>
 
   <body>
@@ -292,7 +291,6 @@
       <script src="{{ asset('assets/admin/js/nicEdit.js') }}"></script>
       <script src="{{ asset('assets/admin/js/bootstrap-colorpicker.min.js') }}"></script>
       <script src="{{ asset('assets/admin/js/notify.js') }}"></script>
-
       <script src="{{ asset('assets/admin/js/jquery.canvasjs.min.js') }}"></script>
 
       <script src="{{ asset('assets/admin/js/load.js') }}"></script>

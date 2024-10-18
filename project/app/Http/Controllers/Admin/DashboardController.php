@@ -25,7 +25,7 @@ class DashboardController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function index()
+    public function index(Request $request)
     {
 
         $days = "";
@@ -40,7 +40,55 @@ class DashboardController extends Controller
         $poproducts = Product::orderBy('views', 'desc')->take(5)->get();
         $rusers = User::orderBy('id', 'desc')->take(5)->get();
         $referrals = Counter::where('type', 'referral')->orderBy('total_count', 'desc')->take(5)->get();
-        $browsers = Counter::where('type', 'browser')->orderBy('total_count', 'desc')->take(5)->get();
+        $browsers = Counter::where('type', 'browser')->orderBy('total_count', 'desc')->get();
+
+        $windowsBrowsers = ['Windows 10', 'Windows 7', 'Windows 8.1', 'Windows 8', 'Windows XP', 'Windows Vista', 'Windows 2000', 'Windows ME', 'Windows Server 2003/XP x64'];
+        $iosBrowsers = ['iPhone', 'iPad', 'iPod'];
+        $macBrowsers = ['Mac OS X'];
+        $androidBrowsers = ['Android'];
+
+        $windowsTotal = 0;
+        $iosTotal = 0;
+        $macTotal = 0;
+        $androidTotal = 0;
+        $unknownTotal = 0;
+
+        foreach ($browsers as $browser) {
+            if (in_array($browser->referral, $windowsBrowsers)) {
+                $windowsTotal += $browser->total_count;
+            } elseif (in_array($browser->referral, $iosBrowsers)) {
+                $iosTotal += $browser->total_count;
+            } elseif (in_array($browser->referral, $macBrowsers)) {
+                $macTotal += $browser->total_count;
+            } elseif (in_array($browser->referral, $androidBrowsers)) {
+                $androidTotal += $browser->total_count;
+            } else {
+                $unknownTotal += $browser->total_count;
+            }
+        }
+
+        $aggregatedBrowsers = [
+            [
+                'referral' => 'Windows',
+                'total_count' => $windowsTotal
+            ],
+            [
+                'referral' => 'iOS',
+                'total_count' => $iosTotal
+            ],
+            [
+                'referral' => 'Mac',
+                'total_count' => $macTotal
+            ],
+            [
+                'referral' => 'Android',
+                'total_count' => $androidTotal
+            ],
+            [
+                'referral' => 'Unknown OS Platform',
+                'total_count' => $unknownTotal
+            ]
+        ];
 
         $activation_notify = "";
         if (file_exists(public_path() . '/rooted.txt')) {
@@ -49,7 +97,8 @@ class DashboardController extends Controller
                 $activation_notify = "<i class='icofont-warning-alt icofont-4x'></i><br>Please activate your system.<br> If you do not activate your system now, it will be inactive on " . $rooted . "!!<br><a href='" . url('/admin/activation') . "' class='btn btn-success'>Activate Now</a>";
             }
         }
-        return view('admin.dashboard', compact('activation_notify', 'coments', 'products', 'users', 'blogs', 'days', 'sales', 'pproducts', 'poproducts', 'rusers', 'referrals', 'browsers'));
+        // return $browsers;
+        return view('admin.dashboard', compact('activation_notify', 'coments', 'products', 'users', 'blogs', 'days', 'sales', 'pproducts', 'poproducts', 'rusers', 'referrals', 'aggregatedBrowsers'));
     }
     public function mode($id)
     {
