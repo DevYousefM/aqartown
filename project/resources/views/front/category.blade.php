@@ -242,9 +242,21 @@
 
                                              </button> --}}
 
-                                            <span class="tag-l">
-                                                {{ $productt->product_condition == 2 ? $langg->lang39 : $langg->lang40 }}</span>
+                                             <div class="d-flex tags-container" style="gap: 10px">
+                                                @if ($productt->is_available == 1)
+                                                    <span class="tag-l bg-danger">
+                                                        @if ($productt->product_condition == 1)
+                                                            {{ $langg->lang832 }}
+                                                            @endif
+                                                        @if ($productt->product_condition == 2)
+                                                            {{ $langg->lang831 }}
+                                                        @endif
+                                                    </span>
+                                                @endif
 
+                                                <span class="tag-l">
+                                                    {{ $productt->product_condition == 2 ? $langg->lang39 : $langg->lang40 }}</span>
+                                            </div>
                                             <div class="min-box-t">
 
                                                 <h3> {{ $productt->price }}</h3>
