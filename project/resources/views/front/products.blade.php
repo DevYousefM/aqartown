@@ -46,7 +46,7 @@
                                             alt="" class="bg-pro-i">
                                     </a>
                                     {{-- <button class="chat-re" data-toggle="modal" data-target="#myModal-chat">
-                                                 <img src="{{asset('assets/aqar/')}}/images/messenger.png" alt="" class="mes">
+                                                 <img src="{{asset('public/assets/aqar/')}}/images/messenger.png" alt="" class="mes">
                                              </button> --}}
                                     <div class="d-flex tags-container" style="gap: 10px">
                                         @if ($productt->is_available == 1)
@@ -78,16 +78,17 @@
                                         <ul class="min-f-img">
                                             {{--
                                                 <li>
-                                                    <img src="{{ asset('assets/aqar/') }}/images/b-o.png" alt=""> 3 Br
+                                                    <img src="{{ asset('public/assets/aqar/') }}/images/b-o.png" alt=""> 3 Br
                                                 </li>
                                                 <li>
-                                                    <img src="{{ asset('assets/aqar/') }}/images/ba-o.png" alt=""> 3 Ba
+                                                    <img src="{{ asset('public/assets/aqar/') }}/images/ba-o.png" alt=""> 3 Ba
                                                 </li>
                                                 <li>
-                                                    <img src="{{ asset('assets/aqar/') }}/images/g-o.png" alt=""> 1 Gr
+                                                    <img src="{{ asset('public/assets/aqar/') }}/images/g-o.png" alt=""> 1 Gr
                                                 </li>
                                             --}}
-                                            <li><img src="{{ asset('assets/aqar/') }}/images/s-o.png" alt="">
+                                            <li><img src="{{ asset('public/assets/aqar/') }}/images/s-o.png"
+                                                    alt="">
                                                 {{ $productt->location }}</li>
                                         </ul>
                                     </div>

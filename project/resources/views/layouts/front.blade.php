@@ -186,33 +186,33 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/bootstrap.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/animate.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/magnific-popup.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/font-awesome.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/owl.carousel.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/swiper.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/swiper.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/select2.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/select2.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/default.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/default.css" type="text/css">
 
     @if ($langg->rtl == 1)
-        <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/style.css" type="text/css">
+        <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/style.css" type="text/css">
     @else
-        <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/styleltr.css" type="text/css">
+        <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/styleltr.css" type="text/css">
     @endif
 
 
 
 
 
-    <link rel="stylesheet" href="{{ asset('assets/aqar/') }}/css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/responsive.css" type="text/css">
 
 
 
@@ -1240,21 +1240,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{{ asset('assets/aqar/') }}/js/bootstrap.min.js"></script>
+    <script src="{{ asset('public/assets/aqar/') }}/js/bootstrap.min.js"></script>
 
-    <script src="{{ asset('assets/aqar/') }}/js/wow-animate.min.js"></script>
+    <script src="{{ asset('public/assets/aqar/') }}/js/wow-animate.min.js"></script>
 
-    <script src="{{ asset('assets/aqar/') }}/js/isotope.pkgd.min.js"></script>
+    <script src="{{ asset('public/assets/aqar/') }}/js/isotope.pkgd.min.js"></script>
 
-    <script src="{{ asset('assets/aqar/') }}/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{ asset('public/assets/aqar/') }}/js/jquery.magnific-popup.min.js"></script>
 
-    <script src="{{ asset('assets/aqar/') }}/js/owl.carousel.min.js"></script>
+    <script src="{{ asset('public/assets/aqar/') }}/js/owl.carousel.min.js"></script>
 
-    <script src="{{ asset('assets/aqar/') }}/js/select2.min.js"></script>
+    <script src="{{ asset('public/assets/aqar/') }}/js/select2.min.js"></script>
 
-    <script src="{{ asset('assets/aqar/') }}/js/swiper.min.js"></script>
+    <script src="{{ asset('public/assets/aqar/') }}/js/swiper.min.js"></script>
 
-    <script src="{{ asset('assets/aqar/') }}/js/main.js"></script>
+    <script src="{{ asset('public/assets/aqar/') }}/js/main.js"></script>
     <script>
         var toggler = document.getElementsByClassName("caret");
         var i;

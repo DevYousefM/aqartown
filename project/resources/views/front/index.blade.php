@@ -299,7 +299,7 @@
 
                                             {{-- <button class="chat-re" data-toggle="modal" data-target="#myModal-chat">
 
-                                                <img src="{{ asset('assets/aqar/') }}/images/messenger.png"
+                                                <img src="{{ asset('public/assets/aqar/') }}/images/messenger.png"
                                                     alt="" class="mes">
 
                                             </button> --}}
@@ -308,7 +308,7 @@
                                                     <span class="tag-l bg-danger">
                                                         @if ($productt->product_condition == 1)
                                                             {{ $langg->lang832 }}
-                                                            @endif
+                                                        @endif
                                                         @if ($productt->product_condition == 2)
                                                             {{ $langg->lang831 }}
                                                         @endif
@@ -337,16 +337,16 @@
                                                     </a></h3>
 
                                                 <ul class="min-f-img">
-                                                    {{-- <li><img src="{{ asset('assets/aqar/') }}/images/b-o.png"
+                                                    {{-- <li><img src="{{ asset('public/assets/aqar/') }}/images/b-o.png"
                                                             alt=""> 3 Br</li>
 
-                                                    <li><img src="{{ asset('assets/aqar/') }}/images/ba-o.png"
+                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/ba-o.png"
                                                             alt=""> 3 Ba</li>
 
-                                                    <li><img src="{{ asset('assets/aqar/') }}/images/g-o.png"
+                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/g-o.png"
                                                             alt=""> 1 Gr</li> --}}
 
-                                                    <li><img src="{{ asset('assets/aqar/') }}/images/s-o.png"
+                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/s-o.png"
                                                             alt=""> {{ $productt->location }}</li>
                                                 </ul>
                                             </div>
@@ -427,5 +427,5 @@
 @section('links')
     <link rel="preload" href="{{ asset('/assets/images/sliders/' . $galss) }}" as="image">
     <link rel="preload" href="{{ asset('assets/images/' . $gs->home_about_img1) }}" as="image">
-    <link rel="preload" href="{{ asset('assets/aqar/') }}/images/s-o.png" as="image">
+    <link rel="preload" href="{{ asset('public/assets/aqar/') }}/images/s-o.png" as="image">
 @endsection
