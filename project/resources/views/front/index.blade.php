@@ -305,7 +305,7 @@
 
                                             </button> --}}
                                             <div class="d-flex tags-container" style="gap: 10px">
-                                                @if ($productt->is_available == 1)
+                                                @if ($productt->is_available == 0)
                                                     <span class="tag-l bg-danger">
                                                         @if ($productt->product_condition == 1)
                                                             {{ $langg->lang832 }}
