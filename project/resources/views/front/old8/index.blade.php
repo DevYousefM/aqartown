@@ -31,7 +31,7 @@
 
                 <div class="swiper-slide">
                     <div class="slider-img">
-                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="img">
+                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="img">
                     </div>
                     <div class="slider-text">
                         <div class="text-buttons">
@@ -123,7 +123,8 @@
 
                             <div class="home-about">
                                 <div class="img-div lazy-div">
-                                    <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}" alt="img">
+                                    <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                        alt="img">
                                 </div>
 
 
@@ -201,7 +202,8 @@
 
                             <div class="home-about">
                                 <div class="img-div lazy-div">
-                                    <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}" alt="img">
+                                    <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                        alt="img">
                                 </div>
 
 
@@ -297,11 +299,11 @@
 
                         <!-- ltr code -->
                         <!-- <div class="swiper-button-next testimonials-slider-next">
-              <span class="linearicons-chevron-right"></span>
-            </div>
-            <div class="swiper-button-prev testimonials-slider-prev">
-              <span class="linearicons-chevron-left"></span>
-            </div> -->
+                  <span class="linearicons-chevron-right"></span>
+                </div>
+                <div class="swiper-button-prev testimonials-slider-prev">
+                  <span class="linearicons-chevron-left"></span>
+                </div> -->
                         <!-- ltr code -->
 
                         <!-- <div class="swiper-pagination testimonials-slider-pagination"></div> -->

@@ -21,13 +21,13 @@
                 $galss = str_replace(' ', '%20', $slide->photo);
             @endphp
             <div class="main-slides-item item-bg4"
-                style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }});">
+                style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }});">
                 <div class="container">
                     <div class="main-slides-content">
                         <!-- <span class="sub-title">
-                            <i class="flaticon-hashtag-symbol"></i>
-                            Keeping Teeth Clean
-                        </span> -->
+                                <i class="flaticon-hashtag-symbol"></i>
+                                Keeping Teeth Clean
+                            </span> -->
                         @if (!empty($slide->subtitle_text) || !empty($slide->subtitle_text_ar))
                             <h1> <span>{{ $langg->rtl == 1 ? $slide->subtitle_text_ar : $slide->subtitle_text }}</span>
                             </h1>

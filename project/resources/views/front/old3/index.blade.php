@@ -27,7 +27,7 @@
                     @endphp
 
                     <div class="swiper-slide slide">
-                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="">
+                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="">
 
                         <div class="auto-container">
                             <div class="content">
@@ -95,7 +95,7 @@
 
                         @foreach ($images as $image)
                             <div class="image item">
-                                <img src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt="">
+                                <img src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt="">
                             </div>
                         @endforeach
                     </div>
@@ -110,7 +110,7 @@
                     <div class="column col-lg-6 col-md-6 col-sm-12">
                         <ul class="list-style-one">
                             @foreach ($chunk as $serv)
-                                <li><img src="{{ asset('/assets/images/gallery/' . $serv->photo) }}"
+                                <li><img src="{{ asset('/public/assets/images/gallery/' . $serv->photo) }}"
                                         alt="">{{ $langg->rtl == 1 ? $serv->name_ar : $serv->name }}</li>
                             @endforeach
                         </ul>
@@ -284,26 +284,26 @@
                             <img src="{{ asset('public/assets/images/reviews/' . $review->photo) }}"
                                 alt="{{ $review->title }}" />
                             <!-- <div class="content-box">
-                                    <h3>maysa ahmed
-                                        <div class="rate">
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star checked"></span>
-                                            <span class="fa fa-star"></span>
-                                            <span class="fa fa-star"></span>
-                                          </div>
+                                        <h3>maysa ahmed
+                                            <div class="rate">
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star"></span>
+                                                <span class="fa fa-star"></span>
+                                              </div>
 
-                                    </h3>
-                                
-                                    <div class="quote-icon icon-quote2"></div>
-                                    <p class="text">احسن طقم عمل واستقبال ممكن تتعامل معاه مع اني خارج الدوله بس مقدرش أقرب
-                                        لاسناني انا وزوجي واولادي غير عندهم من حسن استقبال لطقم عمل والتمريض لدكاتره عندهم ضمير
-                                        لا يبخلو بالنصيحه حتى بالتليفون نظرا لوجودنا خارج الدوله معظم السنه غير أن العياده فيها
-                                        تعقيم وتطهير فوق الوصف فعلا كل الشكر الاستاذه شاديه الخلوقه</p>
-                                </div>
-                                <div class="image-box">
-                                  
-                                </div> -->
+                                        </h3>
+                                    
+                                        <div class="quote-icon icon-quote2"></div>
+                                        <p class="text">احسن طقم عمل واستقبال ممكن تتعامل معاه مع اني خارج الدوله بس مقدرش أقرب
+                                            لاسناني انا وزوجي واولادي غير عندهم من حسن استقبال لطقم عمل والتمريض لدكاتره عندهم ضمير
+                                            لا يبخلو بالنصيحه حتى بالتليفون نظرا لوجودنا خارج الدوله معظم السنه غير أن العياده فيها
+                                            تعقيم وتطهير فوق الوصف فعلا كل الشكر الاستاذه شاديه الخلوقه</p>
+                                    </div>
+                                    <div class="image-box">
+                                      
+                                    </div> -->
                         </div>
                     </div>
                 @endforeach

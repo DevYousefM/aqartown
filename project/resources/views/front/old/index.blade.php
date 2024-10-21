@@ -30,7 +30,7 @@
                                 <div class="feat-item-wrap">
                                     <div class="feat-item pb-240 d-flex flex-wrap align-items-end">
                                         <div class="feat-img position-absolute w-100"
-                                            style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }})">
+                                            style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }})">
                                         </div>
                                         <div class="container">
                                             <div class="row justify-content-between align-items-end">
@@ -91,7 +91,7 @@
                             <div class="feat-item-wrap">
                                 <div class="feat-item pb-240 d-flex flex-wrap align-items-end">
                                     <div class="feat-img position-absolute w-100"
-                                        style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }})">
+                                        style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }})">
                                     </div>
                                     <div class="container">
                                         <div class="row justify-content-between align-items-end">
@@ -439,7 +439,7 @@
         </div>
     </section>
     <!--            </section>
-        -->
+            -->
 
 
 @stop

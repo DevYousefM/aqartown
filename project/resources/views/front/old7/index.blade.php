@@ -31,7 +31,7 @@
                     @endphp
                     <div data-target="#pxp-hero-props-carousel-1" data-slide-to="{{ $k }}"
                         class="pxp-cover @if ($k == 0) active @endif ">
-                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="">
+                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="">
                         <p> {{ $langg->rtl == 1 ? $slide->subtitle_text_ar : $slide->subtitle_text }}</p>
                     </div>
                 @endforeach
@@ -49,21 +49,21 @@
                     <div class="carousel-item @if ($k == 0) active @endif"
                         data-slide="{{ $k }}">
                         <div class="pxp-hero-bg pxp-cover"
-                            style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }});"></div>
+                            style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }});"></div>
 
                     </div>
                 @endforeach
 
                 <!-- <div class="social-media">
-                            <a href="#">
-                                <h6>EN</h6>
-                            </a>
-                            <ul>
-                                <li><a href="#">A <br> R</a></li>
+                                <a href="#">
+                                    <h6>EN</h6>
+                                </a>
+                                <ul>
+                                    <li><a href="#">A <br> R</a></li>
 
 
-                            </ul>
-                        </div> -->
+                                </ul>
+                            </div> -->
 
             </div>
         </div>
@@ -172,7 +172,8 @@
                                             
                                                 {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
                             <div class="single-team-typ-1-wraper">
-                                <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}" alt="img">
+                                <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
+                                    alt="img">
                                 <div class="team-typ-1-hvr text-white">
                                     <p>
                                         @if ($langg->rtl == 1)

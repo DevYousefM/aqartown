@@ -137,8 +137,8 @@ class SliderController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/sliders', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/assets/images/sliders/' . $data->photo)) {
-                    unlink(public_path() . '/assets/images/sliders/' . $data->photo);
+                if (file_exists(public_path() . '/public/assets/images/sliders/' . $data->photo)) {
+                    unlink(public_path() . '/public/assets/images/sliders/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -176,8 +176,8 @@ class SliderController extends Controller
             //--- Redirect Section Ends     
         }
         //If Photo Exist
-        if (file_exists(public_path() . '/assets/images/sliders/' . $data->photo)) {
-            unlink(public_path() . '/assets/images/sliders/' . $data->photo);
+        if (file_exists(public_path() . '/public/assets/images/sliders/' . $data->photo)) {
+            unlink(public_path() . '/public/assets/images/sliders/' . $data->photo);
         }
         $data->delete();
         //--- Redirect Section     

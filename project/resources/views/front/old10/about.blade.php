@@ -60,7 +60,7 @@
             <div class="home-about-slick-slider" data-aos="zoom-in-right" data-aos-duration="1500">
                 @foreach ($images as $image)
                     <div class="img-div">
-                        <img src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt="img">
+                        <img src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt="img">
                     </div>
                 @endforeach
 
