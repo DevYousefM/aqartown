@@ -57,7 +57,7 @@
                     <div class="swiper-slide">
                         <div class="item "><a class="portfolio-img-link " href="#">
                                 <div class="overlay overlay-color"></div><img class="  portfolio-img img-fluid  "
-                                    src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt=" ">
+                                    src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt=" ">
                             </a>
                             <div class="item-info "><span></span>
                                 {{-- <h3 class="item-title">HPL</h3> --}}

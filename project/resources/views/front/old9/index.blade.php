@@ -26,7 +26,7 @@
                 @endphp
                 <div class="swiper-slide">
                     <div class="slider-img">
-                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="img">
+                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="img">
                     </div>
                     <div class="slider-text">
                         <div class="text-buttons">

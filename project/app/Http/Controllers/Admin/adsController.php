@@ -122,8 +122,8 @@ class adsController extends Controller
             $name = $this->generateRandomName($file);
             $file->move('public/assets/images/ads', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path('/assets/images/ads/' . $data->photo))) {
-                    unlink(public_path('/assets/images/ads/' . $data->photo));
+                if (file_exists(public_path('/public/assets/images/ads/' . $data->photo))) {
+                    unlink(public_path('/public/assets/images/ads/' . $data->photo));
                 }
             }
             $input['photo'] = $name;
@@ -133,8 +133,8 @@ class adsController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/ads', $name);
             if ($data->image != null) {
-                if (file_exists(public_path() . '/assets/images/ads/' . $data->image)) {
-                    unlink(public_path() . '/assets/images/ads/' . $data->image);
+                if (file_exists(public_path() . '/public/assets/images/ads/' . $data->image)) {
+                    unlink(public_path() . '/public/assets/images/ads/' . $data->image);
                 }
             }
             $input['image'] = $name;
@@ -155,12 +155,12 @@ class adsController extends Controller
             return response()->json($msg);
         }
         //If Photo Exist
-        if (File::exists(public_path('/assets/images/ads/' . $data->photo))) {
-            unlink(public_path('/assets/images/ads/' . $data->photo));
+        if (File::exists(public_path('/public/assets/images/ads/' . $data->photo))) {
+            unlink(public_path('/public/assets/images/ads/' . $data->photo));
         }
         /*     
-        if (file_exists(public_path().'/assets/images/ads/'.$data->image)) {
-            unlink(public_path().'/assets/images/ads/'.$data->image);
+        if (file_exists(public_path().'/public/assets/images/ads/'.$data->image)) {
+            unlink(public_path().'/public/assets/images/ads/'.$data->image);
         }*/
         $data->delete();
         $msg = 'Data Deleted Successfully.';

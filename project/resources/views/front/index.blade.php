@@ -36,7 +36,7 @@
                 @endphp
 
                 <div class="swiper-slide cover-background"
-                    style="background-image:url({{ asset('/assets/images/sliders/' . $galss) }})">
+                    style="background-image:url({{ asset('/public/assets/images/sliders/' . $galss) }})">
 
 
 
@@ -411,7 +411,7 @@
                     <div class="item team_member">
 
                         <a href="{{ route('front.latestwork', $sign) }}"><img class="img-fluid thumb"
-                                src="{{ asset('/assets/images/ads/' . $image->photo) }}"
+                                src="{{ asset('/public/assets/images/ads/' . $image->photo) }}"
                                 alt="{{ $langg->rtl == 1 ? $image->title_ar : $image->title }} "></a>
                         <div class="details">
                             <a class="Font_01"
@@ -426,7 +426,7 @@
 @stop
 
 @section('links')
-    <link rel="preload" href="{{ asset('/assets/images/sliders/' . $galss) }}" as="image">
+    <link rel="preload" href="{{ asset('/public/assets/images/sliders/' . $galss) }}" as="image">
     <link rel="preload" href="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" as="image">
     <link rel="preload" href="{{ asset('public/assets/aqar/') }}/images/s-o.png" as="image">
 @endsection

@@ -20,23 +20,23 @@ class SliderController extends Controller
     //*** JSON Request
     public function datatables()
     {
-         $user = Auth::user();
-         $datas =  $user->sliders()->orderBy('id','desc')->get();
-         //--- Integrating This Collection Into Datatables
-         return Datatables::of($datas)
-                            ->editColumn('photo', function(Slider $data) {
-                                $photo = $data->photo ? url('public/assets/images/sliders/'.$data->photo):url('public/assets/images/noimage.png');
-                                return '<img src="' . $photo . '" alt="Image">';
-                            })
-                            ->editColumn('title', function(Slider $data) {
-                                $title = strlen(strip_tags($data->title)) > 250 ? substr(strip_tags($data->title),0,250).'...' : strip_tags($data->title);
-                                return  $title;
-                            })
-                            ->addColumn('action', function(Slider $data) {
-                                return '<div class="action-list"><a href="' . route('vendor-sl-edit',$data->id) . '"> <i class="fas fa-edit"></i>Edit</a><a href="javascript:;" data-href="' . route('vendor-sl-delete',$data->id) . '" data-toggle="modal" data-target="#confirm-delete" class="delete"><i class="fas fa-trash-alt"></i></a></div>';
-                            }) 
-                            ->rawColumns(['photo', 'action'])
-                            ->toJson(); //--- Returning Json Data To Client Side
+        $user = Auth::user();
+        $datas =  $user->sliders()->orderBy('id', 'desc')->get();
+        //--- Integrating This Collection Into Datatables
+        return Datatables::of($datas)
+            ->editColumn('photo', function (Slider $data) {
+                $photo = $data->photo ? url('public/assets/images/sliders/' . $data->photo) : url('public/assets/images/noimage.png');
+                return '<img src="' . $photo . '" alt="Image">';
+            })
+            ->editColumn('title', function (Slider $data) {
+                $title = strlen(strip_tags($data->title)) > 250 ? substr(strip_tags($data->title), 0, 250) . '...' : strip_tags($data->title);
+                return  $title;
+            })
+            ->addColumn('action', function (Slider $data) {
+                return '<div class="action-list"><a href="' . route('vendor-sl-edit', $data->id) . '"> <i class="fas fa-edit"></i>Edit</a><a href="javascript:;" data-href="' . route('vendor-sl-delete', $data->id) . '" data-toggle="modal" data-target="#confirm-delete" class="delete"><i class="fas fa-trash-alt"></i></a></div>';
+            })
+            ->rawColumns(['photo', 'action'])
+            ->toJson(); //--- Returning Json Data To Client Side
     }
 
     //*** GET Request
@@ -56,27 +56,26 @@ class SliderController extends Controller
     {
         //--- Validation Section
         $rules = [
-               'photo'      => 'required|mimes:jpeg,jpg,png,svg',
-                ];
+            'photo'      => 'required|mimes:jpeg,jpg,png,svg',
+        ];
 
         $validator = Validator::make($request->all(), $rules);
-        
+
         if ($validator->fails()) {
-          return response()->json(array('errors' => $validator->getMessageBag()->toArray()));
+            return response()->json(array('errors' => $validator->getMessageBag()->toArray()));
         }
         //--- Validation Section Ends
 
         //--- Logic Section
         $data = new Slider();
         $input = $request->all();
-        if ($file = $request->file('photo')) 
-         {      
-            $name = time().$file->getClientOriginalName();
-            $file->move('public/assets/images/sliders',$name);           
+        if ($file = $request->file('photo')) {
+            $name = time() . $file->getClientOriginalName();
+            $file->move('public/assets/images/sliders', $name);
             $input['photo'] = $name;
-        } 
+        }
 
-        $input['user_id'] = Auth::user()->id;    
+        $input['user_id'] = Auth::user()->id;
         // Save Data 
         $data->fill($input)->save();
 
@@ -84,7 +83,7 @@ class SliderController extends Controller
 
         //--- Redirect Section        
         $msg = 'New Data Added Successfully.';
-        return response()->json($msg);      
+        return response()->json($msg);
         //--- Redirect Section Ends    
     }
 
@@ -92,7 +91,7 @@ class SliderController extends Controller
     public function edit($id)
     {
         $data = Slider::findOrFail($id);
-        return view('vendor.slider.edit',compact('data'));
+        return view('vendor.slider.edit', compact('data'));
     }
 
     //*** POST Request
@@ -100,37 +99,35 @@ class SliderController extends Controller
     {
         //--- Validation Section
         $rules = [
-               'photo'      => 'mimes:jpeg,jpg,png,svg',
-                ];
+            'photo'      => 'mimes:jpeg,jpg,png,svg',
+        ];
 
         $validator = Validator::make($request->all(), $rules);
-        
+
         if ($validator->fails()) {
-          return response()->json(array('errors' => $validator->getMessageBag()->toArray()));
+            return response()->json(array('errors' => $validator->getMessageBag()->toArray()));
         }
         //--- Validation Section Ends
 
         //--- Logic Section
         $data = Slider::findOrFail($id);
         $input = $request->all();
-            if ($file = $request->file('photo')) 
-            {              
-                $name = time().$file->getClientOriginalName();
-                $file->move('public/assets/images/sliders',$name);
-                if($data->photo != null)
-                {
-                    if (file_exists(public_path().'/assets/images/sliders/'.$data->photo)) {
-                        unlink(public_path().'/assets/images/sliders/'.$data->photo);
-                    }
-                }            
+        if ($file = $request->file('photo')) {
+            $name = time() . $file->getClientOriginalName();
+            $file->move('public/assets/images/sliders', $name);
+            if ($data->photo != null) {
+                if (file_exists(public_path() . '/public/assets/images/sliders/' . $data->photo)) {
+                    unlink(public_path() . '/public/assets/images/sliders/' . $data->photo);
+                }
+            }
             $input['photo'] = $name;
-            } 
+        }
         $data->update($input);
         //--- Logic Section Ends
 
         //--- Redirect Section     
         $msg = 'Data Updated Successfully.';
-        return response()->json($msg);      
+        return response()->json($msg);
         //--- Redirect Section Ends            
     }
 
@@ -139,21 +136,21 @@ class SliderController extends Controller
     {
         $data = Slider::findOrFail($id);
         //If Photo Doesn't Exist
-        if($data->photo == null){
+        if ($data->photo == null) {
             $data->delete();
             //--- Redirect Section     
             $msg = 'Data Deleted Successfully.';
-            return response()->json($msg);      
+            return response()->json($msg);
             //--- Redirect Section Ends     
         }
         //If Photo Exist
-        if (file_exists(public_path().'/assets/images/sliders/'.$data->photo)) {
-            unlink(public_path().'/assets/images/sliders/'.$data->photo);
+        if (file_exists(public_path() . '/public/assets/images/sliders/' . $data->photo)) {
+            unlink(public_path() . '/public/assets/images/sliders/' . $data->photo);
         }
         $data->delete();
         //--- Redirect Section     
         $msg = 'Data Deleted Successfully.';
-        return response()->json($msg);      
+        return response()->json($msg);
         //--- Redirect Section Ends     
     }
 }

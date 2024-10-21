@@ -21,7 +21,8 @@
                 @php
                     $galss = str_replace(' ', '%20', $slide->photo);
                 @endphp
-                <div class="slide-item" style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }});">
+                <div class="slide-item"
+                    style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }});">
                     <div class="container">
 
                         <div class="content-box">
@@ -33,8 +34,8 @@
                             <h2 class="wow fadeInUp" data-wow-delay="500ms">
                                 {{ $langg->rtl == 1 ? $slide->title_text_ar : $slide->title_text }}</h2>
                             <!-- <div class="link-box wow fadeInUp" data-wow-delay="500ms">
-                                    <a href="tel:+2212-600-4274" class="theme-btn btn-style-five"><span class="icon flaticon-phone-call"> Call 212-600-4274</span></a>
-                                </div> -->
+                                        <a href="tel:+2212-600-4274" class="theme-btn btn-style-five"><span class="icon flaticon-phone-call"> Call 212-600-4274</span></a>
+                                    </div> -->
                         </div> <!-- -->
                     </div>
                 </div>
@@ -175,7 +176,8 @@
                     data-aos="fade-right" @endif>
                         <div class="inner-box">
                             <div class="image">
-                                <img src="{{ asset('public/assets/images/services/' . $service->photo) }}" alt="" />
+                                <img src="{{ asset('public/assets/images/services/' . $service->photo) }}"
+                                    alt="" />
 
                                 <div class="overlay-box">
                                     <div class="overlay-inner">
@@ -271,7 +273,7 @@
                 beforeSend: function() {
                     $('#email-form .response').html(
                         '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
-                        );
+                    );
                     console.log(1);
                 },
                 success: function(data) {

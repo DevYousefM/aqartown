@@ -29,7 +29,8 @@
 
                             <div class="feat-item2 position-relative d-block w-100">
                                 <div class="feat-img position-relative d-block w-100"
-                                    style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }});"></div>
+                                    style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }});">
+                                </div>
                                 <div
                                     class="feat-cap2-wrap text-center d-flex flex-wrap justify-content-center position-absolute w-100">
                                     <div class="feat-cap2 d-inline-block w-100">
@@ -213,9 +214,9 @@
                             </div>
                         @endforeach
                         <!-- <div class="col-md-7 col-sm-6 col-lg-4">
-                                <a class="simple-link thm-clr d-inline-block" href="services.html" title="">خدمات اخرى<i class="fas fa-caret-right"></i></a>
+                                    <a class="simple-link thm-clr d-inline-block" href="services.html" title="">خدمات اخرى<i class="fas fa-caret-right"></i></a>
 
-                                </div> -->
+                                    </div> -->
                     </div>
                 </div>
             </div>

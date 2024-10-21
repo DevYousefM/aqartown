@@ -26,7 +26,7 @@
                 @endphp
                 <div class="swiper-slide">
                     <div class="slider-img">
-                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="img">
+                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="img">
                     </div>
                     <div class="slider-text">
                         <div class="loopy-div"></div>
@@ -61,61 +61,61 @@
     </div>
     <!-- end home main slider -->
     <!-- <div class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
 
-                    <div class="about-description aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1500">
-                        <div class="heading">
+                        <div class="about-description aos-init aos-animate" data-aos="zoom-in" data-aos-duration="1500">
+                            <div class="heading">
+                                <p>
+                                    أ.د/ محمود رشدي الأنصاري
+                                </p>
+                            </div>
+                            <div class="text">
+                                <p>رئيس مجلس إدارة معامل مختبرات العرب الدولية
+                                </p>
+
+        <p>حاصل علي بكالوريوسالطب و الجراحة</p>
+
+        <p>حاصل على ماجيستيرالمناعة و الكائنات الدقيقة
+            بكلية الطب جامعة عين شمسعام 2012&nbsp;</p>
+
+        <p>حاصل على دكتوراة في المناعة و الكائنات الدقيقة 2015</p>
+        <p>عضو هيئة تدريسبكلية الطب جامعة مصرللعلوم
+            والتكنولوجيا وزميل جامعة UCF</p>
+
+        <p>عضو الأكاديمية الأمريكية لدراسة المناعة و الحساسية
+            برقم 143497</p>
+            <p>عضو الجمعية الأوروبية للمناعة و العلاج الجيني
+                عضوية رقم-A121179</p>
+
+                            </div>
+                            <a href="https://m.youtube.com/" class="see-more">
+                              <span>
+                                <i class="ion-social-youtube-outline"></i>
+                              </span>
                             <p>
-                                أ.د/ محمود رشدي الأنصاري
+                              عن د.علي
                             </p>
+                            </a>
+                           
                         </div>
-                        <div class="text">
-                            <p>رئيس مجلس إدارة معامل مختبرات العرب الدولية
-                            </p>
-
-    <p>حاصل علي بكالوريوسالطب و الجراحة</p>
-
-    <p>حاصل على ماجيستيرالمناعة و الكائنات الدقيقة
-        بكلية الطب جامعة عين شمسعام 2012&nbsp;</p>
-
-    <p>حاصل على دكتوراة في المناعة و الكائنات الدقيقة 2015</p>
-    <p>عضو هيئة تدريسبكلية الطب جامعة مصرللعلوم
-        والتكنولوجيا وزميل جامعة UCF</p>
-
-    <p>عضو الأكاديمية الأمريكية لدراسة المناعة و الحساسية
-        برقم 143497</p>
-        <p>عضو الجمعية الأوروبية للمناعة و العلاج الجيني
-            عضوية رقم-A121179</p>
-
-                        </div>
-                        <a href="https://m.youtube.com/" class="see-more">
-                          <span>
-                            <i class="ion-social-youtube-outline"></i>
-                          </span>
-                        <p>
-                          عن د.علي
-                        </p>
-                        </a>
-                       
                     </div>
-                </div>
-                <div class="col-md-6">
+                    <div class="col-md-6">
 
-                    <div class="home-about aos-init aos-animate" data-aos="zoom-in-left" data-aos-duration="1500">
-                        <div class="img-div">
-                            <img src="./images/about/about-dr.jpg" alt="img">
+                        <div class="home-about aos-init aos-animate" data-aos="zoom-in-left" data-aos-duration="1500">
+                            <div class="img-div">
+                                <img src="./images/about/about-dr.jpg" alt="img">
+                            </div>
+
+
                         </div>
-
-
                     </div>
+              
                 </div>
-          
+
             </div>
-
-        </div>
-    </div> -->
+        </div> -->
     <!-- start home about section -->
     <div class="home-about-section">
         <div class="container">
@@ -144,7 +144,7 @@
 
                 @foreach ($images as $image)
                     <div class="img-div">
-                        <img src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt="img">
+                        <img src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt="img">
                     </div>
                 @endforeach
 
@@ -177,7 +177,8 @@
           {{ route('front.category', ['category' => $cat->slug, 'lang' => $sign]) }} @endif"
                             class="product-card">
                             <div class="img-div lazy-div">
-                                <img class="lazy" data-src="{{ asset('public/assets/images/categories/' . $cat->photo) }}"
+                                <img class="lazy"
+                                    data-src="{{ asset('public/assets/images/categories/' . $cat->photo) }}"
                                     alt="png">
                                 <div class="next-lazy-img"></div>
                             </div>
@@ -205,57 +206,57 @@
 
     <!-- end start blogs section -->
     <!-- <div class="blogs-section">
-        <div class="container">
-          <div class="section-heading">
-            <p>
-              المقالات
-            </p>
-          </div>
+            <div class="container">
+              <div class="section-heading">
+                <p>
+                  المقالات
+                </p>
+              </div>
 
-          <div class="section-body">
-            <ul class="main-ul">
-              <li>
-                <a href="blog-details.html" class="blog-card">
-                  <div class="img-div lazy-div">
-                    <img class="" data-src="./images/1627920083تخسيس-البطن.jpg" alt="img"
-                      src="./images/1627920083تخسيس-البطن.jpg">
+              <div class="section-body">
+                <ul class="main-ul">
+                  <li>
+                    <a href="blog-details.html" class="blog-card">
+                      <div class="img-div lazy-div">
+                        <img class="" data-src="./images/1627920083تخسيس-البطن.jpg" alt="img"
+                          src="./images/1627920083تخسيس-البطن.jpg">
 
-                  </div>
-                  <p class="blog-title">
+                      </div>
+                      <p class="blog-title">
 
-                    نصائح عامة للتخسيس
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="blog-details.html" class="blog-card">
-                  <div class="img-div lazy-div">
-                    <img class="" data-src="./images/1627920002mady2.png" alt="img" src="./images/1627920002mady2.png">
+                        نصائح عامة للتخسيس
+                      </p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="blog-details.html" class="blog-card">
+                      <div class="img-div lazy-div">
+                        <img class="" data-src="./images/1627920002mady2.png" alt="img" src="./images/1627920002mady2.png">
 
-                  </div>
-                  <p class="blog-title">
+                      </div>
+                      <p class="blog-title">
 
-                    من اجل رجيم ناجح
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="blog-details.html" class="blog-card">
-                  <div class="img-div lazy-div">
-                    <img class="" data-src="./images/1627919929mady.png" alt="img" src="./images/1627919929mady.png">
+                        من اجل رجيم ناجح
+                      </p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="blog-details.html" class="blog-card">
+                      <div class="img-div lazy-div">
+                        <img class="" data-src="./images/1627919929mady.png" alt="img" src="./images/1627919929mady.png">
 
-                  </div>
-                  <p class="blog-title">
+                      </div>
+                      <p class="blog-title">
 
-                    عادات خاطئة تسسب زيادة الوزن
-                  </p>
-                </a>
-              </li>
+                        عادات خاطئة تسسب زيادة الوزن
+                      </p>
+                    </a>
+                  </li>
 
-            </ul>
-          </div>
-        </div>
-      </div> -->
+                </ul>
+              </div>
+            </div>
+          </div> -->
 
 
 
@@ -307,11 +308,11 @@
 
                         <!-- ltr code -->
                         <!-- <div class="swiper-button-next testimonials-slider-next">
-              <span class="linearicons-chevron-right"></span>
-            </div>
-            <div class="swiper-button-prev testimonials-slider-prev">
-              <span class="linearicons-chevron-left"></span>
-            </div> -->
+                  <span class="linearicons-chevron-right"></span>
+                </div>
+                <div class="swiper-button-prev testimonials-slider-prev">
+                  <span class="linearicons-chevron-left"></span>
+                </div> -->
                         <!-- ltr code -->
 
                         <!-- <div class="swiper-pagination testimonials-slider-pagination"></div> -->

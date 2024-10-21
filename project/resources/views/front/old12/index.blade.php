@@ -29,7 +29,7 @@
                     @endphp
                     <!--first slider-->
                     <div class="swiper-slide">
-                        <div class="slide-bg-img" data-background="{{ asset('/assets/images/sliders/' . $galss) }}">
+                        <div class="slide-bg-img" data-background="{{ asset('/public/assets/images/sliders/' . $galss) }}">
                             <div class="overlay-color"></div>
                         </div>
                         <div class="container">
@@ -99,11 +99,11 @@
                                 @endif
                             </p>
                             <!-- <p class="about-text ">
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
-                      النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى
-                      يولدها التطبيق.
-                      إذا كنت تحتاج إلى عدد أكبر من الفقرات
-                    </p> -->
+                          هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                          النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى
+                          يولدها التطبيق.
+                          إذا كنت تحتاج إلى عدد أكبر من الفقرات
+                        </p> -->
                             <div class="cta-area wow fadeInUp" data-wow-delay=".8s"><a class=" btn-solid "
                                     href="{{ route('front.about', $sign) }}">{{ $langg->lang3 }} </a>
                                 <div class="signature ">
@@ -117,9 +117,9 @@
                         data-wow-delay="0.4s">
                         <div class="img-area  " data-tilt data-tilt-glare data-tilt-max-glare="0.5">
                             <!-- <div class="photo-banner-end"><span class="number">46 </span>
-                      <p class="banner-text">years of Exprince</p>
-                      <div class="line line-on-center   my-1"></div>
-                    </div> -->
+                          <p class="banner-text">years of Exprince</p>
+                          <div class="line line-on-center   my-1"></div>
+                        </div> -->
                             <div class="image">
                                 <div class="overlay-color"></div><img class="img-fluid about-img  video-thumb "
                                     src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" alt="Our vision">
@@ -237,7 +237,7 @@
                     <div class="swiper-slide">
                         <div class="item "><a class="portfolio-img-link " href="#">
                                 <div class="overlay overlay-color"></div><img class="  portfolio-img img-fluid  "
-                                    src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt=" ">
+                                    src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt=" ">
                             </a>
                             <div class="item-info "><span></span>
                                 {{-- <h3 class="item-title">HPL</h3> --}}

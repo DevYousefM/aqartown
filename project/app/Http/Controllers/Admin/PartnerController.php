@@ -296,9 +296,9 @@ mimes:jpeg,webp
 
                 {
 
-                    if (file_exists(public_path().'/assets/images/partner/'.$data->photo)) {
+                    if (file_exists(public_path().'/public/assets/images/partner/'.$data->photo)) {
 
-                        unlink(public_path().'/assets/images/partner/'.$data->photo);
+                        unlink(public_path().'/public/assets/images/partner/'.$data->photo);
 
                     }
 
@@ -410,9 +410,9 @@ mimes:jpeg,webp
 
         //If Photo Exist
 
-        if (file_exists(public_path().'/assets/images/partner/'.$data->photo)) {
+        if (file_exists(public_path().'/public/assets/images/partner/'.$data->photo)) {
 
-            unlink(public_path().'/assets/images/partner/'.$data->photo);
+            unlink(public_path().'/public/assets/images/partner/'.$data->photo);
 
         }
 
