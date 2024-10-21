@@ -27,11 +27,11 @@ class adsController extends Controller
         //--- Integrating This Collection Into Datatables
         return Datatables::of($datas)
             ->editColumn('photo', function (ads $data) {
-                $photo = $data->photo ? url('assets/images/ads/' . $data->photo) : url('assets/images/noimage.png');
+                $photo = $data->photo ? url('public/assets/images/ads/' . $data->photo) : url('public/assets/images/noimage.png');
                 return '<img src="' . $photo . '" alt="Image">';
             })
             ->editColumn('image', function (ads $data) {
-                $photo = $data->image ? url('assets/images/ads/' . $data->image) : url('assets/images/noimage.png');
+                $photo = $data->image ? url('public/assets/images/ads/' . $data->image) : url('public/assets/images/noimage.png');
                 return '<img src="' . $photo . '" alt="Image">';
             })
             ->editColumn('title', function (ads $data) {
@@ -52,7 +52,7 @@ class adsController extends Controller
         //--- Integrating This Collection Into Datatables
         return Datatables::of($datas)
             ->editColumn('photo', function (ads $data) {
-                $photo = $data->photo ? url('assets/images/ads/' . $data->photo) : url('assets/images/noimage.png');
+                $photo = $data->photo ? url('public/assets/images/ads/' . $data->photo) : url('public/assets/images/noimage.png');
                 return '<img src="' . $photo . '" alt="Image">';
             })
             ->editColumn('title', function (ads $data) {
@@ -94,12 +94,12 @@ class adsController extends Controller
         if ($file = $request->file('photo')) {
             $name = $this->generateRandomName($file);
 
-            $file->move('assets/images/ads', $name);
+            $file->move('public/assets/images/ads', $name);
             $input['photo'] = $name;
         }
         if ($file = $request->file('image')) {
             $name = $this->generateRandomName($file);
-            $file->move('assets/images/ads', $name);
+            $file->move('public/assets/images/ads', $name);
             $input['image'] = $name;
         }
         $data->fill($input)->save();
@@ -120,7 +120,7 @@ class adsController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = $this->generateRandomName($file);
-            $file->move('assets/images/ads', $name);
+            $file->move('public/assets/images/ads', $name);
             if ($data->photo != null) {
                 if (file_exists(public_path('/assets/images/ads/' . $data->photo))) {
                     unlink(public_path('/assets/images/ads/' . $data->photo));
@@ -131,7 +131,7 @@ class adsController extends Controller
 
         if ($file = $request->file('image')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/ads', $name);
+            $file->move('public/assets/images/ads', $name);
             if ($data->image != null) {
                 if (file_exists(public_path() . '/assets/images/ads/' . $data->image)) {
                     unlink(public_path() . '/assets/images/ads/' . $data->image);

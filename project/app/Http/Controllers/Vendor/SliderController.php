@@ -25,7 +25,7 @@ class SliderController extends Controller
          //--- Integrating This Collection Into Datatables
          return Datatables::of($datas)
                             ->editColumn('photo', function(Slider $data) {
-                                $photo = $data->photo ? url('assets/images/sliders/'.$data->photo):url('assets/images/noimage.png');
+                                $photo = $data->photo ? url('public/assets/images/sliders/'.$data->photo):url('public/assets/images/noimage.png');
                                 return '<img src="' . $photo . '" alt="Image">';
                             })
                             ->editColumn('title', function(Slider $data) {
@@ -72,7 +72,7 @@ class SliderController extends Controller
         if ($file = $request->file('photo')) 
          {      
             $name = time().$file->getClientOriginalName();
-            $file->move('assets/images/sliders',$name);           
+            $file->move('public/assets/images/sliders',$name);           
             $input['photo'] = $name;
         } 
 
@@ -116,7 +116,7 @@ class SliderController extends Controller
             if ($file = $request->file('photo')) 
             {              
                 $name = time().$file->getClientOriginalName();
-                $file->move('assets/images/sliders',$name);
+                $file->move('public/assets/images/sliders',$name);
                 if($data->photo != null)
                 {
                     if (file_exists(public_path().'/assets/images/sliders/'.$data->photo)) {

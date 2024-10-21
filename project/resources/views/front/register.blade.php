@@ -74,11 +74,11 @@
 
                             <!-- <p>
 
-                                                    Join to Pomah you will get the best recommendation<br>
+                                                        Join to Pomah you will get the best recommendation<br>
 
-                                                    for rent house in near of you.
+                                                        for rent house in near of you.
 
-                                                </p> -->
+                                                    </p> -->
 
                         </div>
 
@@ -150,7 +150,8 @@
 
                                         <li>
 
-                                            <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
+                                            <p><img class="codeimg1"
+                                                    src="{{ asset('public/assets/images/capcha_code.png') }}"
                                                     alt=""> <i class="fas fa-sync-alt pointer refresh_code "></i>
                                             </p>
 

@@ -90,25 +90,26 @@
 
                         <!-- <span class="po-i-ab">
 
-                                                    <img src="images/ديكورات-واجهات-محلات-خشب-1.jpg" alt="" class="img-fluid">
+                                                        <img src="images/ديكورات-واجهات-محلات-خشب-1.jpg" alt="" class="img-fluid">
 
-                                                </span> -->
+                                                    </span> -->
 
-                        <img src="{{ asset('assets/images/' . $gs->home_about_img2) }}" alt="" class="img-fluid">
+                        <img src="{{ asset('public/assets/images/' . $gs->home_about_img2) }}" alt=""
+                            class="img-fluid">
 
                         <!-- <div class="play-s">
 
-                                                    <span class="min-text-line">
+                                                        <span class="min-text-line">
 
-                                                        <b>E</b>Stablished<br>
+                                                            <b>E</b>Stablished<br>
 
-                                                        1984
+                                                            1984
 
-                                                    </span>
+                                                        </span>
 
-                                                    <button class="play-ab"><i class="fa fa-play"></i></button>
+                                                        <button class="play-ab"><i class="fa fa-play"></i></button>
 
-                                                </div> -->
+                                                    </div> -->
 
                     </div>
 

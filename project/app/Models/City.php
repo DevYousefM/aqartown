@@ -21,7 +21,7 @@ class City extends Model {
 
     public function upload($name,$file,$oldname)
     {
-                $file->move('assets/images/gallery/',$name);
+                $file->move('public/assets/images/gallery/',$name);
                 if($oldname != null)
                 {
                     if (file_exists(public_path().'/assets/images/gallery/'.$oldname)) {

@@ -12,7 +12,7 @@ class Pagesetting extends Model
 
     public function upload($name,$file,$oldname)
     {
-                $file->move('assets/images',$name);
+                $file->move('public/assets/images',$name);
                 if($oldname != null)
                 {
                     if (file_exists(public_path().'/assets/images/'.$oldname)) {

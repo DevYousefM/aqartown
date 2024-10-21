@@ -1,4 +1,3 @@
-
 @extends('layouts.front')
 @section('gsearch')
 
@@ -16,15 +15,8 @@
     }
   }
 </script>
-
-
-
-
-    @if(isset($tool->product_analytics ))
-
+    @if (isset($tool->product_analytics))
         {!! $tool->product_analytics !!}
-
-
     @endif
 
 
@@ -33,20 +25,17 @@
 @stop
 @section('title')
 
-    @if($langg->rtl == 1)
-
-        {{$market->name_ar}} 
-
+    @if ($langg->rtl == 1)
+        {{ $market->name_ar }}
     @else
-        {{$market->name}} 
-
+        {{ $market->name }}
     @endif
 
     -
-    @if($langg->rtl == 1 )
-        {{$gs->title_ar}}
+    @if ($langg->rtl == 1)
+        {{ $gs->title_ar }}
     @else
-        {{$gs->title}}
+        {{ $gs->title }}
     @endif
 
 @stop
@@ -54,116 +43,107 @@
 @section('content')
 
 
-@php 
+    @php
+
+        $ps = App\Models\Pagesetting::find(1);
+
+    @endphp
 
 
-
-
-  $ps = App\Models\Pagesetting::find(1);
-  
-
-   @endphp
-
-
-        <!-- ============================ Page Title Start================================== -->
-        <section class="breadcrumb-section" style="background-image: url({{asset('assets/images/'.$gs->big_icon)}});">
-            <div class="container">
-                <div class="breadcrumb-text">
-                    <h1> @if($langg->rtl == 1)
-
-{{$market->name_ar}} 
-
-@else
-{{$market->name}} 
-
-@endif</h1>
-                </div>
-                <ul class="breadcrumb-nav">
-                    <li> @if($langg->rtl == 1)
-
-{{$market->name_ar}} 
-
-@else
-{{$market->name}} 
-
-@endif</li>
-                    <li><a href="{{ route('front.index',$sign) }}">{{ $langg->lang17 }}</a></li>
-                </ul>
-                <span class="btg-text">Absen</span>
+    <!-- ============================ Page Title Start================================== -->
+    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->big_icon) }});">
+        <div class="container">
+            <div class="breadcrumb-text">
+                <h1>
+                    @if ($langg->rtl == 1)
+                        {{ $market->name_ar }}
+                    @else
+                        {{ $market->name }}
+                    @endif
+                </h1>
             </div>
+            <ul class="breadcrumb-nav">
+                <li>
+                    @if ($langg->rtl == 1)
+                        {{ $market->name_ar }}
+                    @else
+                        {{ $market->name }}
+                    @endif
+                </li>
+                <li><a href="{{ route('front.index', $sign) }}">{{ $langg->lang17 }}</a></li>
+            </ul>
+            <span class="btg-text">Absen</span>
+        </div>
 
-        </section>
-        <!-- ============================ Page Title End ================================== -->
-        <div class="service_details">
-            <div class="container">
+    </section>
+    <!-- ============================ Page Title End ================================== -->
+    <div class="service_details">
+        <div class="container">
 
-                <div class="row">
+            <div class="row">
 
-                    <div class="col-md-6">
-                        <div class="service_details_wraper">
-                            <div class="text-p">
-                                <p> @if($langg->rtl == 1)
-
-{{$market->name_ar}} 
-
-@else
-{{$market->name}} 
-
-@endif
-
-                                </p>
-
-                            </div>
-                            <hr>
-                            @if($langg->rtl == 1)
-
-                                {!! $market->details_ar !!}
-
+                <div class="col-md-6">
+                    <div class="service_details_wraper">
+                        <div class="text-p">
+                            <p>
+                                @if ($langg->rtl == 1)
+                                    {{ $market->name_ar }}
                                 @else
-                                {!! $market->details !!}
+                                    {{ $market->name }}
+                                @endif
 
-                                @endif 
-                        
+                            </p>
+
                         </div>
+                        <hr>
+                        @if ($langg->rtl == 1)
+                            {!! $market->details_ar !!}
+                        @else
+                            {!! $market->details !!}
+                        @endif
 
                     </div>
 
-                    <div class="col-md-6">
-                        <div class="service_details_wraper">
-                            <img src="{{asset('assets/images/products/'.$market->hover_photo)}}" alt="">
-                        </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="service_details_wraper">
+                        <img src="{{ asset('public/assets/images/products/' . $market->hover_photo) }}" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- end gallery section -->
+    </div>
+    <!-- end gallery section -->
 
-         @if(!empty($market->galleries))
-        <div  class="gallery-page">
-         
+    @if (!empty($market->galleries))
+        <div class="gallery-page">
+
             <div class="gallery-section">
-               
+
                 <div class="gallery-layout">
                     <div class="mfa-gallery">
-           
-			        @foreach($market->galleries as $image )
-                            <a href="{{asset('assets/images/galleries/'.$image->photo)}}">
-                                    <div class="img-div lazy-div">
-                                        <img class="lazy" data-src="{{asset('assets/images/galleries/'.$image->photo)}}" src="{{asset('assets/images/galleries/'.$image->photo)}}">
-        
-        
-                                    </div>
-                                </a>
-                                @endforeach   
-					                                             
-                                                   
-                                            
+
+                        @foreach ($market->galleries as $image)
+                            <a href="{{ asset('public/assets/images/galleries/' . $image->photo) }}">
+                                <div class="img-div lazy-div">
+                                    <img class="lazy"
+                                        data-src="{{ asset('public/assets/images/galleries/' . $image->photo) }}"
+                                        src="{{ asset('public/assets/images/galleries/' . $image->photo) }}">
+
+
+                                </div>
+                            </a>
+                        @endforeach
+
+
+
                     </div>
                 </div>
             </div>
-            
-        </div>  <!---->
-          @endif    
-        <!-- end gallery section -->
-        <!-- ============================ Agency List Start ================================== -->
-    @stop
+
+        </div> <!---->
+    @endif
+    <!-- end gallery section -->
+    <!-- ============================ Agency List Start ================================== -->
+@stop

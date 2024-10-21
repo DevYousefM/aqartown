@@ -137,7 +137,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-store') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -202,64 +202,64 @@
                                         </div>
 
                                         <!--
-                            <div class="row">
-                             <div class="col-lg-4">
-                              <div class="left-area">
-                                <h4 class="heading">{{ __('related projects') }}*</h4>
-                              </div>
-                             </div>
-                             <div class="col-lg-7">
-                               <select  name="projects[]" multiple="multiple" >
-                                
+                                <div class="row">
+                                 <div class="col-lg-4">
+                                  <div class="left-area">
+                                    <h4 class="heading">{{ __('related projects') }}*</h4>
+                                  </div>
+                                 </div>
+                                 <div class="col-lg-7">
+                                   <select  name="projects[]" multiple="multiple" >
+                                    
 
-                                                              @foreach ($cats as $cat)
+                                                                  @foreach ($cats as $cat)
     <option value="{{ $cat->id }}"  >{{ $cat->name }}</option>
     @endforeach
-                      </select>
-                             </div>
-                            </div>
+                          </select>
+                                 </div>
+                                </div>
 
-                            <div class="row">
-                             <div class="col-lg-4">
-                              <div class="left-area">
-                                <h4 class="heading">{{ __('related products') }}*</h4>
-                              </div>
-                             </div>
-                             <div class="col-lg-7">
-                               <select  name="products[]" multiple="multiple" >
-                                
+                                <div class="row">
+                                 <div class="col-lg-4">
+                                  <div class="left-area">
+                                    <h4 class="heading">{{ __('related products') }}*</h4>
+                                  </div>
+                                 </div>
+                                 <div class="col-lg-7">
+                                   <select  name="products[]" multiple="multiple" >
+                                    
 
-                                                              @foreach ($brands as $cat)
+                                                                  @foreach ($brands as $cat)
     <option value="{{ $cat->id }}"  >{{ $cat->name }}</option>
     @endforeach
-                      </select>
-                             </div>
-                            </div>
-                         
+                          </select>
+                                 </div>
+                                </div>
                              
-                             <div class="row">
-                             <div class="col-lg-4">
-                              <div class="left-area">
-                                <h4 class="heading">{{ __('solution image Alt') }}* </h4>
-                                <p class="sub-heading">{{ __('(In Any Language)') }}</p>
-                              </div>
-                             </div>
-                             <div class="col-lg-7">
-                              <input type="text" class="input-field" placeholder="{{ __('Enter solution image ALt') }}" name="alt" required="">
-                             </div>
-                            </div>
-                            <div class="row">
-                             <div class="col-lg-4">
-                              <div class="left-area">
-                                <h4 class="heading">{{ __('solution image ALt') }}* </h4>
-                                <p class="sub-heading">{{ __('(Arabic)') }}</p>
-                              </div>
-                             </div>
-                             <div class="col-lg-7">
-                              <input type="text" class="input-field" placeholder="{{ __('Enter solution image Arabic ALt') }}" name="alt_ar" required="">
-                             </div>
-                            </div>
-                             -->
+                                 
+                                 <div class="row">
+                                 <div class="col-lg-4">
+                                  <div class="left-area">
+                                    <h4 class="heading">{{ __('solution image Alt') }}* </h4>
+                                    <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                  </div>
+                                 </div>
+                                 <div class="col-lg-7">
+                                  <input type="text" class="input-field" placeholder="{{ __('Enter solution image ALt') }}" name="alt" required="">
+                                 </div>
+                                </div>
+                                <div class="row">
+                                 <div class="col-lg-4">
+                                  <div class="left-area">
+                                    <h4 class="heading">{{ __('solution image ALt') }}* </h4>
+                                    <p class="sub-heading">{{ __('(Arabic)') }}</p>
+                                  </div>
+                                 </div>
+                                 <div class="col-lg-7">
+                                  <input type="text" class="input-field" placeholder="{{ __('Enter solution image Arabic ALt') }}" name="alt_ar" required="">
+                                 </div>
+                                </div>
+                                 -->
 
 
 
@@ -364,18 +364,18 @@
                                         </div>
 
                                         <!--
-                            <div class="row">
-                             <div class="col-lg-4">
-                              <div class="left-area">
-                                <h4 class="heading">{{ __('Child Category') }}*</h4>
-                              </div>
-                             </div>
-                             <div class="col-lg-7">
-                               <select id="childcat" name="childcategory_id" disabled="">
-                                                                  <option value="">{{ __('Select Child Category') }}</option>
-                               </select>
-                             </div>
-                            </div> -->
+                                <div class="row">
+                                 <div class="col-lg-4">
+                                  <div class="left-area">
+                                    <h4 class="heading">{{ __('Child Category') }}*</h4>
+                                  </div>
+                                 </div>
+                                 <div class="col-lg-7">
+                                   <select id="childcat" name="childcategory_id" disabled="">
+                                                                      <option value="">{{ __('Select Child Category') }}</option>
+                                   </select>
+                                 </div>
+                                </div> -->
 
 
 
@@ -383,31 +383,31 @@
 
 
                                         <!-- 	                    <div class="row">
-                       <div class="col-lg-4">
-                       <div class="left-area">
-                       <h4 class="heading">{{ __('Feature front Image') }} *</h4>
-                       </div>
-                       </div>
-                       <div class="col-lg-7">
-                 <div class="row">
-                 <div class="panel panel-body">
-                  <div class="span4 cropme text-center" id="landscape" style="width: 400px; height: 400px; border: 1px dashed black;">
-                  </div>
-                  </div>
-                 </div>
+                           <div class="col-lg-4">
+                           <div class="left-area">
+                           <h4 class="heading">{{ __('Feature front Image') }} *</h4>
+                           </div>
+                           </div>
+                           <div class="col-lg-7">
+                     <div class="row">
+                     <div class="panel panel-body">
+                      <div class="span4 cropme text-center" id="landscape" style="width: 400px; height: 400px; border: 1px dashed black;">
+                      </div>
+                      </div>
+                     </div>
 
-                   <a href="javascript:;" id="crop-image" class="d-inline-block mybtn1">
-                    <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
-                   </a>
-                   <span class='span-img-size'>image size 205px X 205px</span>
+                       <a href="javascript:;" id="crop-image" class="d-inline-block mybtn1">
+                        <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
+                       </a>
+                       <span class='span-img-size'>image size 205px X 205px</span>
 
 
-                       </div>
-                       </div>
+                           </div>
+                           </div>
 
-                       <input type="hidden" id="feature_photo" name="photo" value="">
+                           <input type="hidden" id="feature_photo" name="photo" value="">
 
-                 -->
+                     -->
 
 
                                         <!--image-->
@@ -749,201 +749,201 @@
 												</div> --}}
 
                                         <!--
-                            <div class="row">
-                             <div class="col-lg-4">
-                              <div class="left-area">
-                                <h4 class="heading">{{ __('register link URL') }}*</h4>
-                                <p class="sub-heading">{{ __('(Optional)') }}</p>
-                              </div>
-                             </div>
-                             <div class="col-lg-7">
-                              <input  name="reg_link" type="text" class="input-field" placeholder="{{ __('Enter register link URL') }}">
-                       <div class="checkbox-wrapper">
-                       <input type="checkbox" name="seo_check" value="1" class="checkclick" id="allowProductSEO" value="1">
-                       <label for="allowProductSEO">{{ __('Allow solution SEO') }}</label>
-                       </div>
-                             </div>
-                            </div>
+                                <div class="row">
+                                 <div class="col-lg-4">
+                                  <div class="left-area">
+                                    <h4 class="heading">{{ __('register link URL') }}*</h4>
+                                    <p class="sub-heading">{{ __('(Optional)') }}</p>
+                                  </div>
+                                 </div>
+                                 <div class="col-lg-7">
+                                  <input  name="reg_link" type="text" class="input-field" placeholder="{{ __('Enter register link URL') }}">
+                           <div class="checkbox-wrapper">
+                           <input type="checkbox" name="seo_check" value="1" class="checkclick" id="allowProductSEO" value="1">
+                           <label for="allowProductSEO">{{ __('Allow solution SEO') }}</label>
+                           </div>
+                                 </div>
+                                </div>
 
 
 
-                      <div class="showbox">
-                      <div class="row">
-                      <div class="col-lg-4">
-                      <div class="left-area">
-                      <h4 class="heading">{{ __('Meta Tags') }} *</h4>
-                      </div>
-                      </div>
-                      <div class="col-lg-7">
-                      <ul id="metatags" class="myTags">
-                      </ul>
-                      </div>
-                      </div>
+                          <div class="showbox">
+                          <div class="row">
+                          <div class="col-lg-4">
+                          <div class="left-area">
+                          <h4 class="heading">{{ __('Meta Tags') }} *</h4>
+                          </div>
+                          </div>
+                          <div class="col-lg-7">
+                          <ul id="metatags" class="myTags">
+                          </ul>
+                          </div>
+                          </div>
 
-                      <div class="row">
-                      <div class="col-lg-4">
-                      <div class="left-area">
-                      <h4 class="heading">
-                      {{ __('Meta Description') }} *
-                      </h4>
-                      </div>
-                      </div>
-                      <div class="col-lg-7">
-                      <div class="text-editor">
-                      <textarea name="meta_description" class="input-field" placeholder="{{ __('Meta Description') }}"></textarea>
-                      </div>
-                      </div>
-                      </div>
-                      
-                      <div class="row">
-                      <div class="col-lg-4">
-                      <div class="left-area">
-                      <h4 class="heading">
-                      {{ __('Arabic Meta Description') }} *
-                      </h4>
-                      </div>
-                      </div>
-                      <div class="col-lg-7">
-                      <div class="text-editor">
-                      <textarea name="meta_description_ar" class="input-field" placeholder="{{ __('Arabic Meta Description') }}"></textarea>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
-                             <div class="row">
-                              <div class="col-lg-4">
-                               <div class="left-area">
-                                <h4 class="heading">
-                                 {{ __('solution map') }} :
-                                </h4>
-                               </div>
-                              </div>
-                              <div class="col-lg-7">
-                               <div class="text-editor">
-                                <input name="map" type="text" class="input-field" placeholder="{{ __('solution map') }}" >
-                               </div>
-                              </div>
-                             </div> -->
+                          <div class="row">
+                          <div class="col-lg-4">
+                          <div class="left-area">
+                          <h4 class="heading">
+                          {{ __('Meta Description') }} *
+                          </h4>
+                          </div>
+                          </div>
+                          <div class="col-lg-7">
+                          <div class="text-editor">
+                          <textarea name="meta_description" class="input-field" placeholder="{{ __('Meta Description') }}"></textarea>
+                          </div>
+                          </div>
+                          </div>
+                          
+                          <div class="row">
+                          <div class="col-lg-4">
+                          <div class="left-area">
+                          <h4 class="heading">
+                          {{ __('Arabic Meta Description') }} *
+                          </h4>
+                          </div>
+                          </div>
+                          <div class="col-lg-7">
+                          <div class="text-editor">
+                          <textarea name="meta_description_ar" class="input-field" placeholder="{{ __('Arabic Meta Description') }}"></textarea>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                                 <div class="row">
+                                  <div class="col-lg-4">
+                                   <div class="left-area">
+                                    <h4 class="heading">
+                                     {{ __('solution map') }} :
+                                    </h4>
+                                   </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                   <div class="text-editor">
+                                    <input name="map" type="text" class="input-field" placeholder="{{ __('solution map') }}" >
+                                   </div>
+                                  </div>
+                                 </div> -->
 
                                         <!--    	<div class="row">
-                                                                              <div class="col-lg-4">
-                                                                                  <div class="left-area">
+                                                                                  <div class="col-lg-4">
+                                                                                      <div class="left-area">
 
+                                                                                      </div>
+                                                                                  </div>
+                                                                                  <div class="col-lg-7">
+
+                                                                                  <div class="checkbox-wrapper">
+                                                                                    <input type="checkbox" name="feature" value="1" class="checkclick3" id="allowProductfeature" >
+                                                                                    <label for="allowProductfeature">{{ __('Subscription feature settings ') }}</label>
+                                                                                  </div>
                                                                                   </div>
                                                                               </div>
-                                                                              <div class="col-lg-7">
 
-                                                                              <div class="checkbox-wrapper">
-                                                                                <input type="checkbox" name="feature" value="1" class="checkclick3" id="allowProductfeature" >
-                                                                                <label for="allowProductfeature">{{ __('Subscription feature settings ') }}</label>
-                                                                              </div>
-                                                                              </div>
-                                                                          </div>
-
-                                                                          <div class="showbox subs" >
-                                                                            <div class="row">
-                                                                              <div class="col-lg-4">
-                                                                                <div class="left-area">
-                                                                                    <h4 class="heading">{{ __('Subscription type') }}: </h4>
+                                                                              <div class="showbox subs" >
+                                                                                <div class="row">
+                                                                                  <div class="col-lg-4">
+                                                                                    <div class="left-area">
+                                                                                        <h4 class="heading">{{ __('Subscription type') }}: </h4>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                  <div class="col-lg-7">
+                                                                                 <select name="subscription_type" class>
+                                                                                     <option value="Days">Days</option>
+                                                                                     <option value="Months">Months</option>
+                                                                                     <option value="Years">Years</option>
+                                                                                 </select>
+                                                                                  </div>
                                                                                 </div>
-                                                                              </div>
-                                                                              <div class="col-lg-7">
-                                                                             <select name="subscription_type" class>
-                                                                                 <option value="Days">Days</option>
-                                                                                 <option value="Months">Months</option>
-                                                                                 <option value="Years">Years</option>
-                                                                             </select>
-                                                                              </div>
-                                                                            </div>
 
 
 
-                                                                            <div class="row">
-                                                                              <div class="col-lg-4">
-                                                                                <div class="left-area">
-                                                                                  <h4 class="heading">
-                                                                                      {{ __('subscription trial period') }} :
-                                                                                  </h4>
+                                                                                <div class="row">
+                                                                                  <div class="col-lg-4">
+                                                                                    <div class="left-area">
+                                                                                      <h4 class="heading">
+                                                                                          {{ __('subscription trial period') }} :
+                                                                                      </h4>
+                                                                                    </div>
+                                                                                  </div>
+                                                                                  <div class="col-lg-7">
+                                                                                    <div class="text-editor">
+                                                                                      <input name="trial_period" type="number" min="0" class="input-field" placeholder="{{ __('trial period') }}" value="0">
+                                                                                    </div>
+                                                                                  </div>
                                                                                 </div>
-                                                                              </div>
-                                                                              <div class="col-lg-7">
-                                                                                <div class="text-editor">
-                                                                                  <input name="trial_period" type="number" min="0" class="input-field" placeholder="{{ __('trial period') }}" value="0">
-                                                                                </div>
-                                                                              </div>
-                                                                            </div>
 
-                                                                          </div>-->
+                                                                              </div>-->
 
 
 
                                         <!--
-                            <div class="row">
-                             <div class="col-lg-4">
-                              <div class="left-area">
-
-                              </div>
-                             </div>
-                             <div class="col-lg-7">
-                              <div class="featured-keyword-area">
-                               <div class="heading-area">
-                                <h4 class="title">{{ __('Feature ') }}</h4>
-                               </div>
-
-                               <div class="feature-tag-top-filds" id="feature-section">
-                                <div class="feature-area">
-                                 <span class="remove feature-remove"><i class="fas fa-times"></i></span>
-                                 <div class="row">
-                                  <div class="col-lg-6">
-                                  <input type="text" name="features[]" class="input-field" placeholder="{{ __('Enter Your Keyword') }}">
-                                  </div>
-
-                                  <div class="col-lg-6">
-
-                           <input type="text" name="colors[]" placeholder="{{ __('Enter Your Keyword') }}" class="input-field "/>
-
+                                <div class="row">
+                                 <div class="col-lg-4">
+                                  <div class="left-area">
 
                                   </div>
                                  </div>
-                                </div>
-                               </div>
+                                 <div class="col-lg-7">
+                                  <div class="featured-keyword-area">
+                                   <div class="heading-area">
+                                    <h4 class="title">{{ __('Feature ') }}</h4>
+                                   </div>
 
-                               <a href="javascript:;" id="feature-btn" class="add-fild-btn"><i class="icofont-plus"></i> {{ __('Add More Field') }}</a>
-                              </div>
-                             </div>
-                            </div> -->
+                                   <div class="feature-tag-top-filds" id="feature-section">
+                                    <div class="feature-area">
+                                     <span class="remove feature-remove"><i class="fas fa-times"></i></span>
+                                     <div class="row">
+                                      <div class="col-lg-6">
+                                      <input type="text" name="features[]" class="input-field" placeholder="{{ __('Enter Your Keyword') }}">
+                                      </div>
+
+                                      <div class="col-lg-6">
+
+                               <input type="text" name="colors[]" placeholder="{{ __('Enter Your Keyword') }}" class="input-field "/>
+
+
+                                      </div>
+                                     </div>
+                                    </div>
+                                   </div>
+
+                                   <a href="javascript:;" id="feature-btn" class="add-fild-btn"><i class="icofont-plus"></i> {{ __('Add More Field') }}</a>
+                                  </div>
+                                 </div>
+                                </div> -->
 
                                         <!--
-                      <div class="row">
-                      <div class="col-lg-4">
-                      <div class="left-area">
-                      <h4 class="heading">{{ __('Tags') }} *</h4>
-                      </div>
-                      </div>
-                      <div class="col-lg-7" >
-                      
-                      
-                      <ul id="tags" class="myTags" >
-                      
-                           
-                           
-                           
-                      </ul>
-                      </div>
-                      </div>
+                          <div class="row">
+                          <div class="col-lg-4">
+                          <div class="left-area">
+                          <h4 class="heading">{{ __('Tags') }} *</h4>
+                          </div>
+                          </div>
+                          <div class="col-lg-7" >
+                          
+                          
+                          <ul id="tags" class="myTags" >
+                          
+                               
+                               
+                               
+                          </ul>
+                          </div>
+                          </div>
 
-                            <div class="row">
-                             <div class="col-lg-4">
-                              <div class="left-area">
-                                <h4 class="heading">{{ __('Youtube Video URL') }}*</h4>
-                                <p class="sub-heading">{{ __('(Optional)') }}</p>
-                              </div>
-                             </div>
-                             <div class="col-lg-7">
-                              <input  name="youtube" type="text" class="input-field" placeholder="{{ __('Enter Youtube Video URL') }}">
-                       
-                             </div>
-                            </div> -->
+                                <div class="row">
+                                 <div class="col-lg-4">
+                                  <div class="left-area">
+                                    <h4 class="heading">{{ __('Youtube Video URL') }}*</h4>
+                                    <p class="sub-heading">{{ __('(Optional)') }}</p>
+                                  </div>
+                                 </div>
+                                 <div class="col-lg-7">
+                                  <input  name="youtube" type="text" class="input-field" placeholder="{{ __('Enter Youtube Video URL') }}">
+                           
+                                 </div>
+                                </div> -->
 
                                         {{-- 	<div class="row">
 													<div class="col-lg-4">

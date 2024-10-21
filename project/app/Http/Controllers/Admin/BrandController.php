@@ -100,7 +100,7 @@ class BrandController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/brands', $name);
+            $file->move('public/assets/images/brands', $name);
             $input['photo'] = $name;
         }
         $input['slug'] = str_replace(' ', '-', $input['name']);
@@ -166,7 +166,7 @@ class BrandController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/brands', $name);
+            $file->move('public/assets/images/brands', $name);
             if ($data->photo != null) {
                 if (file_exists(public_path() . '/assets/images/brands/' . $data->photo)) {
                     unlink(public_path() . '/assets/images/brands/' . $data->photo);

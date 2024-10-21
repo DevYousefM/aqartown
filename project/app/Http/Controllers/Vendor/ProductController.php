@@ -207,7 +207,7 @@ class ProductController extends Controller
         list(, $image)      = explode(',', $image);
         $image = base64_decode($image);
         $image_name = time().str_random(8).'.png';
-        $path = 'assets/images/products/'.$image_name;
+        $path = 'public/assets/images/products/'.$image_name;
         file_put_contents($path, $image);
                 if($data->photo != null)
                 {
@@ -475,7 +475,7 @@ if (!Product::where('sku',$line[0])->exists()){
             $imagem2 = $request->file('hover_photo');
             $image_ext2 = $imagem2->getClientOriginalExtension();
             $new_image_name2 = rand(123456, 999999) . "." . $image_ext2;
-            $destination_path2 = public_path('assets/images/products/');
+            $destination_path2 = public_path('public/assets/images/products/');
             $imagem2->move($destination_path2, $new_image_name2);
            $input['hover_photo'] = $new_image_name2;
            $input['photo'] = $new_image_name2;
@@ -487,7 +487,7 @@ if (!Product::where('sku',$line[0])->exists()){
         // list(, $image)      = explode(',', $image);
         // $image = base64_decode($image);
         // $image_name = time().str_random(8).'.png';
-        // $path = 'assets/images/products/'.$image_name;
+        // $path = 'public/assets/images/products/'.$image_name;
         // file_put_contents($path, $image);
         // $input['photo'] = $image_name;
         
@@ -557,7 +557,7 @@ if (!Product::where('sku',$line[0])->exists()){
                 {
                     $gallery = new Gallery;
                     $name = time().$file->getClientOriginalName();
-                    $file->move('assets/images/galleries',$name);
+                    $file->move('public/assets/images/galleries',$name);
                     $gallery['photo'] = $name;
                     $gallery['product_id'] = $lastid;
                     $gallery->save();
@@ -571,7 +571,7 @@ if (!Product::where('sku',$line[0])->exists()){
                 {
                     $gallery = new Gallery;
                     $name = time().$file->getClientOriginalName();
-                    $file->move('assets/images/galleries',$name);
+                    $file->move('public/assets/images/galleries',$name);
                     $gallery['photo'] = $name;
                     $gallery['product_id'] = $lastid;
                     $gallery['web'] = 0;
@@ -727,7 +727,7 @@ if (!Product::where('sku',$line[0])->exists()){
             $image = $request->file('mobile_photo');
             $image_ext = $image->getClientOriginalExtension();
             $new_image_name = rand(123456, 999999) . "." . $image_ext;
-            $destination_path = public_path('assets/images/products/');
+            $destination_path = public_path('public/assets/images/products/');
             $image->move($destination_path, $new_image_name);
            $input['mobile_photo'] = $new_image_name;
         }
@@ -737,7 +737,7 @@ if (!Product::where('sku',$line[0])->exists()){
             $imagem2 = $request->file('hover_photo');
             $image_ext2 = $imagem2->getClientOriginalExtension();
             $new_image_name2 = rand(123456, 999999) . "." . $image_ext2;
-            $destination_path2 = public_path('assets/images/products/');
+            $destination_path2 = public_path('public/assets/images/products/');
             $imagem2->move($destination_path2, $new_image_name2);
            $input['hover_photo'] = $new_image_name2;
            $input['photo'] = $new_image_name2;
@@ -908,7 +908,7 @@ $msg = trans('Update Success');
             list(, $image)      = explode(',', $image);
             $image = base64_decode($image);
             $image_name = time().str_random(8).'.png';
-            $path = 'assets/images/products/'.$image_name;
+            $path = 'public/assets/images/products/'.$image_name;
             file_put_contents($path, $image);
 
             }

@@ -1,33 +1,23 @@
-
 @extends('layouts.front')
 
 @section('title')
-    @if(!empty($childcat))
-        @if($langg->rtl == 1)
-           {{ $childcat->name_ar }} - {{$gs->title_ar}}
-
+    @if (!empty($childcat))
+        @if ($langg->rtl == 1)
+            {{ $childcat->name_ar }} - {{ $gs->title_ar }}
         @else
-           {{ $childcat->name }} - {{$gs->title}}
-
+            {{ $childcat->name }} - {{ $gs->title }}
         @endif
-
     @elseif(!empty($subcat))
-        @if($langg->rtl == 1)
-          {{ $subcat->name_ar }} - {{$gs->title_ar}}
-
+        @if ($langg->rtl == 1)
+            {{ $subcat->name_ar }} - {{ $gs->title_ar }}
         @else
-            {{ $subcat->name }} - {{$gs->title}}
-
+            {{ $subcat->name }} - {{ $gs->title }}
         @endif
-
     @elseif(!empty($cat))
-
-        @if($langg->rtl == 1)
-            {{ $cat->name_ar }} - {{$gs->title_ar}}
-
+        @if ($langg->rtl == 1)
+            {{ $cat->name_ar }} - {{ $gs->title_ar }}
         @else
-            {{ $cat->name }} - {{$gs->title}}
-
+            {{ $cat->name }} - {{ $gs->title }}
         @endif
     @endif
 
@@ -37,11 +27,8 @@
 
 
     @if (!empty($cat) && empty($subcat) && empty($childcat))
-        @if(isset($tool->category_analytics ))
-
+        @if (isset($tool->category_analytics))
             {!! $tool->category_analytics !!}
-
-
         @endif
 
     @endif
@@ -49,11 +36,8 @@
 
 
     @if (!empty($subcat) && !empty($cat) && empty($childcat))
-        @if(isset($tool->subcategory_analytics ))
-
+        @if (isset($tool->subcategory_analytics))
             {!! $tool->subcategory_analytics !!}
-
-
         @endif
 
     @endif
@@ -61,12 +45,9 @@
 
 
 
-    @if (!empty($childcat)&& !empty($subcat) && !empty($cat))
-        @if(isset($tool->childcategory_analytics ))
-
+    @if (!empty($childcat) && !empty($subcat) && !empty($cat))
+        @if (isset($tool->childcategory_analytics))
             {!! $tool->childcategory_analytics !!}
-
-
         @endif
 
     @endif
@@ -75,83 +56,77 @@
 @stop
 
 @section('content')
-@php 
+    @php
+
+        $ps = App\Models\Pagesetting::find(1);
+
+    @endphp
 
 
-
-
-  $ps = App\Models\Pagesetting::find(1);
-  
-
-   @endphp
-
-
-        <section class="page-title">
-            <div class="outer-container">
-                <div class="image">
-                    <img src="{{asset('assets/images/'.$gs->top_icon)}}" alt="" />
-                </div>
+    <section class="page-title">
+        <div class="outer-container">
+            <div class="image">
+                <img src="{{ asset('public/assets/images/' . $gs->top_icon) }}" alt="" />
             </div>
-        </section>
-        <section class="page-breadcrumb">
-            <div class="image-layer" style="background-image:url({{asset('assets/naglaa/images/background/1.png')}})"></div>
-            <div class="container">
-                <div class="clearfix">
-                    <div class="pull-left fll">
-                        <h2> @if($langg->rtl == 1)
+        </div>
+    </section>
+    <section class="page-breadcrumb">
+        <div class="image-layer" style="background-image:url({{ asset('assets/naglaa/images/background/1.png') }})"></div>
+        <div class="container">
+            <div class="clearfix">
+                <div class="pull-left fll">
+                    <h2>
+                        @if ($langg->rtl == 1)
                             {{ $cat->name_ar }}
-
                         @else
                             {{ $cat->name }}
-
-                        @endif</h2>
-                    </div>
-                    <div class="pull-right">
-                        <ul class="breadcrumbs">
-                            <li class="left-curves"></li>
-                            <li class="right-curves"></li>
-                            <li><a href="{{route('front.index',$sign)}}">{{ $langg->lang17 }}-</a></li>
-                            <li> @if($langg->rtl == 1)
-                            {{ $cat->name_ar }}
-
-                        @else
-                            {{ $cat->name }}
-
-                        @endif</li>
-                        </ul>
-                    </div>
+                        @endif
+                    </h2>
+                </div>
+                <div class="pull-right">
+                    <ul class="breadcrumbs">
+                        <li class="left-curves"></li>
+                        <li class="right-curves"></li>
+                        <li><a href="{{ route('front.index', $sign) }}">{{ $langg->lang17 }}-</a></li>
+                        <li>
+                            @if ($langg->rtl == 1)
+                                {{ $cat->name_ar }}
+                            @else
+                                {{ $cat->name }}
+                            @endif
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
-        <section class="services-single-section">
-            <div class="container">
-                <div class="row">
+    <section class="services-single-section">
+        <div class="container">
+            <div class="row">
 
-                    <div class="widgets-column col-lg-3 col-md-12 col-sm-12">
-                        <div class="inner-column">
+                <div class="widgets-column col-lg-3 col-md-12 col-sm-12">
+                    <div class="inner-column">
 
-                            <div class="services-widget category-widget">
-                                <ul class="cat-list">
-                                    <li class="active"><a href="#"><h1>{{ $langg->lang37 }}</h1></a></li>
-                                    @foreach($categories->where('id' ,'!=', $cat->id) as $key=>$category)
-                                    <li><a href="@if($langg->rtl == 1)
-                                               {{ route('front.category',['category' => $category->slug_ar, 'lang' => $sign]) }}
+                        <div class="services-widget category-widget">
+                            <ul class="cat-list">
+                                <li class="active"><a href="#">
+                                        <h1>{{ $langg->lang37 }}</h1>
+                                    </a></li>
+                                @foreach ($categories->where('id', '!=', $cat->id) as $key => $category)
+<li><a href="@if ($langg->rtl == 1) {{ route('front.category', ['category' => $category->slug_ar, 'lang' => $sign]) }}
                                               
                                             @else
-                                              {{ route('front.category',['category' => $category->slug, 'lang' => $sign]) }}
-                                                   
-                                            @endif">@if($langg->rtl == 1)
-                            {{ $category->name_ar }}
-
-                        @else
-                            {{ $category->name }}
-
-                        @endif</a></li>
-
-                                            @endforeach
+                                              {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
+@if ($langg->rtl == 1)
+{{ $category->name_ar }}
+@else
+{{ $category->name }}
+@endif
+</a></li>
+@endforeach
                                 </ul>
                             </div>
 
@@ -177,35 +152,33 @@
                                     <div class="carousel-outer">
                                         <ul class="image-carousel owl-carousel owl-theme">
 
-                                    @foreach($cat->galleries as $image )
-                                            <li><a href="{{asset('assets/images/galleries/'.$image->photo)}}" class="lightbox-image"
-                                                    title="Image Caption Here"><img src="{{asset('assets/images/galleries/'.$image->photo)}}"
+                                    @foreach ($cat->galleries as $image)
+<li><a href="{{ asset('public/assets/images/galleries/' . $image->photo) }}" class="lightbox-image"
+                                                    title="Image Caption Here"><img src="{{ asset('public/assets/images/galleries/' . $image->photo) }}"
                                                         alt=""></a></li>
-                                    @endforeach
+@endforeach
                                         
                                         </ul>
                                         <ul class="thumbs-carousel owl-carousel owl-theme">
-                                        @foreach($cat->galleries as $image )
-                                            <li><img src="{{asset('assets/images/galleries/'.$image->photo)}}" alt=""></li>
-                                            @endforeach
+                                        @foreach ($cat->galleries as $image)
+<li><img src="{{ asset('public/assets/images/galleries/' . $image->photo) }}" alt=""></li>
+@endforeach
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <h2> @if($langg->rtl == 1)
-                            {{ $cat->name_ar }}
-
-                        @else
-                            {{ $cat->name }}
-
-                        @endif</h2>
-                            <p> @if($langg->rtl == 1)
-                           {!! $cat->details_ar !!}
-
-                        @else
-                            {!! $cat->details !!}
-
-                        @endif</p>
+                            <h2> @if ($langg->rtl == 1)
+{{ $cat->name_ar }}
+@else
+{{ $cat->name }}
+@endif
+</h2>
+<p> @if ($langg->rtl == 1)
+{!! $cat->details_ar !!}
+@else
+{!! $cat->details !!}
+@endif
+</p>
                             <!-- <h2>Treatment Plans</h2>
                             <div class="row">
                                 <div class="column col-lg-6 col-md-12 col-sm-12">
@@ -263,69 +236,69 @@
 
 @section('js')
 
- <script>
+     <script>
+         $(document).on('submit', '#email-form', function(e) {
+             e.preventDefault();
+             $('.gocover').show();
+             $('.submit-btn').prop('disabled', true);
+             var name = $('.fname').val();
 
-        $(document).on('submit','#email-form',function(e){
-        e.preventDefault();
-        $('.gocover').show();
-        $('.submit-btn').prop('disabled',true);
-        var name = $('.fname').val();
+             var email = $('.email').val();
 
-        var email = $('.email').val();
+             if (name == '' || email == '') {
+                 $('#email-form .response').html(
+                     '<div class="failed alert alert-warning">Please fill the required fields.</div>');
+                 $('button.submit-btn').prop('disabled', false);
+                 return false;
+             }
 
-        if(name == '' || email == '') {
-        $('#email-form .response').html('<div class="failed alert alert-warning">Please fill the required fields.</div>');
-        $('button.submit-btn').prop('disabled',false);
-        return false;
-        }
+             $.ajax({
+                 method: "POST",
+                 url: $(this).prop('action'),
+                 data: new FormData(this),
+                 contentType: false,
+                 cache: false,
+                 processData: false,
+                 beforeSend: function() {
+                     $('#email-form .response').html(
+                         '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                         );
+                     console.log(1);
+                 },
+                 success: function(data) {
+                     console.log(2);
+                     if ((data.errors)) {
+                         console.log(3);
+                         $('.alert-success').hide();
+                         $('.alert-danger').show();
+                         $('#email-form .response').html('');
+                         for (var error in data.errors) {
+                             console.log(4);
+                             $('#email-form .response').append('<li>' + data.errors[error] + '</li>')
+                         }
+                         $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
+                             .eq(0).focus();
+                         $('#email-form .refresh_code').trigger('click');
 
-        $.ajax({
-        method:"POST",
-        url:$(this).prop('action'),
-        data:new FormData(this),
-        contentType: false,
-        cache: false,
-        processData: false,
-        beforeSend:function(){
-        $('#email-form .response').html('<div class="text-info"><img src="{{asset('assets/images/preloader.gif')}}"> Loading...</div>');
-            console.log(1);
-        },
-        success:function(data)
-        {
-            console.log(2);
-        if ((data.errors)) {
-            console.log(3);
-        $('.alert-success').hide();
-        $('.alert-danger').show();
-        $('#email-form .response').html('');
-        for(var error in data.errors)
-        {
-            console.log(4);
-        $('#email-form .response').append('<li>'+ data.errors[error] +'</li>')
-        }
-        $('#email-form input[type=text], #email-form input[type=email], #email-form textarea').eq(0).focus();
-        $('#email-form .refresh_code').trigger('click');
+                     } else {
+                         console.log(5);
+                         $('.alert-danger').hide();
+                         $('.alert-success').show();
+                         $('#email-form .response').html(data);
+                         $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
+                             .eq(0).focus();
+                         $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
+                             .val('');
+                         $('#email-form .refresh_code').trigger('click');
 
-        }
-        else
-        {
-            console.log(5);
-        $('.alert-danger').hide();
-        $('.alert-success').show();
-        $('#email-form .response').html(data);
-        $('#email-form input[type=text], #email-form input[type=email], #email-form textarea').eq(0).focus();
-        $('#email-form input[type=text], #email-form input[type=email], #email-form textarea').val('');
-        $('#email-form .refresh_code').trigger('click');
+                     }
+                     console.log(6);
+                     $('.gocover').hide();
+                     $('button.submit-btn').prop('disabled', false);
+                 }
 
-        }
-            console.log(6);
-        $('.gocover').hide();
-        $('button.submit-btn').prop('disabled',false);
-        }
+             });
 
-        });
-
-        });
-
-</script>
-@stop
+         });
+     </script>
+@stop)

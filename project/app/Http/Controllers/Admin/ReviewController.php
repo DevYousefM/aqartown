@@ -23,7 +23,7 @@ class ReviewController extends Controller
         //--- Integrating This Collection Into Datatables
         return Datatables::of($datas)
             ->editColumn('photo', function (Review $data) {
-                $photo = $data->photo ? url('assets/images/reviews/' . $data->photo) : url('assets/images/noimage.png');
+                $photo = $data->photo ? url('public/assets/images/reviews/' . $data->photo) : url('public/assets/images/noimage.png');
                 return '<img src="' . $photo . '" alt="Image">';
             })
             ->addColumn('action', function (Review $data) {
@@ -75,7 +75,7 @@ class ReviewController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/reviews', $name);
+            $file->move('public/assets/images/reviews', $name);
             $input['photo'] = $name;
         }
         $data->fill($input)->save();
@@ -130,7 +130,7 @@ class ReviewController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/reviews', $name);
+            $file->move('public/assets/images/reviews', $name);
             if ($data->photo != null) {
                 if (file_exists(public_path() . '/assets/images/reviews/' . $data->photo)) {
                     unlink(public_path() . '/assets/images/reviews/' . $data->photo);

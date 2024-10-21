@@ -114,7 +114,7 @@ class ImportController extends Controller
         list(, $image)      = explode(',', $image);
         $image = base64_decode($image);
         $image_name = time().str_random(8).'.png';
-        $path = 'assets/images/products/'.$image_name;
+        $path = 'public/assets/images/products/'.$image_name;
         file_put_contents($path, $image);
                 if($data->photo != null)
                 {
@@ -176,7 +176,7 @@ class ImportController extends Controller
                 list(, $image)      = explode(',', $image);
                 $image = base64_decode($image);
                 $image_name = time().str_random(8).'.png';
-                $path = 'assets/images/products/'.$image_name;
+                $path = 'public/assets/images/products/'.$image_name;
                 file_put_contents($path, $image);
                 $input['photo'] = $image_name;
             }else{
@@ -332,7 +332,7 @@ class ImportController extends Controller
                         {
                             $gallery = new Gallery;
                             $name = time().$file->getClientOriginalName();
-                            $file->move('assets/images/galleries',$name);
+                            $file->move('public/assets/images/galleries',$name);
                             $gallery['photo'] = $name;
                             $gallery['product_id'] = $lastid;
                             $gallery->save();

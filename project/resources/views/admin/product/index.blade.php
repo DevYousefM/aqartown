@@ -3,73 +3,73 @@
 
  @section('content')
      <style>
-     /* The container */
-     .container {
-     display: block;
-     position: relative;
-     padding-left: 35px;
-     margin-bottom: 12px;
-     cursor: pointer;
-     font-size: 14px;
-     -webkit-user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
-     }
+         /* The container */
+         .container {
+             display: block;
+             position: relative;
+             padding-left: 35px;
+             margin-bottom: 12px;
+             cursor: pointer;
+             font-size: 14px;
+             -webkit-user-select: none;
+             -moz-user-select: none;
+             -ms-user-select: none;
+             user-select: none;
+         }
 
-     /* Hide the browser's default checkbox */
-     .container input {
-     position: absolute;
-     opacity: 0;
-     cursor: pointer;
-     height: 0;
-     width: 0;
-     }
+         /* Hide the browser's default checkbox */
+         .container input {
+             position: absolute;
+             opacity: 0;
+             cursor: pointer;
+             height: 0;
+             width: 0;
+         }
 
-     /* Create a custom checkbox */
-     .checkmark {
-     position: absolute;
-     top: 0;
-     left: 0;
-     height: 25px;
-     width: 25px;
-     background-color: #eee;
-     }
+         /* Create a custom checkbox */
+         .checkmark {
+             position: absolute;
+             top: 0;
+             left: 0;
+             height: 25px;
+             width: 25px;
+             background-color: #eee;
+         }
 
-     /* On mouse-over, add a grey background color */
-     .container:hover input~.checkmark {
-     background-color: #ccc;
-     }
+         /* On mouse-over, add a grey background color */
+         .container:hover input~.checkmark {
+             background-color: #ccc;
+         }
 
-     /* When the checkbox is checked, add a blue background */
-     .container input:checked~.checkmark {
-     background-color: #2D3274;
-     }
+         /* When the checkbox is checked, add a blue background */
+         .container input:checked~.checkmark {
+             background-color: #2D3274;
+         }
 
-     /* Create the checkmark/indicator (hidden when not checked) */
-     .checkmark:after {
-     content: "";
-     position: absolute;
-     display: none;
-     }
+         /* Create the checkmark/indicator (hidden when not checked) */
+         .checkmark:after {
+             content: "";
+             position: absolute;
+             display: none;
+         }
 
-     /* Show the checkmark when checked */
-     .container input:checked~.checkmark:after {
-     display: block;
-     }
+         /* Show the checkmark when checked */
+         .container input:checked~.checkmark:after {
+             display: block;
+         }
 
-     /* Style the checkmark/indicator */
-     .container .checkmark:after {
-     left: 9px;
-     top: 5px;
-     width: 5px;
-     height: 10px;
-     border: solid white;
-     border-width: 0 3px 3px 0;
-     -webkit-transform: rotate(45deg);
-     -ms-transform: rotate(45deg);
-     transform: rotate(45deg);
-     }
+         /* Style the checkmark/indicator */
+         .container .checkmark:after {
+             left: 9px;
+             top: 5px;
+             width: 5px;
+             height: 10px;
+             border: solid white;
+             border-width: 0 3px 3px 0;
+             -webkit-transform: rotate(45deg);
+             -ms-transform: rotate(45deg);
+             transform: rotate(45deg);
+         }
      </style>
      <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.3.1/js/dataTables.buttons.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
@@ -78,93 +78,93 @@
 
      <input type="hidden" id="headerdata" value="{{ __('solution') }}">
      <div class="content-area">
-     <div class="mr-breadcrumb">
-     <div class="row">
-     <div class="col-lg-12">
-     <h4 class="heading">{{ __('solution') }}</h4>
-     <ul class="links">
-     <li>
-     <a href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }} </a>
-     </li>
-     <li>
-     <a href="javascript:;">{{ __('solution') }} </a>
-     </li>
-     <li>
-     <a href="{{ route('admin-prod-index') }}">{{ __('All solution') }}</a>
-     </li>
-     </ul>
-     </div>
-     </div>
-     </div>
-     <div class="product-area">
-     <div class="row">
-     <div class="col-lg-12">
-     <div class="mr-table allproduct">
+         <div class="mr-breadcrumb">
+             <div class="row">
+                 <div class="col-lg-12">
+                     <h4 class="heading">{{ __('solution') }}</h4>
+                     <ul class="links">
+                         <li>
+                             <a href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }} </a>
+                         </li>
+                         <li>
+                             <a href="javascript:;">{{ __('solution') }} </a>
+                         </li>
+                         <li>
+                             <a href="{{ route('admin-prod-index') }}">{{ __('All solution') }}</a>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+         <div class="product-area">
+             <div class="row">
+                 <div class="col-lg-12">
+                     <div class="mr-table allproduct">
 
-     @include('includes.admin.form-success')
-
-
-
-     <div class="table-responsiv">
-     <table id="geniustable" class="table table-hover dt-responsive" cellspacing="0" width="100%">
-     <thead>
-     <tr>
-     <th>
-     <div class="">
-     <label class="container">{{ __('Check All') }}
-     <input type="checkbox" name="checkall" id="checkall">
+                         @include('includes.admin.form-success')
 
 
-     <span class="checkmark"></span>
-     </label>
-     </div>
-     </th>
-     <th>{{ __('Photo') }}</th>
-     <th>{{ __('Name') }}</th>
 
-     <th>{{ __('Status') }}</th>
-     <th>{{ __('Is Available') }}</th>
-     <th>{{ __('Options') }}</th>
-     </tr>
-     </thead>
-     </table>
-     </div>
-     <div class="row" style="margin-top: 31px;">
-     <div class="col-lg-12" style="display:contents">
-
-     <form action="{{ route('admin-prod-all') }}" method="post" enctype="multipart/form-data"
-     id="mass_deactivate_form" style="margin-right: 5px;">
-     {{ csrf_field() }}
-     <input type="hidden" id="selected_products" name="selected_products" value="">
-     <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit"
-     value="{{ __('deactivate Selected') }}">
-     </form>
-
-     <form action="{{ route('admin-prod-activate') }}" method="post"
-     enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
-     {{ csrf_field() }}
-     <input type="hidden" id="selected_products_activate" name="selected_products_activate"
-     value="">
-     <input class="btn btn-xs btn-success" id="activate-selected" type="submit"
-     value="{{ __('activate Selected') }}">
-     </form>
-
-     <form action="{{ route('admin-prod-deleted') }}" method="post"
-     enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
-     {{ csrf_field() }}
-     <input type="hidden" id="selected_products_delete" name="selected_products_delete"
-     value="">
-     <input class="btn btn-xs btn-danger" id="delete-selected" type="submit"
-     value="{{ __('Delete Selected') }}">
-     </form>
+                         <div class="table-responsiv">
+                             <table id="geniustable" class="table table-hover dt-responsive" cellspacing="0" width="100%">
+                                 <thead>
+                                     <tr>
+                                         <th>
+                                             <div class="">
+                                                 <label class="container">{{ __('Check All') }}
+                                                     <input type="checkbox" name="checkall" id="checkall">
 
 
-     </div>
-     </div>
-     </div>
-     </div>
-     </div>
-     </div>
+                                                     <span class="checkmark"></span>
+                                                 </label>
+                                             </div>
+                                         </th>
+                                         <th>{{ __('Photo') }}</th>
+                                         <th>{{ __('Name') }}</th>
+
+                                         <th>{{ __('Status') }}</th>
+                                         <th>{{ __('Is Available') }}</th>
+                                         <th>{{ __('Options') }}</th>
+                                     </tr>
+                                 </thead>
+                             </table>
+                         </div>
+                         <div class="row" style="margin-top: 31px;">
+                             <div class="col-lg-12" style="display:contents">
+
+                                 <form action="{{ route('admin-prod-all') }}" method="post" enctype="multipart/form-data"
+                                     id="mass_deactivate_form" style="margin-right: 5px;">
+                                     {{ csrf_field() }}
+                                     <input type="hidden" id="selected_products" name="selected_products" value="">
+                                     <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit"
+                                         value="{{ __('deactivate Selected') }}">
+                                 </form>
+
+                                 <form action="{{ route('admin-prod-activate') }}" method="post"
+                                     enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
+                                     {{ csrf_field() }}
+                                     <input type="hidden" id="selected_products_activate" name="selected_products_activate"
+                                         value="">
+                                     <input class="btn btn-xs btn-success" id="activate-selected" type="submit"
+                                         value="{{ __('activate Selected') }}">
+                                 </form>
+
+                                 <form action="{{ route('admin-prod-deleted') }}" method="post"
+                                     enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
+                                     {{ csrf_field() }}
+                                     <input type="hidden" id="selected_products_delete" name="selected_products_delete"
+                                         value="">
+                                     <input class="btn btn-xs btn-danger" id="delete-selected" type="submit"
+                                         value="{{ __('Delete Selected') }}">
+                                 </form>
+
+
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
      </div>
 
 
@@ -173,31 +173,31 @@
      {{-- CATALOG MODAL --}}
 
      <div class="modal fade" id="catalog-modal" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
-     <div class="modal-dialog">
-     <div class="modal-content">
+         <div class="modal-dialog">
+             <div class="modal-content">
 
-     <div class="modal-header d-block text-center">
-     <h4 class="modal-title d-inline-block">{{ __('Update Status') }}</h4>
-     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-     </button>
-     </div>
+                 <div class="modal-header d-block text-center">
+                     <h4 class="modal-title d-inline-block">{{ __('Update Status') }}</h4>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                     </button>
+                 </div>
 
 
-     <!-- Modal body -->
-     <div class="modal-body">
-     <p class="text-center">{{ __('You are about to change the status of this Product.') }}</p>
-     <p class="text-center">{{ __('Do you want to proceed?') }}</p>
-     </div>
+                 <!-- Modal body -->
+                 <div class="modal-body">
+                     <p class="text-center">{{ __('You are about to change the status of this Product.') }}</p>
+                     <p class="text-center">{{ __('Do you want to proceed?') }}</p>
+                 </div>
 
-     <!-- Modal footer -->
-     <div class="modal-footer justify-content-center">
-     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('Cancel') }}</button>
-     <a class="btn btn-success btn-ok">{{ __('Proceed') }}</a>
-     </div>
+                 <!-- Modal footer -->
+                 <div class="modal-footer justify-content-center">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('Cancel') }}</button>
+                     <a class="btn btn-success btn-ok">{{ __('Proceed') }}</a>
+                 </div>
 
-     </div>
-     </div>
+             </div>
+         </div>
      </div>
 
      {{-- CATALOG MODAL ENDS --}}
@@ -206,30 +206,30 @@
      {{-- DELETE MODAL --}}
 
      <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
-     <div class="modal-dialog">
-     <div class="modal-content">
+         <div class="modal-dialog">
+             <div class="modal-content">
 
-     <div class="modal-header d-block text-center">
-     <h4 class="modal-title d-inline-block">{{ __('Confirm Delete') }}</h4>
-     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-     </button>
-     </div>
+                 <div class="modal-header d-block text-center">
+                     <h4 class="modal-title d-inline-block">{{ __('Confirm Delete') }}</h4>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                     </button>
+                 </div>
 
-     <!-- Modal body -->
-     <div class="modal-body">
-     <p class="text-center">{{ __('You are about to delete this Product.') }}</p>
-     <p class="text-center">{{ __('Do you want to proceed?') }}</p>
-     </div>
+                 <!-- Modal body -->
+                 <div class="modal-body">
+                     <p class="text-center">{{ __('You are about to delete this Product.') }}</p>
+                     <p class="text-center">{{ __('Do you want to proceed?') }}</p>
+                 </div>
 
-     <!-- Modal footer -->
-     <div class="modal-footer justify-content-center">
-     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('Cancel') }}</button>
-     <a class="btn btn-danger btn-ok">{{ __('Delete') }}</a>
-     </div>
+                 <!-- Modal footer -->
+                 <div class="modal-footer justify-content-center">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">{{ __('Cancel') }}</button>
+                     <a class="btn btn-danger btn-ok">{{ __('Delete') }}</a>
+                 </div>
 
-     </div>
-     </div>
+             </div>
+         </div>
      </div>
 
      {{-- DELETE MODAL ENDS --}}
@@ -238,49 +238,50 @@
      {{-- GALLERY MODAL --}}
 
      <div class="modal fade" id="setgallery" tabindex="-1" role="dialog" aria-labelledby="setgallery"
-     aria-hidden="true">
-     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-     <div class="modal-content">
-     <div class="modal-header">
-     <h5 class="modal-title" id="exampleModalCenterTitle">{{ __('Image Gallery') }}</h5>
-     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-     <span aria-hidden="true">×</span>
-     </button>
-     </div>
-     <div class="modal-body">
-     <div class="top-area">
-     <div class="row">
-     <div class="col-sm-6 text-right">
-     <div class="upload-img-btn">
-     <form method="POST" enctype="multipart/form-data" id="form-gallery">
-     {{ csrf_field() }}
-     <input type="hidden" id="pid" name="product_id" value="">
-     <input type="file" name="gallery[]" class="hidden" id="uploadgallery"
-     accept="image/*" multiple>
-     <label for="image-upload" id="prod_gallery"><i
-     class="icofont-upload-alt"></i>{{ __('Upload File') }}</label>
-     </form>
-     </div>
-     </div>
-     <div class="col-sm-6">
-     <a href="javascript:;" class="upload-done" data-dismiss="modal"> <i
-     class="fas fa-check"></i> {{ __('Done') }}</a>
-     </div>
-     <div class="col-sm-12 text-center">(
-     <small>{{ __('You can upload multiple Images') }}.</small> )</div>
-     </div>
-     </div>
-     <div class="gallery-images">
-     <div class="selected-image">
-     <div class="row">
+         aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalCenterTitle">{{ __('Image Gallery') }}</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">×</span>
+                     </button>
+                 </div>
+                 <div class="modal-body">
+                     <div class="top-area">
+                         <div class="row">
+                             <div class="col-sm-6 text-right">
+                                 <div class="upload-img-btn">
+                                     <form method="POST" enctype="multipart/form-data" id="form-gallery">
+                                         {{ csrf_field() }}
+                                         <input type="hidden" id="pid" name="product_id" value="">
+                                         <input type="file" name="gallery[]" class="hidden" id="uploadgallery"
+                                             accept="image/*" multiple>
+                                         <label for="image-upload" id="prod_gallery"><i
+                                                 class="icofont-upload-alt"></i>{{ __('Upload File') }}</label>
+                                     </form>
+                                 </div>
+                             </div>
+                             <div class="col-sm-6">
+                                 <a href="javascript:;" class="upload-done" data-dismiss="modal"> <i
+                                         class="fas fa-check"></i> {{ __('Done') }}</a>
+                             </div>
+                             <div class="col-sm-12 text-center">(
+                                 <small>{{ __('You can upload multiple Images') }}.</small> )
+                             </div>
+                         </div>
+                     </div>
+                     <div class="gallery-images">
+                         <div class="selected-image">
+                             <div class="row">
 
 
-     </div>
-     </div>
-     </div>
-     </div>
-     </div>
-     </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
      </div>
 
 
@@ -331,7 +332,7 @@
 
              ],
              language: {
-                 processing: '<img src="{{ asset('assets/images/' . $gs->admin_loader) }}">'
+                 processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
              },
              drawCallback: function(settings) {
                  $('.select').niceSelect();
@@ -382,9 +383,11 @@
                                  '<span class="remove-img"><i class="fas fa-times"></i>' +
                                  '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                  '</span>' +
-                                 '<a href="' + '{{ asset('assets/images/galleries') . '/' }}' + arr[k]
+                                 '<a href="' +
+                                 '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k]
                                  ['photo'] + '" target="_blank">' +
-                                 '<img src="' + '{{ asset('assets/images/galleries') . '/' }}' + arr[
+                                 '<img src="' +
+                                 '{{ asset('public/assets/images/galleries') . '/' }}' + arr[
                                      k]['photo'] + '" alt="gallery image">' +
                                  '</a>' +
                                  '</div>' +
@@ -440,9 +443,11 @@
                                  '<span class="remove-img"><i class="fas fa-times"></i>' +
                                  '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                  '</span>' +
-                                 '<a href="' + '{{ asset('assets/images/galleries') . '/' }}' + arr[k]
+                                 '<a href="' +
+                                 '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k]
                                  ['photo'] + '" target="_blank">' +
-                                 '<img src="' + '{{ asset('assets/images/galleries') . '/' }}' + arr[
+                                 '<img src="' +
+                                 '{{ asset('public/assets/images/galleries') . '/' }}' + arr[
                                      k]['photo'] + '" alt="gallery image">' +
                                  '</a>' +
                                  '</div>' +

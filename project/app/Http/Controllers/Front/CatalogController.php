@@ -316,7 +316,7 @@ class CatalogController extends Controller
         $input = $request->all();
         $input['comment_id'] = $id;
         $reply->fill($input)->save();
-        $data[0] = $reply->user->photo ? url('assets/images/users/' . $reply->user->photo) : url('assets/images/noimage.png');
+        $data[0] = $reply->user->photo ? url('public/assets/images/users/' . $reply->user->photo) : url('public/assets/images/noimage.png');
         $data[1] = $reply->user->name;
         $data[2] = $reply->created_at->diffForHumans();
         $data[3] = $reply->text;

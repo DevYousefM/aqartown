@@ -36,12 +36,12 @@
         }
 
         /* On mouse-over, add a grey background color */
-        .container:hover input ~ .checkmark {
+        .container:hover input~.checkmark {
             background-color: #ccc;
         }
 
         /* When the checkbox is checked, add a blue background */
-        .container input:checked ~ .checkmark {
+        .container input:checked~.checkmark {
             background-color: #2D3274;
         }
 
@@ -53,7 +53,7 @@
         }
 
         /* Show the checkmark when checked */
-        .container input:checked ~ .checkmark:after {
+        .container input:checked~.checkmark:after {
             display: block;
         }
 
@@ -114,45 +114,47 @@
                         <div class="table-responsiv">
                             <table id="geniustable" class="table table-hover dt-responsive" cellspacing="0" width="100%">
                                 <thead>
-                                <tr>
-                                    <th  width="2%"><div class="">
-                                            <label class="container">{{ __("Check All") }}
-                                                <input type="checkbox" name="checkall" id="checkall">
+                                    <tr>
+                                        <th width="2%">
+                                            <div class="">
+                                                <label class="container">{{ __('Check All') }}
+                                                    <input type="checkbox" name="checkall" id="checkall">
 
 
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </div></th>
-                                    <th width="20%">{{ __('Name') }}</th>
-                                    <!-- <th width="20%">{{ __('Slug') }}</th> -->
+                                                    <span class="checkmark"></span>
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <th width="20%">{{ __('Name') }}</th>
+                                        <!-- <th width="20%">{{ __('Slug') }}</th> -->
 
-                                    <th>{{ __('Status') }}</th>
-                                    <th>{{ __('Options') }}</th>
-                                </tr>
+                                        <th>{{ __('Status') }}</th>
+                                        <th>{{ __('Options') }}</th>
+                                    </tr>
                                 </thead>
                             </table>
                         </div>
                         <div class="row" style="margin-top: 31px;">
                             <div class="col-lg-12" style="display:contents">
                                 <!--
-									<form  action="{{route('admin-cat-all')}}" method="post" enctype="multipart/form-data" id="mass_deactivate_form"  style="margin-right: 5px;" >
-									     {{csrf_field()}}
-                                        <input type="hidden" id="selected_products" name="selected_products" value="">
-                                       <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit" value="{{ __("deactivate Selected") }}">
-									</form>
+             <form  action="{{ route('admin-cat-all') }}" method="post" enctype="multipart/form-data" id="mass_deactivate_form"  style="margin-right: 5px;" >
+             {{ csrf_field() }}
+                                            <input type="hidden" id="selected_products" name="selected_products" value="">
+                                           <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit" value="{{ __('deactivate Selected') }}">
+             </form>
 
-									<form  action="{{route('admin-cat-activate')}}" method="post" enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
-									     {{csrf_field()}}
-                                        <input type="hidden" id="selected_products_activate" name="selected_products_activate" value="">
-                                       <input class="btn btn-xs btn-success" id="activate-selected" type="submit" value="{{ __("activate Selected") }}">
-									</form>
+             <form  action="{{ route('admin-cat-activate') }}" method="post" enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
+             {{ csrf_field() }}
+                                            <input type="hidden" id="selected_products_activate" name="selected_products_activate" value="">
+                                           <input class="btn btn-xs btn-success" id="activate-selected" type="submit" value="{{ __('activate Selected') }}">
+             </form>
 
-									<form  action="{{route('admin-cat-deleted')}}" method="post" enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
-									     {{csrf_field()}}
-                                        <input type="hidden" id="selected_products_delete" name="selected_products_delete" value="">
-                                       <input class="btn btn-xs btn-danger" id="delete-selected" type="submit" value="{{ __("Delete Selected") }}">
-									</form>
-									 -->
+             <form  action="{{ route('admin-cat-deleted') }}" method="post" enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
+             {{ csrf_field() }}
+                                            <input type="hidden" id="selected_products_delete" name="selected_products_delete" value="">
+                                           <input class="btn btn-xs btn-danger" id="delete-selected" type="submit" value="{{ __('Delete Selected') }}">
+             </form>
+             -->
 
 
 
@@ -173,7 +175,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">{{ __("Image Gallery") }}</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">{{ __('Image Gallery') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
@@ -183,18 +185,22 @@
                         <div class="row">
                             <div class="col-sm-6 text-right">
                                 <div class="upload-img-btn">
-                                    <form  method="POST" enctype="multipart/form-data" id="form-gallery">
+                                    <form method="POST" enctype="multipart/form-data" id="form-gallery">
                                         {{ csrf_field() }}
                                         <input type="hidden" id="pid" name="category_id" value="">
-                                        <input type="file" name="gallery[]" class="hidden" id="uploadgallery" accept="image/*" multiple>
-                                        <label for="image-upload" id="prod_gallery"><i class="icofont-upload-alt"></i>{{ __("Upload File") }}</label>
+                                        <input type="file" name="gallery[]" class="hidden" id="uploadgallery"
+                                            accept="image/*" multiple>
+                                        <label for="image-upload" id="prod_gallery"><i
+                                                class="icofont-upload-alt"></i>{{ __('Upload File') }}</label>
                                     </form>
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <a href="javascript:;" class="upload-done" data-dismiss="modal"> <i class="fas fa-check"></i> {{ __("Done") }}</a>
+                                <a href="javascript:;" class="upload-done" data-dismiss="modal"> <i
+                                        class="fas fa-check"></i> {{ __('Done') }}</a>
                             </div>
-                            <div class="col-sm-12 text-center">( <small>{{ __("You can upload multiple Images") }}.</small> )</div>
+                            <div class="col-sm-12 text-center">(
+                                <small>{{ __('You can upload multiple Images') }}.</small> )</div>
                         </div>
                     </div>
                     <div class="gallery-images">
@@ -220,7 +226,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img  src="{{asset('assets/images/'.$gs->admin_loader)}}" alt="">
+                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
@@ -242,12 +248,13 @@
 
     {{-- ATTRIBUTE MODAL --}}
 
-    <div class="modal fade" id="attribute" tabindex="-1" role="dialog" aria-labelledby="attribute" aria-hidden="true">
+    <div class="modal fade" id="attribute" tabindex="-1" role="dialog" aria-labelledby="attribute"
+        aria-hidden="true">
 
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img  src="{{asset('assets/images/'.$gs->admin_loader)}}" alt="">
+                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
@@ -270,7 +277,8 @@
 
     {{-- DELETE MODAL --}}
 
-    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
+    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="modal1"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -283,7 +291,9 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <p class="text-center">{{ __('You are about to delete this Category. Everything under this category will be deleted') }}.</p>
+                    <p class="text-center">
+                        {{ __('You are about to delete this Category. Everything under this category will be deleted') }}.
+                    </p>
                     <p class="text-center">{{ __('Do you want to proceed?') }}</p>
                 </div>
 
@@ -298,78 +308,84 @@
     </div>
 
     {{-- DELETE MODAL ENDS --}}
-
 @endsection
 
 
 @section('scripts')
-
     {{-- DATA TABLE --}}
 
     <script type="text/javascript">
-
         var table = $('#geniustable').DataTable({
             ordering: false,
             processing: true,
             serverSide: true,
             ajax: '{{ route('admin-cat2-datatables') }}',
-            columns: [
-                { data: 'checkbox', name: 'checkbox' },
-                { data: 'name', name: 'name' },
+            columns: [{
+                    data: 'checkbox',
+                    name: 'checkbox'
+                },
+                {
+                    data: 'name',
+                    name: 'name'
+                },
                 // { data: 'slug', name: 'slug' },
 
-                { data: 'status', searchable: false, orderable: false},
-                { data: 'action', searchable: false, orderable: false }
+                {
+                    data: 'status',
+                    searchable: false,
+                    orderable: false
+                },
+                {
+                    data: 'action',
+                    searchable: false,
+                    orderable: false
+                }
 
             ],
-            language : {
-                processing: '<img src="{{asset('assets/images/'.$gs->admin_loader)}}">'
+            language: {
+                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
             },
-            drawCallback : function( settings ) {
+            drawCallback: function(settings) {
                 $('.select').niceSelect();
             }
         });
 
         $(function() {
-            $(".btn-area").append('<div class="col-sm-4 table-contents">'+
-                    '<a class="add-btn" data-href="{{route('admin-cat2-create')}}" id="add-data" data-toggle="modal" data-target="#modal1">'+
-                    '<i class="fas fa-plus"></i> Add New'+
-                    '</a>'+
-                    '</div>');
+            $(".btn-area").append('<div class="col-sm-4 table-contents">' +
+                '<a class="add-btn" data-href="{{ route('admin-cat2-create') }}" id="add-data" data-toggle="modal" data-target="#modal1">' +
+                '<i class="fas fa-plus"></i> Add New' +
+                '</a>' +
+                '</div>');
         });
 
-        {{-- DATA TABLE ENDS--}}
-
+        {{-- DATA TABLE ENDS --}}
     </script>
 
     <script type="text/javascript">
-
         $("#checkall").change(function() {
-            if(this.checked) {
+            if (this.checked) {
 
-                $(".all").prop('checked',true);
+                $(".all").prop('checked', true);
 
-            }
-            else
-            {
-                $(".all").prop('checked',false);
+            } else {
+                $(".all").prop('checked', false);
 
             }
         });
 
         $(".all").change(function() {
 
-            $("#checkall").prop('checked',false);
+            $("#checkall").prop('checked', false);
 
 
         });
 
 
-        $(document).on('click', '#deactivate-selected', function(e){
+        $(document).on('click', '#deactivate-selected', function(e) {
             e.preventDefault();
             var selected_rows = getSelectedRows();
 
-            if(selected_rows.length > 0){
+            if (selected_rows.length > 0) {
                 $('input#selected_products').val(selected_rows);
 
 
@@ -386,8 +402,8 @@
                             toastr.success(result.msg);
                             product_table.ajax.reload();
                             form
-                                    .find('#selected_products')
-                                    .val('');
+                                .find('#selected_products')
+                                .val('');
                         } else {
                             toastr.error(result.msg);
                         }
@@ -395,18 +411,18 @@
                 });
 
 
-            } else{
+            } else {
                 $('input#selected_products').val('');
 
             }
 
         });
 
-        $(document).on('click', '#activate-selected', function(e){
+        $(document).on('click', '#activate-selected', function(e) {
             e.preventDefault();
             var selected_rows = getSelectedRows();
 
-            if(selected_rows.length > 0){
+            if (selected_rows.length > 0) {
                 $('input#selected_products_activate').val(selected_rows);
 
 
@@ -423,8 +439,8 @@
                             toastr.success(result.msg);
                             product_table.ajax.reload();
                             form
-                                    .find('#selected_products_activate')
-                                    .val('');
+                                .find('#selected_products_activate')
+                                .val('');
                         } else {
                             toastr.error(result.msg);
                         }
@@ -432,17 +448,17 @@
                 });
 
 
-            } else{
+            } else {
                 $('input#selected_products_activate').val('');
 
             }
 
         });
-        $(document).on('click', '#delete-selected', function(e){
+        $(document).on('click', '#delete-selected', function(e) {
             e.preventDefault();
             var selected_rows = getSelectedRows();
 
-            if(selected_rows.length > 0){
+            if (selected_rows.length > 0) {
                 $('input#selected_products_delete').val(selected_rows);
 
 
@@ -459,8 +475,8 @@
                             toastr.success(result.msg);
                             product_table.ajax.reload();
                             form
-                                    .find('#selected_products_delete')
-                                    .val('');
+                                .find('#selected_products_delete')
+                                .val('');
                         } else {
                             toastr.error(result.msg);
                         }
@@ -468,7 +484,7 @@
                 });
 
 
-            } else{
+            } else {
                 $('input#selected_products_delete').val('');
 
             }
@@ -480,55 +496,55 @@
         function getSelectedRows() {
             var selected_rows = [];
             var i = 0;
-            $('.row-select:checked').each(function () {
+            $('.row-select:checked').each(function() {
                 selected_rows[i++] = $(this).val();
             });
 
             return selected_rows;
         }
-
-
     </script>
 
 
 
     <script type="text/javascript">
-
-
         // Gallery Section Update
 
-        $(document).on("click", ".set-gallery" , function(){
+        $(document).on("click", ".set-gallery", function() {
             var pid = $(this).find('input[type=hidden]').val();
             $('#pid').val(pid);
             $('.selected-image .row').html('');
             $.ajax({
                 type: "GET",
-                url:"{{ route('admin-gallery-show') }}",
-                data:{id:pid},
-                success:function(data){
-                    if(data[0] == 0)
-                    {
+                url: "{{ route('admin-gallery-show') }}",
+                data: {
+                    id: pid
+                },
+                success: function(data) {
+                    if (data[0] == 0) {
                         $('.selected-image .row').addClass('justify-content-center');
-                        $('.selected-image .row').html('<h3>{{ __("No Images Found.") }}</h3>');
-                    }
-                    else {
+                        $('.selected-image .row').html('<h3>{{ __('No Images Found.') }}</h3>');
+                    } else {
                         $('.selected-image .row').removeClass('justify-content-center');
                         $('.selected-image .row h3').remove();
                         var arr = $.map(data[1], function(el) {
-                            return el });
+                            return el
+                        });
 
-                        for(var k in arr)
-                        {
-                            $('.selected-image .row').append('<div class="col-sm-6">'+
-                                    '<div class="img gallery-img">'+
-                                    '<span class="remove-img"><i class="fas fa-times"></i>'+
-                                    '<input type="hidden" value="'+arr[k]['id']+'">'+
-                                    '</span>'+
-                                    '<a href="'+'{{asset('assets/images/galleries').'/'}}'+arr[k]['photo']+'" target="_blank">'+
-                                    '<img src="'+'{{asset('assets/images/galleries').'/'}}'+arr[k]['photo']+'" alt="gallery image">'+
-                                    '</a>'+
-                                    '</div>'+
-                                    '</div>');
+                        for (var k in arr) {
+                            $('.selected-image .row').append('<div class="col-sm-6">' +
+                                '<div class="img gallery-img">' +
+                                '<span class="remove-img"><i class="fas fa-times"></i>' +
+                                '<input type="hidden" value="' + arr[k]['id'] + '">' +
+                                '</span>' +
+                                '<a href="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                arr[k]['photo'] + '" target="_blank">' +
+                                '<img src="' +
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                    'photo'
+                                ] + '" alt="gallery image">' +
+                                '</a>' +
+                                '</div>' +
+                                '</div>');
                         }
                     }
 
@@ -537,54 +553,58 @@
         });
 
 
-        $(document).on('click', '.remove-img' ,function() {
+        $(document).on('click', '.remove-img', function() {
             var id = $(this).find('input[type=hidden]').val();
             $(this).parent().parent().remove();
             $.ajax({
                 type: "GET",
-                url:"{{ route('admin-gallery-delete') }}",
-                data:{id:id}
+                url: "{{ route('admin-gallery-delete') }}",
+                data: {
+                    id: id
+                }
             });
         });
 
-        $(document).on('click', '#prod_gallery' ,function() {
+        $(document).on('click', '#prod_gallery', function() {
             $('#uploadgallery').click();
         });
 
 
-        $("#uploadgallery").change(function(){
+        $("#uploadgallery").change(function() {
             $("#form-gallery").submit();
         });
 
-        $(document).on('submit', '#form-gallery' ,function() {
+        $(document).on('submit', '#form-gallery', function() {
             $.ajax({
-                url:"{{ route('admin-gallery-store') }}",
-                method:"POST",
-                data:new FormData(this),
-                dataType:'JSON',
+                url: "{{ route('admin-gallery-store') }}",
+                method: "POST",
+                data: new FormData(this),
+                dataType: 'JSON',
                 contentType: false,
                 cache: false,
                 processData: false,
-                success:function(data)
-                {
-                    if(data != 0)
-                    {
+                success: function(data) {
+                    if (data != 0) {
                         $('.selected-image .row').removeClass('justify-content-center');
                         $('.selected-image .row h3').remove();
                         var arr = $.map(data, function(el) {
-                            return el });
-                        for(var k in arr)
-                        {
-                            $('.selected-image .row').append('<div class="col-sm-6">'+
-                                    '<div class="img gallery-img">'+
-                                    '<span class="remove-img"><i class="fas fa-times"></i>'+
-                                    '<input type="hidden" value="'+arr[k]['id']+'">'+
-                                    '</span>'+
-                                    '<a href="'+'{{asset('assets/images/galleries').'/'}}'+arr[k]['photo']+'" target="_blank">'+
-                                    '<img src="'+'{{asset('assets/images/galleries').'/'}}'+arr[k]['photo']+'" alt="gallery image">'+
-                                    '</a>'+
-                                    '</div>'+
-                                    '</div>');
+                            return el
+                        });
+                        for (var k in arr) {
+                            $('.selected-image .row').append('<div class="col-sm-6">' +
+                                '<div class="img gallery-img">' +
+                                '<span class="remove-img"><i class="fas fa-times"></i>' +
+                                '<input type="hidden" value="' + arr[k]['id'] + '">' +
+                                '</span>' +
+                                '<a href="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                arr[k]['photo'] + '" target="_blank">' +
+                                '<img src="' +
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                    'photo'
+                                ] + '" alt="gallery image">' +
+                                '</a>' +
+                                '</div>' +
+                                '</div>');
                         }
                     }
 
@@ -596,9 +616,5 @@
 
 
         // Gallery Section Update Ends
-
-
     </script>
-
-
 @endsection
