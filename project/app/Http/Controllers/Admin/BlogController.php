@@ -26,7 +26,7 @@ class BlogController extends Controller
         //--- Integrating This Collection Into Datatables
         return Datatables::of($datas)
             ->editColumn('photo', function (Blog $data) {
-                $photo = $data->photo ? url('assets/images/blogs/' . $data->photo) : url('assets/images/noimage.png');
+                $photo = $data->photo ? url('public/assets/images/blogs/' . $data->photo) : url('public/assets/images/noimage.png');
                 return '<img src="' . $photo . '" alt="Image">';
             })
             ->addColumn('action', function (Blog $data) {
@@ -76,12 +76,12 @@ class BlogController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = $this->generateRandomName($file);
-            $file->move('assets/images/blogs', $name);
+            $file->move('public/assets/images/blogs', $name);
             $input['photo'] = $name;
         }
         if ($file2 = $request->file('image')) {
             $name2 = $name = $this->generateRandomName($file2);
-            $file2->move('assets/images/blogs', $name2);
+            $file2->move('public/assets/images/blogs', $name2);
             $input['image'] = $name2;
         }
         if (!empty($request->meta_tag)) {
@@ -142,7 +142,7 @@ class BlogController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = $this->generateRandomName($file);
-            $file->move('assets/images/blogs', $name);
+            $file->move('public/assets/images/blogs', $name);
             if ($data->photo != null) {
                 if (file_exists(public_path() . '/assets/images/blogs/' . $data->photo)) {
                     unlink(public_path() . '/assets/images/blogs/' . $data->photo);
@@ -152,7 +152,7 @@ class BlogController extends Controller
         }
         if ($file2 = $request->file('image')) {
             $name2 = $this->generateRandomName($file2);
-            $file2->move('assets/images/blogs', $name2);
+            $file2->move('public/assets/images/blogs', $name2);
             if ($data->image != null) {
                 if (file_exists(public_path() . '/assets/images/blogs/' . $data->image)) {
                     unlink(public_path() . '/assets/images/blogs/' . $data->image);

@@ -40,7 +40,7 @@ class StateController extends Controller
                             }) 
                              ->editColumn('photo', function(City $data) {
                                 
-                                $photo = '<div class=""><img style="width: 85px;" src="'.url('assets/images/gallery',$data->photo).'"  ></div>';
+                                $photo = '<div class=""><img style="width: 85px;" src="'.url('public/assets/images/gallery',$data->photo).'"  ></div>';
                                 return  $photo;
                             })->addColumn('status', function(City $data) {
                                 $class = $data->status == 1 ? 'drop-success' : 'drop-danger';

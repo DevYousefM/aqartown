@@ -48,7 +48,7 @@ class PartnerController extends Controller
 
                             ->editColumn('photo', function(Partner $data) {
 
-                                $photo = $data->photo ? url('assets/images/partner/'.$data->photo):url('assets/images/noimage.png');
+                                $photo = $data->photo ? url('public/assets/images/partner/'.$data->photo):url('public/assets/images/noimage.png');
 
                                 return '<imgmimes:jpeg,webp$photo . '" alt="Image">';
 
@@ -152,7 +152,7 @@ mimes:jpeg,webp
 
             $name = time().$file->getClientOriginalName();
 
-            $file->move('assets/images/partner',$name);           
+            $file->move('public/assets/images/partner',$name);           
 
             $input['photo'] = $name;
 
@@ -290,7 +290,7 @@ mimes:jpeg,webp
 
                 $name = time().$file->getClientOriginalName();
 
-                $file->move('assets/images/partner',$name);
+                $file->move('public/assets/images/partner',$name);
 
                 if($data->photo != null)
 

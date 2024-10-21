@@ -156,7 +156,7 @@
 
                             <div class="card-img">
 
-                                <img src="{{ asset('assets/images/categories/' . $cat->photo) }}" alt="...">
+                                <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}" alt="...">
 
                             </div>
 
@@ -231,7 +231,7 @@
 
                                             {{ route('front.product', ['slug' => $productt->slug, 'lang' => $sign]) }} @endif          ">
 
-                                                <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('assets/images/products/' . $productt->photo) }}"
+                                                <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('public/assets/images/products/' . $productt->photo) }}"
                                                     alt="" class="bg-pro-i">
 
                                             </a>

@@ -17,7 +17,7 @@
       <!-- Title -->
       <title>{{ $gs->title }}</title>
       <!-- favicon -->
-      <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
+      <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
       <!-- Bootstrap -->
 
       @if ($gs->light_dark == 0)
@@ -207,7 +207,7 @@
                                   <li class="login-profile-area">
                                       <a class="dropdown-toggle-1" href="javascript:;">
                                           <div class="user-img">
-                                              <img src="{{ Auth::guard('admin')->user()->photo ? asset('assets/images/admins/' . Auth::guard('admin')->user()->photo) : asset('assets/images/noimage.png') }}"
+                                              <img src="{{ Auth::guard('admin')->user()->photo ? asset('public/assets/images/admins/' . Auth::guard('admin')->user()->photo) : asset('public/assets/images/noimage.png') }}"
                                                   alt="">
                                           </div>
                                       </a>

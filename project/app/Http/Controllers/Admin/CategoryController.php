@@ -98,7 +98,7 @@ class CategoryController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/categories', $name);
+            $file->move('public/assets/images/categories', $name);
             $input['photo'] = $name;
         }
         if ($request->is_featured == '') {
@@ -128,7 +128,7 @@ class CategoryController extends Controller
             //--- Validation Section Ends
             if ($file = $request->file('image')) {
                 $name = time() . $file->getClientOriginalName();
-                $file->move('assets/images/categories', $name);
+                $file->move('public/assets/images/categories', $name);
                 $input['image'] = $name;
             }
         }
@@ -210,7 +210,7 @@ class CategoryController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/categories', $name);
+            $file->move('public/assets/images/categories', $name);
             if ($data->photo != null) {
                 if (file_exists(public_path() . '/assets/images/categories/' . $data->photo)) {
                     unlink(public_path() . '/assets/images/categories/' . $data->photo);
@@ -238,7 +238,7 @@ class CategoryController extends Controller
             //--- Validation Section Ends
             if ($file = $request->file('image')) {
                 $name = time() . $file->getClientOriginalName();
-                $file->move('assets/images/categories', $name);
+                $file->move('public/assets/images/categories', $name);
                 $input['image'] = $name;
             }
         }

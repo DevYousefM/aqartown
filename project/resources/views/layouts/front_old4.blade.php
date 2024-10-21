@@ -1,77 +1,68 @@
-
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-	@php 
+    @php
 
+        $ps = App\Models\Pagesetting::find(1);
 
-
-
-  $ps = App\Models\Pagesetting::find(1);
-  
-
-   @endphp
-
-
- 
+    @endphp
 
 
 
 
 
-    @if(isset($page->meta_tag) && isset($page->meta_description))
+
+
+
+    @if (isset($page->meta_tag) && isset($page->meta_description))
         <meta name="keywords" content="{{ $page->meta_tag }}">
         <meta name="description" content="{{ $page->meta_description }}">
         <title>@yield('title') -
-                @if($langg->rtl == 1 )
-                    {{$gs->title_ar}}
-                @else
-                    {{$gs->title}}
-                @endif
-            </title>
+            @if ($langg->rtl == 1)
+                {{ $gs->title_ar }}
+            @else
+                {{ $gs->title }}
+            @endif
+        </title>
     @elseif(isset($blog->meta_tag) && isset($blog->meta_description))
         <meta name="keywords" content="{{ $blog->meta_tag }}">
         <meta name="description" content="{{ $blog->meta_description }}">
-
     @elseif(isset($productt))
-
-        <meta name="keywords" content="{{ !empty($productt->meta_tag) ? implode(',', $productt->meta_tag ): '' }}">
-        <meta name="description" content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}">
-        <meta property="og:title" content="{{$productt->name}}" />
-        <meta property="og:id" content="{{$productt->id}}" />
-        <meta property="og:description" content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{asset('assets/images/products/'.$productt->photo)}}" />
-        <meta name="author" content="{{$gs->title}}">
+        <meta name="keywords" content="{{ !empty($productt->meta_tag) ? implode(',', $productt->meta_tag) : '' }}">
+        <meta name="description"
+            content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}">
+        <meta property="og:title" content="{{ $productt->name }}" />
+        <meta property="og:id" content="{{ $productt->id }}" />
+        <meta property="og:description"
+            content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
+        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta name="author" content="{{ $gs->title }}">
         <title>
-                @if($langg->rtl == 1 )
-                    {{substr($productt->name_ar, 0,20)."-"}}{{$gs->title_ar}}
-                @else
-                    {{substr($productt->name, 0,11)."-"}}{{$gs->title}}
-                @endif -
-                    @if($langg->rtl == 1 )
-                        {{$gs->title_ar}}
-                    @else
-                        {{$gs->title}}
-                    @endif
-         </title>
+            @if ($langg->rtl == 1)
+                {{ substr($productt->name_ar, 0, 20) . '-' }}{{ $gs->title_ar }}
+            @else
+                {{ substr($productt->name, 0, 11) . '-' }}{{ $gs->title }}
+            @endif -
+            @if ($langg->rtl == 1)
+                {{ $gs->title_ar }}
+            @else
+                {{ $gs->title }}
+            @endif
+        </title>
     @else
-
-        <meta name="+author" content="{{$gs->title}}">
-       <title>
-           @yield('title')
-       </title>
+        <meta name="+author" content="{{ $gs->title }}">
+        <title>
+            @yield('title')
+        </title>
     @endif
 
-    @if(isset($seo->product_analytics ))
-
+    @if (isset($seo->product_analytics))
         @yield('prod_seo')
-
-
     @endif
 
 
@@ -79,10 +70,10 @@
 
 
 
-    @if(isset($seo->meta_keys))
+    @if (isset($seo->meta_keys))
 
 
-        @if($langg->rtl == 1 )
+        @if ($langg->rtl == 1)
             <meta name="keywords" content="{!! $seo->meta_keys_ar !!}">
         @else
             <meta name="keywords" content="{{ $seo->meta_keys }}">
@@ -93,43 +84,43 @@
     @endif
 
 
-    @if(isset($seo->meta_description))
+    @if (isset($seo->meta_description))
 
 
-        @if($langg->rtl == 1 )
-            <meta name="description" content="{{ $seo->meta_description_ar != null ? $seo->meta_description_ar : strip_tags($productt->description_ar) }}">
+        @if ($langg->rtl == 1)
+            <meta name="description"
+                content="{{ $seo->meta_description_ar != null ? $seo->meta_description_ar : strip_tags($productt->description_ar) }}">
         @else
-            <meta name="description" content="{{ $seo->meta_description != null ? $seo->meta_description : strip_tags($seo->description) }}">
+            <meta name="description"
+                content="{{ $seo->meta_description != null ? $seo->meta_description : strip_tags($seo->description) }}">
         @endif
 
 
 
     @endif
 
-@if(isset($seo->google_analytics))
-          
+    @if (isset($seo->google_analytics))
         {!! $seo->google_analytics !!}
+    @endif
 
-   @endif
 
-
-           <script type="application/ld+json">
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
     }
     </script>
-<script type="application/ld+json">
+    <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}",
+    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -151,13 +142,13 @@
     {!! $seo->facebook_pixel !!}
 
 
-     	@yield('gsearch')
-          <!-- Google Font -->
-  
-	<!-- favicon -->
-	<link rel="icon"  type="image/x-icon" href="{{asset('assets/images/'.$gs->favicon)}}"/>
-	<!-- bootstrap -->
-	
+    @yield('gsearch')
+    <!-- Google Font -->
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <!-- bootstrap -->
+
 
     <link
         href="https://fonts.googleapis.com/css?family=Exo:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
@@ -171,34 +162,35 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link href="{{asset('assets/naglaa/css/bootstrap.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/jquery-ui.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/icomoon-icons.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/animate.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/flaticon.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/aos.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/owl.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/animation.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/naglaa/css/magnific-popup.css')}}">
-    <link href="{{asset('assets/naglaa/css/jquery.fancybox.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/jquery.mCustomScrollbar.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/menu.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('assets/naglaa/css/responsive.css')}}" rel="stylesheet">
-
- 
+    <link href="{{ asset('assets/naglaa/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/jquery-ui.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/icomoon-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/owl.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/animation.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/naglaa/css/magnific-popup.css') }}">
+    <link href="{{ asset('assets/naglaa/css/jquery.fancybox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/jquery.mCustomScrollbar.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/menu.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/naglaa/css/responsive.css') }}" rel="stylesheet">
 
 
-    
 
-	<link rel="stylesheet" href="{{asset('assets/front/css/toastr.css')}}">
+
+
+
+    <link rel="stylesheet" href="{{ asset('assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
+
 <body>
-   
-  <!--============= STart header Area =============-->
-  <div class="page-wrapper">
+
+    <!--============= STart header Area =============-->
+    <div class="page-wrapper">
 
         <div class="preloader"></div>
 
@@ -208,13 +200,14 @@
                     <div class="top-outer clearfix">
 
                         <ul class="top-left">
-                            <li><a href="tel:{{$ps->phone}}"><span class="icon flaticon-phone-receiver"></span> {{$ps->phone}}</a></li>
-                            <li><a href="tel:{{$ps->fax}}"><span class="icon flaticon-phone-receiver"></span> {{$ps->fax}}</a></li>
+                            <li><a href="tel:{{ $ps->phone }}"><span class="icon flaticon-phone-receiver"></span>
+                                    {{ $ps->phone }}</a></li>
+                            <li><a href="tel:{{ $ps->fax }}"><span class="icon flaticon-phone-receiver"></span>
+                                    {{ $ps->fax }}</a></li>
                             <!-- <li><span class="icon flaticon-clock-1"></span>Mon-Fri (8am - 6pm)</li> -->
-                            <li><a
-                                    href="mailto:{{$ps->email}}"><span
-                                        class="icon flaticon-letter"></span><span class="__cf_email__"
-                                        data-cfemail="cba2a5ada48baeb3aaa6bba7aee5a8a4a6">{{$ps->email}}</span></a>
+                            <li><a href="mailto:{{ $ps->email }}"><span class="icon flaticon-letter"></span><span
+                                        class="__cf_email__"
+                                        data-cfemail="cba2a5ada48baeb3aaa6bba7aee5a8a4a6">{{ $ps->email }}</span></a>
                             </li>
                         </ul>
 
@@ -227,7 +220,9 @@
                 <div class="container">
                     <div class="xs-navbar clearfix">
                         <div class="logo-outer">
-                            <div class="logo"><a href="{{ route('front.index',$sign) }}"><img src="{{asset('assets/images/'.$gs->logo)}}" alt="" title=""></a>
+                            <div class="logo"><a href="{{ route('front.index', $sign) }}"><img
+                                        src="{{ asset('public/assets/images/' . $gs->logo) }}" alt=""
+                                        title=""></a>
                             </div>
                         </div>
                         <nav class="elementskit-navbar">
@@ -252,47 +247,54 @@
 
                                 <ul class="elementskit-navbar-nav nav-alignment-dynamic">
                                     <li>
-                                        <a href="{{ route('front.index',$sign) }}">{{ $langg->lang17 }}</a>
+                                        <a href="{{ route('front.index', $sign) }}">{{ $langg->lang17 }}</a>
                                     </li>
-                                    <li><a href="{{ route('front.about',$sign) }}">{{ $langg->lang16 }}</a>
+                                    <li><a href="{{ route('front.about', $sign) }}">{{ $langg->lang16 }}</a>
                                     </li>
                                     <li class="elementskit-dropdown-has"><a href="#">{{ $langg->lang11 }}</a>
                                         <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                        @foreach($categories as $category)
-										   <li >
-										@if($langg->rtl == 1)
-											<a href="{{ route('front.category',['category' => $category->slug_ar, 'lang' => $sign]) }}" title="{{ $category->name_ar }}">
-													{{ $category->name_ar }}</a>
-												@else
-												<a href="{{ route('front.category',['category' => $category->slug, 'lang' => $sign]) }}" title="{{ $category->name }}">	
-													{{ $category->name }}</a>
-											@endif
-										
-											</li>
-                                       
-											@endforeach
+                                            @foreach ($categories as $category)
+                                                <li>
+                                                    @if ($langg->rtl == 1)
+                                                        <a href="{{ route('front.category', ['category' => $category->slug_ar, 'lang' => $sign]) }}"
+                                                            title="{{ $category->name_ar }}">
+                                                            {{ $category->name_ar }}</a>
+                                                    @else
+                                                        <a href="{{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }}"
+                                                            title="{{ $category->name }}">
+                                                            {{ $category->name }}</a>
+                                                    @endif
+
+                                                </li>
+                                            @endforeach
 
                                         </ul>
                                     </li>
                                     <li class="elementskit-dropdown-has"><a href="#">{{ $langg->lang18 }}</a>
                                         <ul class="elementskit-dropdown elementskit-submenu-panel">
-                                            <li><a href="{{ route('front.gallery',$sign) }}">{{ $langg->lang221 }}</a></li>
-                                            <li><a href="{{ route('front.video',$sign) }}">{{ $langg->lang223 }}</a></li>
+                                            <li><a
+                                                    href="{{ route('front.gallery', $sign) }}">{{ $langg->lang221 }}</a>
+                                            </li>
+                                            <li><a href="{{ route('front.video', $sign) }}">{{ $langg->lang223 }}</a>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{ route('front.afterbefore',$sign) }}">{{ $langg->lang222 }}</a></li>
-                                    <li><a href="{{ route('front.contact',$sign) }}">{{ $langg->lang20 }}</a></li>
+                                    <li><a href="{{ route('front.afterbefore', $sign) }}">{{ $langg->lang222 }}</a>
+                                    </li>
+                                    <li><a href="{{ route('front.contact', $sign) }}">{{ $langg->lang20 }}</a></li>
 
 
                                 </ul>
 
                                 <div class="elementskit-nav-identity-panel">
                                     <h1 class="elementskit-site-title">
-                                        <a href="#" class="elementskit-nav-logo">  @if($langg->rtl == 1 )
-                        {{$gs->title_ar}}
-                    @else
-                        {{$gs->title}}
-                    @endif</a>
+                                        <a href="#" class="elementskit-nav-logo">
+                                            @if ($langg->rtl == 1)
+                                                {{ $gs->title_ar }}
+                                            @else
+                                                {{ $gs->title }}
+                                            @endif
+                                        </a>
                                     </h1>
                                     <button class="elementskit-menu-close elementskit-menu-toggler" type="button"><i
                                             class="icon icon-cross"></i></button>
@@ -320,16 +322,16 @@
         </header>
 
 
-    <!--============= end header Area =============-->
+        <!--============= end header Area =============-->
 
 
-  @yield('content')
+        @yield('content')
 
 
-    <!--============ Start footer ============-->
-   
+        <!--============ Start footer ============-->
 
-    <footer style="
+
+        <footer style="
         direction: rtl;
             text-align: right;
     ">
@@ -341,19 +343,22 @@
                                 <div class="footer__widget">
                                     <div class="footer__widget-title mb-30">
                                         <div class="logo">
-                                            <a href="index.html"><img src="{{asset('assets/images/'.$gs->logo_ar)}}" style="
+                                            <a href="index.html"><img
+                                                    src="{{ asset('public/assets/images/' . $gs->logo_ar) }}"
+                                                    style="
         width: 145px;
             margin-right: 92px;
     
-    " alt="logo"></a>
-                                            <p>{!!$langg->rtl == 1 ? $gs->footer_ar  : $gs->footer !!}<br>
+    "
+                                                    alt="logo"></a>
+                                            <p>{!! $langg->rtl == 1 ? $gs->footer_ar : $gs->footer !!}<br>
                                             </p>
                                         </div>
-                                              <!-- <div class="Subscribe-box">
-                                                <p>{!!$langg->rtl == 1 ? $gs->footer_ar  : $gs->footer !!}</p>
+                                        <!-- <div class="Subscribe-box">
+                                                <p>{!! $langg->rtl == 1 ? $gs->footer_ar : $gs->footer !!}</p>
 
-                                                <form class="form-inline" action="{{route('front.subscribe')}}" id="subscribeform" method="POST">
-                                                {{csrf_field()}}
+                                                <form class="form-inline" action="{{ route('front.subscribe') }}" id="subscribeform" method="POST">
+                                                {{ csrf_field() }}
                                                 <div style="width: 81%;">
                                                         @include('includes.admin.form-both')
                                                     </div>
@@ -382,19 +387,20 @@
                                         <div class="footer__services">
                                             <ul>
 
-                                            @foreach($categories->take(6) as $category)
-										   <li >
-										@if($langg->rtl == 1)
-											<a href="{{ route('front.category',['category' => $category->slug_ar, 'lang' => $sign]) }}" title="{{ $category->name_ar }}">
-													{{ $category->name_ar }}</a>
-												@else
-												<a href="{{ route('front.category',['category' => $category->slug, 'lang' => $sign]) }}" title="{{ $category->name }}">	
-													{{ $category->name }}</a>
-											@endif
-										
-											</li>
-                                       
-											@endforeach
+                                                @foreach ($categories->take(6) as $category)
+                                                    <li>
+                                                        @if ($langg->rtl == 1)
+                                                            <a href="{{ route('front.category', ['category' => $category->slug_ar, 'lang' => $sign]) }}"
+                                                                title="{{ $category->name_ar }}">
+                                                                {{ $category->name_ar }}</a>
+                                                        @else
+                                                            <a href="{{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }}"
+                                                                title="{{ $category->name }}">
+                                                                {{ $category->name }}</a>
+                                                        @endif
+
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
@@ -418,16 +424,16 @@
                                                 <li>
                                                     <div class="footer__contact-item">
                                                         <h6>{{ $langg->lang49 }}:</h6>
-                                                        <p><a href="mailto:{{$ps->email}}"
-                                                                class="__cf_email__"
-                                                                data-cfemail="2c45424a436c4e4d5f454f5844494149024f4341">{{$ps->email}}</a>
+                                                        <p><a href="mailto:{{ $ps->email }}" class="__cf_email__"
+                                                                data-cfemail="2c45424a436c4e4d5f454f5844494149024f4341">{{ $ps->email }}</a>
                                                         </p>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="footer__contact-item">
                                                         <h6>{{ $langg->lang48 }}:</h6>
-                                                        <p><a href="tel:{{$ps->phone}}">{{$ps->phone}}</a></p>
+                                                        <p><a href="tel:{{ $ps->phone }}">{{ $ps->phone }}</a>
+                                                        </p>
                                                     </div>
                                                 </li>
 
@@ -441,31 +447,31 @@
 
                                     <div class="footer__widget-content">
                                         <div class="footer__services">
-                                            <h3 style="
+                                            <h3
+                                                style="
                                             color: #fff;
                                         ">
-                                           {{ $langg->lang7 }}
+                                                {{ $langg->lang7 }}
                                             </h3>
                                             <ul>
-                                            @if(!empty($gs->percent_title))
-                                                                @php
-                                                                    $title =    explode(',', $gs->percent_title);
-                                                                    
-                                                                    $title_ar =    explode(',', $gs->percent_title_ar);
-                                                                    
-                                                                @endphp
-																	 @foreach($title as $key => $data1)
-                          <li>
-                            <span>
-                            {{ $title[$key] }} :
-                            </span>
-                            <span>
-                            {{ $title_ar[$key] }}
-                            </span>
-                          </li>
+                                                @if (!empty($gs->percent_title))
+                                                    @php
+                                                        $title = explode(',', $gs->percent_title);
 
-                          @endforeach
-                        @endif
+                                                        $title_ar = explode(',', $gs->percent_title_ar);
+
+                                                    @endphp
+                                                    @foreach ($title as $key => $data1)
+                                                        <li>
+                                                            <span>
+                                                                {{ $title[$key] }} :
+                                                            </span>
+                                                            <span>
+                                                                {{ $title_ar[$key] }}
+                                                            </span>
+                                                        </li>
+                                                    @endforeach
+                                                @endif
                                             </ul>
 
                                             <div class="footer__subscribe-form footer__subscribe-form-2">
@@ -481,11 +487,13 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="footer__copyright-text">
-                                    <p style="text-align: center;">@if($langg->rtl == 1)
-                    {!! $gs->copyright_ar !!}
-                @else
-                    {!! $gs->copyright !!}
-                @endif</p>
+                                    <p style="text-align: center;">
+                                        @if ($langg->rtl == 1)
+                                            {!! $gs->copyright_ar !!}
+                                        @else
+                                            {!! $gs->copyright !!}
+                                        @endif
+                                    </p>
                                 </div>
                             </div>
 
@@ -513,11 +521,13 @@
                     <div class="sidebar-info-contents">
                         <div class="content-inner">
                             <div class="logo">
-                                <a href="{{route('front.index',$sign)}}"><img src="{{asset('assets/images/'.$gs->logo)}}" alt="" /></a>
+                                <a href="{{ route('front.index', $sign) }}"><img
+                                        src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="" /></a>
                             </div>
                             <div class="content-box">
                                 <h2>About Us</h2>
-                                <p class="text">We must explain to you how all seds this mistakens idea off denouncing
+                                <p class="text">We must explain to you how all seds this mistakens idea off
+                                    denouncing
                                     pleasures and praising pain was born and I will give you a completed accounts off
                                     the system and expound.</p>
                                 <a href="#" class="theme-btn btn-style-one"><i>Consultation</i></a>
@@ -588,7 +598,8 @@
                     <div class="cart-product">
                         <div class="inner">
                             <div class="cross-icon"><span class="icon icon-cross"></span></div>
-                            <div class="image"><img src="images/resource/treatment-three.jpg" alt="" /></div>
+                            <div class="image"><img src="images/resource/treatment-three.jpg" alt="" />
+                            </div>
                             <h3><a href="shop-single.html">Treatment Three</a></h3>
                             <div class="quantity-text">Quantity 1</div>
                             <div class="price">$99.00</div>
@@ -614,102 +625,98 @@
 
 
     <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="{{asset('assets/naglaa/js/jquery.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/popper.min.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/jquery-ui.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/jquery.fancybox.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/owl.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/paroller.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/wow.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/main.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/nav-tool.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/jquery-ui.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/aos.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/appear.js')}}"></script>
-    <script src="{{asset('assets/naglaa/js/script.js')}}"></script>
-    <script> AOS.init(); </script>
+    <script src="{{ asset('assets/naglaa/js/jquery.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/owl.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/paroller.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/wow.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/main.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/nav-tool.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/aos.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/appear.js') }}"></script>
+    <script src="{{ asset('assets/naglaa/js/script.js') }}"></script>
+    <script>
+        AOS.init();
+    </script>
 
 
 
 
-	
 
-	<script src="{{asset('assets/admin/js/toastr.js')}}"></script>
+
+    <script src="{{ asset('assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
-  var mainurl = "{{url('/'.$sign)}}";
-   var mainurl2 = "{{url('/')}}";
-  var gs      = {!! json_encode($gs) !!};
-  var langg    = {!! json_encode($langg) !!};
-  var mainurl2 = "{{url('/')}}";
-
-</script>
+        var mainurl = "{{ url('/' . $sign) }}";
+        var mainurl2 = "{{ url('/') }}";
+        var gs = {!! json_encode($gs) !!};
+        var langg = {!! json_encode($langg) !!};
+        var mainurl2 = "{{ url('/') }}";
+    </script>
     <Script>
-   $(document).on('submit','#subscribeform',function(e){
-        e.preventDefault();
-        console.log(12);
-        $('#sub-btn').prop('disabled',true);
-        console.log(13);
-        $.ajax({
-            method:"POST",
-            url:$(this).prop('action'),
-            data:new FormData(this),
-            contentType: false,
-            cache: false,
-            processData: false,
-            success:function(data)
-            {
-                console.log(14);
-                if ((data.errors)) {
-                    console.log(15);
-                    $('.alert-danger').show();
-                    $('.alert-danger ul').html('');
-                    for(var error in data.errors)
-                    {
-                        $('.alert-danger ul').append('<li>'+ data.errors[error] +'</li>');
+        $(document).on('submit', '#subscribeform', function(e) {
+            e.preventDefault();
+            console.log(12);
+            $('#sub-btn').prop('disabled', true);
+            console.log(13);
+            $.ajax({
+                method: "POST",
+                url: $(this).prop('action'),
+                data: new FormData(this),
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function(data) {
+                    console.log(14);
+                    if ((data.errors)) {
+                        console.log(15);
+                        $('.alert-danger').show();
+                        $('.alert-danger ul').html('');
+                        for (var error in data.errors) {
+                            $('.alert-danger ul').append('<li>' + data.errors[error] + '</li>');
+                        }
+
+                    } else {
+                        console.log(16);
+                        toastr.success(langg.subscribe_success);
+                        $('.alert-danger').hide();
+                        $('.alert-success').show();
+                        $('.alert-success p').html(langg.subscribe_success);
+
                     }
 
-                }
-                else {
-                    console.log(16);
-                    toastr.success(langg.subscribe_success);
-                    $('.alert-danger').hide();
-                    $('.alert-success').show();
-                    $('.alert-success p').html(langg.subscribe_success);
+                    $('#sub-btn').prop('disabled', false);
+
 
                 }
 
-                $('#sub-btn').prop('disabled',false);
-
-
-            }
+            });
 
         });
-
-    });
-
-
     </script>
     {!! $seo->google_analytics !!}
 
-@if($gs->is_talkto == 1)
-  <!--Start of Tawk.to Script-->
-    {!! $gs->talkto !!}
-  <!--End of Tawk.to Script-->
-@endif 
-@if($gs->is_drift == 1)
-  <!--Start of drift.to Script-->
-    {!! $gs->drift !!}
-  <!--End of drift.to Script-->
-@endif 
-@if($gs->is_messenger == 1)
-  <!--Start of drift.to Script-->
-    {!! $gs->messenger !!}
-  <!--End of drift.to Script-->
-@endif
-  @yield('js')
+    @if ($gs->is_talkto == 1)
+        <!--Start of Tawk.to Script-->
+        {!! $gs->talkto !!}
+        <!--End of Tawk.to Script-->
+    @endif
+    @if ($gs->is_drift == 1)
+        <!--Start of drift.to Script-->
+        {!! $gs->drift !!}
+        <!--End of drift.to Script-->
+    @endif
+    @if ($gs->is_messenger == 1)
+        <!--Start of drift.to Script-->
+        {!! $gs->messenger !!}
+        <!--End of drift.to Script-->
+    @endif
+    @yield('js')
 </body>
 
 </html>

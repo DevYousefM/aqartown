@@ -76,7 +76,7 @@ class VendorController extends Controller
         if ($file = $request->file('shop_image')) 
          {      
             $name = time().$file->getClientOriginalName();
-            $file->move('assets/images/vendorbanner',$name);           
+            $file->move('public/assets/images/vendorbanner',$name);           
             $input['shop_image'] = $name;
         }
 
@@ -212,7 +212,7 @@ class VendorController extends Controller
                         else {
                             $input['attachments'] .= $name.',';
                         }
-                        $file->move('assets/images/attachments',$name);
+                        $file->move('public/assets/images/attachments',$name);
 
                     $i++;
                     }

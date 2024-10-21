@@ -24,7 +24,7 @@ class mobilebannersController extends Controller
         //--- Integrating This Collection Into Datatables
         return Datatables::of($datas)
             ->editColumn('photo', function (AdsBanner $data) {
-                $photo = $data->photo ? url('assets/images/adsbanner/' . $data->photo) : url('assets/images/noimage.png');
+                $photo = $data->photo ? url('public/assets/images/adsbanner/' . $data->photo) : url('public/assets/images/noimage.png');
                 return '<img src="' . $photo . '" alt="Image">';
             })
             ->editColumn('title', function (AdsBanner $data) {
@@ -73,7 +73,7 @@ class mobilebannersController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/adsbanner', $name);
+            $file->move('public/assets/images/adsbanner', $name);
             $input['photo'] = $name;
         }
         $data->fill($input)->save();
@@ -112,7 +112,7 @@ class mobilebannersController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/adsbanner', $name);
+            $file->move('public/assets/images/adsbanner', $name);
             if ($data->photo != null) {
                 if (file_exists(public_path() . '/assets/images/adsbanner/' . $data->photo)) {
                     unlink(public_path() . '/assets/images/adsbanner/' . $data->photo);

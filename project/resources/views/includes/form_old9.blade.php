@@ -1,16 +1,15 @@
-<section
-        data-bg="{{asset('assets/images/'.$gs->new_icon)}}"
-        class="appointment-area ptb-100 jarallax rocket-lazyload entered lazyloaded"
-        style="background-image: url(&quot;https://drahmednabilelhoufy.com/wp-content/uploads/2020/09/computer-desk-laptop-stethoscope-48604-scaled-1.jpg&quot;);"
-        data-jarallax="{&quot;speed&quot;: 0.3}" data-ll-status="loaded">
+<section data-bg="{{ asset('public/assets/images/' . $gs->new_icon) }}"
+    class="appointment-area ptb-100 jarallax rocket-lazyload entered lazyloaded"
+    style="background-image: url(&quot;https://drahmednabilelhoufy.com/wp-content/uploads/2020/09/computer-desk-laptop-stethoscope-48604-scaled-1.jpg&quot;);"
+    data-jarallax="{&quot;speed&quot;: 0.3}" data-ll-status="loaded">
     <div class="container">
         <div class="appointment-content">
             <span class="sub-title">{{ $langg->lang3 }} </span>
             <h2>{{ $langg->lang6 }} </h2>
-            {{--https://drahmednabilelhoufy.com/wp-admin/admin-post.php novalidate="novalidate"--}}
-            <form action="{{route('front.appointment.submit')}}" method="post" class="reserve-form" id="appointment-form"
-                  enctype="multipart/form-data" >
-                {{csrf_field()}}
+            {{-- https://drahmednabilelhoufy.com/wp-admin/admin-post.php novalidate="novalidate" --}}
+            <form action="{{ route('front.appointment.submit') }}" method="post" class="reserve-form"
+                id="appointment-form" enctype="multipart/form-data">
+                {{ csrf_field() }}
                 <div class="form-group w-100">
                     <div class="response w-100"></div>
                 </div>
@@ -22,7 +21,8 @@
                                 <i class="linearicons-user"></i>
                             </div>
                             <label>{{ $langg->lang47 }}</label>
-                            <input type="text" required class="form-control fname" placeholder="{{ $langg->lang47 }} *" id="name" name="name">
+                            <input type="text" required class="form-control fname"
+                                placeholder="{{ $langg->lang47 }} *" id="name" name="name">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -46,7 +46,8 @@
                                 <i class="linearicons-phone"></i>
                             </div>
                             <label>{{ $langg->lang48 }}</label>
-                            <input type="text" required class="form-control" placeholder="{{ $langg->lang48 }}* " id="text" name="phone">
+                            <input type="text" required class="form-control" placeholder="{{ $langg->lang48 }}* "
+                                id="text" name="phone">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -55,8 +56,8 @@
                                 <i class="linearicons-envelope"></i>
                             </div>
                             <label>{{ $langg->lang49 }} </label>
-                            <input type="email" class="form-control" placeholder="{{ $langg->lang49 }}" id="email"
-                                   name="email">
+                            <input type="email" class="form-control" placeholder="{{ $langg->lang49 }}"
+                                id="email" name="email">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -65,7 +66,8 @@
                                 <i class="fas fa-weight"></i>
                             </div>
                             <label>{{ $langg->lang8 }}</label>
-                            <input type="number" class="form-control" placeholder="{{ $langg->lang8 }}" id="text" name="weight">
+                            <input type="number" class="form-control" placeholder="{{ $langg->lang8 }}" id="text"
+                                name="weight">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -74,7 +76,8 @@
                                 <i class="fas fa-arrows-alt-v"></i>
                             </div>
                             <label>{{ $langg->lang53 }}</label>
-                            <input type="number" class="form-control" placeholder="{{ $langg->lang53 }}" id="text" name="height">
+                            <input type="number" class="form-control" placeholder="{{ $langg->lang53 }}"
+                                id="text" name="height">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12">
@@ -83,7 +86,8 @@
                                 <i class="fas fa-hourglass"></i>
                             </div>
                             <label>{{ $langg->lang35 }}</label>
-                            <input type="number" class="form-control" placeholder="{{ $langg->lang35 }}" id="text" name="age">
+                            <input type="number" class="form-control" placeholder="{{ $langg->lang35 }}"
+                                id="text" name="age">
                         </div>
                     </div>
                     <div class="col-lg-12 col-md-12">
@@ -95,23 +99,24 @@
                             <textarea type="text" class="form-control" placeholder="{{ $langg->lang50 }}" id="text" name="message"></textarea>
                         </div>
                     </div>
-                    @if($gs->is_capcha == 1)
-
+                    @if ($gs->is_capcha == 1)
                         <ul class="captcha-area">
                             <li>
-                                <p><img class="codeimg1" src="{{asset("assets/images/capcha_code.png")}}" alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
+                                <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                        alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                             </li>
                             <li>
-                                <input name="codes" type="text" class="input-field" placeholder="{{ $langg->lang51 }}" required="">
+                                <input name="codes" type="text" class="input-field"
+                                    placeholder="{{ $langg->lang51 }}" required="">
 
                             </li>
                         </ul>
-
                     @endif
                     <div class="col-lg-12 col-md-12">
                         <div class="submit-btn">
-                            <button class="btn btn-primary">{{ $langg->lang36 }}  <i class="linearicons-paper-plane"></i></button>
+                            <button class="btn btn-primary">{{ $langg->lang36 }} <i
+                                    class="linearicons-paper-plane"></i></button>
                         </div>
                     </div>
                 </div>

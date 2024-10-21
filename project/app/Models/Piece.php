@@ -26,7 +26,7 @@ class Piece extends Model {
     
    public function upload($name,$file,$oldname)
     {
-                $file->move('assets/images/coupon/',$name);
+                $file->move('public/assets/images/coupon/',$name);
                 if($oldname != null)
                 {
                     if (file_exists(public_path().'/assets/images/coupon/'.$oldname)) {
