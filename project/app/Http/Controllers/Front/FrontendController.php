@@ -185,7 +185,7 @@ class FrontendController extends Controller
         $works =  Zone::where('status', 1)->get();
         $types =  City::where('status', 1)->get();
         $locations =  Country::where('status', 1)->get();
-        
+
         return view('front.index', compact('ps', 'sliders', 'locations', 'types', 'blogs', 'works', 'images', 'our_teams', 'counters', 'categoriess', 'subcategories', 'about_uss', 'categoriesss', 'services', 'reviews', 'partners', 'fix_banners'));
     }
 
@@ -1405,7 +1405,6 @@ class FrontendController extends Controller
     // Capcha Code Image
     private function  code_image()
     {
-        $actual_path = base_path('public/');
         $image = imagecreatetruecolor(200, 50);
         $background_color = imagecolorallocate($image, 255, 255, 255);
         imagefilledrectangle($image, 0, 0, 200, 50, $background_color);
@@ -1415,7 +1414,7 @@ class FrontendController extends Controller
             imagesetpixel($image, rand() % 200, rand() % 50, $pixel);
         }
 
-        $font = $actual_path . 'assets/front/fonts/NotoSans-Bold.ttf'; // Correct path for the font file
+        $font = 'assets/front/fonts/NotoSans-Bold.ttf'; // Correct path for the font file
 
         $allowed_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $length = strlen($allowed_letters);
