@@ -1433,7 +1433,7 @@ class FrontendController extends Controller
             imagesetpixel($image, rand() % 200, rand() % 50, $pixels);
         }
         session(['captcha_string' => $word]);
-        imagepng($image, $actual_path . "assets/images/capcha_code.png");
+        imagepng($image, "assets/images/capcha_code.png");
     }
 
     // -------------------------------- CONTACT SECTION ENDS----------------------------------------
