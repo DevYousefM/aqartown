@@ -182,7 +182,7 @@
                                                         {{ $productt->subcategory->name }}
                                                     @endif
                                                 </a></label> <label itemprop="floorSize">
-                                                <img alt="size" src="{{ url('public/assets/aqar/images/size.svg') }}">
+                                                <img alt="size" src="{{ url('assets/aqar/images/size.svg') }}">
                                                 {{ $productt->location }}
                                             </label></label></div>
                                     <ul class="image-carousel owl-carousel owl-theme">
