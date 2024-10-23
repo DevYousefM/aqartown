@@ -25,7 +25,7 @@
                     <div class="product-description">
                         <div class="body-area">
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-gs-update') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -99,7 +99,7 @@
                                 </div>-->
                                 <div class="add-logo-area">
                                     <div class="gocover"
-                                        style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                        style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col-xl-6 col-md-6">
@@ -112,7 +112,7 @@
 
 
                                                 <div class="currrent-logo">
-                                                    <img src="{{ $gs->home_about_img2 ? asset('public/assets/images/' . $gs->home_about_img2) : asset('public/assets/images/noimage.png') }}"
+                                                    <img src="{{ $gs->home_about_img2 ? asset('assets/images/' . $gs->home_about_img2) : asset('assets/images/noimage.png') }}"
                                                         alt="">
                                                 </div>
                                                 <div class="set-logo">
@@ -134,7 +134,7 @@
                               </div>
 
                               <div class="currrent-logo">
-                                  <img src="{{ $gs->home_about_img4 ? asset('public/assets/images/' . $gs->home_about_img4) : asset('public/assets/images/noimage.png') }}" alt="">
+                                  <img src="{{ $gs->home_about_img4 ? asset('assets/images/' . $gs->home_about_img4) : asset('assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                   <input class="img-upload1" type="file" name="home_about_img4">
@@ -153,7 +153,7 @@
                               </div>
 
                               <div class="currrent-logo">
-                                  <img src="{{ $gs->home_about_img5 ? asset('public/assets/images/' . $gs->home_about_img5) : asset('public/assets/images/noimage.png') }}" alt="">
+                                  <img src="{{ $gs->home_about_img5 ? asset('assets/images/' . $gs->home_about_img5) : asset('assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                   <input class="img-upload1" type="file" name="home_about_img5">
@@ -173,7 +173,7 @@
 
 
                               <div class="currrent-logo">
-                                  <img src="{{ $gs->home_about_img3 ? asset('public/assets/images/' . $gs->home_about_img3) : asset('public/assets/images/noimage.png') }}" alt="">
+                                  <img src="{{ $gs->home_about_img3 ? asset('assets/images/' . $gs->home_about_img3) : asset('assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                   <input class="img-upload1" type="file" name="home_about_img3">
@@ -195,7 +195,7 @@
                            
                                 
                               <div class="currrent-logo">
-                                <img src="{{ $gs->home_about_img1 ? asset('public/assets/images/' . $gs->home_about_img1) : asset('public/assets/images/noimage.png') }}" alt="">
+                                <img src="{{ $gs->home_about_img1 ? asset('assets/images/' . $gs->home_about_img1) : asset('assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                 <input class="img-upload1" type="file" name="home_about_img1">

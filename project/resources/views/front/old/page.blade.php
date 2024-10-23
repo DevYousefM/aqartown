@@ -18,7 +18,7 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->new_icon) }});"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/' . $gs->new_icon) }});"></div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
                     <h1 class="mb-0">

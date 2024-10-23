@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-12">
                     <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-                        <img src="{{ asset('public/assets/images/' . $gs->best_icon) }}" alt="{{ $langg->lang16 }}">
+                        <img src="{{ asset('assets/images/' . $gs->best_icon) }}" alt="{{ $langg->lang16 }}">
 
                     </div><!-- Page Title Wrap -->
                 </div>
@@ -84,7 +84,7 @@
                             </p>
                         </div>
                         <div class="col-lg-6 d-flex justify-content-lg-end" data-aos="zoom-in" data-aos-delay="300">
-                            <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                            <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}"
                                 alt="@if ($langg->rtl == 1) {{ $about_us->title_ar }}
 								@else
 
@@ -102,7 +102,7 @@
                 <div class="col-lg-6">
                     <div class="appointment__wrapIllustration position-relative" data-aos="fade-down">
                         <img class="appointment__illustration position-relative"
-                            src="{{ asset('public/assets/images/' . $gs->discount_icon) }}" alt="Illustration">
+                            src="{{ asset('assets/images/' . $gs->discount_icon) }}" alt="Illustration">
                         <img class="appointment__arrow position-absolute"
                             src="{{ asset('assets/cangrow/images/svg/appointment-arrow.svg') }}" alt="Arrow">
                     </div>
@@ -174,7 +174,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>

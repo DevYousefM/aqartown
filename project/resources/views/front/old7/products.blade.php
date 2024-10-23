@@ -20,7 +20,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->top_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->top_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -57,7 +57,7 @@
                             <div class="card-content">
                                 <div class="card-front">
                                     <div class="img-div">
-                                        <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                        <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}"
                                             alt="img">
                                     </div>
                                     <div class="title">
@@ -138,7 +138,7 @@
 
                 @foreach ($images as $data)
                     <div class="item">
-                        <img src="{{ asset('public/assets/images/ads/' . $data->photo) }}" alt="">
+                        <img src="{{ asset('assets/images/ads/' . $data->photo) }}" alt="">
                     </div>
                 @endforeach
             </div>

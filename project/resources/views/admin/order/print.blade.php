@@ -22,7 +22,7 @@
     <link href="{{ asset('assets/print/css/print.css') }}" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <link rel="icon" type="image/png" href="{{ asset('public/assets/images/' . $gs->favicon) }}">
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/' . $gs->favicon) }}">
     <style type="text/css">
         @page {
             size: auto;
@@ -59,7 +59,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="invoice__logo text-left">
-                        <img src="{{ asset('public/assets/images/' . $gs->invoice_logo) }}" alt="woo commerce logo">
+                        <img src="{{ asset('assets/images/' . $gs->invoice_logo) }}" alt="woo commerce logo">
                     </div>
                 </div>
             </div>

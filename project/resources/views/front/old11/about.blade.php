@@ -18,7 +18,7 @@
 
     <!-- =====slider home ===== -->
     <!-- Main Slider -->
-    <section class="breadcrumb-area" style="background-image: url({{ asset('public/assets/images/' . $gs->feature_icon) }});">
+    <section class="breadcrumb-area" style="background-image: url({{ asset('assets/images/' . $gs->feature_icon) }});">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -69,18 +69,18 @@
 
                             <div class="col-lg-7 mb-30">
                                 <div class="about-images-2">
-                                    <img src="{{ asset('public/assets/images/' . $gs->home_about_img2) }}" alt=""> <a
+                                    <img src="{{ asset('assets/images/' . $gs->home_about_img2) }}" alt=""> <a
                                         href="{{ $gs->home_about_link }}" class="video-btn venobox vbox-item"
                                         data-autoplay="true" data-vbtype="video"> <i class="fa fa-play"></i> <span>Play
                                             Video</span> </a>
                                 </div>
                                 <div class="about-images-3 mt-30"> <img
-                                        src="{{ asset('public/assets/images/' . $gs->home_about_img4) }}" alt="">
+                                        src="{{ asset('assets/images/' . $gs->home_about_img4) }}" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-5 mb-30">
                                 <div class="about-images-1"> <img
-                                        src="{{ asset('public/assets/images/' . $gs->home_about_img5) }}" alt="">
+                                        src="{{ asset('assets/images/' . $gs->home_about_img5) }}" alt="">
                                 </div>
                             </div>
                         </div>

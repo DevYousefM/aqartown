@@ -16,7 +16,7 @@
 
     @endphp
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->new_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->new_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang13 }} </h1>

@@ -96,7 +96,7 @@
 
             ],
             language: {
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset('assets/images/' . $gs->admin_loader) }}">'
             }
         });
 

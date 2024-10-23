@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -29,7 +29,7 @@
                     @endphp
                     <!--first slider-->
                     <div class="swiper-slide">
-                        <div class="slide-bg-img" data-background="{{ asset('/public/assets/images/sliders/' . $galss) }}">
+                        <div class="slide-bg-img" data-background="{{ asset('/assets/images/sliders/' . $galss) }}">
                             <div class="overlay-color"></div>
                         </div>
                         <div class="container">
@@ -122,7 +122,7 @@
                         </div> -->
                             <div class="image">
                                 <div class="overlay-color"></div><img class="img-fluid about-img  video-thumb "
-                                    src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" alt="Our vision">
+                                    src="{{ asset('assets/images/' . $gs->home_about_img1) }}" alt="Our vision">
                             </div>
                             <div class="video-wrapper on-start">
                                 <div class="play-btn-col-dir"><a class="video-link" href="{{ $gs->home_about_link }}"
@@ -180,7 +180,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--    {{asset('public/assets/images/categories/'.$cat->photo)}} --}}
+                            {{--    {{asset('assets/images/categories/'.$cat->photo)}} --}}
                             <div class="back-face">
                                 <div class="bg-img-wrapper"><img class="bg-img"
                                         src="assets/images/services/وحدات-التخزين.png" alt="bg-img" /></div>
@@ -237,7 +237,7 @@
                     <div class="swiper-slide">
                         <div class="item "><a class="portfolio-img-link " href="#">
                                 <div class="overlay overlay-color"></div><img class="  portfolio-img img-fluid  "
-                                    src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt=" ">
+                                    src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt=" ">
                             </a>
                             <div class="item-info "><span></span>
                                 {{-- <h3 class="item-title">HPL</h3> --}}
@@ -280,7 +280,7 @@
                                     <div class="testmonial-card d-flex align-items-center justify-content-center">
                                         <div class="testimonial-content">
                                             <div class="customer-info "><img class="img-fluid "
-                                                    src="{{ $review->photo ? asset('public/assets/images/reviews/' . $review->photo) : asset('public/assets/images/noimage.png') }}"
+                                                    src="{{ $review->photo ? asset('assets/images/reviews/' . $review->photo) : asset('assets/images/noimage.png') }}"
                                                     alt="First Slide ">
                                                 <div class="customer-details">
                                                     <p class="customer-name">

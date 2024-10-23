@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -26,7 +26,7 @@
                 @endphp
                 <div class="swiper-slide">
                     <div class="slider-img">
-                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="img">
+                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="img">
                     </div>
                     <div class="slider-text">
                         <div class="loopy-div"></div>
@@ -125,7 +125,7 @@
                     <div class="heading-left">
                         <span class="draw-line"></span>
                     </div>
-                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                    <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="">
 
                     <div class="heading-right">
                         <span class="draw-line"></span>
@@ -144,7 +144,7 @@
 
                 @foreach ($images as $image)
                     <div class="img-div">
-                        <img src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt="img">
+                        <img src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt="img">
                     </div>
                 @endforeach
 
@@ -178,7 +178,7 @@
                             class="product-card">
                             <div class="img-div lazy-div">
                                 <img class="lazy"
-                                    data-src="{{ asset('public/assets/images/categories/' . $cat->photo) }}"
+                                    data-src="{{ asset('assets/images/categories/' . $cat->photo) }}"
                                     alt="png">
                                 <div class="next-lazy-img"></div>
                             </div>
@@ -281,7 +281,7 @@
                             @foreach ($reviews as $review)
                                 <div class="swiper-slide">
                                     <div class="img-div">
-                                        <img src="{{ $review->photo ? asset('public/assets/images/reviews/' . $review->photo) : asset('public/assets/images/noimage.png') }}"
+                                        <img src="{{ $review->photo ? asset('assets/images/reviews/' . $review->photo) : asset('assets/images/noimage.png') }}"
                                             alt="img">
                                     </div>
 

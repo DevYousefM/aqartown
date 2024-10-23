@@ -376,9 +376,9 @@ $(document).ready(function () {
       focusOnSelect: true,
       vertical: false,
       prevArrow:
-        "<button type='button' class='slick-prev'><img src='public/assets/images/arrow-left.png' alt='Arrow Left'></button>",
+        "<button type='button' class='slick-prev'><img src='assets/images/arrow-left.png' alt='Arrow Left'></button>",
       nextArrow:
-        "<button type='button' class='slick-next'><img src='public/assets/images/arrow-right.png' alt='Arrow Right'></button>",
+        "<button type='button' class='slick-next'><img src='assets/images/arrow-right.png' alt='Arrow Right'></button>",
       responsive: [
         {
           breakpoint: 981,

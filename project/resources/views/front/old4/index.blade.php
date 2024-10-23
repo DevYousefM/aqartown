@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -22,7 +22,7 @@
                     $galss = str_replace(' ', '%20', $slide->photo);
                 @endphp
                 <div class="slide-item"
-                    style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }});">
+                    style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }});">
                     <div class="container">
 
                         <div class="content-box">
@@ -52,7 +52,7 @@
     <div class="home-about-section" id="about-section" data-aos="zoom-in">
         <div class="first-section container">
             <div class="img-div" data-aos="fade-right" data-aos-duration="2000">
-                <img src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" alt="img">
+                <img src="{{ asset('assets/images/' . $gs->home_about_img1) }}" alt="img">
             </div>
             <div class="ceo" data-aos="fade-left" data-aos-duration="2000">
                 <div class="text">
@@ -110,7 +110,7 @@
                                               
                                             @else
                                               {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
-                                        <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
+                                        <img src="{{ asset('assets/images/categories/' . $category->photo) }}"
                                             alt=""></a>
                                 </div>
                                 <div class="lower-content">
@@ -176,7 +176,7 @@
                     data-aos="fade-right" @endif>
                         <div class="inner-box">
                             <div class="image">
-                                <img src="{{ asset('public/assets/images/services/' . $service->photo) }}"
+                                <img src="{{ asset('assets/images/services/' . $service->photo) }}"
                                     alt="" />
 
                                 <div class="overlay-box">
@@ -189,7 +189,7 @@
                                                     href="#">{{ $langg->rtl == 1 ? $service->name_ar : $service->name }}</a>
                                             </h3>
                                             <a class="plus"
-                                                href="{{ asset('public/assets/images/services/' . $service->photo) }}"
+                                                href="{{ asset('assets/images/services/' . $service->photo) }}"
                                                 data-fancybox="gallery-1" data-caption=""><span
                                                     class="flaticon-plus-symbol"></span></a>
                                         </div>
@@ -228,7 +228,7 @@
 
                             </div>
                             <div class="image-box">
-                                <img src="{{ asset('public/assets/images/reviews/' . $review->photo) }}" alt="" />
+                                <img src="{{ asset('assets/images/reviews/' . $review->photo) }}" alt="" />
                             </div>
                         </div>
                     </div>
@@ -272,7 +272,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

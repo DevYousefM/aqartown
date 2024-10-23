@@ -88,7 +88,7 @@
 
                             <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}">
 
-                                <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
                                     alt="Shape">
 
                             </a>

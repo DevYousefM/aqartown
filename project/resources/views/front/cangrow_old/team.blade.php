@@ -57,8 +57,8 @@
                                 data-aos="zoom-out" data-aos-delay="100">
                                 <div class="sk-spinner sk-spinner-pulse"></div>
                                 <img class="ourTeam__image position-absolute h-100 w-100 b-lazy"
-                                    data-src="{{ asset('public/assets/images/services/' . $data->photo) }}"
-                                    src="{{ asset('public/assets/images/services/' . $data->photo) }}"
+                                    data-src="{{ asset('assets/images/services/' . $data->photo) }}"
+                                    src="{{ asset('assets/images/services/' . $data->photo) }}"
                                     alt="@if ($langg->rtl == 1) {!! $data->name_ar !!}
 										@else
 
@@ -131,8 +131,8 @@
         </section>
         <div class="pageTeam__wrapVideo" data-aos="fade">
             <div class="sk-spinner sk-spinner-pulse"></div>
-            <img class="pageTeam__bg-video b-lazy" data-src="{{ asset('public/assets/images/' . $gs->hot_icon) }}"
-                src="{{ asset('public/assets/images/' . $gs->hot_icon) }}" alt="">
+            <img class="pageTeam__bg-video b-lazy" data-src="{{ asset('assets/images/' . $gs->hot_icon) }}"
+                src="{{ asset('assets/images/' . $gs->hot_icon) }}" alt="">
             <button type="button" class="pageTeam__showVideoBtn">
                 <img src="{{ asset('assets/cangrow/images/svg/show_video.svg') }}" alt="">
             </button>
@@ -144,7 +144,7 @@
                 <div class="col-lg-6">
                     <div class="appointment__wrapIllustration position-relative" data-aos="fade-down">
                         <img class="appointment__illustration position-relative"
-                            src="{{ asset('public/assets/images/' . $gs->discount_icon) }}" alt="Illustration">
+                            src="{{ asset('assets/images/' . $gs->discount_icon) }}" alt="Illustration">
                         <img class="appointment__arrow position-absolute"
                             src="{{ asset('assets/cangrow/images/svg/appointment-arrow.svg') }}" alt="Arrow">
                     </div>
@@ -216,7 +216,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>

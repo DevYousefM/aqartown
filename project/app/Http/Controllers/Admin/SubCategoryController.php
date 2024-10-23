@@ -100,7 +100,7 @@ class SubCategoryController extends Controller
 
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('public/assets/images/subcategories', $name);
+            $file->move('assets/images/subcategories', $name);
             $input['photo'] = $name;
         }
 
@@ -185,10 +185,10 @@ class SubCategoryController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('public/assets/images/subcategories', $name);
+            $file->move('assets/images/subcategories', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/subcategories/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/subcategories/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/subcategories/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/subcategories/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -432,8 +432,8 @@ class SubCategoryController extends Controller
 
 
                 //If Photo Exist
-                if (file_exists(public_path() . '/public/assets/images/subcategories/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/subcategories/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/subcategories/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/subcategories/' . $data->photo);
                 }
 
                 $data->delete();

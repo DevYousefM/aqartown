@@ -43,7 +43,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -112,7 +112,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -122,8 +122,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset('assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -149,7 +149,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
@@ -218,7 +218,7 @@
         <div class="main-header-md-ul-div">
             <div class="img-ul-div">
                 <a class="logo-img">
-                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="img" />
+                    <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="img" />
                 </a>
                 <ul class="main-header-md-ul">
                     <li class="active-li">
@@ -422,7 +422,7 @@
                 <div class="block-wrapper">
                     <div class="logo-img">
                         <a href="{{ route('front.index', $sign) }}">
-                            <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="img" />
+                            <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="img" />
                         </a>
                     </div>
                     <div class="header-lg-ul-div"></div>
@@ -445,7 +445,7 @@
                 <div class="section-one">
                     <div class="section-body">
                         <a href="{{ route('front.index', $sign) }}" class="logo-img">
-                            <img src="{{ asset('public/assets/images/' . $gs->contact_icon) }}" alt="img">
+                            <img src="{{ asset('assets/images/' . $gs->contact_icon) }}" alt="img">
                         </a>
                         <div class="text">
                             <p>
@@ -782,7 +782,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },
@@ -846,7 +846,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#appointment-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },

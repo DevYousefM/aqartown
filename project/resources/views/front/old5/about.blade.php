@@ -18,7 +18,7 @@
 
 
 
-    <div class="page-banner-area" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+    <div class="page-banner-area" style="background-image: url({{ asset('assets/images/' . $gs->best_icon) }});">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang16 }}</h2>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="about-image">
-                            <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}" alt="image">
+                            <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}" alt="image">
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@
                         </div>
                         <p>{!! $langg->rtl == 1 ? $review->details_ar : $review->details !!}</p>
                         <div class="review-info">
-                            <img src="{{ asset('public/assets/images/reviews/' . $review->photo) }}" alt="image">
+                            <img src="{{ asset('assets/images/reviews/' . $review->photo) }}" alt="image">
                             <h3>{{ $langg->rtl == 1 ? $review->title_ar : $review->title }}</h3>
                             <span>{{ $langg->rtl == 1 ? $review->subtitle_ar : $review->subtitle }}</span>
                         </div>

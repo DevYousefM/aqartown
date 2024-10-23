@@ -21,7 +21,7 @@
 
 
     <section class="medicen-aboutUs text-center"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->trending_icon) }});">
+        style="background-image: url({{ asset('assets/images/' . $gs->trending_icon) }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-6">
@@ -53,9 +53,9 @@
             <div class="gallery-layout">
                 <div class="home-light-gallery">
                     @foreach ($images as $key => $data)
-                        <a href="{{ asset('public/assets/images/gallery/' . $data->photo) }}" data-aos="zoom-in"
+                        <a href="{{ asset('assets/images/gallery/' . $data->photo) }}" data-aos="zoom-in"
                             data-aos-duration="1500">
-                            <img src="{{ asset('public/assets/images/gallery/' . $data->photo) }}"
+                            <img src="{{ asset('assets/images/gallery/' . $data->photo) }}"
                                 alt="@if ($langg->rtl == 1) {{ $data->name_ar }}
 
                     @else

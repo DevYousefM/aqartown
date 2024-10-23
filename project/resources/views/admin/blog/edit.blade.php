@@ -121,7 +121,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->photo ? asset('public/assets/images/blogs/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->photo ? asset('assets/images/blogs/' . $data->photo) : asset('assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload"
@@ -139,7 +139,7 @@
                                                   </div>
                                                   <div class="col-lg-7">
                                                       <div class="img-upload">
-                                                          <div id="image-preview" class="img-preview" style="background: url({{ $data->image ? asset('public/assets/images/blogs/' . $data->image) : asset('public/assets/images/noimage.png') }});">
+                                                          <div id="image-preview" class="img-preview" style="background: url({{ $data->image ? asset('assets/images/blogs/' . $data->image) : asset('assets/images/noimage.png') }});">
                                                               <label for="image-uploade" class="img-label" id="image-labell"><i class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                               <input type="file" name="image" class="img-upload" id="image-uploade">
                                                           </div>

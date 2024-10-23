@@ -40,7 +40,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -109,7 +109,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -119,8 +119,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset('assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -146,7 +146,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
@@ -179,7 +179,7 @@
     <main>
         <div id="preloader">
             <div class="preloader-inner">
-                <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="">
             </div>
         </div>
         <header class="style2 w-100">
@@ -217,8 +217,8 @@
                         <div class="logo v2 z1 scndry-bg position-absolute text-center">
                             <h1 class="mb-0"><a class="d-block" href="{{ route('front.index', $sign) }}"
                                     title="{{ $langg->lang17 }}"><img class="img-fluid"
-                                        src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="Logo"
-                                        srcset="{{ asset('public/assets/images/' . $gs->logo) }}"></a></h1>
+                                        src="{{ asset('assets/images/' . $gs->logo) }}" alt="Logo"
+                                        srcset="{{ asset('assets/images/' . $gs->logo) }}"></a></h1>
                         </div>
                         <nav class="d-flex flex-wrap align-items-center justify-content-between w-100">
                             <div class="header-left" style="margin-right: 142px;">
@@ -299,8 +299,8 @@
                     <div class="logo">
                         <h1 class="mb-0"><a class="d-block" href="{{ route('front.index', $sign) }}"
                                 title="{{ $langg->lang17 }}"><img class="img-fluid"
-                                    src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="Logo"
-                                    srcset="{{ asset('public/assets/images/' . $gs->logo) }}"></a></h1>
+                                    src="{{ asset('assets/images/' . $gs->logo) }}" alt="Logo"
+                                    srcset="{{ asset('assets/images/' . $gs->logo) }}"></a></h1>
                     </div>
                     <nav class="d-flex flex-wrap align-items-center justify-content-between">
                         <div class="header-left" style="margin-right: 142px;">
@@ -385,7 +385,7 @@
                 margin-bottom: -100px;
             ">
                     <h1 class="mb-0 d-block"><a href="{{ route('front.index', $sign) }}"
-                            title="{{ $langg->lang17 }}"><img src="{{ asset('public/assets/images/' . $gs->logo) }}"
+                            title="{{ $langg->lang17 }}"><img src="{{ asset('assets/images/' . $gs->logo) }}"
                                 alt="Logo"></a></h1>
                 </div>
                 <div class="rspn-cnt">
@@ -460,7 +460,7 @@
         <footer>
             <div class="w-100 style2 pt-90 dark-layer opc9 pb-130 position-relative">
                 <div class="fixed-bg"
-                    style="background-image: url({{ asset('public/assets/images/' . $gs->feature_icon) }});"></div>
+                    style="background-image: url({{ asset('assets/images/' . $gs->feature_icon) }});"></div>
                 <div class="container">
                     <div class="footer-data w-100">
                         <div class="row justify-content-between mrg30">
@@ -558,7 +558,7 @@
             <div class="container">
                 <div class="bottom-bar-inner d-flex flex-wrap align-items-center justify-content-center w-100">
                     <!-- <div class="logo v2 z1 bg-color10 position-relative">
-                            <h1 class="mb-0"><a class="d-block" href="{{ route('front.index', $sign) }}" title="{{ $langg->lang17 }}"><img class="img-fluid" src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="Logo" srcset="{{ asset('public/assets/images/' . $gs->logo) }}"></a></h1>
+                            <h1 class="mb-0"><a class="d-block" href="{{ route('front.index', $sign) }}" title="{{ $langg->lang17 }}"><img class="img-fluid" src="{{ asset('assets/images/' . $gs->logo) }}" alt="Logo" srcset="{{ asset('assets/images/' . $gs->logo) }}"></a></h1>
                         </div> -->
                     <div class="copyright-links d-inline-flex flex-wrap align-items-center justify-content-between">
                         <p class="mb-0"><a href="{{ route('front.index', $sign) }}" title="Neurology">

@@ -19,7 +19,7 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('public/assets/images/' . $gs->discount_icon) }}" alt="" />
+                <img src="{{ asset('assets/images/' . $gs->discount_icon) }}" alt="" />
             </div>
         </div>
     </section>
@@ -73,7 +73,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },

@@ -62,7 +62,7 @@
 
     @endphp
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->top_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>
@@ -97,8 +97,8 @@
                     <div class="fotorama" data-direction="rtl" data-fit="cover" data-nav="thumbs"
                         data-allowfullscreen="true">
                         @foreach ($cat->galleries as $image)
-                            <a href="{{ asset('public/assets/images/galleries/' . $image->photo) }}">
-                                <img src="{{ asset('public/assets/images/galleries/' . $image->photo) }}" />
+                            <a href="{{ asset('assets/images/galleries/' . $image->photo) }}">
+                                <img src="{{ asset('assets/images/galleries/' . $image->photo) }}" />
                             </a>
                         @endforeach
 

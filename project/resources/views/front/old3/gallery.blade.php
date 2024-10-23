@@ -22,7 +22,7 @@
 
     <!--============= Start breadvroumb =============-->
 
-    <div class="breadvroumb_area" style="background-image: url({{ asset('public/assets/images/' . $gs->trending_icon) }});">
+    <div class="breadvroumb_area" style="background-image: url({{ asset('assets/images/' . $gs->trending_icon) }});">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -71,10 +71,10 @@
 
                     @foreach ($images as $key => $data)
                         <div class="col-md-4 mix a{{ $data->country_id }}">
-                            <a href="{{ asset('public/assets/images/gallery/' . $data->photo) }}"
+                            <a href="{{ asset('assets/images/gallery/' . $data->photo) }}"
                                 class="img_popup single_gallery ">
                                 <div class="gallery_img"
-                                    style="background-image: url({{ asset('public/assets/images/gallery/' . $data->photo) }});">
+                                    style="background-image: url({{ asset('assets/images/gallery/' . $data->photo) }});">
                                     <div class="gallery_hover_content">
                                         <i class="far fa-dot-circle"></i><!--
                                     <h5>غرفة عمليات</h5>

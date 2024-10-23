@@ -13,7 +13,7 @@
         "@id": "{{url('/item',$blog->slug)}}"
       },
       "headline": "{{$blog->title}}",
-      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('public/assets/images/blogs/'.$blog->photo)}}",
+      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('assets/images/blogs/'.$blog->photo)}}",
 
 
       "datePublished": "{{$blog->created_at}}",
@@ -47,7 +47,7 @@
 @section('content')
 
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->hot_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->hot_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>
@@ -78,7 +78,7 @@
     <div class="news-details-page">
         <div class="details-wrapper">
             <div class="news-img">
-                <img src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}" alt="img">
+                <img src="{{ asset('assets/images/blogs/' . $blog->photo) }}" alt="img">
             </div>
             <div class="news-body">
                 <div class="news-heading-date">

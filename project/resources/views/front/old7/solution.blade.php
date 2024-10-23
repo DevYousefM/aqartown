@@ -50,7 +50,7 @@
     @endphp
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->big_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->big_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -155,7 +155,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <img style="width: 100%;" src="{{ asset('public/assets/images/products/' . $solution->hover_photo) }}"
+                    <img style="width: 100%;" src="{{ asset('assets/images/products/' . $solution->hover_photo) }}"
                         alt="">
                 </div>
 
@@ -187,7 +187,7 @@
                                             
                                                 {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
                                 <div class="single-team-typ-1-wraper">
-                                    <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
+                                    <img src="{{ asset('assets/images/categories/' . $category->photo) }}"
                                         alt="img">
                                     <div class="team-typ-1-hvr text-white">
                                         <p>
@@ -238,7 +238,7 @@
                                 <div class="card-content">
                                     <div class="card-front">
                                         <div class="img-div">
-                                            <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                            <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}"
                                                 alt="img">
                                         </div>
                                         <div class="title">

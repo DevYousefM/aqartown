@@ -13,7 +13,7 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->contact_icon) }});">
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/' . $gs->contact_icon) }});">
             </div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
@@ -100,7 +100,7 @@
                                                 <ul class="captcha-area">
                                                     <li>
                                                         <p><img class="codeimg1"
-                                                                src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                                                src="{{ asset('assets/images/capcha_code.png') }}"
                                                                 alt=""> <i
                                                                 class="fas fa-sync-alt pointer refresh_code"></i></p>
 
@@ -184,7 +184,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

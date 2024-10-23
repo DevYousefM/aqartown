@@ -60,7 +60,7 @@
                             <div class="portfolio__work" data-aos="fade-up" data-aos-delay="600">
                                 <div class="portfolio__wrap-icons">
                                     <a class="portfolio__work-zoom-image"
-                                        href="{{ asset('public/assets/images/gallery/' . $data->photo) }}">
+                                        href="{{ asset('assets/images/gallery/' . $data->photo) }}">
                                         <img src="{{ asset('assets/cangrow/images/svg/zoom.svg') }}" alt="">
                                     </a>
                                     <a class="portfolio__work-share" href="#">
@@ -70,7 +70,7 @@
                                 <div class="portfolio__wrap-work-image">
                                     <div class="sk-spinner sk-spinner-pulse"></div>
                                     <img class="portfolio__image position-absolute h-100 w-100 b-lazy"
-                                        data-src="{{ asset('public/assets/images/gallery/' . $data->photo) }}"
+                                        data-src="{{ asset('assets/images/gallery/' . $data->photo) }}"
                                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                                         alt="Planning">
                                 </div>

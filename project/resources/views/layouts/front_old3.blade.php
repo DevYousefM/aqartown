@@ -40,7 +40,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -109,7 +109,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -119,8 +119,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset('assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -146,7 +146,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
@@ -253,7 +253,7 @@
 
                     <div class="logo-outer">
                         <div class="logo"><a href="{{ route('front.index', $sign) }}"><img
-                                    src="{{ asset('public/assets/images/' . $gs->logo) }}"></a></div>
+                                    src="{{ asset('assets/images/' . $gs->logo) }}"></a></div>
                     </div>
 
                     <nav class="elementskit-navbar">
@@ -355,7 +355,7 @@
                     <div class="col-md-6 col-lg-3 col-12">
                         <div class="footer_content_box">
                             <div class="footer_logo">
-                                <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                                <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="">
                             </div>
                             <div class="Subscribe-box">
                                 <p>{!! $langg->rtl == 1 ? $gs->footer_ar : $gs->footer !!}</p>

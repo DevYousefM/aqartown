@@ -18,7 +18,7 @@ class InfoController extends Controller
             return [
                 'id' => $product->id,
                 'name' => $request->lang == 'ar' ? $product->name_ar : $product->name,
-                'image' => url('public/assets/images/products/' . $product->photo),
+                'image' => url('assets/images/products/' . $product->photo),
                 'url' => route('front.product', ['slug' => $request->lang == 'ar' ? $product->slug_ar : $product->slug, 'lang' => $request->lang]),
                 'price' => $product->price
             ];
@@ -33,7 +33,7 @@ class InfoController extends Controller
             return [
                 'id' => $subcategory->id,
                 'name' => $request->lang == 'ar' ? $subcategory->name_ar : $subcategory->name,
-                'image' => url('public/assets/images/subcategories/' . $subcategory->photo),
+                'image' => url('assets/images/subcategories/' . $subcategory->photo),
                 'url' => route('front.category', ['category' => $request->lang == 'en' ? $subcategory->category->slug : $subcategory->category->slug_ar, 'subcategory' => $request->lang == 'en' ? $subcategory->slug : $subcategory->slug_ar, 'lang' => $request->lang]),
             ];
         });
@@ -46,7 +46,7 @@ class InfoController extends Controller
             return [
                 'id' => $image->id,
                 'title' => $request->lang == 'ar' ? $image->title_ar : $image->title,
-                'image' => url('public/assets/images/ads/' . $image->photo),
+                'image' => url('assets/images/ads/' . $image->photo),
             ];
         });
         return response()->json($images);

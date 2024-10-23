@@ -63,7 +63,7 @@
     @endphp
 
 
-    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+    <section class="page-title" style="background-image:url({{ asset('assets/images/' . $gs->best_icon) }});">
         <div class="auto-container">
             <h1>
                 @if (!empty($childcat))
@@ -172,7 +172,7 @@
 
 
                     <div id="before-after-container" class="twentytwenty-container">
-                        <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}">
+                        <img src="{{ asset('assets/images/categories/' . $cat->photo) }}">
 
                     </div>
                 </div>

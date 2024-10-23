@@ -43,7 +43,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -112,7 +112,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -122,8 +122,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset('assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -149,7 +149,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
@@ -224,7 +224,7 @@
                             <div class="info-list-inner">
                                 <div class="info info-panel-logo">
                                     <div class="logo"><img class="logo-img light-logo"
-                                            src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="logo"></div>
+                                            src="{{ asset('assets/images/' . $gs->logo) }}" alt="logo"></div>
                                     <h3 class="info-title ">Who We Are?</h3>
                                     <div class="info-text">
                                         <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -294,9 +294,9 @@
             <div class="container">
                 <nav class="menu-navbar">
                     <div class="header-logo"><a class="logo-link" href="{{ route('front.index', $sign) }}"><img
-                                class="logo-img light-logo" src="{{ asset('public/assets/images/' . $gs->logo) }}"
+                                class="logo-img light-logo" src="{{ asset('assets/images/' . $gs->logo) }}"
                                 alt="logo" /><img class="logo-img  dark-logo"
-                                src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="logo" /></a></div>
+                                src="{{ asset('assets/images/' . $gs->logo) }}" alt="logo" /></a></div>
                     <div class="links menu-wrapper ">
                         <ul class="list-js links-list">
                             <li class="menu-item"><a class="menu-link"
@@ -403,7 +403,7 @@
         <div class="container">
             <div class="row footer-cols">
                 <div class="col-12 col-md-8 col-lg-4  footer-col wow fadeInUp " data-wow-delay="0.3s"><img
-                        class="img-fluid footer-logo" src="{{ asset('public/assets/images/' . $gs->logo) }}"
+                        class="img-fluid footer-logo" src="{{ asset('assets/images/' . $gs->logo) }}"
                         alt="logo" />
                     <div class="footer-col-content-wrapper">
                         <p class="footer-text-about-us ">
@@ -682,7 +682,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },
@@ -746,7 +746,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#appointment-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },

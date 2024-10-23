@@ -131,7 +131,7 @@ class ChildCategoryController extends Controller
 
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('public/assets/images/childcategories', $name);
+            $file->move('assets/images/childcategories', $name);
             $input['photo'] = $name;
         }
 
@@ -227,10 +227,10 @@ class ChildCategoryController extends Controller
 
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('public/assets/images/childcategories', $name);
+            $file->move('assets/images/childcategories', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/childcategories/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/childcategories/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/childcategories/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/childcategories/' . $data->photo);
                 }
             }
             $input['photo'] = $name;

@@ -126,8 +126,8 @@ class {{modelName}}Controller extends Controller
                 $file->move('assets/images/{{modelNameSingularLowerCase}}',$name);
                 if($data->photo != null)
                 {
-                    if (file_exists(public_path().'/public/assets/images/{{modelNameSingularLowerCase}}/'.$data->photo)) {
-                        unlink(public_path().'/public/assets/images/{{modelNameSingularLowerCase}}/'.$data->photo);
+                    if (file_exists(public_path().'/assets/images/{{modelNameSingularLowerCase}}/'.$data->photo)) {
+                        unlink(public_path().'/assets/images/{{modelNameSingularLowerCase}}/'.$data->photo);
                     }
                 }            
             $input['photo'] = $name;
@@ -173,8 +173,8 @@ class {{modelName}}Controller extends Controller
             //--- Redirect Section Ends     
         }
         //If Photo Exist
-        if (file_exists(public_path().'/public/assets/images/{{modelNameSingularLowerCase}}/'.$data->photo)) {
-            unlink(public_path().'/public/assets/images/{{modelNameSingularLowerCase}}/'.$data->photo);
+        if (file_exists(public_path().'/assets/images/{{modelNameSingularLowerCase}}/'.$data->photo)) {
+            unlink(public_path().'/assets/images/{{modelNameSingularLowerCase}}/'.$data->photo);
         }
         $data->delete();
         //--- Redirect Section     

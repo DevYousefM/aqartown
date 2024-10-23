@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 @section('content')
@@ -29,7 +29,7 @@
 
                             <div class="feat-item2 position-relative d-block w-100">
                                 <div class="feat-img position-relative d-block w-100"
-                                    style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }});">
+                                    style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }});">
                                 </div>
                                 <div
                                     class="feat-cap2-wrap text-center d-flex flex-wrap justify-content-center position-absolute w-100">
@@ -104,7 +104,7 @@
     <section>
         <div class="w-100 pt-100 gray-layer opc95 pb-100 position-relative">
             <div class="fixed-bg"
-                style="background-image: url({{ asset('public/assets/images/' . $gs->about_background) }});"></div>
+                style="background-image: url({{ asset('assets/images/' . $gs->about_background) }});"></div>
             <div class="container">
                 <div class="about-wrap2 position-relative w-100">
                     <div class="row mrg30">
@@ -113,17 +113,17 @@
                                 <div class="row align-items-end mrg20">
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="about-gal-img brd-rd10 overflow-hidden position-relative w-100">
-                                            <a href="{{ asset('public/assets/images/' . $gs->home_about_img1) }}"
+                                            <a href="{{ asset('assets/images/' . $gs->home_about_img1) }}"
                                                 data-fancybox="gallery" title=""><img class="img-fluid w-100"
-                                                    src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}"
+                                                    src="{{ asset('assets/images/' . $gs->home_about_img1) }}"
                                                     alt="About Gallery Image 1"></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="about-gal-img brd-rd10 overflow-hidden position-relative w-100">
-                                            <a href="{{ asset('public/assets/images/' . $gs->home_about_img2) }}"
+                                            <a href="{{ asset('assets/images/' . $gs->home_about_img2) }}"
                                                 data-fancybox="gallery" title=""><img class="img-fluid w-100"
-                                                    src="{{ asset('public/assets/images/' . $gs->home_about_img2) }}"
+                                                    src="{{ asset('assets/images/' . $gs->home_about_img2) }}"
                                                     alt="About Gallery Image 2"></a>
                                         </div>
                                     </div>
@@ -132,19 +132,19 @@
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div
                                             class="about-gal-img brd-rd10 brd-rd10 overflow-hidden position-relative w-100">
-                                            <a href="{{ asset('public/assets/images/' . $gs->home_about_img3) }}"
+                                            <a href="{{ asset('assets/images/' . $gs->home_about_img3) }}"
                                                 data-fancybox="gallery" title=""><img class="img-fluid w-100"
-                                                    src="{{ asset('public/assets/images/' . $gs->home_about_img3) }}"
+                                                    src="{{ asset('assets/images/' . $gs->home_about_img3) }}"
                                                     alt="About Gallery Image 3"></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="about-gal-img brd-rd10 overflow-hidden position-relative w-100">
                                             <a class="about-play-btn spinner thm-clr rounded-circle"
-                                                href="{{ asset('public/assets/images/' . $gs->home_about_link) }}"
+                                                href="{{ asset('assets/images/' . $gs->home_about_link) }}"
                                                 data-fancybox title=""><i class="fas fa-play-circle"></i></a>
                                             <img class="img-fluid w-100"
-                                                src="{{ asset('public/assets/images/' . $gs->home_about_img4) }}"
+                                                src="{{ asset('assets/images/' . $gs->home_about_img4) }}"
                                                 alt="About Gallery Image 4">
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@
     <section>
         <div class="w-100 pt-200 white-layer opc95 pb-100 position-relative">
             <div class="fixed-bg"
-                style="background-image: url({{ asset('public/assets/images/' . $gs->service_background) }});"></div>
+                style="background-image: url({{ asset('assets/images/' . $gs->service_background) }});"></div>
             <div class="container">
                 <div
                     class="sec-title sec-title-with-btns d-flex flex-wrap align-items-center justify-content-between w-100">
@@ -191,7 +191,7 @@
                                 <div class="serv-box2 v2 position-relative w-100">
                                     <div class="serv-img2 brd-rd10 position-relative overflow-hidden w-100">
                                         <img class="img-fluid w-100"
-                                            src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
+                                            src="{{ asset('assets/images/categories/' . $category->photo) }}"
                                             alt="{{ $category->name_ar }}">
                                         <a class="position-absolute"
                                             href="{{ $langg->rtl == 1 ? route('front.category', ['category' => $category->slug_ar, 'lang' => $sign]) : route('front.category', ['category' => $category->slug, 'lang' => $sign]) }}"
@@ -276,7 +276,7 @@
                                 class="thm-bg rounded-pill position-absolute z2">{{ $langg->rtl == 1 ? $work->name_ar : $work->name }}</span>
                             <div class="live-video-img z1 brd-rd10 position-relative overflow-hidden w-100">
                                 <img class="img-fluid w-100"
-                                    src="{{ asset('public/assets/images/gallery/' . $work->photo) }}"
+                                    src="{{ asset('assets/images/gallery/' . $work->photo) }}"
                                     alt="{{ $langg->rtl == 1 ? $work->name_ar : $work->name }}">
                                 <a class="position-absolute spinner rounded-circle" href="{{ $work->auther }}"
                                     data-fancybox title=""><i class="fas fa-play-circle"></i></a>

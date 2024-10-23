@@ -16,7 +16,7 @@
 
     @endphp
     <!-- ============================ Page Title Start================================== -->
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->best_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1> {{ $langg->lang223 }}</h1>
@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6">
-                    <img src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" class="img-fluid rounded"
+                    <img src="{{ asset('assets/images/' . $gs->home_about_img1) }}" class="img-fluid rounded"
                         alt="" />
                 </div>
 

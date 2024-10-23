@@ -42,7 +42,7 @@
                                 <div class="min-pro-box">
                                     <a
                                         href="{{ route('front.product', ['slug' => $langg->rtl == 1 ? $productt->slug_ar : $productt->slug, 'lang' => $sign]) }}">
-                                        <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('public/assets/images/products/' . $productt->photo) }}"
+                                        <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('assets/images/products/' . $productt->photo) }}"
                                             alt="" class="bg-pro-i">
                                     </a>
                                     {{-- <button class="chat-re" data-toggle="modal" data-target="#myModal-chat">

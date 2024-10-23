@@ -13,7 +13,7 @@
         "@id": "{{url('/item',$blog->slug)}}"
       },
       "headline": "{{$blog->title}}",
-      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('public/assets/images/blogs/'.$blog->photo)}}",
+      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('assets/images/blogs/'.$blog->photo)}}",
 
 
       "datePublished": "{{$blog->created_at}}",
@@ -59,7 +59,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->hot_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->hot_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -99,7 +99,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="service_details_wraper">
-                        <img src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}" alt="">
+                        <img src="{{ asset('assets/images/blogs/' . $blog->photo) }}" alt="">
                         <div class="text-p">
                             <p>
                                 @if ($langg->rtl == 1)

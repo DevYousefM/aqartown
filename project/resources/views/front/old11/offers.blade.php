@@ -23,7 +23,7 @@
 
     <!-- =====slider home ===== -->
     <!-- Main Slider -->
-    <section class="breadcrumb-area" style="background-image: url(  {{ asset('public/assets/images/' . $gs->big_icon) }} );">
+    <section class="breadcrumb-area" style="background-image: url(  {{ asset('assets/images/' . $gs->big_icon) }} );">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">

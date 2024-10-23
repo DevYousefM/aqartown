@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -26,7 +26,7 @@
                 @endphp
                 <div class="swiper-slide">
                     <div class="slider-img">
-                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="img">
+                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="img">
                     </div>
                     <div class="slider-text">
                         <div class="text-buttons">
@@ -78,7 +78,7 @@
          @else
          {{ route('front.category', ['category' => $cat->slug, 'lang' => $sign]) }} @endif">
                             <div class="imgs">
-                                <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}" alt="">
+                                <img src="{{ asset('assets/images/categories/' . $cat->photo) }}" alt="">
                             </div>
                             <div class="text">
                                 <h1 class="service-title">
@@ -147,9 +147,9 @@
 
                                     <div class="col-md-12 col-sm-12 col-lg-12">
                                         <div class="about-gal-img brd-rd10 overflow-hidden position-relative w-100">
-                                            <a href="{{ asset('public/assets/images/' . $gs->home_about_img3) }}"
+                                            <a href="{{ asset('assets/images/' . $gs->home_about_img3) }}"
                                                 data-fancybox="gallery" title=""><img class="img-fluid w-100"
-                                                    src="{{ asset('public/assets/images/' . $gs->home_about_img3) }}"
+                                                    src="{{ asset('assets/images/' . $gs->home_about_img3) }}"
                                                     alt="About Gallery Image 2"></a>
                                         </div>
                                     </div>
@@ -175,14 +175,14 @@
                     <a href="{{ route('front.category', ['category' => $subcat->category->slug_ar, 'subcategory' => $subcat->slug_ar, 'lang' => $sign]) }}"
                         class="service-item" data-aos="zoom-in-down" data-aos-duration="3000">
                         <div class="service-icon">
-                            <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
+                            <img src="{{ asset('assets/images/subcategories/' . $subcat->photo) }}"
                                 alt="@if ($langg->rtl == 1) {{ $subcat->name_ar }}
             @else
 
             {{ $subcat->name }} @endif   "
-                                data-lazy-src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
+                                data-lazy-src="{{ asset('assets/images/subcategories/' . $subcat->photo) }}"
                                 data-ll-status="loaded" class="entered lazyloaded"><noscript><img
-                                    src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
+                                    src="{{ asset('assets/images/subcategories/' . $subcat->photo) }}"
                                     alt="@if ($langg->rtl == 1) {{ $subcat->name_ar }}
                 @else
 
@@ -223,9 +223,9 @@
                                 class="blog-card">
                                 <div class="img-div lazy-div">
                                     <img class=""
-                                        data-src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                        data-src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
                                         alt="img"
-                                        src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}">
+                                        src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}">
 
                                 </div>
                                 <p class="blog-title">

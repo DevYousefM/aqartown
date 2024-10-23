@@ -100,7 +100,7 @@
     <section><!--assets/images/parallax8.jpg-->
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
             <div class="fixed-bg"
-                style="background-image: url({{ $productt->hover_photo ? (filter_var($productt->hover_photo, FILTER_VALIDATE_URL) ? $productt->hover_photo : asset('public/assets/images/products/' . $productt->hover_photo)) : asset('public/assets/images/' . $gs->big_icon) }});">
+                style="background-image: url({{ $productt->hover_photo ? (filter_var($productt->hover_photo, FILTER_VALIDATE_URL) ? $productt->hover_photo : asset('assets/images/products/' . $productt->hover_photo)) : asset('assets/images/' . $gs->big_icon) }});">
             </div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
@@ -238,7 +238,7 @@
                         @if (!empty($productt->hover_photo))
                             <div class="event-detail-img position-relative w-100">
                                 <img class="img-fluid w-100"
-                                    src="{{ $productt->hover_photo ? (filter_var($productt->hover_photo, FILTER_VALIDATE_URL) ? $productt->hover_photo : asset('public/assets/images/products/' . $productt->hover_photo)) : asset('public/assets/images/noimage.png') }}"
+                                    src="{{ $productt->hover_photo ? (filter_var($productt->hover_photo, FILTER_VALIDATE_URL) ? $productt->hover_photo : asset('assets/images/products/' . $productt->hover_photo)) : asset('assets/images/noimage.png') }}"
                                     @if ($langg->rtl == 1) alt="{{ $productt->alt_ar }}"
                                          @else
                                          alt="{{ $productt->alt }}" @endif>
@@ -277,7 +277,7 @@
                                             <div class="col-md-6 col-sm-6 col-lg-6">
                                                 <div class="speaker-box position-relative mb-40 w-100 overflow-hidden">
                                                     <img class="img-fluid w-100"
-                                                        src="{{ asset('public/assets/images/speakers/' . $data->photo) }}"
+                                                        src="{{ asset('assets/images/speakers/' . $data->photo) }}"
                                                         alt="Speaker Image 1">
                                                     <div class="speaker-info position-absolute">
                                                         <h3 class="mb-0 text-white"><a href="{{ $data->facebook }}">
@@ -378,7 +378,7 @@
                                     <div class="event-grid-box mb-30 w-100">
                                         <div class="event-grid-img w-100 overflow-hidden position-relative">
                                             <img class="img-fluid w-100"
-                                                src="{{ $data->photo ? (filter_var($data->photo, FILTER_VALIDATE_URL) ? $data->photo : asset('public/assets/images/products/' . $data->photo)) : asset('public/assets/images/noimage.png') }}"
+                                                src="{{ $data->photo ? (filter_var($data->photo, FILTER_VALIDATE_URL) ? $data->photo : asset('assets/images/products/' . $data->photo)) : asset('assets/images/noimage.png') }}"
                                                 alt="Event Image 1">
                                             <span class="position-absolute"><a class="rounded-circle"
                                                     href="javascript:void(0);" title=""><i
@@ -433,7 +433,7 @@
                         @foreach ($productt->galleries as $gal)
                             <div class="text-center w-100">
                                 <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block"
-                                        src="{{ asset('public/assets/images/galleries/' . $gal->photo) }}"
+                                        src="{{ asset('assets/images/galleries/' . $gal->photo) }}"
                                         alt="Sponsor Image 1"></a>
                             </div>
                         @endforeach

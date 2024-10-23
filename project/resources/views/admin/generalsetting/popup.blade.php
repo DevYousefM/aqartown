@@ -26,7 +26,7 @@
                     <div class="product-description">
                         <div class="body-area">
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form action="{{ route('admin-gs-update') }}" id="geniusform" method="POST"
                                 enctype="multipart/form-data">
@@ -69,7 +69,7 @@
                                     <div class="col-lg-6">
                                         <div class="img-upload full-width-img">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $gs->popup_background ? asset('public/assets/images/' . $gs->popup_background) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $gs->popup_background ? asset('assets/images/' . $gs->popup_background) : asset('assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="popup_background" class="img-upload"

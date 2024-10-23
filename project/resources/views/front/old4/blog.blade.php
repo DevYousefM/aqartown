@@ -18,7 +18,7 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('public/assets/images/' . $gs->new_icon) }}" alt="" />
+                <img src="{{ asset('assets/images/' . $gs->new_icon) }}" alt="" />
             </div>
         </div>
     </section>
@@ -56,7 +56,7 @@
                     @foreach ($blogs as $blogg)
                         <div class="blog-card text-center">
                             <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}">
-                                <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
                                     alt="Shape">
                             </a>
                             <div class="b-card-text">
@@ -124,7 +124,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },

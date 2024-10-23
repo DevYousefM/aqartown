@@ -57,7 +57,7 @@
 
 @section('content')
     <section class="medicen-aboutUs text-center"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+        style="background-image: url({{ asset('assets/images/' . $gs->top_icon) }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-6">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 service_details_wraper">
-                    <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}" alt="{{ $cat->name_ar }}">
+                    <img src="{{ asset('assets/images/categories/' . $cat->photo) }}" alt="{{ $cat->name_ar }}">
                 </div>
             </div>
         </div>

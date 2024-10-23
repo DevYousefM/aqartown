@@ -22,7 +22,7 @@
 
 
     <!-- ============================ Page Title Start================================== -->
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->top_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>
@@ -92,15 +92,15 @@
                     <div class="fotorama" data-direction="ltr" data-fit="cover" data-nav="thumbs"
                         data-allowfullscreen="true">
                         @if (!empty($product->photo))
-                            <a href="{{ asset('public/assets/images/brands/' . $product->photo) }}">
-                                <img src="{{ asset('public/assets/images/brands/' . $product->photo) }}" />
+                            <a href="{{ asset('assets/images/brands/' . $product->photo) }}">
+                                <img src="{{ asset('assets/images/brands/' . $product->photo) }}" />
                             </a>
                         @endif
 
                         @if (!empty($product->galleries))
                             @foreach ($product->galleries as $image)
-                                <a href="{{ asset('public/assets/images/galleries/' . $image->photo) }}">
-                                    <img src="{{ asset('public/assets/images/galleries/' . $image->photo) }}" />
+                                <a href="{{ asset('assets/images/galleries/' . $image->photo) }}">
+                                    <img src="{{ asset('assets/images/galleries/' . $image->photo) }}" />
                                 </a>
                             @endforeach
                         @endif

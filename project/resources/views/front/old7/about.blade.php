@@ -18,7 +18,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->best_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->best_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="col-lg-6 col-md-6">
-                    <img src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" class="img-fluid rounded"
+                    <img src="{{ asset('assets/images/' . $gs->home_about_img1) }}" class="img-fluid rounded"
                         alt="" />
                 </div>
 
@@ -84,7 +84,7 @@
 
                 @foreach ($images as $partner)
                     <div class="item">
-                        <img src="{{ asset('public/assets/images/ads/' . $partner->photo) }}" alt="">
+                        <img src="{{ asset('assets/images/ads/' . $partner->photo) }}" alt="">
                     </div>
                 @endforeach
 

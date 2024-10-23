@@ -188,7 +188,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-update', $data->id) }}" method="POST"
                                 enctype="multipart/form-data">
@@ -489,7 +489,7 @@
                                             <div class="row">
                                                 <div class="panel panel-body">
                                                     <img class="span4 mobile text-center" id="landscapes2"
-                                                        src="{{ asset('public/assets/images/products/' . $data->hover_photo) }}"
+                                                        src="{{ asset('assets/images/products/' . $data->hover_photo) }}"
                                                         style="width: 400px; height: 400px; border: 1px dashed black;">
 
                                                 </div>
@@ -1112,9 +1112,9 @@
                                                 <span class="remove-img"><i class="fas fa-times"></i>
                                                     <input type="hidden" value="{{ $image->id }}">
                                                 </span>
-                                                <a href="{{ asset('public/assets/images/galleries') . '/' . $image->photo }}"
+                                                <a href="{{ asset('assets/images/galleries') . '/' . $image->photo }}"
                                                     target="_blank">
-                                                    <img src="{{ asset('public/assets/images/galleries') . '/' . $image->photo }}"
+                                                    <img src="{{ asset('assets/images/galleries') . '/' . $image->photo }}"
                                                         alt="gallery image">
                                                 </a>
                                             </div>
@@ -1209,11 +1209,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset('assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset('assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1278,11 +1278,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset('assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset('assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1319,11 +1319,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset('assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset('assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1363,11 +1363,11 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ !empty($data->photo) ? (filter_var($data->photo, FILTER_VALIDATE_URL) ? $data->photo : asset('public/assets/images/products/' . $data->photo)) : asset('public/assets/images/noimage.png') }}" alt="">`;
+                `<img src="{{ !empty($data->photo) ? (filter_var($data->photo, FILTER_VALIDATE_URL) ? $data->photo : asset('assets/images/products/' . $data->photo)) : asset('assets/images/noimage.png') }}" alt="">`;
             $(".span4.cropme").html(html);
 
             let htmls =
-                `<img src="{{ !empty($data->mobile_photo) ? (filter_var($data->mobile_photo, FILTER_VALIDATE_URL) ? $data->mobile_photo : asset('public/assets/images/products/' . $data->mobile_photo)) : asset('public/assets/images/noimage.png') }}" alt="">`;
+                `<img src="{{ !empty($data->mobile_photo) ? (filter_var($data->mobile_photo, FILTER_VALIDATE_URL) ? $data->mobile_photo : asset('assets/images/products/' . $data->mobile_photo)) : asset('assets/images/noimage.png') }}" alt="">`;
             $(".mobile").html(htmls);
 
             $.ajaxSetup({

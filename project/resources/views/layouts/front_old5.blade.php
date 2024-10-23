@@ -40,7 +40,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -109,7 +109,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -119,8 +119,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset('assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -146,7 +146,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
@@ -247,7 +247,7 @@
                     <div class="middle-header">
                         <h1>
                             <a href="{{ route('front.index', $sign) }}"><img
-                                    src="{{ asset('public/assets/images/' . $gs->logo) }}" alt=""></a>
+                                    src="{{ asset('assets/images/' . $gs->logo) }}" alt=""></a>
                         </h1>
                     </div>
                 </div>
@@ -276,7 +276,7 @@
                 <div class="main-responsive-menu">
                     <div class="logo">
                         <a href="{{ route('front.index', $sign) }}">
-                            <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="logo">
+                            <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -403,14 +403,14 @@
 
 
     <footer class="footer-area pt-100 pb-70"
-        style="background: linear-gradient(324deg, #1d31575e, #1a1a1af2),url({{ asset('public/assets/images/' . $gs->contact_icon) }})">
+        style="background: linear-gradient(324deg, #1d31575e, #1a1a1af2),url({{ asset('assets/images/' . $gs->contact_icon) }})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="single-footer-widget">
                         <h2>
                             <a href="{{ route('front.index', $sign) }}"><img
-                                    src="{{ asset('public/assets/images/' . $gs->logo_ar) }}" alt=""></a>
+                                    src="{{ asset('assets/images/' . $gs->logo_ar) }}" alt=""></a>
                         </h2>
                         <p>{!! $langg->rtl == 1 ? $gs->footer_ar : $gs->footer !!}</p>
                         <!-- <div class="signature">
@@ -479,7 +479,7 @@
                                     <a href="{{ route('front.blogshow', ['id' => $blog->id, 'lang' => $sign]) }}"
                                         class="thumb">
                                         <span class="fullimage bg1" role="img"
-                                            style="background-image: url({{ asset('public/assets/images/blogs/' . $blog->photo) }});"></span>
+                                            style="background-image: url({{ asset('assets/images/blogs/' . $blog->photo) }});"></span>
                                     </a>
                                     <div class="info">
                                         <span><a

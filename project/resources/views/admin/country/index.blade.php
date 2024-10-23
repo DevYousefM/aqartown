@@ -25,7 +25,7 @@
                     <div class="product-description">
                         <div class="body-area">
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-gs-update') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -76,7 +76,7 @@
 
 
                                         <div class="currrent-logo">
-                                            <img src="{{ $gs->home_about_img1 ? asset('public/assets/images/' . $gs->home_about_img1) : asset('public/assets/images/noimage.png') }}"
+                                            <img src="{{ $gs->home_about_img1 ? asset('assets/images/' . $gs->home_about_img1) : asset('assets/images/noimage.png') }}"
                                                 alt="">
                                         </div>
                                         <div class="set-logo">
@@ -99,7 +99,7 @@
 
 
                               <div class="currrent-logo">
-                                <img src="{{ $gs->home_about_img2 ? asset('public/assets/images/' . $gs->home_about_img2) : asset('public/assets/images/noimage.png') }}" alt="">
+                                <img src="{{ $gs->home_about_img2 ? asset('assets/images/' . $gs->home_about_img2) : asset('assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                 <input class="img-upload1" type="file" name="home_about_img2">
