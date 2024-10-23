@@ -315,7 +315,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset('assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header d-block text-center">
                     <h4 class="modal-title d-inline-block">{{ __('Update Status') }}</h4>

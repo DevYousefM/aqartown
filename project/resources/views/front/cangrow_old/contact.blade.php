@@ -82,7 +82,7 @@
                 <div class="col-lg-6">
                     <div class="appointment__wrapIllustration position-relative" data-aos="fade-down">
                         <img class="appointment__illustration position-relative"
-                            src="{{ asset('public/assets/images/' . $gs->discount_icon) }}" alt="Illustration">
+                            src="{{ asset('assets/images/' . $gs->discount_icon) }}" alt="Illustration">
                         <img class="appointment__arrow position-absolute"
                             src="{{ asset('assets/cangrow/images/svg/appointment-arrow.svg') }}" alt="Arrow">
                     </div>
@@ -154,7 +154,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>

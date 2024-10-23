@@ -16,7 +16,7 @@
 
     @endphp
     <!--============= Start breadvroumb =============-->
-    <div class="breadvroumb_area" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+    <div class="breadvroumb_area" style="background-image: url({{ asset('assets/images/' . $gs->best_icon) }});">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -70,7 +70,7 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="box-img">
-                                <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}" alt="">
+                                <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}" alt="">
 
                             </div>
                         </div>
@@ -82,7 +82,7 @@
 
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <div class="box-img">
-                                <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}" alt="">
+                                <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}" alt="">
 
                             </div>
                         </div>

@@ -40,7 +40,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-update', $data->id) }}" method="POST"
                                 enctype="multipart/form-data">
@@ -262,7 +262,7 @@
                                             <div class="row">
                                                 <div class="panel panel-body">
                                                     <img class="span4 mobile text-center" id="landscapes2"
-                                                        src="{{ asset('public/assets/images/products/' . $data->hover_photo) }}"
+                                                        src="{{ asset('assets/images/products/' . $data->hover_photo) }}"
                                                         style="width: 400px; height: 400px; border: 1px dashed black;">
 
                                                 </div>
@@ -952,11 +952,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1014,11 +1014,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1053,7 +1053,7 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ empty($data->photo) ? asset('public/assets/images/noimage.png') : asset('public/assets/images/products/' . $data->photo) }}" alt="">`;
+                `<img src="{{ empty($data->photo) ? asset('assets/images/noimage.png') : asset('assets/images/products/' . $data->photo) }}" alt="">`;
             $(".span4.cropme").html(html);
 
             $.ajaxSetup({

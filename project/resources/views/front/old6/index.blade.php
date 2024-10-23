@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -26,7 +26,7 @@
                 @endphp
                 <div class="swiper-slide">
                     <div class="slider-img">
-                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="img">
+                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="img">
                     </div>
                     <div class="slider-text">
                         <div class="text-buttons">
@@ -75,7 +75,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        <img src="{{ asset('public/assets/images/' . $gs->popup_background) }}" alt="">
+                        <img src="{{ asset('assets/images/' . $gs->popup_background) }}" alt="">
 
                     </div>
                     <div class="modal-body">
@@ -144,7 +144,7 @@
         </div>
     </section>
 
-    <section class="ask" style="background-image: url({{ asset('public/assets/images/' . $gs->feature_icon) }});">
+    <section class="ask" style="background-image: url({{ asset('assets/images/' . $gs->feature_icon) }});">
         <div class="container">
             <div class="icon" data-aos="zoom-in" data-aos-duration="1500">
                 <i class="fal fa-microscope"></i>
@@ -189,9 +189,9 @@
                                 class="blog-card">
                                 <div class="img-div lazy-div">
                                     <img class=""
-                                        data-src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                        data-src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
                                         alt="img"
-                                        src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}">
+                                        src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}">
 
                                 </div>
                                 <p class="blog-title">
@@ -227,7 +227,7 @@
                 @foreach ($images as $partner)
                     <div class="swiper-slide">
                         <div class="slider-img">
-                            <img src="{{ asset('public/assets/images/ads/' . $partner->photo) }}" alt="img">
+                            <img src="{{ asset('assets/images/ads/' . $partner->photo) }}" alt="img">
                         </div>
                     </div>
                 @endforeach

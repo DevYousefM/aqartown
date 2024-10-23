@@ -16,7 +16,7 @@
 
     @endphp
 
-    <div class="page-banner-area" style="background-image: url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
+    <div class="page-banner-area" style="background-image: url({{ asset('assets/images/' . $gs->discount_icon) }});">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang20 }}</h2>
@@ -85,7 +85,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>
@@ -175,7 +175,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

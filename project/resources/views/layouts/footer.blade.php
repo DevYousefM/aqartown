@@ -15,7 +15,7 @@
                  <div class="footer-info-area">
                      <div class="footer-logo">
                          <a href="{{ route('front.index', $sign) }}" class="logo-link">
-                             <img src="{{ asset('public/assets/images/' . $gs->footer_logo) }}" alt="">
+                             <img src="{{ asset('assets/images/' . $gs->footer_logo) }}" alt="">
                          </a>
                      </div>
                      <div class="text">
@@ -169,7 +169,7 @@
                                  <div class="post">
                                      <div class="post-img">
                                          <img style="width: 73px; height: 59px;"
-                                             src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}"
+                                             src="{{ asset('assets/images/blogs/' . $blog->photo) }}"
                                              alt="">
                                      </div>
                                      <div class="post-details">
@@ -382,7 +382,7 @@
                                          <ul class="captcha-area">
                                              <li>
                                                  <p><img class="codeimg1"
-                                                         src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                                         src="{{ asset('assets/images/capcha_code.png') }}"
                                                          alt=""> <i
                                                          class="fas fa-sync-alt pointer refresh_code "></i></p>
                                              </li>
@@ -652,7 +652,7 @@
                                                      <li>
                                                          <p>
                                                              <img class="codeimg1"
-                                                                 src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                                                 src="{{ asset('assets/images/capcha_code.png') }}"
                                                                  alt=""> <i
                                                                  class="fas fa-sync-alt pointer refresh_code "></i>
                                                          </p>
@@ -703,7 +703,7 @@
      <div class="modal-dialog quickview-modal modal-dialog-centered modal-lg" role="document">
          <div class="modal-content">
              <div class="submit-loader">
-                 <img src="{{ asset('public/assets/images/' . $gs->loader) }}" alt="">
+                 <img src="{{ asset('assets/images/' . $gs->loader) }}" alt="">
              </div>
              <div class="modal-header">
                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -744,7 +744,7 @@
 
                  <div>
                      <div class="submit-loader d-none">
-                         <img src="{{ asset('public/assets/images/' . $gs->loader) }}" alt="">
+                         <img src="{{ asset('assets/images/' . $gs->loader) }}" alt="">
                      </div>
                      <div id="track-order">
 

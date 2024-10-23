@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 @php
@@ -31,7 +31,7 @@
 
                 <div class="swiper-slide">
                     <div class="slider-img">
-                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="img">
+                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="img">
                     </div>
                     <div class="slider-text">
                         <div class="text-buttons">
@@ -123,7 +123,7 @@
 
                             <div class="home-about">
                                 <div class="img-div lazy-div">
-                                    <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                    <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}"
                                         alt="img">
                                 </div>
 
@@ -202,7 +202,7 @@
 
                             <div class="home-about">
                                 <div class="img-div lazy-div">
-                                    <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                    <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}"
                                         alt="img">
                                 </div>
 
@@ -223,7 +223,7 @@
             <div class="row animatedParent animateOnce">
                 <div class="col-lg-6 col-md-6">
                     <div class="article_featured_image">
-                        <img src="{{ asset('public/assets/images/' . $gs->home_about_img3) }}" alt="">
+                        <img src="{{ asset('assets/images/' . $gs->home_about_img3) }}" alt="">
 
                     </div>
                 </div>
@@ -261,7 +261,7 @@
                             @foreach ($categories->take(5) as $cat)
                                 <div class="swiper-slide">
                                     <div class="img-div">
-                                        <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}"
+                                        <img src="{{ asset('assets/images/categories/' . $cat->photo) }}"
                                             alt="img">
                                     </div>
 

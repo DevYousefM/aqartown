@@ -62,7 +62,7 @@
 
     @endphp
     <!--============= Start breadvroumb =============-->
-    <div class="breadvroumb_area" style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+    <div class="breadvroumb_area" style="background-image: url({{ asset('assets/images/' . $gs->top_icon) }});">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="service_details_wraper">
-                        <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}"
+                        <img src="{{ asset('assets/images/categories/' . $cat->photo) }}"
                             alt="{{ $cat->name_ar }}">
                         <div class="text-p">
                             <p>
@@ -195,7 +195,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>
@@ -250,7 +250,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

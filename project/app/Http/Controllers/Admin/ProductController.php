@@ -52,7 +52,7 @@ class ProductController extends Controller
             })
             ->editColumn('thumbnail', function (Product $data) {
 
-                $photo = '<div class=""><img style="width: 85px;" src="' . url('public/assets/images/products', $data->hover_photo) . '"  ></div>';
+                $photo = '<div class=""><img style="width: 85px;" src="' . url('assets/images/products', $data->hover_photo) . '"  ></div>';
                 return  $photo;
             })
             ->addColumn('status', function (Product $data) {
@@ -224,25 +224,25 @@ class ProductController extends Controller
         list(, $image)      = explode(',', $image);
         $image = base64_decode($image);
         $image_name = time() . str_random(8) . '.png';
-        $path = 'public/assets/images/products/' . $image_name;
+        $path = 'assets/images/products/' . $image_name;
         file_put_contents($path, $image);
         if ($data->photo != null) {
-            if (file_exists(public_path() . '/public/assets/images/products/' . $data->photo)) {
-                unlink(public_path() . '/public/assets/images/products/' . $data->photo);
+            if (file_exists(public_path() . '/assets/images/products/' . $data->photo)) {
+                unlink(public_path() . '/assets/images/products/' . $data->photo);
             }
         }
         $input['photo'] = $image_name;
         $input['mobile_photo'] = $image_name;
         $data->update($input);
         if ($data->thumbnail != null) {
-            if (file_exists(public_path() . '/public/assets/images/thumbnails/' . $data->thumbnail)) {
-                unlink(public_path() . '/public/assets/images/thumbnails/' . $data->thumbnail);
+            if (file_exists(public_path() . '/assets/images/thumbnails/' . $data->thumbnail)) {
+                unlink(public_path() . '/assets/images/thumbnails/' . $data->thumbnail);
             }
         }
 
-        $img = Image::make(public_path() . '/public/assets/images/products/' . $data->photo)->resize(285, 285);
+        $img = Image::make(public_path() . '/assets/images/products/' . $data->photo)->resize(285, 285);
         $thumbnail = time() . str_random(8) . '.jpg';
-        $img->save(public_path() . '/public/assets/images/thumbnails/' . $thumbnail);
+        $img->save(public_path() . '/assets/images/thumbnails/' . $thumbnail);
         $data->thumbnail  = $thumbnail;
         $data->update();
         return response()->json(['status' => true, 'file_name' => $image_name]);
@@ -266,11 +266,11 @@ class ProductController extends Controller
         list(, $image)      = explode(',', $image);
         $image = base64_decode($image);
         $image_name = time() . str_random(8) . '.png';
-        $path = 'public/assets/images/products/' . $image_name;
+        $path = 'assets/images/products/' . $image_name;
         file_put_contents($path, $image);
         if ($data->mobile_photo != null) {
-            if (file_exists(public_path() . '/public/assets/images/products/' . $data->mobile_photo)) {
-                unlink(public_path() . '/public/assets/images/products/' . $data->mobile_photo);
+            if (file_exists(public_path() . '/assets/images/products/' . $data->mobile_photo)) {
+                unlink(public_path() . '/assets/images/products/' . $data->mobile_photo);
             }
         }
         $input['mobile_photo'] = $image_name;
@@ -317,7 +317,7 @@ class ProductController extends Controller
             $imagem2 = $request->file('hover_photo');
             $image_ext2 = $imagem2->getClientOriginalExtension();
             $new_image_name2 = rand(123456, 999999) . "." . $image_ext2;
-            $destination_path2 = public_path('public/assets/images/products/');
+            $destination_path2 = public_path('assets/images/products/');
             $imagem2->move($destination_path2, $new_image_name2);
             $input['hover_photo'] = $new_image_name2;
             $input['photo'] = $new_image_name2;
@@ -329,7 +329,7 @@ class ProductController extends Controller
         // list(, $image)      = explode(',', $image);
         // $image = base64_decode($image);
         // $image_name = time().str_random(8).'.png';
-        // $path = 'public/assets/images/products/'.$image_name;
+        // $path = 'assets/images/products/'.$image_name;
         // file_put_contents($path, $image);
         // $input['photo'] = $image_name;
 
@@ -390,7 +390,7 @@ class ProductController extends Controller
                 if (in_array($key, $request->galval)) {
                     $gallery = new Gallery;
                     $name = time() . $file->getClientOriginalName();
-                    $file->move('public/assets/images/galleries', $name);
+                    $file->move('assets/images/galleries', $name);
                     $gallery['photo'] = $name;
                     $gallery['product_id'] = $lastid;
                     $gallery->save();
@@ -403,7 +403,7 @@ class ProductController extends Controller
                 if (in_array($key, $request->galvalm)) {
                     $gallery = new Gallery;
                     $name = time() . $file->getClientOriginalName();
-                    $file->move('public/assets/images/galleries', $name);
+                    $file->move('assets/images/galleries', $name);
                     $gallery['photo'] = $name;
                     $gallery['product_id'] = $lastid;
                     $gallery['web'] = 0;
@@ -559,7 +559,7 @@ class ProductController extends Controller
             $image = $request->file('mobile_photo');
             $image_ext = $image->getClientOriginalExtension();
             $new_image_name = rand(123456, 999999) . "." . $image_ext;
-            $destination_path = public_path('public/assets/images/products/');
+            $destination_path = public_path('assets/images/products/');
             $image->move($destination_path, $new_image_name);
             $input['mobile_photo'] = $new_image_name;
         }
@@ -569,7 +569,7 @@ class ProductController extends Controller
             $imagem2 = $request->file('hover_photo');
             $image_ext2 = $imagem2->getClientOriginalExtension();
             $new_image_name2 = rand(123456, 999999) . "." . $image_ext2;
-            $destination_path2 = public_path('public/assets/images/products/');
+            $destination_path2 = public_path('assets/images/products/');
             $imagem2->move($destination_path2, $new_image_name2);
             $input['hover_photo'] = $new_image_name2;
             $input['photo'] = $new_image_name2;
@@ -759,8 +759,8 @@ class ProductController extends Controller
         $data = Product::findOrFail($id);
         if ($data->galleries->count() > 0) {
             foreach ($data->galleries as $gal) {
-                if (file_exists(public_path() . '/public/assets/images/galleries/' . $gal->photo)) {
-                    unlink(public_path() . '/public/assets/images/galleries/' . $gal->photo);
+                if (file_exists(public_path() . '/assets/images/galleries/' . $gal->photo)) {
+                    unlink(public_path() . '/assets/images/galleries/' . $gal->photo);
                 }
                 $gal->delete();
             }
@@ -771,16 +771,16 @@ class ProductController extends Controller
 
         if (!empty($data->photo)) {
             if (!filter_var($data->photo, FILTER_VALIDATE_URL)) {
-                if (file_exists(public_path() . '/public/assets/images/products/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/products/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/products/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/products/' . $data->photo);
                 }
             }
         }
 
 
         if (!empty($data->thumbnail)) {
-            if (file_exists(public_path() . '/public/assets/images/thumbnails/' . $data->thumbnail) && $data->thumbnail != "") {
-                unlink(public_path() . '/public/assets/images/thumbnails/' . $data->thumbnail);
+            if (file_exists(public_path() . '/assets/images/thumbnails/' . $data->thumbnail) && $data->thumbnail != "") {
+                unlink(public_path() . '/assets/images/thumbnails/' . $data->thumbnail);
             }
         }
 
@@ -900,8 +900,8 @@ class ProductController extends Controller
             foreach ($products as $data) {
                 if ($data->galleries->count() > 0) {
                     foreach ($data->galleries as $gal) {
-                        if (file_exists(public_path() . '/public/assets/images/galleries/' . $gal->photo)) {
-                            unlink(public_path() . '/public/assets/images/galleries/' . $gal->photo);
+                        if (file_exists(public_path() . '/assets/images/galleries/' . $gal->photo)) {
+                            unlink(public_path() . '/assets/images/galleries/' . $gal->photo);
                         }
                         $gal->delete();
                     }
@@ -928,13 +928,13 @@ class ProductController extends Controller
 
 
                 if (!filter_var($data->photo, FILTER_VALIDATE_URL)) {
-                    if (file_exists(public_path() . '/public/assets/images/products/' . $data->photo)) {
-                        unlink(public_path() . '/public/assets/images/products/' . $data->photo);
+                    if (file_exists(public_path() . '/assets/images/products/' . $data->photo)) {
+                        unlink(public_path() . '/assets/images/products/' . $data->photo);
                     }
                 }
 
-                if (file_exists(public_path() . '/public/assets/images/thumbnails/' . $data->thumbnail) && $data->thumbnail != "") {
-                    unlink(public_path() . '/public/assets/images/thumbnails/' . $data->thumbnail);
+                if (file_exists(public_path() . '/assets/images/thumbnails/' . $data->thumbnail) && $data->thumbnail != "") {
+                    unlink(public_path() . '/assets/images/thumbnails/' . $data->thumbnail);
                 }
 
                 if ($data->file != null) {

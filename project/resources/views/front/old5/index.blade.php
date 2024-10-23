@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -21,7 +21,7 @@
                 $galss = str_replace(' ', '%20', $slide->photo);
             @endphp
             <div class="main-slides-item item-bg4"
-                style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }});">
+                style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }});">
                 <div class="container">
                     <div class="main-slides-content">
                         <!-- <span class="sub-title">
@@ -132,7 +132,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about_bg"
-                        style="background-image: url({{ asset('public/assets/images/' . $gs->home_about_img1) }});"></div>
+                        style="background-image: url({{ asset('assets/images/' . $gs->home_about_img1) }});"></div>
                 </div>
             </div>
         </div>
@@ -190,7 +190,7 @@
                                             
                                                 {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
                             <div
-                                class="boxmoth boxmoth-1"style="background-image: url({{ asset('public/assets/images/categories/' . $category->photo) }});">
+                                class="boxmoth boxmoth-1"style="background-image: url({{ asset('assets/images/categories/' . $category->photo) }});">
                                 <h6>0{{ $key + 1 }}.</h6>
                                 <h5>
                                     @if ($langg->rtl == 1)
@@ -239,7 +239,7 @@
                 @foreach ($our_teams->take(5) as $data)
                     <div class="col-lg-3">
                         <div class="card carda">
-                            <img src="{{ asset('public/assets/images/speakers/' . $data->photo) }}" alt="">
+                            <img src="{{ asset('assets/images/speakers/' . $data->photo) }}" alt="">
                             <ul class="links">
                                 <li><a href="{{ $data->facebook }}"><i class="fab fa-facebook"></i></a></li>
                             </ul>
@@ -292,9 +292,9 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <img width="450" height="450"
-                                src="{{ asset('public/assets/images/reviews/' . $review->photo) }}"
+                                src="{{ asset('assets/images/reviews/' . $review->photo) }}"
                                 class="attachment-full size-full" alt="" loading="lazy"
-                                srcset="{{ asset('public/assets/images/reviews/' . $review->photo) }} 450w, {{ asset('public/assets/images/reviews/' . $review->photo) }} 300w, {{ asset('public/assets/images/reviews/' . $review->photo) }} 150w, {{ asset('public/assets/images/reviews/' . $review->photo) }} 400w"
+                                srcset="{{ asset('assets/images/reviews/' . $review->photo) }} 450w, {{ asset('assets/images/reviews/' . $review->photo) }} 300w, {{ asset('assets/images/reviews/' . $review->photo) }} 150w, {{ asset('assets/images/reviews/' . $review->photo) }} 400w"
                                 sizes="(max-width: 450px) 100vw, 450px">
                             <div class="content">
                                 <p>{!! $langg->rtl == 1 ? $review->details_ar : $review->details !!}</p>
@@ -332,7 +332,7 @@
                             @foreach ($blogs as $blogg)
                                 <div class="blog-card text-center">
                                     <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}">
-                                        <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                        <img src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
                                             alt="Shape">
                                     </a>
                                     <div class="b-card-text">
@@ -378,13 +378,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                    <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="">
                 </div>
                 <div class="col-md-8">
                     <div class="clints-slider owl-carousel owl-theme">
                         @foreach ($partners as $partner)
                             <div class="item">
-                                <img src="{{ asset('public/assets/images/partner/' . $partner->photo) }}" alt="">
+                                <img src="{{ asset('assets/images/partner/' . $partner->photo) }}" alt="">
                             </div>
                         @endforeach
                     </div>

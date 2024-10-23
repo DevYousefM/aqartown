@@ -21,7 +21,7 @@
 
     <!--============= Start breadvroumb =============-->
 
-    <div class="breadvroumb_area" style="background-image: url({{ asset('public/assets/images/' . $gs->hot_icon) }});">
+    <div class="breadvroumb_area" style="background-image: url({{ asset('assets/images/' . $gs->hot_icon) }});">
         <div class="container">
             <div class="row text-center">
                 <div class="col">

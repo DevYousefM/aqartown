@@ -13,7 +13,7 @@
         "@id": "{{url('/item',$blog->slug)}}"
       },
       "headline": "{{$blog->title}}",
-      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('public/assets/images/blogs/'.$blog->photo)}}",
+      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('assets/images/blogs/'.$blog->photo)}}",
 
 
       "datePublished": "{{$blog->created_at}}",
@@ -58,7 +58,7 @@
 
 
     <!-- ============================ Page Title Start================================== -->
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->hot_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->hot_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>
@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="service_details_wraper">
-                        <img src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}" alt="">
+                        <img src="{{ asset('assets/images/blogs/' . $blog->photo) }}" alt="">
                         <div class="text-p">
                             <p>
                                 @if ($langg->rtl == 1)

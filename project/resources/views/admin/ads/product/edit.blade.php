@@ -43,7 +43,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-mobile-update', $data->id) }}" method="POST"
                                 enctype="multipart/form-data">
@@ -264,10 +264,10 @@
                                 '<span class="remove-img"><i class="fas fa-times"></i>' +
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
-                                '<a href="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '<a href="' + '{{ asset('assets/images/galleries') . '/' }}' +
                                 arr[k]['photo'] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -324,10 +324,10 @@
                                 '<span class="remove-img"><i class="fas fa-times"></i>' +
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
-                                '<a href="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '<a href="' + '{{ asset('assets/images/galleries') . '/' }}' +
                                 arr[k]['photo'] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -362,7 +362,7 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ (empty($data->mobile_photo) ? asset('public/assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset('public/assets/images/products/' . $data->mobile_photo) }}" alt="">`;
+                `<img src="{{ (empty($data->mobile_photo) ? asset('assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset('assets/images/products/' . $data->mobile_photo) }}" alt="">`;
             $(".span4.cropme").html(html);
 
             $.ajaxSetup({

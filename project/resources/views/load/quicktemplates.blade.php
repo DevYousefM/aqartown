@@ -11,8 +11,8 @@
                 <div class="product-single-carousel owl-carousel owl-theme">
                     <div class="product-item">
                         <img class="product-single-image"
-                            src="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('public/assets/images/products/' . $product->photo) }}"
-                            data-zoom-image="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('public/assets/images/products/' . $product->photo) }}"
+                            src="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('assets/images/products/' . $product->photo) }}"
+                            data-zoom-image="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('assets/images/products/' . $product->photo) }}"
                             @if (!$slang) @if ($lang->id == 2)
                                                                
                                                               alt="{{ $product->alt_ar }}"        
@@ -29,8 +29,8 @@
                     @foreach ($product->galleries as $gal)
                         <div class="product-item">
                             <img class="product-single-image"
-                                src="{{ asset('public/assets/images/galleries/' . $gal->photo) }}"
-                                data-zoom-image="{{ asset('public/assets/images/galleries/' . $gal->photo) }}"
+                                src="{{ asset('assets/images/galleries/' . $gal->photo) }}"
+                                data-zoom-image="{{ asset('assets/images/galleries/' . $gal->photo) }}"
                                 @if (!$slang) @if ($lang->id == 2)
                                                                
                                                               alt="{{ $product->alt_ar }}"        
@@ -51,7 +51,7 @@
 
             <div class="prod-thumbnail row owl-dots" id='carousel-custom-dots'>
                 <div class="col-3 owl-dot">
-                    <img src="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('public/assets/images/products/' . $product->photo) }}"
+                    <img src="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('assets/images/products/' . $product->photo) }}"
                         style="height:100px;"
                         @if (!$slang) @if ($lang->id == 2)
                                                                
@@ -68,7 +68,7 @@
                 </div>
                 @foreach ($product->galleries as $gal)
                     <div class="col-3 owl-dot">
-                        <img src="{{ asset('public/assets/images/galleries/' . $gal->photo) }}" style="height:100px;" />
+                        <img src="{{ asset('assets/images/galleries/' . $gal->photo) }}" style="height:100px;" />
                     </div>
                 @endforeach
             </div>

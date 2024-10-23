@@ -16,7 +16,7 @@
 
     @endphp
     <section class="medicen-aboutUs text-center"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+        style="background-image: url({{ asset('assets/images/' . $gs->best_icon) }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-6">
@@ -74,7 +74,7 @@
     <section>
         <div class="w-100 gray-layer opc95 pb-10 position-relative">
             <div class="fixed-bg"
-                style="background-image: url({{ asset('public/assets/images/' . $gs->about_page_background) }});opacity: .4;">
+                style="background-image: url({{ asset('assets/images/' . $gs->about_page_background) }});opacity: .4;">
             </div>
             <div class="container">
                 <div class="about-wrap2 position-relative w-100">
@@ -84,17 +84,17 @@
                                 <div class="row align-items-end mrg20">
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="about-gal-img brd-rd10 overflow-hidden position-relative w-100">
-                                            <a href="{{ asset('public/assets/images/' . $gs->home_about_img1) }}"
+                                            <a href="{{ asset('assets/images/' . $gs->home_about_img1) }}"
                                                 data-fancybox="gallery" title=""><img class="img-fluid w-100"
-                                                    src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}"
+                                                    src="{{ asset('assets/images/' . $gs->home_about_img1) }}"
                                                     alt="About Gallery Image 1"></a>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="about-gal-img brd-rd10 overflow-hidden position-relative w-100">
-                                            <a href="{{ asset('public/assets/images/' . $gs->home_about_img2) }}"
+                                            <a href="{{ asset('assets/images/' . $gs->home_about_img2) }}"
                                                 data-fancybox="gallery" title=""><img class="img-fluid w-100"
-                                                    src="{{ asset('public/assets/images/' . $gs->home_about_img2) }}"
+                                                    src="{{ asset('assets/images/' . $gs->home_about_img2) }}"
                                                     alt="About Gallery Image 2"></a>
                                         </div>
                                     </div>
@@ -103,9 +103,9 @@
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div
                                             class="about-gal-img brd-rd10 brd-rd10 overflow-hidden position-relative w-100">
-                                            <a href="{{ asset('public/assets/images/' . $gs->home_about_img3) }}"
+                                            <a href="{{ asset('assets/images/' . $gs->home_about_img3) }}"
                                                 data-fancybox="gallery" title=""><img class="img-fluid w-100"
-                                                    src="{{ asset('public/assets/images/' . $gs->home_about_img3) }}"
+                                                    src="{{ asset('assets/images/' . $gs->home_about_img3) }}"
                                                     alt="About Gallery Image 3"></a>
                                         </div>
                                     </div>
@@ -115,7 +115,7 @@
                                                 href="{{ $gs->home_about_link }}" data-fancybox title=""><i
                                                     class="fas fa-play-circle"></i></a>
                                             <img class="img-fluid w-100"
-                                                src="{{ asset('public/assets/images/' . $gs->home_about_img4) }}"
+                                                src="{{ asset('assets/images/' . $gs->home_about_img4) }}"
                                                 alt="About Gallery Image 4">
                                         </div>
                                     </div>

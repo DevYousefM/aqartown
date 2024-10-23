@@ -10,7 +10,7 @@
     <!-- Title -->
     <title>{{ $gs->title }}</title>
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
     <!-- Bootstrap -->
     <link href="{{ asset('assets/vendor/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- Fontawesome -->

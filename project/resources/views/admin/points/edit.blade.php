@@ -160,7 +160,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->photo ? asset('public/assets/images/points/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->photo ? asset('assets/images/points/' . $data->photo) : asset('assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload"

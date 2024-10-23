@@ -18,7 +18,7 @@
     @endphp
 
     <!-- ============================ Page Title Start================================== -->
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->top_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang16 }}</h1>
@@ -50,7 +50,7 @@
                         <a href="{{ route('front.product2', ['slug' => $about_us->slug, 'lang' => $sign]) }}"
                             class="product-card">
                             <div class="img-div lazy-div">
-                                <img class="lazy" data-src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                <img class="lazy" data-src="{{ asset('assets/images/brands/' . $about_us->photo) }}"
                                     alt="png" />
                                 <div class="next-lazy-img"></div>
                             </div>

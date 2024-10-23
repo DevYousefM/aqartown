@@ -48,7 +48,7 @@
 
 
     <!-- ============================ Page Title Start================================== -->
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->big_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->big_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang11 }}</h1>
@@ -74,7 +74,7 @@
                         <div class="col-sm-6 col-sm-12">
                             <a href="{{ route('front.markets_details', ['lang' => $sign, 'slug' => $solution->slug]) }}"
                                 data-aos="zoom-in" data-aos-duration="1500">
-                                <img src="{{ asset('public/assets/images/products/' . $solution->hover_photo) }}">
+                                <img src="{{ asset('assets/images/products/' . $solution->hover_photo) }}">
                                 <div class="text text-left">
                                     <h2>
                                         @if ($langg->rtl == 1)

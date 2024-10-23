@@ -19,7 +19,7 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('public/assets/images/' . $gs->best_icon) }}" alt="" />
+                <img src="{{ asset('assets/images/' . $gs->best_icon) }}" alt="" />
             </div>
         </div>
     </section>
@@ -50,7 +50,7 @@
             <div class="first-section container">
 
                 <div class="img-div aos-init aos-animate" data-aos="fade-right" data-aos-duration="2000">
-                    <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}" alt="img">
+                    <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}" alt="img">
                 </div>
                 <div class="ceo aos-init aos-animate" data-aos="fade-left" data-aos-duration="2000">
                     <div class="text">
@@ -110,7 +110,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },

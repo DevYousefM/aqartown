@@ -66,7 +66,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->feature_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->feature_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -187,9 +187,9 @@
                     <div class="service_details_wraper">
 
                         @if (!empty($subcat))
-                            <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}" alt="">
+                            <img src="{{ asset('assets/images/subcategories/' . $subcat->photo) }}" alt="">
                         @elseif(!empty($cat))
-                            <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}" alt="">
+                            <img src="{{ asset('assets/images/categories/' . $cat->photo) }}" alt="">
                         @endif
 
 

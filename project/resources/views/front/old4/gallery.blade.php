@@ -24,7 +24,7 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('public/assets/images/' . $gs->trending_icon) }}" alt="" />
+                <img src="{{ asset('assets/images/' . $gs->trending_icon) }}" alt="" />
             </div>
         </div>
     </section>
@@ -78,7 +78,7 @@
                     data-aos="fade-right" @endif>
                         <div class="inner-box">
                             <div class="image">
-                                <img src="{{ asset('public/assets/images/services/' . $service->photo) }}" alt="" />
+                                <img src="{{ asset('assets/images/services/' . $service->photo) }}" alt="" />
 
                                 <div class="overlay-box">
                                     <div class="overlay-inner">
@@ -90,7 +90,7 @@
                                                     href="#">{{ $langg->rtl == 1 ? $service->name_ar : $service->name }}</a>
                                             </h3>
                                             <a class="plus"
-                                                href="{{ asset('public/assets/images/services/' . $service->photo) }}"
+                                                href="{{ asset('assets/images/services/' . $service->photo) }}"
                                                 data-fancybox="gallery-1" data-caption=""><span
                                                     class="flaticon-plus-symbol"></span></a>
                                         </div>

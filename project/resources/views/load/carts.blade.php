@@ -73,7 +73,7 @@
                         <figure class="product-image-container">
                             <a href="{{ route('front.product', ['slug' => $product['item']['slug'], 'lang' => $sign]) }}"
                                 class="product-image">
-                                <img src="{{ $product['item']['photo'] ? (filter_var($product['item']['photo'], FILTER_VALIDATE_URL) ? $product['item']['photo'] : asset('public/assets/images/products/' . $product['item']['photo'])) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $product['item']['photo'] ? (filter_var($product['item']['photo'], FILTER_VALIDATE_URL) ? $product['item']['photo'] : asset('assets/images/products/' . $product['item']['photo'])) : asset('assets/images/noimage.png') }}"
                                     style="width:100px;height:auto;" alt="product">
                             </a>
                             <a class="cart-remove btn-remove"

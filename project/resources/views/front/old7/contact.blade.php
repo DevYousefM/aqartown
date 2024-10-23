@@ -17,7 +17,7 @@
     @endphp
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->discount_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->discount_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -108,7 +108,7 @@
                                     <ul class="captcha-area">
                                         <li>
                                             <p><img class="codeimg1"
-                                                    src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                                    src="{{ asset('assets/images/capcha_code.png') }}"
                                                     alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                         </li>

@@ -73,7 +73,7 @@
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
 
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
 
         <meta name="author" content="{{ $gs->title }}">
 
@@ -187,7 +187,7 @@
 
       "url": "{{url('/')}}",
 
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('assets/images/'.$gs->logo)}}"
 
     }
 
@@ -207,9 +207,9 @@
 
     "description": "",
 
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset('assets/images/'.$gs->logo)}}",
 
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('assets/images/'.$gs->logo)}}",
 
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
 
@@ -261,7 +261,7 @@
 
     <!-- favicon -->
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
 
     <!-- bootstrap -->
 
@@ -498,7 +498,7 @@
                                 <div class="logo">
 
                                     <a href="{{ route('front.index', $sign) }}"><img
-                                            src="{{ asset('public/assets/images/' . $gs->logo) }}"
+                                            src="{{ asset('assets/images/' . $gs->logo) }}"
                                             alt=""></a>
 
                                 </div>
@@ -732,7 +732,7 @@
                                 <div class="nav-logo">
 
                                     <a href="{{ route('front.index', $sign) }}"><img
-                                            src="{{ asset('public/assets/images/' . $gs->logo) }}" alt=""
+                                            src="{{ asset('assets/images/' . $gs->logo) }}" alt=""
                                             title=""></a>
 
                                 </div>
@@ -881,7 +881,7 @@
 
                                 <a href="{{ route('front.index', $sign) }}">
 
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo_ar) }}" alt="">
+                                    <img src="{{ asset('assets/images/' . $gs->logo_ar) }}" alt="">
 
                                 </a>
 
@@ -1633,7 +1633,7 @@
                 beforeSend: function() {
 
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                     );
 
                     console.log(1);
@@ -1761,7 +1761,7 @@
                 beforeSend: function() {
 
                     $('#appointment-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                     );
 
                     console.log(1);

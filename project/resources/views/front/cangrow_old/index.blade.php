@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
 @stop
 
 @section('content')
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-7 h-100 align-items-center d-none d-lg-flex fs-ilustratio-col" data-aos="fade-in"
                         data-aos-delay="500">
-                        <img src="{{ asset('/public/assets/images/sliders/' . $sliders[0]->photo) }}"
+                        <img src="{{ asset('/assets/images/sliders/' . $sliders[0]->photo) }}"
                             style="max-width: 1000px;" alt="">
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-6 d-flex justify-content-lg-end" data-aos="zoom-in" data-aos-delay="300">
                             <img class="img-fluid w-100"
-                                src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                src="{{ asset('assets/images/brands/' . $about_us->photo) }}"
                                 alt="{{ $about_us->name }}">
                         </div>
                         <div class="col-xl-6 content-column">
@@ -138,7 +138,7 @@
                         <div
                             class="col-md-6 @if ($key == 0) position-relative @endif"@if ($key % 2) data-aos="fade-right"  @else data-aos="fade-left" @endif>
                             <img class="works__illustration position-absolute"
-                                src="{{ asset('public/assets/images/gallery/' . $work->photo) }}"
+                                src="{{ asset('assets/images/gallery/' . $work->photo) }}"
                                 alt="{{ $langg->rtl == 1 ? $work->name_ar : $work->name }}">
                             <div class="works__blockText align-items-center d-flex position-relative text-center">
                                 <div class="works__triangle position-absolute">Triangle</div>
@@ -272,8 +272,8 @@
                                     <div class="ourClients__slide swiper-slide">
                                         <span class="sk-spinner sk-spinner-pulse"></span>
                                         <img class="swiper-lazy ourClients__image"
-                                            data-src="{{ asset('public/assets/images/partner/' . $partner->photo) }}"
-                                            src="{{ asset('public/assets/images/partner/' . $partner->photo) }}"
+                                            data-src="{{ asset('assets/images/partner/' . $partner->photo) }}"
+                                            src="{{ asset('assets/images/partner/' . $partner->photo) }}"
                                             alt="Pingdom">
                                     </div>
                                 @endforeach
@@ -305,8 +305,8 @@
                                                 <div class="reviews__blockImage overflow-hidden position-relative">
                                                     <div class="sk-spinner sk-spinner-pulse"></div>
                                                     <img class="swiper-lazy reviews__image position-absolute"
-                                                        data-src="{{ asset('public/assets/images/reviews/' . $review->photo) }}"
-                                                        src="{{ asset('public/assets/images/reviews/' . $review->photo) }}"
+                                                        data-src="{{ asset('assets/images/reviews/' . $review->photo) }}"
+                                                        src="{{ asset('assets/images/reviews/' . $review->photo) }}"
                                                         alt="{{ $langg->rtl == 1 ? $review->title_ar : $review->title }}">
                                                 </div>
                                             </div>
@@ -420,7 +420,7 @@
                         data-aos-delay="300">
                         <div class="sk-spinner sk-spinner-pulse"></div>
                         <img class="subscribe__image position-absolute b-lazy"
-                            data-src="{{ asset('public/assets/images/' . $gs->big_icon) }}"
+                            data-src="{{ asset('assets/images/' . $gs->big_icon) }}"
                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             alt="">
                     </div>
@@ -492,7 +492,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>
@@ -551,7 +551,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

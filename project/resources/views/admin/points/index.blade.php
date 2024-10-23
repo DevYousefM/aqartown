@@ -144,7 +144,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset('assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
@@ -254,7 +254,7 @@
 
             ],
             language: {
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset('assets/images/' . $gs->admin_loader) }}">'
             },
 
         });
@@ -304,7 +304,7 @@
 
             ],
             language: {
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset('assets/images/' . $gs->admin_loader) }}">'
             },
 
         });
@@ -354,7 +354,7 @@
 
             ],
             language: {
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset('assets/images/' . $gs->admin_loader) }}">'
             },
 
         });

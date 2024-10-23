@@ -13,7 +13,7 @@
         "@id": "{{url('/item',$blog->slug)}}"
       },
       "headline": "{{$blog->title}}",
-      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('public/assets/images/blogs/'.$blog->photo)}}",
+      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('assets/images/blogs/'.$blog->photo)}}",
 
 
       "datePublished": "{{$blog->created_at}}",
@@ -58,7 +58,7 @@
 
 
     <!-- end header -->
-    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->hot_icon) }});">
+    <section class="page-title" style="background-image:url({{ asset('assets/images/' . $gs->hot_icon) }});">
         <div class="auto-container">
             <h1>
                 @if ($langg->rtl == 1)
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="news-img">
-                <img src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}"
+                <img src="{{ asset('assets/images/blogs/' . $blog->photo) }}"
                     alt="@if ($langg->rtl == 1) {{ $blog->title_ar }}
         @else
         {{ $blog->title }} @endif  ">

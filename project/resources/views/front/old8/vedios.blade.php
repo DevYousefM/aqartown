@@ -17,7 +17,7 @@
 @section('content')
     <!-- ============================ Page Title Start================================== -->
     <section class="breadcrumb-section"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->trending_icon) }});">
+        style="background-image: url({{ asset('assets/images/' . $gs->trending_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang12 }}</h1>

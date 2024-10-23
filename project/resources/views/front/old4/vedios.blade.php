@@ -23,7 +23,7 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('public/assets/images/' . $gs->hot_icon) }}" alt="" />
+                <img src="{{ asset('assets/images/' . $gs->hot_icon) }}" alt="" />
             </div>
         </div>
     </section>

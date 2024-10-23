@@ -24,7 +24,7 @@
                 <div class="col-lg-12 p-5">
 
                     <div class="gocover"
-                        style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                        style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                     </div>
                     <form id="geniusform" action="{{ route('vendor-prod-importsubmit') }}" method="POST"
                         enctype="multipart/form-data">

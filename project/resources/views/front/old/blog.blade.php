@@ -14,7 +14,7 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->new_icon) }});"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/' . $gs->new_icon) }});"></div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
                     <h1 class="mb-0">{{ $langg->lang18 }}</h1>
@@ -40,7 +40,7 @@
                                         <div class="post-img2 w-100 position-relative overflow-hidden">
                                             <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}"
                                                 title=""><img class="img-fluid w-100"
-                                                    src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                                    src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
                                                     @if ($langg->rtl == 1) alt="{{ $blogg->alt_ar }}"
                                                                                          @else
                                                                                          alt="{{ $blogg->alt }}" @endif></a>

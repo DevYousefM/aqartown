@@ -22,7 +22,7 @@
         </div>
         <div class="add-logo-area">
             <div class="gocover"
-                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
             </div>
             <div class="row justify-content-center">
 
@@ -40,7 +40,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->feature_icon ? asset('public/assets/images/' . $gs->feature_icon) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $gs->feature_icon ? asset('assets/images/' . $gs->feature_icon) : asset('assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -68,7 +68,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->about_background ? asset('public/assets/images/' . $gs->about_background) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $gs->about_background ? asset('assets/images/' . $gs->about_background) : asset('assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -96,7 +96,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->service_background ? asset('public/assets/images/' . $gs->service_background) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $gs->service_background ? asset('assets/images/' . $gs->service_background) : asset('assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -125,7 +125,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->contact_background ? asset('public/assets/images/' . $gs->contact_background) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $gs->contact_background ? asset('assets/images/' . $gs->contact_background) : asset('assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -153,7 +153,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->about_page_background ? asset('public/assets/images/' . $gs->about_page_background) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $gs->about_page_background ? asset('assets/images/' . $gs->about_page_background) : asset('assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">

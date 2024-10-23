@@ -42,7 +42,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -111,7 +111,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -121,8 +121,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset('assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -148,7 +148,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
@@ -240,7 +240,7 @@
                 <div class="row">
                     <div class="col top-panel align-items-center d-flex justify-content-between">
                         <a href="{{ route('front.index', $sign) }}" class="logo"><img
-                                src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="Logo"></a>
+                                src="{{ asset('assets/images/' . $gs->logo) }}" alt="Logo"></a>
                         <nav id="topmenu" class="topmenu d-flex">
                             <button id="burger" class="topmenu__burger ml-auto" type="button">
                                 <span class="topmenu__burgerLine">Burger menu</span>
@@ -329,7 +329,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-4 col-12 d-flex justify-content-center justify-content-md-start">
                         <a class="footer__logo logo" href="{{ route('front.index', $sign) }}"><img
-                                src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="logo"></a>
+                                src="{{ asset('assets/images/' . $gs->logo) }}" alt="logo"></a>
                     </div>
                     <div class="col-md-4 col-12 text-center">
                         <h2 class="footer__title">{{ $langg->lang200 }}</h2>

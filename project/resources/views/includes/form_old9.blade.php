@@ -1,4 +1,4 @@
-<section data-bg="{{ asset('public/assets/images/' . $gs->new_icon) }}"
+<section data-bg="{{ asset('assets/images/' . $gs->new_icon) }}"
     class="appointment-area ptb-100 jarallax rocket-lazyload entered lazyloaded"
     style="background-image: url(&quot;https://drahmednabilelhoufy.com/wp-content/uploads/2020/09/computer-desk-laptop-stethoscope-48604-scaled-1.jpg&quot;);"
     data-jarallax="{&quot;speed&quot;: 0.3}" data-ll-status="loaded">
@@ -102,7 +102,7 @@
                     @if ($gs->is_capcha == 1)
                         <ul class="captcha-area">
                             <li>
-                                <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
                                         alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                             </li>

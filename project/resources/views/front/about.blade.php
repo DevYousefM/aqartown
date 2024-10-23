@@ -94,7 +94,7 @@
 
                                                     </span> -->
 
-                        <img src="{{ asset('public/assets/images/' . $gs->home_about_img2) }}" alt=""
+                        <img src="{{ asset('assets/images/' . $gs->home_about_img2) }}" alt=""
                             class="img-fluid">
 
                         <!-- <div class="play-s">

@@ -141,7 +141,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('assets/images/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if (!$slang)
@@ -182,7 +182,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/products/'.$gs->logo)}}"
+      "logo": "{{asset('assets/images/products/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -192,8 +192,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/products/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/products/'.$gs->logo)}}",
+    "image": "{{asset('assets/images/products/'.$gs->logo)}}",
+      "logo": "{{asset('assets/images/products/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -305,7 +305,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
     <link rel="stylesheet" href="{{ asset('assets/front/css/bootstrap.min.css') }}">
     <!-- Plugin css -->
@@ -365,7 +365,7 @@
 
     @if ($gs->is_loader == 1)
         <div class="preloader" id="preloader"
-            style="background: url({{ asset('public/assets/images/' . $gs->loader) }}) no-repeat scroll center center #FFF;">
+            style="background: url({{ asset('assets/images/' . $gs->loader) }}) no-repeat scroll center center #FFF;">
         </div>
     @endif
 
@@ -373,13 +373,13 @@
 
         @if (isset($visited))
             <div style="display:none">
-                <img src="{{ asset('public/assets/images/' . $gs->popup_background) }}">
+                <img src="{{ asset('assets/images/' . $gs->popup_background) }}">
             </div>
 
             <!--  Starting of subscribe-pre-loader Area   -->
             <div class="subscribe-preloader-wrap" id="subscriptionForm" style="display: none;">
                 <div class="subscribePreloader__thumb"
-                    style="background-image: url({{ asset('public/assets/images/' . $gs->popup_background) }});">
+                    style="background-image: url({{ asset('assets/images/' . $gs->popup_background) }});">
                     <span class="preload-close"><i class="fas fa-times"></i></span>
                     <div class="subscribePreloader__text text-center">
                         <h1>{{ $gs->popup_title }}</h1>
@@ -551,16 +551,16 @@
 
                             @if (!$slang)
                                 @if ($lang->id == 2)
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo_ar) }}" alt="">
+                                    <img src="{{ asset('assets/images/' . $gs->logo_ar) }}" alt="">
                                 @else
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                                    <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="">
 
                                 @endif
                             @else
                                 @if ($slang == 2)
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo_ar) }}" alt="">
+                                    <img src="{{ asset('assets/images/' . $gs->logo_ar) }}" alt="">
                                 @else
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                                    <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="">
                                 @endif
                             @endif
 
@@ -734,7 +734,7 @@
                                         class="{{ count($category->subs) > 0 ? 'dropdown_list' : '' }} {{ $i >= 15 ? 'rx-child' : '' }}">
                                         @if (count($category->subs) > 0)
                                             <div class="img">
-                                                <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
+                                                <img src="{{ asset('assets/images/categories/' . $category->photo) }}"
                                                     alt="">
                                             </div>
                                             <div class="link-area">
@@ -786,24 +786,24 @@
                                                 @if ($lang->id == 2)
                                                     <a
                                                         href="{{ route('front.category', ['category' => $category->slug_ar, 'lang' => $sign]) }}"><img
-                                                            src="{{ asset('public/assets/images/categories/' . $category->photo) }}">
+                                                            src="{{ asset('assets/images/categories/' . $category->photo) }}">
                                                         {{ $category->name_ar }}
                                                     @else
                                                         <a
                                                             href="{{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }}"><img
-                                                                src="{{ asset('public/assets/images/categories/' . $category->photo) }}">
+                                                                src="{{ asset('assets/images/categories/' . $category->photo) }}">
                                                             {{ $category->name }}
                                                 @endif
                                             @else
                                                 @if ($slang == 2)
                                                     <a
                                                         href="{{ route('front.category', ['category' => $category->slug_ar, 'lang' => $sign]) }}"><img
-                                                            src="{{ asset('public/assets/images/categories/' . $category->photo) }}">
+                                                            src="{{ asset('assets/images/categories/' . $category->photo) }}">
                                                         {{ $category->name_ar }}
                                                     @else
                                                         <a
                                                             href="{{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }}"><img
-                                                                src="{{ asset('public/assets/images/categories/' . $category->photo) }}">
+                                                                src="{{ asset('assets/images/categories/' . $category->photo) }}">
                                                             {{ $category->name }}
                                                 @endif
                                             @endif
