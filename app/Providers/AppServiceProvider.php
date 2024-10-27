@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
             $settings->with('subcategories', Subcategory::where('status', '=', 1)->get());
             if (Session::has('language')) {
                 $data = DB::table('languages')->find(Session::get('language'));
-                $data_results = file_get_contents('assets/languages/' . $data->file);
+                $data_results = file_get_contents('public/assets/languages/' . $data->file);
                 $lang = json_decode($data_results);
                 $settings->with('langg', $lang);
                 if ($data->id == 1) {
@@ -46,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
                 $settings->with('locale', $data->sign);
             } else {
                 $data = DB::table('languages')->where('is_default', '=', 1)->first();
-                $data_results = file_get_contents('assets/languages/' . $data->file);
+                $data_results = file_get_contents('public/assets/languages/' . $data->file);
                 $lang = json_decode($data_results);
                 $settings->with('langg', $lang);
                 if ($data->id == 1) {
@@ -73,7 +73,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        
+
         Collection::macro('paginate', function ($perPage, $total = null, $page = null, $pageName = 'page') {
             $page = $page ?: LengthAwarePaginator::resolveCurrentPage($pageName);
             return new LengthAwarePaginator(
