@@ -73,7 +73,7 @@ class LanguageController extends Controller
     public function edit($id)
     {
         $data = Language::findOrFail($id);
-        $data_results = file_get_contents(public_path() . '/public/assets/languages/' . $data->file);
+        $data_results = file_get_contents(public_path() . '/assets/languages/' . $data->file);
         $lang = json_decode($data_results);
         return view('admin.language.edit', compact('data', 'lang'));
     }
