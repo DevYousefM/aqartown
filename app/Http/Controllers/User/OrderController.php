@@ -81,7 +81,7 @@ class OrderController extends Controller
         if (!isset($order) || $prod->type == 'Physical' || $order->user_id != $user->id) {
             return redirect()->back();
         }
-        return response()->download(public_path('public/assets/files/' . $prod->file));
+        return response()->download(public_path('assets/files/' . $prod->file));
     }
 
     public function orderprint($id)

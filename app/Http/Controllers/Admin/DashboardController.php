@@ -208,8 +208,8 @@ class DashboardController extends Controller
     public function activation()
     {
         $activation_data = "";
-        if (file_exists(public_path() . '/project/license.txt')) {
-            $license = file_get_contents(public_path() . '/project/license.txt');
+        if (file_exists(public_path() . '/license.txt')) {
+            $license = file_get_contents(public_path() . '/license.txt');
             if ($license != "") {
                 $activation_data = "<i style='color:darkgreen;' class='icofont-check-circled icofont-4x'></i><br><h3 style='color:darkgreen;'>Your System is Activated!</h3><br> Your License Key:  <b>" . $license . "</b>";
             }
@@ -252,7 +252,7 @@ class DashboardController extends Controller
                 unlink(public_path() . '/rooted.txt');
             }
 
-            $fpbt = fopen(public_path() . '/project/license.txt', 'w');
+            $fpbt = fopen(public_path() . '/license.txt', 'w');
             fwrite($fpbt, $purchase_code);
             fclose($fpbt);
 
