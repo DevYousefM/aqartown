@@ -363,7 +363,7 @@ class ChildCategoryController extends Controller
         //return response()->json($filename);
         $datas = "";
 
-        $file = fopen(public_path('public/assets/temp_files/' . $filename), "r");
+        $file = fopen(public_path('assets/temp_files/' . $filename), "r");
         $i = 1;
         while (($line = fgetcsv($file)) !== FALSE) {
 

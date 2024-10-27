@@ -64,7 +64,7 @@ class GeniusMailer
                 $message->subject($objDemo->subject);
                 $order = Order::findOrFail($id);
                 $cart = unserialize(bzdecompress(utf8_decode($order->cart)));
-                $fileName = public_path('public/assets/prints/') . str_random(4) . time() . '.pdf';
+                $fileName = public_path('assets/prints/') . str_random(4) . time() . '.pdf';
                 $pdf = PDF::loadView('print.order', compact('order', 'cart'))->save($fileName);
                 $message->attach($fileName);
             });

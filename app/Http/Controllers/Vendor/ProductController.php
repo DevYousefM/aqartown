@@ -267,7 +267,7 @@ class ProductController extends Controller
                 //return response()->json($filename);
                 $datas = "";
 
-                $file = fopen(public_path('public/assets/temp_files/' . $filename), "r");
+                $file = fopen(public_path('assets/temp_files/' . $filename), "r");
                 $i = 1;
                 while (($line = fgetcsv($file)) !== FALSE) {
 
@@ -446,7 +446,7 @@ class ProductController extends Controller
             $imagem2 = $request->file('hover_photo');
             $image_ext2 = $imagem2->getClientOriginalExtension();
             $new_image_name2 = rand(123456, 999999) . "." . $image_ext2;
-            $destination_path2 = public_path('public/assets/images/products/');
+            $destination_path2 = public_path('assets/images/products/');
             $imagem2->move($destination_path2, $new_image_name2);
             $input['hover_photo'] = $new_image_name2;
             $input['photo'] = $new_image_name2;
@@ -686,7 +686,7 @@ class ProductController extends Controller
             $image = $request->file('mobile_photo');
             $image_ext = $image->getClientOriginalExtension();
             $new_image_name = rand(123456, 999999) . "." . $image_ext;
-            $destination_path = public_path('public/assets/images/products/');
+            $destination_path = public_path('assets/images/products/');
             $image->move($destination_path, $new_image_name);
             $input['mobile_photo'] = $new_image_name;
         }
@@ -696,7 +696,7 @@ class ProductController extends Controller
             $imagem2 = $request->file('hover_photo');
             $image_ext2 = $imagem2->getClientOriginalExtension();
             $new_image_name2 = rand(123456, 999999) . "." . $image_ext2;
-            $destination_path2 = public_path('public/assets/images/products/');
+            $destination_path2 = public_path('assets/images/products/');
             $imagem2->move($destination_path2, $new_image_name2);
             $input['hover_photo'] = $new_image_name2;
             $input['photo'] = $new_image_name2;
