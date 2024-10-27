@@ -212,8 +212,8 @@ class CategoryController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/categories', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/categories/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/categories/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/categories/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/categories/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -336,13 +336,13 @@ class CategoryController extends Controller
         //If Photo Exist
 
         if (!empty($data->photo)) {
-            if (file_exists(public_path() . '/public/assets/images/categories/' . $data->photo)) {
-                unlink(public_path() . '/public/assets/images/categories/' . $data->photo);
+            if (file_exists(public_path() . '/assets/images/categories/' . $data->photo)) {
+                unlink(public_path() . '/assets/images/categories/' . $data->photo);
             }
         }
         if (!empty($data->image)) {
-            if (file_exists(public_path() . '/public/assets/images/categories/' . $data->image)) {
-                unlink(public_path() . '/public/assets/images/categories/' . $data->image);
+            if (file_exists(public_path() . '/assets/images/categories/' . $data->image)) {
+                unlink(public_path() . '/assets/images/categories/' . $data->image);
             }
         }
         $data->delete();
@@ -476,14 +476,14 @@ class CategoryController extends Controller
                 }
                 //If Photo Exist
                 if (!empty($data->photo)) {
-                    if (file_exists(public_path() . '/public/assets/images/categories/' . $data->photo)) {
-                        unlink(public_path() . '/public/assets/images/categories/' . $data->photo);
+                    if (file_exists(public_path() . '/assets/images/categories/' . $data->photo)) {
+                        unlink(public_path() . '/assets/images/categories/' . $data->photo);
                     }
                 }
 
                 if (!empty($data->image)) {
-                    if (file_exists(public_path() . '/public/assets/images/categories/' . $data->image)) {
-                        unlink(public_path() . '/public/assets/images/categories/' . $data->image);
+                    if (file_exists(public_path() . '/assets/images/categories/' . $data->image)) {
+                        unlink(public_path() . '/assets/images/categories/' . $data->image);
                     }
                 }
 

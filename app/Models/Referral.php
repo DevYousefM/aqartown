@@ -41,8 +41,8 @@ class Referral extends Model
     {
         $file->move('public/assets/images/coupon/', $name);
         if ($oldname != null) {
-            if (file_exists(public_path() . '/public/assets/images/coupon/' . $oldname)) {
-                unlink(public_path() . '/public/assets/images/coupon/' . $oldname);
+            if (file_exists(public_path() . '/assets/images/coupon/' . $oldname)) {
+                unlink(public_path() . '/assets/images/coupon/' . $oldname);
             }
         }
     }

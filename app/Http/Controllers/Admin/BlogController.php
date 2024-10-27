@@ -144,8 +144,8 @@ class BlogController extends Controller
             $name = $this->generateRandomName($file);
             $file->move('public/assets/images/blogs', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/blogs/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/blogs/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/blogs/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/blogs/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -154,8 +154,8 @@ class BlogController extends Controller
             $name2 = $this->generateRandomName($file2);
             $file2->move('public/assets/images/blogs', $name2);
             if ($data->image != null) {
-                if (file_exists(public_path() . '/public/assets/images/blogs/' . $data->image)) {
-                    unlink(public_path() . '/public/assets/images/blogs/' . $data->image);
+                if (file_exists(public_path() . '/assets/images/blogs/' . $data->image)) {
+                    unlink(public_path() . '/assets/images/blogs/' . $data->image);
                 }
             }
             $input['image'] = $name2;
@@ -199,8 +199,8 @@ class BlogController extends Controller
             return response()->json($msg);
         }
         //If Photo Exist
-        if (file_exists(public_path() . '/public/assets/images/blogs/' . $data->photo)) {
-            unlink(public_path() . '/public/assets/images/blogs/' . $data->photo);
+        if (file_exists(public_path() . '/assets/images/blogs/' . $data->photo)) {
+            unlink(public_path() . '/assets/images/blogs/' . $data->photo);
         }
         $data->delete();
         $msg = trans('Delete Msg');

@@ -54,7 +54,7 @@ class GalleryController extends Controller
 
                     $img = Image::make($file->getRealPath())->resize(800, 800);
                     $thumbnail = time() . str_random(8) . '.jpg';
-                    $img->save(public_path() . '/public/assets/images/galleries/' . $thumbnail);
+                    $img->save(public_path() . '/assets/images/galleries/' . $thumbnail);
 
                     $gallery['photo'] = $thumbnail;
                     $gallery['category_id'] = $lastid;
@@ -81,7 +81,7 @@ class GalleryController extends Controller
 
                     $img = Image::make($file->getRealPath())->resize(800, 800);
                     $thumbnail = time() . str_random(8) . '.jpg';
-                    $img->save(public_path() . '/public/assets/images/galleries/' . $thumbnail);
+                    $img->save(public_path() . '/assets/images/galleries/' . $thumbnail);
 
                     $gallery['photo'] = $thumbnail;
                     $gallery['category_id'] = $lastid;
@@ -100,8 +100,8 @@ class GalleryController extends Controller
 
         $id = $_GET['id'];
         $gal = Gallery::findOrFail($id);
-        if (file_exists(public_path() . '/public/assets/images/galleries/' . $gal->photo)) {
-            unlink(public_path() . '/public/assets/images/galleries/' . $gal->photo);
+        if (file_exists(public_path() . '/assets/images/galleries/' . $gal->photo)) {
+            unlink(public_path() . '/assets/images/galleries/' . $gal->photo);
         }
         $gal->delete();
     }

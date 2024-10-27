@@ -24,8 +24,8 @@ class City extends Model
     {
         $file->move('public/assets/images/gallery/', $name);
         if ($oldname != null) {
-            if (file_exists(public_path() . '/public/assets/images/gallery/' . $oldname)) {
-                unlink(public_path() . '/public/assets/images/gallery/' . $oldname);
+            if (file_exists(public_path() . '/assets/images/gallery/' . $oldname)) {
+                unlink(public_path() . '/assets/images/gallery/' . $oldname);
             }
         }
     }

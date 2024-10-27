@@ -112,8 +112,8 @@ class ImportController extends Controller
         $path = 'public/assets/images/products/' . $image_name;
         file_put_contents($path, $image);
         if ($data->photo != null) {
-            if (file_exists(public_path() . '/public/assets/images/products/' . $data->photo)) {
-                unlink(public_path() . '/public/assets/images/products/' . $data->photo);
+            if (file_exists(public_path() . '/assets/images/products/' . $data->photo)) {
+                unlink(public_path() . '/assets/images/products/' . $data->photo);
             }
         }
         $input['photo'] = $image_name;
@@ -280,7 +280,7 @@ class ImportController extends Controller
                 $prod->slug = str_slug($data->name, '-') . '-' . strtolower($data->sku);
             }
 
-            $fimageData = public_path() . '/public/assets/images/products/' . $prod->photo;
+            $fimageData = public_path() . '/assets/images/products/' . $prod->photo;
 
             if (filter_var($prod->photo, FILTER_VALIDATE_URL)) {
                 $fimageData = $prod->photo;
@@ -288,7 +288,7 @@ class ImportController extends Controller
 
             $img = Image::make($fimageData)->resize(285, 285);
             $thumbnail = time() . str_random(8) . '.jpg';
-            $img->save(public_path() . '/public/assets/images/thumbnails/' . $thumbnail);
+            $img->save(public_path() . '/assets/images/thumbnails/' . $thumbnail);
             $prod->thumbnail  = $thumbnail;
             $prod->update();
 
@@ -357,8 +357,8 @@ class ImportController extends Controller
             $input['link'] = null;
         } else {
             if ($data->file != null) {
-                if (file_exists(public_path() . '/public/assets/files/' . $data->file)) {
-                    unlink(public_path() . '/public/assets/files/' . $data->file);
+                if (file_exists(public_path() . '/assets/files/' . $data->file)) {
+                    unlink(public_path() . '/assets/files/' . $data->file);
                 }
             }
             $input['file'] = null;
@@ -490,12 +490,12 @@ class ImportController extends Controller
         //-- Logic Section Ends
 
         if ($data->photo != null) {
-            if (file_exists(public_path() . '/public/assets/images/thumbnails/' . $data->thumbnail)) {
-                unlink(public_path() . '/public/assets/images/thumbnails/' . $data->thumbnail);
+            if (file_exists(public_path() . '/assets/images/thumbnails/' . $data->thumbnail)) {
+                unlink(public_path() . '/assets/images/thumbnails/' . $data->thumbnail);
             }
         }
 
-        $fimageData = public_path() . '/public/assets/images/products/' . $prod->photo;
+        $fimageData = public_path() . '/assets/images/products/' . $prod->photo;
 
         if (filter_var($prod->photo, FILTER_VALIDATE_URL)) {
             $fimageData = $prod->photo;
@@ -503,7 +503,7 @@ class ImportController extends Controller
 
         $img = Image::make($fimageData)->resize(285, 285);
         $thumbnail = time() . str_random(8) . '.jpg';
-        $img->save(public_path() . '/public/assets/images/thumbnails/' . $thumbnail);
+        $img->save(public_path() . '/assets/images/thumbnails/' . $thumbnail);
         $prod->thumbnail  = $thumbnail;
         $prod->update();
 
