@@ -70,7 +70,7 @@ class AdminLanguageController extends Controller
             $new[$n] = $value;
         }
         $mydata = json_encode($new);
-        file_put_contents('/resources/lang/' . $data->file, $mydata);
+        file_put_contents(__DIR__ . '/../resources/lang/' . $data->file, $mydata);
         //--- Logic Section Ends
 
         //--- Redirect Section        
@@ -90,7 +90,7 @@ class AdminLanguageController extends Controller
     public function edit($id)
     {
         $data = AdminLanguage::findOrFail($id);
-        $data_results = file_get_contents('/resources/lang/' . $data->file);
+        $data_results = file_get_contents(__DIR__ . '/../resources/lang/' . $data->file);
         $lang = json_decode($data_results, true);
         return view('admin.adminlanguage.edit', compact('data', 'lang'));
     }
@@ -106,7 +106,7 @@ class AdminLanguageController extends Controller
         $new = null;
         $input = $request->all();
         $data = AdminLanguage::findOrFail($id);
-        if (file_exists('/resources/lang/' . $data->file)) {
+        if (file_exists(__DIR__ . '/../resources/lang/' . $data->file)) {
             //    unlink(public_path().'/resources/lang/'.$data->file);
         }
         $data->language = $input['language'];
@@ -124,7 +124,7 @@ class AdminLanguageController extends Controller
             $new[$n] = $value;
         }
         $mydata = json_encode($new);
-        file_put_contents('/resources/lang/' . $data->file, $mydata);
+        file_put_contents(__DIR__ . '/../resources/lang/' . $data->file, $mydata);
         //--- Logic Section Ends
 
         //--- Redirect Section     
@@ -163,8 +163,8 @@ class AdminLanguageController extends Controller
         if ($data->is_default == 1) {
             return "You can not remove default language.";
         }
-        if (file_exists('/resources/lang/' . $data->file)) {
-            unlink('/resources/lang/' . $data->file);
+        if (file_exists(__DIR__ . '/../resources/lang/' . $data->file)) {
+            unlink(__DIR__ . '/../resources/lang/' . $data->file);
         }
         $data->delete();
         //--- Redirect Section     
