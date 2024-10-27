@@ -32,7 +32,7 @@
                 <div class="col-md-6 mb-auto mt-auto">
                     <div class="contact__list">
                         <div class="contact__listItem d-flex">
-                            <img class="contact__listIcon" src="{{ asset('assets/cangrow/images/svg/email.svg') }}"
+                            <img class="contact__listIcon" src="{{ asset('public/assets/cangrow/images/svg/email.svg') }}"
                                 alt="" data-aos="fade" data-aos-delay="300" data-aos-offset="0">
                             <div class="contact__listWrapLabelLink">
                                 <h4 class="contact__listLabel" data-aos="fade-left" data-aos-delay="200"
@@ -43,7 +43,7 @@
                             </div>
                         </div>
                         <div class="contact__listItem d-flex">
-                            <img class="contact__listIcon" src="{{ asset('assets/cangrow/images/svg/phone.svg') }}"
+                            <img class="contact__listIcon" src="{{ asset('public/assets/cangrow/images/svg/phone.svg') }}"
                                 alt="" data-aos="fade" data-aos-delay="400" data-aos-offset="0">
                             <div class="contact__listWrapLabelLink">
                                 <h4 class="contact__listLabel" data-aos="fade-left" data-aos-delay="300"
@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="contact__listItem d-flex">
-                            <img class="contact__listIcon" src="{{ asset('assets/cangrow/images/svg/address.svg') }}"
+                            <img class="contact__listIcon" src="{{ asset('public/assets/cangrow/images/svg/address.svg') }}"
                                 alt="" data-aos="fade" data-aos-delay="500" data-aos-offset="0">
                             <div class="contact__listWrapLabelLink">
                                 <h4 class="contact__listLabel" data-aos="fade-in" data-aos-delay="400" data-aos-offset="0">
@@ -82,9 +82,9 @@
                 <div class="col-lg-6">
                     <div class="appointment__wrapIllustration position-relative" data-aos="fade-down">
                         <img class="appointment__illustration position-relative"
-                            src="{{ asset('assets/images/' . $gs->discount_icon) }}" alt="Illustration">
+                            src="{{ asset('public/assets/images/' . $gs->discount_icon) }}" alt="Illustration">
                         <img class="appointment__arrow position-absolute"
-                            src="{{ asset('assets/cangrow/images/svg/appointment-arrow.svg') }}" alt="Arrow">
+                            src="{{ asset('public/assets/cangrow/images/svg/appointment-arrow.svg') }}" alt="Arrow">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -154,7 +154,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>

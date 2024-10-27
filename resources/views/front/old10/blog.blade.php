@@ -9,7 +9,7 @@
     @endif
 @stop
 @section('css')
-    <link href="{{ asset('assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
 @stop
 @section('content')
     @php
@@ -18,7 +18,7 @@
 
     @endphp
     <!-- end header -->
-    <section class="page-title" style="background-image:url({{ asset('assets/images/' . $gs->hot_icon) }});">
+    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->hot_icon) }});">
         <div class="auto-container">
             <h1>{{ $langg->lang222 }}</h1>
 
@@ -57,9 +57,9 @@
                                 class="blog-card">
                                 <div class="img-div lazy-div">
                                     <img class=""
-                                        data-src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
+                                        data-src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
                                         alt="img"
-                                        src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}">
+                                        src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}">
 
                                 </div>
                                 <p class="blog-title">

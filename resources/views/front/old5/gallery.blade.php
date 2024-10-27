@@ -10,7 +10,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/qoudorat/assets/css/lightgallery.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/qoudorat/assets/css/lightgallery.css') }}">
 
 @stop
 
@@ -22,7 +22,7 @@
 
 
 
-    <div class="page-banner-area" style="background-image:url({{ asset('assets/images/' . $gs->trending_icon) }})">
+    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->trending_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang221 }}</h2>
@@ -48,8 +48,8 @@
             <div class="gallery-layout">
                 <div class="home-light-gallery">
                     @foreach ($services as $key => $service)
-                        <a href="{{ asset('assets/images/services/' . $service->photo) }}">
-                            <img src="{{ asset('assets/images/services/' . $service->photo) }}">
+                        <a href="{{ asset('public/assets/images/services/' . $service->photo) }}">
+                            <img src="{{ asset('public/assets/images/services/' . $service->photo) }}">
                         </a>
                     @endforeach
 
@@ -62,9 +62,9 @@
 
 @section('js')
 
-    <script src="{{ asset('assets/qoudorat/assets/js/lightgallery.js') }}"></script>
+    <script src="{{ asset('public/assets/qoudorat/assets/js/lightgallery.js') }}"></script>
 
-    <script src="{{ asset('assets/qoudorat/assets/js/lg-thumbnail.umd.js') }}"></script>
+    <script src="{{ asset('public/assets/qoudorat/assets/js/lg-thumbnail.umd.js') }}"></script>
 
 
     <script>

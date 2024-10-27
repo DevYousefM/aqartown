@@ -42,10 +42,10 @@
                                 <div class="col-md-4">
                                     <div class="user-image">
                                         @if ($data->is_provider == 1)
-                                            <img src="{{ $data->photo ? asset($data->photo) : asset('assets/images/' . $gs->user_image) }}"
+                                            <img src="{{ $data->photo ? asset($data->photo) : asset('public/assets/images/' . $gs->user_image) }}"
                                                 alt="No Image">
                                         @else
-                                            <img src="{{ $data->photo ? asset('assets/images/users/' . $data->photo) : asset('assets/images/' . $gs->user_image) }}"
+                                            <img src="{{ $data->photo ? asset('public/assets/images/users/' . $data->photo) : asset('public/assets/images/' . $gs->user_image) }}"
                                                 alt="No Image">
                                         @endif
                                         <a href="javascript:;" class="mybtn1 send" data-email="{{ $data->email }}"

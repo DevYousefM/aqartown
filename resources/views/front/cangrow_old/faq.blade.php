@@ -48,8 +48,8 @@
                     <div class="col-lg-6">
                         <div class="faq__BlockImage overflow-hidden position-relative" data-aos="fade">
                             <div class="sk-spinner sk-spinner-pulse"></div>
-                            <img class="faq__image b-lazy" data-src="{{ asset('assets/images/' . $gs->new_icon) }}"
-                                src="{{ asset('assets/images/' . $gs->new_icon) }}" alt="">
+                            <img class="faq__image b-lazy" data-src="{{ asset('public/assets/images/' . $gs->new_icon) }}"
+                                src="{{ asset('public/assets/images/' . $gs->new_icon) }}" alt="">
                         </div>
 
                     </div>
@@ -84,7 +84,7 @@ padding-right: 35px;">
                 </div>
             </div>
             <img class="faq__illustration position-absolute"
-                src="{{ asset('assets/cangrow/images/svg/faq-illustration.svg') }}" alt="FAQ Illustration">
+                src="{{ asset('public/assets/cangrow/images/svg/faq-illustration.svg') }}" alt="FAQ Illustration">
         </section>
         <div class="subscribe container position-relative">
             <div class="row">
@@ -101,8 +101,8 @@ padding-right: 35px;">
                         data-aos-delay="300">
                         <div class="sk-spinner sk-spinner-pulse"></div>
                         <img class="subscribe__image position-absolute b-lazy"
-                            data-src="{{ asset('assets/images/' . $gs->trending_icon) }}"
-                            src="{{ asset('assets/images/' . $gs->trending_icon) }}" alt="">
+                            data-src="{{ asset('public/assets/images/' . $gs->trending_icon) }}"
+                            src="{{ asset('public/assets/images/' . $gs->trending_icon) }}" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 align-items-center d-flex">

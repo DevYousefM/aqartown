@@ -17,7 +17,7 @@
     @endphp
 
     <!-- end header -->
-    <section class="page-title" style="background-image:url({{ asset('assets/images/' . $gs->best_icon) }});">
+    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->best_icon) }});">
         <div class="auto-container">
             <h1>{{ $langg->lang11 }} </h1>
 
@@ -45,14 +45,14 @@
                     <a href="{{ route('front.category', ['category' => $subcat->category->slug_ar, 'subcategory' => $subcat->slug_ar, 'lang' => $sign]) }}"
                         class="service-item" data-aos="zoom-in-down" data-aos-duration="3000">
                         <div class="service-icon">
-                            <img src="{{ asset('assets/images/subcategories/' . $subcat->photo) }}"
+                            <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
                                 alt="@if ($langg->rtl == 1) {{ $subcat->name_ar }}
             @else
 
             {{ $subcat->name }} @endif   "
-                                data-lazy-src="{{ asset('assets/images/subcategories/' . $subcat->photo) }}"
+                                data-lazy-src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
                                 data-ll-status="loaded" class="entered lazyloaded"><noscript><img
-                                    src="{{ asset('assets/images/subcategories/' . $subcat->photo) }}"
+                                    src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
                                     alt="@if ($langg->rtl == 1) {{ $subcat->name_ar }}
                 @else
 

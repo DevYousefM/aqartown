@@ -131,7 +131,7 @@ class ChildCategoryController extends Controller
 
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/childcategories', $name);
+            $file->move('public/assets/images/childcategories', $name);
             $input['photo'] = $name;
         }
 
@@ -227,10 +227,10 @@ class ChildCategoryController extends Controller
 
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/childcategories', $name);
+            $file->move('public/assets/images/childcategories', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/assets/images/childcategories/' . $data->photo)) {
-                    unlink(public_path() . '/assets/images/childcategories/' . $data->photo);
+                if (file_exists(public_path() . '/public/assets/images/childcategories/' . $data->photo)) {
+                    unlink(public_path() . '/public/assets/images/childcategories/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -356,14 +356,14 @@ class ChildCategoryController extends Controller
         $filename = '';
         if ($file = $request->file('csvfile')) {
             $filename = time() . '-' . $file->getClientOriginalName();
-            $file->move('assets/temp_files', $filename);
+            $file->move('public/assets/temp_files', $filename);
         }
 
         //$filename = $request->file('csvfile')->getClientOriginalName();
         //return response()->json($filename);
         $datas = "";
 
-        $file = fopen(public_path('assets/temp_files/' . $filename), "r");
+        $file = fopen(public_path('public/assets/temp_files/' . $filename), "r");
         $i = 1;
         while (($line = fgetcsv($file)) !== FALSE) {
 

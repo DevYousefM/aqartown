@@ -22,7 +22,7 @@
     @endphp
 
     <!-- end header -->
-    <section class="page-title" style="background-image:url({{ asset('assets/images/' . $gs->big_icon) }});">
+    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->big_icon) }});">
         <div class="auto-container">
             <h1>{{ $langg->lang7 }} </h1>
 
@@ -50,7 +50,7 @@
                 @foreach ($offers as $offer)
                     <div class="col-lg-4">
                         <div class="card">
-                            <img src="{{ asset('assets/images/speakers/' . $offer->photo) }}" class="card-img-top"
+                            <img src="{{ asset('public/assets/images/speakers/' . $offer->photo) }}" class="card-img-top"
                                 alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-right"> {{ $langg->rtl == 1 ? $offer->name_ar : $offer->name }}

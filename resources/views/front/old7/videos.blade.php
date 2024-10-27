@@ -15,7 +15,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/Al-Araby/css/lightgallery.css"') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/Al-Araby/css/lightgallery.css"') }}">
 @stop
 
 
@@ -32,7 +32,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->trending_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->trending_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">

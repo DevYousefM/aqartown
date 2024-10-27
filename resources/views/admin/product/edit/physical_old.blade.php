@@ -5,9 +5,9 @@
 @endphp
 @section('styles')
 
-    <link href="{{ asset('assets/admin/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -19,9 +19,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
     @if ($gs->light_dark == 0)
-        <link href="{{ asset('assets/admin/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+        <link href="{{ asset('public/assets/admin/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     @else
-        <link href="{{ asset('assets/admin/css/light/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+        <link href="{{ asset('public/assets/admin/css/light/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     @endif
     <style>
         * {
@@ -196,7 +196,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-update', $data->id) }}" method="POST"
                                 enctype="multipart/form-data">
@@ -748,7 +748,7 @@
                                                         <div class="row">
                                                             <div class="panel panel-body">
                                                                 <img class="span4 mobile text-center" id="landscapes2"
-                                                                    src="{{ asset('assets/images/products/' . $data->hover_photo) }}"
+                                                                    src="{{ asset('public/assets/images/products/' . $data->hover_photo) }}"
                                                                     style="width: 400px; height: 400px; border: 1px dashed black;">
 
                                                             </div>
@@ -1916,7 +1916,7 @@
                                                     <div class="row">
                                                         <div class="panel panel-body">
                                                             <img class="span4 cropme2 mobile text-center"
-                                                                src="{{ (empty($data->mobile_photo) ? asset('assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset('assets/images/products/' . $data->mobile_photo) }}"
+                                                                src="{{ (empty($data->mobile_photo) ? asset('public/assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset('public/assets/images/products/' . $data->mobile_photo) }}"
                                                                 id="landscapes"
                                                                 style="width: 400px; height: 400px; border: 1px dashed black;">
 
@@ -2190,11 +2190,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -2234,11 +2234,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -2303,11 +2303,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -2344,11 +2344,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -2367,9 +2367,9 @@
         // Gallery Section Update Ends
     </script>
 
-    <script src="{{ asset('assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
 
-    <script src="{{ asset('assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         $('.cropme').simpleCropper();
@@ -2388,11 +2388,11 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ (empty($data->photo) ? asset('assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset('assets/images/products/' . $data->photo) }}" alt="">`;
+                `<img src="{{ (empty($data->photo) ? asset('public/assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset('public/assets/images/products/' . $data->photo) }}" alt="">`;
             $(".span4.cropme").html(html);
 
             let htmls =
-                `<img src="{{ (empty($data->mobile_photo) ? asset('assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset('assets/images/products/' . $data->mobile_photo) }}" alt="">`;
+                `<img src="{{ (empty($data->mobile_photo) ? asset('public/assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset('public/assets/images/products/' . $data->mobile_photo) }}" alt="">`;
             $(".mobile").html(htmls);
 
             $.ajaxSetup({
@@ -2517,8 +2517,8 @@
             }
         });
     </script>
-    <script type="text/javascript" src="{{ asset('assets/admin/js/bootstrap-tagsinput.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/admin/js/product.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/assets/admin/js/bootstrap-tagsinput.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/assets/admin/js/product.js') }}"></script>
 
     <script type="text/javascript">
         $('.size-color').val();

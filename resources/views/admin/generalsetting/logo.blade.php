@@ -21,7 +21,7 @@
         </div>
         <div class="add-logo-area">
             <div class="gocover"
-                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
             </div>
             <div class="row justify-content-center">
                 <div class="col-xl-4 col-md-6">
@@ -38,7 +38,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->logo ? asset('assets/images/' . $gs->logo) : asset('assets/images/noimage.png') }}"
+                                <img src="{{ $gs->logo ? asset('public/assets/images/' . $gs->logo) : asset('public/assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -68,7 +68,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->logo_ar ? asset('assets/images/' . $gs->logo_ar) : asset('assets/images/noimage.png') }}"
+                                <img src="{{ $gs->logo_ar ? asset('public/assets/images/' . $gs->logo_ar) : asset('public/assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -98,7 +98,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->sidebar_logo ? asset('assets/images/' . $gs->sidebar_logo) : asset('assets/images/noimage.png') }}"
+                                <img src="{{ $gs->sidebar_logo ? asset('public/assets/images/' . $gs->sidebar_logo) : asset('public/assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -130,7 +130,7 @@
 
                               @include('includes.admin.form-both')
                               <div class="currrent-logo">
-                                  <img src="{{ $gs->footer_logo ? asset('assets/images/'.$gs->footer_logo):asset('assets/images/noimage.png')}}" alt="">
+                                  <img src="{{ $gs->footer_logo ? asset('public/assets/images/'.$gs->footer_logo):asset('public/assets/images/noimage.png')}}" alt="">
                               </div>
                               <div class="set-logo">
                                   <input class="img-upload1" type="file" name="footer_logo">
@@ -161,7 +161,7 @@
                               @include('includes.admin.form-both')
 
                               <div class="currrent-logo">
-                                  <img src="{{ $gs->invoice_logo ? asset('assets/images/'.$gs->invoice_logo):asset('assets/images/noimage.png')}}" alt="">
+                                  <img src="{{ $gs->invoice_logo ? asset('public/assets/images/'.$gs->invoice_logo):asset('public/assets/images/noimage.png')}}" alt="">
                               </div>
 
                               <div class="set-logo">
@@ -193,7 +193,7 @@
                            @include('includes.admin.form-both')  
 
                           <div class="currrent-logo">
-                            <img src="{{ $gs->paymentsicon ? asset('assets/images/'.$gs->paymentsicon):asset('assets/images/noimage.png')}}" alt="">
+                            <img src="{{ $gs->paymentsicon ? asset('public/assets/images/'.$gs->paymentsicon):asset('public/assets/images/noimage.png')}}" alt="">
                           </div>
                           
                           <div class="set-logo">

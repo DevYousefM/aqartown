@@ -8,7 +8,7 @@
                 <div class="product-description">
                     <div class="body-area">
                         <div class="gocover"
-                            style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                            style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                         </div>
                         <input type="hidden" id="track-store" value="{{ route('admin-order-track-store') }}">
                         <form id="trackform" action="{{ route('admin-order-track-store') }}" method="POST"

@@ -191,7 +191,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ asset('assets/images/noimage.png') }});">
+                                                style="background: url({{ asset('public/assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Icon') }}</label>
                                                 <input type="file" name="photo" class="img-upload"
@@ -249,8 +249,8 @@
         {{-- TAGIT ENDS --}}
     </script>
 
-    <script src="{{ asset('assets/admin/js/product.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/jscolor.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/jscolor.js') }}"></script>
 
 
 

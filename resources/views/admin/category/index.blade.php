@@ -441,7 +441,7 @@
 
                 <div class="submit-loader">
 
-                    <img src="{{ asset('assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
 
                 </div>
 
@@ -496,7 +496,7 @@
 
                 <div class="submit-loader">
 
-                    <img src="{{ asset('assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
 
                 </div>
 
@@ -656,7 +656,7 @@
 
             language: {
 
-                processing: '<img src="{{ asset('assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
 
             },
 
@@ -1041,11 +1041,11 @@
 
                                 '</span>' +
 
-                                '<a href="' + '{{ asset('assets/images/galleries') . '/' }}' +
+                                '<a href="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
                                 arr[k]['photo'] + '" target="_blank">' +
 
                                 '<img src="' +
-                                '{{ asset('assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
 
@@ -1160,10 +1160,10 @@
 
                                 '</span>' +
 
-                                '<a href="' + '{{ asset('assets/images/galleries') . '/' }}' +
+                                '<a href="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
                                 arr[k]['photo'] + '" target="_blank">' +
 
-                                '<img src="' + '{{ asset('assets/images/galleries') . '/' }}' +
+                                '<img src="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
                                 arr[k]['photo'] + '" alt="gallery image">' +
 
                                 '</a>' +

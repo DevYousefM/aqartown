@@ -49,7 +49,7 @@
                               </div>
                               <div class="col-lg-7">
                                 <div class="img-upload full-width-img">
-                                    <div id="image-preview" class="img-preview" style="background: url({{ $data->photo ? asset('assets/images/partner/' . $data->photo) : asset('assets/images/noimage.png') }});">
+                                    <div id="image-preview" class="img-preview" style="background: url({{ $data->photo ? asset('public/assets/images/partner/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
                                         <label for="image-upload" class="img-label" id="image-label"><i class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                         <input type="file" name="photo" class="img-upload" id="image-upload">
                                         <span class='span-img-size bottom'>Image size 240px X 150px</span>

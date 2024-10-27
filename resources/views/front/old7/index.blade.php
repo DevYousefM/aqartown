@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -31,7 +31,7 @@
                     @endphp
                     <div data-target="#pxp-hero-props-carousel-1" data-slide-to="{{ $k }}"
                         class="pxp-cover @if ($k == 0) active @endif ">
-                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="">
+                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="">
                         <p> {{ $langg->rtl == 1 ? $slide->subtitle_text_ar : $slide->subtitle_text }}</p>
                     </div>
                 @endforeach
@@ -49,21 +49,21 @@
                     <div class="carousel-item @if ($k == 0) active @endif"
                         data-slide="{{ $k }}">
                         <div class="pxp-hero-bg pxp-cover"
-                            style="background-image: url({{ asset('/assets/images/sliders/' . $galss) }});"></div>
+                            style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }});"></div>
 
                     </div>
                 @endforeach
 
                 <!-- <div class="social-media">
-                                <a href="#">
-                                    <h6>EN</h6>
-                                </a>
-                                <ul>
-                                    <li><a href="#">A <br> R</a></li>
+                                    <a href="#">
+                                        <h6>EN</h6>
+                                    </a>
+                                    <ul>
+                                        <li><a href="#">A <br> R</a></li>
 
 
-                                </ul>
-                            </div> -->
+                                    </ul>
+                                </div> -->
 
             </div>
         </div>
@@ -88,7 +88,7 @@
                             <div class="card-content">
                                 <div class="card-front">
                                     <div class="img-div">
-                                        <img src="{{ asset('assets/images/brands/' . $about_us->photo) }}"
+                                        <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
                                             alt="img">
                                     </div>
                                     <div class="title">
@@ -172,7 +172,7 @@
                                             
                                                 {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
                             <div class="single-team-typ-1-wraper">
-                                <img src="{{ asset('assets/images/categories/' . $category->photo) }}"
+                                <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
                                     alt="img">
                                 <div class="team-typ-1-hvr text-white">
                                     <p>
@@ -217,7 +217,7 @@
                         <li>
                             <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}">
                                 <div class="img-div">
-                                    <img src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
+                                    <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
                                         alt="img">
                                 </div>
                                 <div class="body">

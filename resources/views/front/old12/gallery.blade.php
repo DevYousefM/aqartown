@@ -21,9 +21,9 @@
     <!-- Start inner Page hero-->
     <section class="d-flex align-items-center page-hero hero-vegas-slider inner-page-hero " id="page-hero">
         <div class="overlay-color"></div>
-        <div class="vegas-slider-content" data-vegas-slide-1="{{ asset('assets/images/' . $gs->feature_icon) }}"
-            data-vegas-slide-2="{{ asset('assets/images/' . $gs->best_icon) }}"
-            data-vegas-slide-3="{{ asset('assets/images/' . $gs->trending_icon) }}">
+        <div class="vegas-slider-content" data-vegas-slide-1="{{ asset('public/assets/images/' . $gs->feature_icon) }}"
+            data-vegas-slide-2="{{ asset('public/assets/images/' . $gs->best_icon) }}"
+            data-vegas-slide-3="{{ asset('public/assets/images/' . $gs->trending_icon) }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12 hero-text-area ">
@@ -56,10 +56,10 @@
             <div class="gallery-layout">
                 <div class="mfa-gallery">
                     @foreach ($images as $key => $service)
-                        <a href="{{ asset('assets/images/banners/' . $service->photo) }}">
+                        <a href="{{ asset('public/assets/images/banners/' . $service->photo) }}">
                             <div class="img-div lazy-div">
                                 <img class="lazy"
-                                    data-src="{{ asset('assets/images/banners/' . $service->photo) }}" />
+                                    data-src="{{ asset('public/assets/images/banners/' . $service->photo) }}" />
                                 <div class="next-lazy-img"></div>
                             </div>
                         </a>

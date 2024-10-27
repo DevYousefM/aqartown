@@ -88,7 +88,7 @@
                                         <tbody>
                                             @foreach ($poproducts as $data)
                                             <tr>
-                                            <td><img src="{{filter_var($data->photo, FILTER_VALIDATE_URL) ?$data->photo:asset('assets/images/products/'.$data->photo)}}"></td>
+                                            <td><img src="{{filter_var($data->photo, FILTER_VALIDATE_URL) ?$data->photo:asset('public/assets/images/products/'.$data->photo)}}"></td>
                                             <td>{{  strlen(strip_tags($data->name)) > 50 ? substr(strip_tags($data->name),0,50).'...' : strip_tags($data->name) }}</td>
                                             <td>{{ $data->category->name }}
                                                     @if (isset($data->subcategory))
@@ -144,7 +144,7 @@
                                                 <tbody>
                                                     @foreach ($pproducts as $data)
                                                     <tr>
-                                                    <td><img src="{{filter_var($data->photo, FILTER_VALIDATE_URL) ?$data->photo:asset('assets/images/products/'.$data->photo)}}"></td>
+                                                    <td><img src="{{filter_var($data->photo, FILTER_VALIDATE_URL) ?$data->photo:asset('public/assets/images/products/'.$data->photo)}}"></td>
                                                     <td>{{  strlen(strip_tags($data->name)) > 50 ? substr(strip_tags($data->name),0,50).'...' : strip_tags($data->name) }}</td>
                                                     <td>{{ $data->category->name }}
                                                         @if (isset($data->subcategory))

@@ -38,10 +38,10 @@
                                 </div>
 
 
-                                <script type="text/javascript" src="{{ asset('assets/front/js/payvalid.js') }}"></script>
-                                <script type="text/javascript" src="{{ asset('assets/front/js/paymin.js') }}"></script>
+                                <script type="text/javascript" src="{{ asset('public/assets/front/js/payvalid.js') }}"></script>
+                                <script type="text/javascript" src="{{ asset('public/assets/front/js/paymin.js') }}"></script>
                                 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-                                <script type="text/javascript" src="{{ asset('assets/front/js/payform.js') }}"></script>
+                                <script type="text/javascript" src="{{ asset('public/assets/front/js/payform.js') }}"></script>
 
 
                                 <script type="text/javascript">

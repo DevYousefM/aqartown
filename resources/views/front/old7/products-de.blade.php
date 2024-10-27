@@ -24,7 +24,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->top_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->top_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -88,7 +88,7 @@
 
                 <div class="col-md-6">
                     <div class="service_details_wraper">
-                        <img src="{{ asset('assets/images/brands/' . $product->photo) }}" alt="">
+                        <img src="{{ asset('public/assets/images/brands/' . $product->photo) }}" alt="">
                     </div>
                 </div>
             </div>

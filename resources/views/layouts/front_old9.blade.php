@@ -43,7 +43,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -112,7 +112,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -122,8 +122,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}",
+    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -149,7 +149,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
@@ -157,34 +157,34 @@
 
 
     <!-- <link rel="stylesheet" href="./css/jquery-ui.css" /> -->
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/all.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/owl.theme.default.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/bootstrap.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/linearicons.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/ionicons.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/fontello.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/featherIcons.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/swiper.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/owl.theme.default.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/linearicons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/ionicons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/fontello.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/featherIcons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/swiper.min.css') }}" />
     <!-- <link rel="stylesheet" href="./css/slick.css" /> -->
-    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/nice-select.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/jquery.fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/jquery.fancybox.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/fotorama.css') }}" />
-
-
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/lightgallery.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/aos.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/hamburgers.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/advancedclinic/css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/fotorama.css') }}" />
 
 
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/lightgallery.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/aos.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/hamburgers.css') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/advancedclinic/css/index.css') }}" />
 
 
 
 
-    <link rel="stylesheet" href="{{ asset('assets/front/css/toastr.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
@@ -218,7 +218,7 @@
         <div class="main-header-md-ul-div">
             <div class="img-ul-div">
                 <a class="logo-img">
-                    <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="img" />
+                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="img" />
                 </a>
                 <ul class="main-header-md-ul">
                     <li class="active-li">
@@ -422,7 +422,7 @@
                 <div class="block-wrapper">
                     <div class="logo-img">
                         <a href="{{ route('front.index', $sign) }}">
-                            <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="img" />
+                            <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="img" />
                         </a>
                     </div>
                     <div class="header-lg-ul-div"></div>
@@ -445,7 +445,7 @@
                 <div class="section-one">
                     <div class="section-body">
                         <a href="{{ route('front.index', $sign) }}" class="logo-img">
-                            <img src="{{ asset('assets/images/' . $gs->contact_icon) }}" alt="img">
+                            <img src="{{ asset('public/assets/images/' . $gs->contact_icon) }}" alt="img">
                         </a>
                         <div class="text">
                             <p>
@@ -645,24 +645,24 @@
 
 
 
-    <script src="{{ asset('assets/advancedclinic/js/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/aos.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/popper.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/aos.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/popper.min.js') }}"></script>
     <!-- <script src="./js/jquery.counterup.js"></script> -->
-    <script src="{{ asset('assets/advancedclinic/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/jquery.fancybox.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/jquery.fancybox.min.js') }}"></script>
     <!-- <script src="./js/jquery-ui.min.js"></script> -->
-    <script src="{{ asset('assets/advancedclinic/js/swiper.min.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/jquery.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/fotorama.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/lightgallery.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/lg-thumbnail.js') }}"></script>
-    <script src="{{ asset('assets/advancedclinic/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/jquery.js') }}"></script>
+    <script src="{{ asset('public/assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/fotorama.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/lightgallery.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/lg-thumbnail.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/owl.carousel.min.js') }}"></script>
 
-    <script src="{{ asset('assets/advancedclinic/js/index.js') }}"></script>
+    <script src="{{ asset('public/assets/advancedclinic/js/index.js') }}"></script>
 
     <script>
         function getbmivalue() {
@@ -701,7 +701,7 @@
     </script>
 
 
-    <script src="{{ asset('assets/admin/js/toastr.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
         var mainurl = "{{ url('/' . $sign) }}";
         var mainurl2 = "{{ url('/') }}";
@@ -782,7 +782,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },
@@ -846,7 +846,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#appointment-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
                         );
                     console.log(1);
                 },

@@ -10,7 +10,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/qoudorat/assets/css/lightgallery.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/qoudorat/assets/css/lightgallery.css') }}">
 @stop
 
 
@@ -20,7 +20,7 @@
 @section('content')
 
 
-    <div class="page-banner-area" style="background-image:url({{ asset('assets/images/' . $gs->big_icon) }})">
+    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->big_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2> {{ $langg->lang18 }}</h2>
@@ -46,7 +46,7 @@
                 @foreach ($our_teams as $data)
                     <div class="col-lg-3">
                         <div class="card carda">
-                            <img src="{{ asset('assets/images/speakers/' . $data->photo) }}" alt="">
+                            <img src="{{ asset('public/assets/images/speakers/' . $data->photo) }}" alt="">
                             <ul class="links">
                                 <li><a href="{{ $data->facebook }}"><i class="fab fa-facebook"></i></a></li>
                             </ul>

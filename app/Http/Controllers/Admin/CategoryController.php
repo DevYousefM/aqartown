@@ -98,7 +98,7 @@ class CategoryController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/categories', $name);
+            $file->move('public/assets/images/categories', $name);
             $input['photo'] = $name;
         }
         if ($request->is_featured == '') {
@@ -128,7 +128,7 @@ class CategoryController extends Controller
             //--- Validation Section Ends
             if ($file = $request->file('image')) {
                 $name = time() . $file->getClientOriginalName();
-                $file->move('assets/images/categories', $name);
+                $file->move('public/assets/images/categories', $name);
                 $input['image'] = $name;
             }
         }
@@ -210,10 +210,10 @@ class CategoryController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/categories', $name);
+            $file->move('public/assets/images/categories', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/assets/images/categories/' . $data->photo)) {
-                    unlink(public_path() . '/assets/images/categories/' . $data->photo);
+                if (file_exists(public_path() . '/public/assets/images/categories/' . $data->photo)) {
+                    unlink(public_path() . '/public/assets/images/categories/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -238,7 +238,7 @@ class CategoryController extends Controller
             //--- Validation Section Ends
             if ($file = $request->file('image')) {
                 $name = time() . $file->getClientOriginalName();
-                $file->move('assets/images/categories', $name);
+                $file->move('public/assets/images/categories', $name);
                 $input['image'] = $name;
             }
         }
@@ -336,13 +336,13 @@ class CategoryController extends Controller
         //If Photo Exist
 
         if (!empty($data->photo)) {
-            if (file_exists(public_path() . '/assets/images/categories/' . $data->photo)) {
-                unlink(public_path() . '/assets/images/categories/' . $data->photo);
+            if (file_exists(public_path() . '/public/assets/images/categories/' . $data->photo)) {
+                unlink(public_path() . '/public/assets/images/categories/' . $data->photo);
             }
         }
         if (!empty($data->image)) {
-            if (file_exists(public_path() . '/assets/images/categories/' . $data->image)) {
-                unlink(public_path() . '/assets/images/categories/' . $data->image);
+            if (file_exists(public_path() . '/public/assets/images/categories/' . $data->image)) {
+                unlink(public_path() . '/public/assets/images/categories/' . $data->image);
             }
         }
         $data->delete();
@@ -382,14 +382,14 @@ class CategoryController extends Controller
         $filename = '';
         if ($file = $request->file('csvfile')) {
             $filename = time() . '-' . $file->getClientOriginalName();
-            $file->move('assets/temp_files', $filename);
+            $file->move('public/assets/temp_files', $filename);
         }
 
         //$filename = $request->file('csvfile')->getClientOriginalName();
         //return response()->json($filename);
         $datas = '';
 
-        $file = fopen(public_path('assets/temp_files/' . $filename), 'r');
+        $file = fopen(public_path('public/assets/temp_files/' . $filename), 'r');
         $i = 1;
         while (($line = fgetcsv($file)) !== false) {
             if ($i != 1) {
@@ -476,14 +476,14 @@ class CategoryController extends Controller
                 }
                 //If Photo Exist
                 if (!empty($data->photo)) {
-                    if (file_exists(public_path() . '/assets/images/categories/' . $data->photo)) {
-                        unlink(public_path() . '/assets/images/categories/' . $data->photo);
+                    if (file_exists(public_path() . '/public/assets/images/categories/' . $data->photo)) {
+                        unlink(public_path() . '/public/assets/images/categories/' . $data->photo);
                     }
                 }
 
                 if (!empty($data->image)) {
-                    if (file_exists(public_path() . '/assets/images/categories/' . $data->image)) {
-                        unlink(public_path() . '/assets/images/categories/' . $data->image);
+                    if (file_exists(public_path() . '/public/assets/images/categories/' . $data->image)) {
+                        unlink(public_path() . '/public/assets/images/categories/' . $data->image);
                     }
                 }
 

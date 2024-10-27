@@ -13,7 +13,7 @@
         "@id": "{{url('/item',$blog->slug)}}"
       },
       "headline": "{{$blog->title}}",
-      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('assets/images/blogs/'.$blog->photo)}}",
+      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('public/assets/images/blogs/'.$blog->photo)}}",
 
 
       "datePublished": "{{$blog->created_at}}",
@@ -46,7 +46,7 @@
 
 @section('content')
 
-    <div class="page-banner-area" style="background-image:url({{ asset('assets/images/' . $gs->hot_icon) }})">
+    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->hot_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2>
@@ -78,7 +78,7 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="blog-details-desc">
                         <div class="article-image">
-                            <img src="{{ asset('assets/images/blogs/' . $blog->photo) }}" alt="image">
+                            <img src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}" alt="image">
                             <!-- <div class="tag">{{ date('d M, Y', strtotime($blog->created_at)) }}</div>
                                 <div class="tag-two"><a href="blog-details.html">Technology</a></div> -->
                         </div>
@@ -151,7 +151,7 @@
                                     <a href="{{ route('front.blogshow', ['id' => $blog->id, 'lang' => $sign]) }}"
                                         class="thumb">
                                         <span class="fullimage cover bg1" role="img"
-                                            style="background-image: url({{ asset('assets/images/blogs/' . $blog->photo) }});"></span>
+                                            style="background-image: url({{ asset('public/assets/images/blogs/' . $blog->photo) }});"></span>
                                     </a>
                                     <div class="info">
                                         <span> {{ date('M d - Y', strtotime($blog->created_at)) }}</span>

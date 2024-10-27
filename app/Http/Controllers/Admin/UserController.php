@@ -99,10 +99,10 @@ class UserController extends Controller
         $data = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/users', $name);
+            $file->move('public/assets/images/users', $name);
             if ($user->photo != null) {
-                if (file_exists(public_path() . '/assets/images/users/' . $user->photo)) {
-                    unlink(public_path() . '/assets/images/users/' . $user->photo);
+                if (file_exists(public_path() . '/public/assets/images/users/' . $user->photo)) {
+                    unlink(public_path() . '/public/assets/images/users/' . $user->photo);
                 }
             }
             $data['photo'] = $name;
@@ -220,8 +220,8 @@ class UserController extends Controller
 
         if ($user->services->count() > 0) {
             foreach ($user->services as $gal) {
-                if (file_exists(public_path() . '/assets/images/services/' . $gal->photo)) {
-                    unlink(public_path() . '/assets/images/services/' . $gal->photo);
+                if (file_exists(public_path() . '/public/assets/images/services/' . $gal->photo)) {
+                    unlink(public_path() . '/public/assets/images/services/' . $gal->photo);
                 }
                 $gal->delete();
             }
@@ -242,8 +242,8 @@ class UserController extends Controller
             foreach ($user->products as $prod) {
                 if ($prod->galleries->count() > 0) {
                     foreach ($prod->galleries as $gal) {
-                        if (file_exists(public_path() . '/assets/images/galleries/' . $gal->photo)) {
-                            unlink(public_path() . '/assets/images/galleries/' . $gal->photo);
+                        if (file_exists(public_path() . '/public/assets/images/galleries/' . $gal->photo)) {
+                            unlink(public_path() . '/public/assets/images/galleries/' . $gal->photo);
                         }
                         $gal->delete();
                     }
@@ -276,8 +276,8 @@ class UserController extends Controller
                     }
                 }
 
-                if (file_exists(public_path() . '/assets/images/products/' . $prod->photo)) {
-                    unlink(public_path() . '/assets/images/products/' . $prod->photo);
+                if (file_exists(public_path() . '/public/assets/images/products/' . $prod->photo)) {
+                    unlink(public_path() . '/public/assets/images/products/' . $prod->photo);
                 }
 
                 $prod->delete();
@@ -355,8 +355,8 @@ class UserController extends Controller
             //--- Redirect Section Ends 
         }
         //If Photo Exist
-        if (file_exists(public_path() . '/assets/images/users/' . $user->photo)) {
-            unlink(public_path() . '/assets/images/users/' . $user->photo);
+        if (file_exists(public_path() . '/public/assets/images/users/' . $user->photo)) {
+            unlink(public_path() . '/public/assets/images/users/' . $user->photo);
         }
         $user->delete();
         //--- Redirect Section     
@@ -471,14 +471,14 @@ class UserController extends Controller
         $filename = '';
         if ($file = $request->file('csvfile')) {
             $filename = time() . '-' . $file->getClientOriginalName();
-            $file->move('assets/temp_files', $filename);
+            $file->move('public/assets/temp_files', $filename);
         }
 
         //$filename = $request->file('csvfile')->getClientOriginalName();
         //return response()->json($filename);
         $datas = "";
 
-        $file = fopen(public_path('assets/temp_files/' . $filename), "r");
+        $file = fopen(public_path('public/assets/temp_files/' . $filename), "r");
         $i = 1;
         while (($line = fgetcsv($file)) !== FALSE) {
 

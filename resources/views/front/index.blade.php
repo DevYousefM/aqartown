@@ -16,7 +16,7 @@
 
 @section('gsearch')
 
-    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -36,7 +36,7 @@
                 @endphp
 
                 <div class="swiper-slide cover-background"
-                    style="background-image:url({{ asset('/assets/images/sliders/' . $galss) }})">
+                    style="background-image:url({{ asset('/public/assets/images/sliders/' . $galss) }})">
 
 
 
@@ -229,7 +229,7 @@
                 </div>
                 <div class="col-md-6 pl-70 pt-50">
                     <div class="min-about pl-40 pb-40">
-                        <img src="{{ asset('assets/images/' . $gs->home_about_img1) }}" alt=""
+                        <img src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" alt=""
                             class="img-fluid">
                     </div>
                 </div>
@@ -293,14 +293,14 @@
 
                                     {{ route('front.product', ['slug' => $productt->slug, 'lang' => $sign]) }} @endif          ">
 
-                                                <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('assets/images/products/' . $productt->photo) }}"
+                                                <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('public/assets/images/products/' . $productt->photo) }}"
                                                     alt="" class="bg-pro-i">
 
                                             </a>
 
                                             {{-- <button class="chat-re" data-toggle="modal" data-target="#myModal-chat">
 
-                                                <img src="{{ asset('assets/aqar/') }}/images/messenger.png"
+                                                <img src="{{ asset('public/assets/aqar/') }}/images/messenger.png"
                                                     alt="" class="mes">
 
                                             </button> --}}
@@ -338,16 +338,16 @@
                                                     </a></h3>
 
                                                 <ul class="min-f-img">
-                                                    {{-- <li><img src="{{ asset('assets/aqar/') }}/images/b-o.png"
+                                                    {{-- <li><img src="{{ asset('public/assets/aqar/') }}/images/b-o.png"
                                                             alt=""> 3 Br</li>
 
-                                                    <li><img src="{{ asset('assets/aqar/') }}/images/ba-o.png"
+                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/ba-o.png"
                                                             alt=""> 3 Ba</li>
 
-                                                    <li><img src="{{ asset('assets/aqar/') }}/images/g-o.png"
+                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/g-o.png"
                                                             alt=""> 1 Gr</li> --}}
 
-                                                    <li><img src="{{ asset('assets/aqar/') }}/images/s-o.png"
+                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/s-o.png"
                                                             alt=""> {{ $productt->location }}</li>
                                                 </ul>
                                             </div>
@@ -378,7 +378,7 @@
                         {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
                             <div class="properti_city">
                                 <div class="thumb"><img class="img-fluid w100 DistrictImgList"
-                                        src="{{ asset('assets/images/categories/' . $category->photo) }}"
+                                        src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
                                         alt="@if ($langg->rtl == 1) {{ $category->name_ar }}
                                         @else
                                         {{ $category->name }} @endif ">
@@ -411,7 +411,7 @@
                     <div class="item team_member">
 
                         <a href="{{ route('front.latestwork', $sign) }}"><img class="img-fluid thumb"
-                                src="{{ asset('/assets/images/ads/' . $image->photo) }}"
+                                src="{{ asset('/public/assets/images/ads/' . $image->photo) }}"
                                 alt="{{ $langg->rtl == 1 ? $image->title_ar : $image->title }} "></a>
                         <div class="details">
                             <a class="Font_01"
@@ -426,7 +426,7 @@
 @stop
 
 @section('links')
-    <link rel="preload" href="{{ asset('/assets/images/sliders/' . $galss) }}" as="image">
-    <link rel="preload" href="{{ asset('assets/images/' . $gs->home_about_img1) }}" as="image">
-    <link rel="preload" href="{{ asset('assets/aqar/') }}/images/s-o.png" as="image">
+    <link rel="preload" href="{{ asset('/public/assets/images/sliders/' . $galss) }}" as="image">
+    <link rel="preload" href="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" as="image">
+    <link rel="preload" href="{{ asset('public/assets/aqar/') }}/images/s-o.png" as="image">
 @endsection

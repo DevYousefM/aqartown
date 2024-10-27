@@ -10,7 +10,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/lightgallery.css"') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/lightgallery.css"') }}">
 @stop
 
 
@@ -24,12 +24,12 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('assets/images/' . $gs->trending_icon) }}" alt="" />
+                <img src="{{ asset('public/assets/images/' . $gs->trending_icon) }}" alt="" />
             </div>
         </div>
     </section>
     <section class="page-breadcrumb">
-        <div class="image-layer" style="background-image:url({{ asset('assets/naglaa/images/background/1.png') }})"></div>
+        <div class="image-layer" style="background-image:url({{ asset('public/assets/naglaa/images/background/1.png') }})"></div>
         <div class="container">
             <div class="clearfix">
                 <div class="pull-left fll">
@@ -78,7 +78,7 @@
                     data-aos="fade-right" @endif>
                         <div class="inner-box">
                             <div class="image">
-                                <img src="{{ asset('assets/images/services/' . $service->photo) }}" alt="" />
+                                <img src="{{ asset('public/assets/images/services/' . $service->photo) }}" alt="" />
 
                                 <div class="overlay-box">
                                     <div class="overlay-inner">
@@ -90,7 +90,7 @@
                                                     href="#">{{ $langg->rtl == 1 ? $service->name_ar : $service->name }}</a>
                                             </h3>
                                             <a class="plus"
-                                                href="{{ asset('assets/images/services/' . $service->photo) }}"
+                                                href="{{ asset('public/assets/images/services/' . $service->photo) }}"
                                                 data-fancybox="gallery-1" data-caption=""><span
                                                     class="flaticon-plus-symbol"></span></a>
                                         </div>

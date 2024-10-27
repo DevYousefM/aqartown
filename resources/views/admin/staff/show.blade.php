@@ -16,7 +16,7 @@
                                     <tr>
                                         <th>{{ __('Staff Photo') }}</th>
                                         <td>
-                                            <img src="{{ $data->photo ? asset('assets/images/admins/' . $data->photo) : asset('assets/images/noimage.png') }}"
+                                            <img src="{{ $data->photo ? asset('public/assets/images/admins/' . $data->photo) : asset('public/assets/images/noimage.png') }}"
                                                 alt="{{ __('No Image') }}">
 
                                         </td>

@@ -1,8 +1,8 @@
 @extends('layouts.vendor')
 @section('styles')
-    <link href="{{ asset('assets/vendor/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/vendor/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 @endsection
 @section('content')
     @php
@@ -42,7 +42,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('vendor-prod-store') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -894,8 +894,8 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/admin/js/jquery.Jcrop.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         // Gallery Section Insert
@@ -944,7 +944,7 @@
     </script>
 
 
-    <script src="{{ asset('assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
     <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {

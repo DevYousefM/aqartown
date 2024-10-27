@@ -18,7 +18,7 @@
 
 
     <!-- end header -->
-    <section class="page-title" style="background-image:url({{ asset('assets/images/' . $gs->discount_icon) }});">
+    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
         <div class="auto-container">
             <h1>{{ $langg->lang20 }} </h1>
 
@@ -159,7 +159,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>

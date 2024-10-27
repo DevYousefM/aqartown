@@ -10,7 +10,7 @@
 @section('content')
 
 
-    <div class="sub-banner pt-90 pb-90" style="background-image: url({{ asset('assets/images/' . $gs->new_icon) }});">
+    <div class="sub-banner pt-90 pb-90" style="background-image: url({{ asset('public/assets/images/' . $gs->new_icon) }});">
         <div class="container">
             <div class="col-md-12">
                 <div class="text-center text-line">

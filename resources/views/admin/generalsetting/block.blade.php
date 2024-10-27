@@ -22,7 +22,7 @@
         </div>
         <div class="add-logo-area">
             <div class="gocover"
-                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
             </div>
             <div class="row justify-content-center">
 
@@ -40,7 +40,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->feature_icon ? asset('assets/images/' . $gs->feature_icon) : asset('assets/images/noimage.png') }}"
+                                <img src="{{ $gs->feature_icon ? asset('public/assets/images/' . $gs->feature_icon) : asset('public/assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -68,7 +68,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->best_icon ? asset('assets/images/' . $gs->best_icon) : asset('assets/images/noimage.png') }}"
+                                <img src="{{ $gs->best_icon ? asset('public/assets/images/' . $gs->best_icon) : asset('public/assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -95,7 +95,7 @@
 
                              @include('includes.admin.form-both')  
                           <div class="currrent-logo">
-                            <img src="{{ $gs->top_icon ? asset('assets/images/'.$gs->top_icon):asset('assets/images/noimage.png')}}" alt="">
+                            <img src="{{ $gs->top_icon ? asset('public/assets/images/'.$gs->top_icon):asset('public/assets/images/noimage.png')}}" alt="">
                           </div>
                           <div class="set-logo">
                             <input class="img-upload1" type="file" name="top_icon">
@@ -122,7 +122,7 @@
 
                              @include('includes.admin.form-both')  
                           <div class="currrent-logo">
-                            <img src="{{ $gs->big_icon ? asset('assets/images/'.$gs->big_icon):asset('assets/images/noimage.png')}}" alt="">
+                            <img src="{{ $gs->big_icon ? asset('public/assets/images/'.$gs->big_icon):asset('public/assets/images/noimage.png')}}" alt="">
                           </div>
                           <div class="set-logo">
                             <input class="img-upload1" type="file" name="big_icon">
@@ -148,7 +148,7 @@
 
                                  @include('includes.admin.form-both')
                               <div class="currrent-logo">
-                                <img src="{{ $gs->new_icon ? asset('assets/images/' . $gs->new_icon) : asset('assets/images/noimage.png') }}" alt="">
+                                <img src="{{ $gs->new_icon ? asset('public/assets/images/' . $gs->new_icon) : asset('public/assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                 <input class="img-upload1" type="file" name="new_icon">
@@ -174,7 +174,7 @@
 
                                  @include('includes.admin.form-both')
                               <div class="currrent-logo">
-                                <img src="{{ $gs->hot_icon ? asset('assets/images/' . $gs->hot_icon) : asset('assets/images/noimage.png') }}" alt="">
+                                <img src="{{ $gs->hot_icon ? asset('public/assets/images/' . $gs->hot_icon) : asset('public/assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                 <input class="img-upload1" type="file" name="hot_icon">
@@ -201,7 +201,7 @@
 
                             @include('includes.admin.form-both')
                             <div class="currrent-logo">
-                                <img src="{{ $gs->trending_icon ? asset('assets/images/' . $gs->trending_icon) : asset('assets/images/noimage.png') }}"
+                                <img src="{{ $gs->trending_icon ? asset('public/assets/images/' . $gs->trending_icon) : asset('public/assets/images/noimage.png') }}"
                                     alt="">
                             </div>
                             <div class="set-logo">
@@ -228,7 +228,7 @@
 
                                  @include('includes.admin.form-both')
                               <div class="currrent-logo">
-                                <img src="{{ $gs->discount_icon ? asset('assets/images/' . $gs->discount_icon) : asset('assets/images/noimage.png') }}" alt="">
+                                <img src="{{ $gs->discount_icon ? asset('public/assets/images/' . $gs->discount_icon) : asset('public/assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                 <input class="img-upload1" type="file" name="discount_icon">
@@ -254,7 +254,7 @@
 
                                  @include('includes.admin.form-both')
                               <div class="currrent-logo">
-                                <img src="{{ $gs->contact_icon ? asset('assets/images/' . $gs->contact_icon) : asset('assets/images/noimage.png') }}" alt="">
+                                <img src="{{ $gs->contact_icon ? asset('public/assets/images/' . $gs->contact_icon) : asset('public/assets/images/noimage.png') }}" alt="">
                               </div>
                               <div class="set-logo">
                                 <input class="img-upload1" type="file" name="contact_icon">

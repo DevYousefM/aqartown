@@ -9,7 +9,7 @@
     @endif
 @stop
 @section('css')
-    <link href="{{ asset('assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
 @stop
 @section('content')
     @php
@@ -19,7 +19,7 @@
     @endphp
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->hot_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->hot_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -55,7 +55,7 @@
                         <li>
                             <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}">
                                 <div class="img-div">
-                                    <img src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
+                                    <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
                                         alt="img">
                                 </div>
                                 <div class="body">
@@ -105,7 +105,7 @@
 
                 @foreach ($images as $partner)
                     <div class="item">
-                        <img src="{{ asset('assets/images/ads/' . $partner->photo) }}" alt="">
+                        <img src="{{ asset('public/assets/images/ads/' . $partner->photo) }}" alt="">
                     </div>
                 @endforeach
 

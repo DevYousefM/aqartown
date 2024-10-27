@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -27,7 +27,7 @@
                     @endphp
 
                     <div class="swiper-slide slide">
-                        <img src="{{ asset('/assets/images/sliders/' . $galss) }}" alt="">
+                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="">
 
                         <div class="auto-container">
                             <div class="content">
@@ -95,7 +95,7 @@
 
                         @foreach ($images as $image)
                             <div class="image item">
-                                <img src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt="">
+                                <img src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt="">
                             </div>
                         @endforeach
                     </div>
@@ -110,7 +110,7 @@
                     <div class="column col-lg-6 col-md-6 col-sm-12">
                         <ul class="list-style-one">
                             @foreach ($chunk as $serv)
-                                <li><img src="{{ asset('/assets/images/gallery/' . $serv->photo) }}"
+                                <li><img src="{{ asset('/public/assets/images/gallery/' . $serv->photo) }}"
                                         alt="">{{ $langg->rtl == 1 ? $serv->name_ar : $serv->name }}</li>
                             @endforeach
                         </ul>
@@ -144,7 +144,7 @@
                                               
                                             @else
                                               {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
-                                        <img src="{{ asset('assets/images/categories/' . $category->photo) }}"
+                                        <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
                                             alt="" /></a>
                                 </div>
                                 <div class="lower-content">
@@ -194,10 +194,10 @@
                 <div class="row">
 
                     @foreach ($services as $service)
-                        <a href="{{ asset('assets/images/services/' . $service->photo) }}"
+                        <a href="{{ asset('public/assets/images/services/' . $service->photo) }}"
                             class="img_popup single_gallery col-md-4">
                             <div class="gallery_img"
-                                style="background-image: url({{ asset('assets/images/services/' . $service->photo) }});">
+                                style="background-image: url({{ asset('public/assets/images/services/' . $service->photo) }});">
                                 <div class="gallery_hover_content">
                                     <i class="far fa-dot-circle"></i>
 
@@ -230,7 +230,7 @@
                     @foreach ($blogs as $blogg)
                         <div class="blog-card text-center">
                             <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}">
-                                <img src="{{ $blogg->photo ? asset('assets/images/blogs/' . $blogg->photo) : asset('assets/images/noimage.png') }}"
+                                <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
                                     alt="{{ $langg->rtl == 1 ? $blogg->alt_ar : $blogg->alt }}">
                             </a>
                             <div class="b-card-text">
@@ -281,29 +281,29 @@
                 @foreach ($reviews as $review)
                     <div class="testimonial-block">
                         <div class="inner-box">
-                            <img src="{{ asset('assets/images/reviews/' . $review->photo) }}"
+                            <img src="{{ asset('public/assets/images/reviews/' . $review->photo) }}"
                                 alt="{{ $review->title }}" />
                             <!-- <div class="content-box">
-                                        <h3>maysa ahmed
-                                            <div class="rate">
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star"></span>
-                                                <span class="fa fa-star"></span>
-                                              </div>
+                                            <h3>maysa ahmed
+                                                <div class="rate">
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star checked"></span>
+                                                    <span class="fa fa-star"></span>
+                                                    <span class="fa fa-star"></span>
+                                                  </div>
 
-                                        </h3>
-                                    
-                                        <div class="quote-icon icon-quote2"></div>
-                                        <p class="text">احسن طقم عمل واستقبال ممكن تتعامل معاه مع اني خارج الدوله بس مقدرش أقرب
-                                            لاسناني انا وزوجي واولادي غير عندهم من حسن استقبال لطقم عمل والتمريض لدكاتره عندهم ضمير
-                                            لا يبخلو بالنصيحه حتى بالتليفون نظرا لوجودنا خارج الدوله معظم السنه غير أن العياده فيها
-                                            تعقيم وتطهير فوق الوصف فعلا كل الشكر الاستاذه شاديه الخلوقه</p>
-                                    </div>
-                                    <div class="image-box">
-                                      
-                                    </div> -->
+                                            </h3>
+                                        
+                                            <div class="quote-icon icon-quote2"></div>
+                                            <p class="text">احسن طقم عمل واستقبال ممكن تتعامل معاه مع اني خارج الدوله بس مقدرش أقرب
+                                                لاسناني انا وزوجي واولادي غير عندهم من حسن استقبال لطقم عمل والتمريض لدكاتره عندهم ضمير
+                                                لا يبخلو بالنصيحه حتى بالتليفون نظرا لوجودنا خارج الدوله معظم السنه غير أن العياده فيها
+                                                تعقيم وتطهير فوق الوصف فعلا كل الشكر الاستاذه شاديه الخلوقه</p>
+                                        </div>
+                                        <div class="image-box">
+                                          
+                                        </div> -->
                         </div>
                     </div>
                 @endforeach
@@ -403,7 +403,7 @@
                                             <ul class="captcha-area">
                                                 <li>
                                                     <p><img class="codeimg1"
-                                                            src="{{ asset('assets/images/capcha_code.png') }}"
+                                                            src="{{ asset('public/assets/images/capcha_code.png') }}"
                                                             alt=""> <i
                                                             class="fas fa-sync-alt pointer refresh_code"></i></p>
 
@@ -470,7 +470,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

@@ -164,7 +164,7 @@
 
 
         <section class="page-breadcrumb">
-            <div class="image-layer" style="background-image:url({{asset('assets/naglaa/images/background/1.png')}})"></div>
+            <div class="image-layer" style="background-image:url({{asset('public/assets/naglaa/images/background/1.png')}})"></div>
             <div class="container">
                 <div class="clearfix">
                     <div class="pull-left fll">

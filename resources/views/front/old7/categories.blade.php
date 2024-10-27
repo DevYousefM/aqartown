@@ -20,7 +20,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <div class="page-title"
-        style="background:linear-gradient(#21459799, #21459799), url({{ asset('assets/images/' . $gs->feature_icon) }});"
+        style="background:linear-gradient(#21459799, #21459799), url({{ asset('public/assets/images/' . $gs->feature_icon) }});"
         data-overlay="5">
         <div class="container">
             <div class="row">
@@ -60,7 +60,7 @@
                                             
                                                 {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
                         <div class="single-team-typ-1-wraper">
-                            <img src="{{ asset('assets/images/categories/' . $category->photo) }}" alt="img">
+                            <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}" alt="img">
                             <div class="team-typ-1-hvr text-white">
                                 <p>
                                     @if ($langg->rtl == 1)
@@ -97,7 +97,7 @@
 
                 @foreach ($images as $partner)
                     <div class="item">
-                        <img src="{{ asset('assets/images/ads/' . $partner->photo) }}" alt="">
+                        <img src="{{ asset('public/assets/images/ads/' . $partner->photo) }}" alt="">
                     </div>
                 @endforeach
             </div>

@@ -10,7 +10,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/Al-Araby/css/lightgallery.css"') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/Al-Araby/css/lightgallery.css"') }}">
 @stop
 
 
@@ -21,7 +21,7 @@
 
 
     <section class="breadcrumb-section"
-        style="background-image: url({{ asset('assets/images/' . $gs->trending_icon) }});">
+        style="background-image: url({{ asset('public/assets/images/' . $gs->trending_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1> {{ $langg->lang2 }}

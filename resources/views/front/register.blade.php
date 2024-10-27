@@ -93,7 +93,7 @@
 
                                 <div class="form-group po-re-log d-none">
 
-                                    <img src="{{ asset('assets/') }}/images/user-i.png" alt="" class="po-i-log">
+                                    <img src="{{ asset('public/assets/') }}/images/user-i.png" alt="" class="po-i-log">
 
                                     <select required class="form-control fill-log" name="vendor">
 
@@ -151,7 +151,7 @@
                                         <li>
 
                                             <p><img class="codeimg1"
-                                                    src="{{ asset('assets/images/capcha_code.png') }}"
+                                                    src="{{ asset('public/assets/images/capcha_code.png') }}"
                                                     alt=""> <i class="fas fa-sync-alt pointer refresh_code "></i>
                                             </p>
 
@@ -213,7 +213,7 @@
 
                     <div class="log-img">
 
-                        <img src="{{ asset('assets/') }}/images/253418027_2228630604111347_3213032108329630617_n.png"
+                        <img src="{{ asset('public/assets/') }}/images/253418027_2228630604111347_3213032108329630617_n.png"
                             alt="" class="img-fluid">
 
                         <div class="po-a-re">
@@ -222,7 +222,7 @@
 
                                 {{ $langg->lang15 }}
 
-                                <span class="reg-i"><img src="{{ asset('assets/') }}/images/user-i.png" alt=""
+                                <span class="reg-i"><img src="{{ asset('public/assets/') }}/images/user-i.png" alt=""
                                         class="po-i-reg"></span>
 
 

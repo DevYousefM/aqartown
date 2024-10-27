@@ -23,7 +23,7 @@ class OurTeamController extends Controller
         //--- Integrating This Collection Into Datatables
         return Datatables::of($datas)
             ->editColumn('photo', function (OurTeam $data) {
-                $photo = $data->photo ? url('assets/images/services/' . $data->photo) : url('assets/images/noimage.png');
+                $photo = $data->photo ? url('public/assets/images/services/' . $data->photo) : url('public/assets/images/noimage.png');
                 return '<img src="' . $photo . '" alt="Image">';
             })
             ->editColumn('title', function (OurTeam $data) {
@@ -85,7 +85,7 @@ class OurTeamController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/services', $name);
+            $file->move('public/assets/images/services', $name);
             $input['photo'] = $name;
         }
         $data->fill($input)->save();
@@ -140,10 +140,10 @@ class OurTeamController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/services', $name);
+            $file->move('public/assets/images/services', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/assets/images/services/' . $data->photo)) {
-                    unlink(public_path() . '/assets/images/services/' . $data->photo);
+                if (file_exists(public_path() . '/public/assets/images/services/' . $data->photo)) {
+                    unlink(public_path() . '/public/assets/images/services/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -180,8 +180,8 @@ class OurTeamController extends Controller
             //--- Redirect Section Ends     
         }
         //If Photo Exist
-        if (file_exists(public_path() . '/assets/images/services/' . $data->photo)) {
-            unlink(public_path() . '/assets/images/services/' . $data->photo);
+        if (file_exists(public_path() . '/public/assets/images/services/' . $data->photo)) {
+            unlink(public_path() . '/public/assets/images/services/' . $data->photo);
         }
         $data->delete();
         //--- Redirect Section     

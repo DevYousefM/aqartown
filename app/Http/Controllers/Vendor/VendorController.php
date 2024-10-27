@@ -26,11 +26,11 @@ class VendorController extends Controller
 
         if (Session::has('language')) {
             $data = DB::table('languages')->find(Session::get('language'));
-            $data_results = file_get_contents(public_path() . '/assets/languages/' . $data->file);
+            $data_results = file_get_contents(public_path() . '/public/assets/languages/' . $data->file);
             $this->lang = json_decode($data_results);
         } else {
             $data = DB::table('languages')->where('is_default', '=', 1)->first();
-            $data_results = file_get_contents(public_path() . '/assets/languages/' . $data->file);
+            $data_results = file_get_contents(public_path() . '/public/assets/languages/' . $data->file);
             $this->lang = json_decode($data_results);
         }
     }
@@ -71,7 +71,7 @@ class VendorController extends Controller
 
         if ($file = $request->file('shop_image')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/vendorbanner', $name);
+            $file->move('public/assets/images/vendorbanner', $name);
             $input['shop_image'] = $name;
         }
 
@@ -205,7 +205,7 @@ class VendorController extends Controller
                 } else {
                     $input['attachments'] .= $name . ',';
                 }
-                $file->move('assets/images/attachments', $name);
+                $file->move('public/assets/images/attachments', $name);
 
                 $i++;
             }
