@@ -114,8 +114,8 @@ class mobilebannersController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/adsbanner', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/adsbanner/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/adsbanner/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/adsbanner/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/adsbanner/' . $data->photo);
                 }
             }
             $input['photo'] = $name;

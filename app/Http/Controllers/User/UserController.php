@@ -218,8 +218,8 @@ class UserController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/users/', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/users/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/users/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/users/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/users/' . $data->photo);
                 }
             }
             $input['photo'] = $name;

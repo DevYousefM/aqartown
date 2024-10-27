@@ -229,8 +229,8 @@ class ChildCategoryController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/childcategories', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/childcategories/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/childcategories/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/childcategories/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/childcategories/' . $data->photo);
                 }
             }
             $input['photo'] = $name;

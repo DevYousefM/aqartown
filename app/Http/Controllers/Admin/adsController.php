@@ -133,8 +133,8 @@ class adsController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/ads', $name);
             if ($data->image != null) {
-                if (file_exists(public_path() . '/public/assets/images/ads/' . $data->image)) {
-                    unlink(public_path() . '/public/assets/images/ads/' . $data->image);
+                if (file_exists(public_path() . '/assets/images/ads/' . $data->image)) {
+                    unlink(public_path() . '/assets/images/ads/' . $data->image);
                 }
             }
             $input['image'] = $name;

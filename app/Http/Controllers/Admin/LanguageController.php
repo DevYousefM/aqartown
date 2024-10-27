@@ -60,7 +60,7 @@ class LanguageController extends Controller
         unset($input['_token']);
         unset($input['language']);
         $mydata = json_encode($input);
-        file_put_contents(public_path() . '/public/assets/languages/' . $data->file, $mydata);
+        file_put_contents(public_path() . '/assets/languages/' . $data->file, $mydata);
         //--- Logic Section Ends
 
         //--- Redirect Section        
@@ -88,7 +88,7 @@ class LanguageController extends Controller
         //--- Logic Section
         $input = $request->all();
         $data = Language::findOrFail($id);
-        if (file_exists(public_path() . '/public/assets/languages/' . $data->file)) {
+        if (file_exists(public_path() . '/assets/languages/' . $data->file)) {
             // unlink(public_path().'/public/assets/languages/'.$data->file);
         }
         $data->language = $input['language'];
@@ -98,7 +98,7 @@ class LanguageController extends Controller
         unset($input['_token']);
         unset($input['language']);
         $mydata = json_encode($input);
-        file_put_contents(public_path() . '/public/assets/languages/' . $data->file, $mydata);
+        file_put_contents(public_path() . '/assets/languages/' . $data->file, $mydata);
         //--- Logic Section Ends
 
         //--- Redirect Section     
@@ -131,8 +131,8 @@ class LanguageController extends Controller
         }
 
 
-        if (file_exists(public_path() . '/public/assets/languages/' . $data->file)) {
-            unlink(public_path() . '/public/assets/languages/' . $data->file);
+        if (file_exists(public_path() . '/assets/languages/' . $data->file)) {
+            unlink(public_path() . '/assets/languages/' . $data->file);
         }
         $data->delete();
         //--- Redirect Section     

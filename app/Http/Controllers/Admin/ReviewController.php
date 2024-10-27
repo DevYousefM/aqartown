@@ -132,8 +132,8 @@ class ReviewController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/reviews', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/reviews/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/reviews/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/reviews/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/reviews/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -167,8 +167,8 @@ class ReviewController extends Controller
             //--- Redirect Section Ends     
         }
         //If Photo Exist
-        if (file_exists(public_path() . '/public/assets/images/reviews/' . $data->photo)) {
-            unlink(public_path() . '/public/assets/images/reviews/' . $data->photo);
+        if (file_exists(public_path() . '/assets/images/reviews/' . $data->photo)) {
+            unlink(public_path() . '/assets/images/reviews/' . $data->photo);
         }
         $data->delete();
         //--- Redirect Section     

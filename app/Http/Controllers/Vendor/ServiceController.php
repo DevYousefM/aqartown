@@ -126,8 +126,8 @@ class ServiceController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/services', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/services/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/services/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/services/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/services/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -154,8 +154,8 @@ class ServiceController extends Controller
             //--- Redirect Section Ends     
         }
         //If Photo Exist
-        if (file_exists(public_path() . '/public/assets/images/services/' . $data->photo)) {
-            unlink(public_path() . '/public/assets/images/services/' . $data->photo);
+        if (file_exists(public_path() . '/assets/images/services/' . $data->photo)) {
+            unlink(public_path() . '/assets/images/services/' . $data->photo);
         }
         $data->delete();
         //--- Redirect Section     

@@ -167,8 +167,8 @@ class BannerController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/banners', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/banners/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/banners/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/banners/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/banners/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -205,8 +205,8 @@ class BannerController extends Controller
             //--- Redirect Section Ends     
         }
         //If Photo Exist
-        if (file_exists(public_path() . '/public/assets/images/banners/' . $data->photo)) {
-            unlink(public_path() . '/public/assets/images/banners/' . $data->photo);
+        if (file_exists(public_path() . '/assets/images/banners/' . $data->photo)) {
+            unlink(public_path() . '/assets/images/banners/' . $data->photo);
         }
         $data->delete();
         //--- Redirect Section     
@@ -334,8 +334,8 @@ class BannerController extends Controller
             $name = time() . $file->getClientOriginalName();
             $file->move('public/assets/images/banners', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/public/assets/images/banners/' . $data->photo)) {
-                    unlink(public_path() . '/public/assets/images/banners/' . $data->photo);
+                if (file_exists(public_path() . '/assets/images/banners/' . $data->photo)) {
+                    unlink(public_path() . '/assets/images/banners/' . $data->photo);
                 }
             }
             $input['photo'] = $name;

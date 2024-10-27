@@ -16,8 +16,8 @@ class Generalsetting extends Model
     {
         $file->move('public/assets/images', $name);
         if ($oldname != null) {
-            if (file_exists(public_path() . '/public/assets/images/' . $oldname)) {
-                unlink(public_path() . '/public/assets/images/' . $oldname);
+            if (file_exists(public_path() . '/assets/images/' . $oldname)) {
+                unlink(public_path() . '/assets/images/' . $oldname);
             }
         }
     }
