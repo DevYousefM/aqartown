@@ -1,7 +1,7 @@
 @extends('layouts.load')
 
 @section('styles')
-    <link href="{{ asset('assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('public/assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 

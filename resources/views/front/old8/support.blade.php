@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="service_details_wraper">
-                        <img src="{{ asset('assets/images/' . $gs->home_about_img2) }}" alt="">
+                        <img src="{{ asset('public/assets/images/' . $gs->home_about_img2) }}" alt="">
                     </div>
                 </div>
                 <div class="col-md-6">

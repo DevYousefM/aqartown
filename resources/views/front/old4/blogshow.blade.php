@@ -13,7 +13,7 @@
         "@id": "{{url('/item',$blog->slug)}}"
       },
       "headline": "{{$blog->title}}",
-      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('assets/images/blogs/'.$blog->photo)}}",
+      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('public/assets/images/blogs/'.$blog->photo)}}",
 
 
       "datePublished": "{{$blog->created_at}}",
@@ -50,12 +50,12 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('assets/images/' . $gs->new_icon) }}" alt="" />
+                <img src="{{ asset('public/assets/images/' . $gs->new_icon) }}" alt="" />
             </div>
         </div>
     </section>
     <section class="page-breadcrumb">
-        <div class="image-layer" style="background-image:url({{ asset('assets/naglaa/images/background/1.png') }})"></div>
+        <div class="image-layer" style="background-image:url({{ asset('public/assets/naglaa/images/background/1.png') }})"></div>
         <div class="container">
             <div class="clearfix">
 
@@ -99,11 +99,11 @@
                     <div class="blog_detaisl_area">
                         <div class="blog_full_content">
                             <img class=""
-                                data-src="{{ $blog->photo ? asset('assets/images/blogs/' . $blog->photo) : asset('assets/images/noimage.png') }}"
-                                data-srcset="{{ $blog->photo ? asset('assets/images/blogs/' . $blog->photo) : asset('assets/images/noimage.png') }} 2x"
+                                data-src="{{ $blog->photo ? asset('public/assets/images/blogs/' . $blog->photo) : asset('public/assets/images/noimage.png') }}"
+                                data-srcset="{{ $blog->photo ? asset('public/assets/images/blogs/' . $blog->photo) : asset('public/assets/images/noimage.png') }} 2x"
                                 alt="I'm an image!"
-                                src="{{ $blog->photo ? asset('assets/images/blogs/' . $blog->photo) : asset('assets/images/noimage.png') }}"
-                                srcset="{{ $blog->photo ? asset('assets/images/blogs/' . $blog->photo) : asset('assets/images/noimage.png') }} 2x">
+                                src="{{ $blog->photo ? asset('public/assets/images/blogs/' . $blog->photo) : asset('public/assets/images/noimage.png') }}"
+                                srcset="{{ $blog->photo ? asset('public/assets/images/blogs/' . $blog->photo) : asset('public/assets/images/noimage.png') }} 2x">
                             <h4>
                                 @if ($langg->rtl == 1)
                                     {{ $blog->title_ar }}
@@ -136,7 +136,7 @@
         $k++;
     @endphp
                                         <a href="{{ route('front.blogshow', ['id' => $blog->slug, 'lang' => $sign]) }}" class="single_recent_post">
-                                            <span class="rp_img" style="background-image: url({{ $blog->photo ? asset('assets/images/blogs/' . $blog->photo) : asset('assets/images/noimage.png') }});"></span>
+                                            <span class="rp_img" style="background-image: url({{ $blog->photo ? asset('public/assets/images/blogs/' . $blog->photo) : asset('public/assets/images/noimage.png') }});"></span>
                                             <h4>  @if ($langg->rtl == 1)
     {{ strlen($blog->title_ar) > 70 ? substr($blog->title_ar, 0, 70) . '...' : $blog->title_ar }}
 @else

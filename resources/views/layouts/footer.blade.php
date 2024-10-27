@@ -15,7 +15,7 @@
                  <div class="footer-info-area">
                      <div class="footer-logo">
                          <a href="{{ route('front.index', $sign) }}" class="logo-link">
-                             <img src="{{ asset('assets/images/' . $gs->footer_logo) }}" alt="">
+                             <img src="{{ asset('public/assets/images/' . $gs->footer_logo) }}" alt="">
                          </a>
                      </div>
                      <div class="text">
@@ -169,7 +169,7 @@
                                  <div class="post">
                                      <div class="post-img">
                                          <img style="width: 73px; height: 59px;"
-                                             src="{{ asset('assets/images/blogs/' . $blog->photo) }}"
+                                             src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}"
                                              alt="">
                                      </div>
                                      <div class="post-details">
@@ -382,7 +382,7 @@
                                          <ul class="captcha-area">
                                              <li>
                                                  <p><img class="codeimg1"
-                                                         src="{{ asset('assets/images/capcha_code.png') }}"
+                                                         src="{{ asset('public/assets/images/capcha_code.png') }}"
                                                          alt=""> <i
                                                          class="fas fa-sync-alt pointer refresh_code "></i></p>
                                              </li>
@@ -652,7 +652,7 @@
                                                      <li>
                                                          <p>
                                                              <img class="codeimg1"
-                                                                 src="{{ asset('assets/images/capcha_code.png') }}"
+                                                                 src="{{ asset('public/assets/images/capcha_code.png') }}"
                                                                  alt=""> <i
                                                                  class="fas fa-sync-alt pointer refresh_code "></i>
                                                          </p>
@@ -703,7 +703,7 @@
      <div class="modal-dialog quickview-modal modal-dialog-centered modal-lg" role="document">
          <div class="modal-content">
              <div class="submit-loader">
-                 <img src="{{ asset('assets/images/' . $gs->loader) }}" alt="">
+                 <img src="{{ asset('public/assets/images/' . $gs->loader) }}" alt="">
              </div>
              <div class="modal-header">
                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -744,7 +744,7 @@
 
                  <div>
                      <div class="submit-loader d-none">
-                         <img src="{{ asset('assets/images/' . $gs->loader) }}" alt="">
+                         <img src="{{ asset('public/assets/images/' . $gs->loader) }}" alt="">
                      </div>
                      <div id="track-order">
 
@@ -800,25 +800,25 @@ if($features[4]->status == 1 && $features[4]->active == 1 ){
 
 
  <!-- jquery -->
- <script src="{{ asset('assets/front/js/jquery.js') }}"></script>
- {{-- <script src="{{asset('assets/front/js/vue.js')}}"></script> --}}
- <script src="{{ asset('assets/front/jquery-ui/jquery-ui.min.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/jquery.js') }}"></script>
+ {{-- <script src="{{asset('public/assets/front/js/vue.js')}}"></script> --}}
+ <script src="{{ asset('public/assets/front/jquery-ui/jquery-ui.min.js') }}"></script>
  <!-- popper -->
- <script src="{{ asset('assets/front/js/popper.min.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/popper.min.js') }}"></script>
  <!-- bootstrap -->
- <script src="{{ asset('assets/front/js/bootstrap.min.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/bootstrap.min.js') }}"></script>
  <!-- plugin js-->
- <script src="{{ asset('assets/front/js/plugin.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/plugin.js') }}"></script>
 
- <script src="{{ asset('assets/front/js/xzoom.min.js') }}"></script>
- <script src="{{ asset('assets/front/js/jquery.hammer.min.js') }}"></script>
- <script src="{{ asset('assets/front/js/setup.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/xzoom.min.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/jquery.hammer.min.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/setup.js') }}"></script>
 
- <script src="{{ asset('assets/front/js/toastr.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/toastr.js') }}"></script>
  <!-- main -->
- <script src="{{ asset('assets/front/js/main.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/main.js') }}"></script>
  <!-- custom -->
- <script src="{{ asset('assets/front/js/custom.js') }}"></script>
+ <script src="{{ asset('public/assets/front/js/custom.js') }}"></script>
 
 
 

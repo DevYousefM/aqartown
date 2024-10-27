@@ -1,8 +1,8 @@
 @extends('layouts.vendor')
 @section('styles')
-    <link href="{{ asset('assets/vendor/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/vendor/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 @endsection
 @section('content')
     <div class="content-area">
@@ -35,7 +35,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('vendor-prod-catalog-update', $data->id) }}"
                                 method="POST" enctype="multipart/form-data">
@@ -1141,8 +1141,8 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('assets/admin/js/jquery.Jcrop.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         // Gallery Section Insert
@@ -1200,12 +1200,12 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ (empty($data->photo) ? asset('assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset('assets/images/products/' . $data->photo) }}" alt="">`;
+                `<img src="{{ (empty($data->photo) ? asset('public/assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset('public/assets/images/products/' . $data->photo) }}" alt="">`;
             $(".span4.cropme").html(html);
 
 
         });
     </script>
 
-    <script src="{{ asset('assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
 @endsection

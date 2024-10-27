@@ -29,7 +29,7 @@ class mobilesettingController extends Controller
         //--- Integrating This Collection Into Datatables
         return Datatables::of($datas)
             ->editColumn('photo', function (mobileslider $data) {
-                $photo = $data->photo ? url('assets/images/sliders/' . $data->photo) : url('assets/images/noimage.png');
+                $photo = $data->photo ? url('public/assets/images/sliders/' . $data->photo) : url('public/assets/images/noimage.png');
                 return '<img src="' . $photo . '" alt="Image">';
             })
             ->editColumn('title', function (mobileslider $data) {
@@ -75,7 +75,7 @@ class mobilesettingController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/sliders', $name);
+            $file->move('public/assets/images/sliders', $name);
             $input['photo'] = $name;
         }
         $data->fill($input)->save();
@@ -114,10 +114,10 @@ class mobilesettingController extends Controller
         $input = $request->all();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/sliders', $name);
+            $file->move('public/assets/images/sliders', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/assets/images/sliders/' . $data->photo)) {
-                    unlink(public_path() . '/assets/images/sliders/' . $data->photo);
+                if (file_exists(public_path() . '/public/assets/images/sliders/' . $data->photo)) {
+                    unlink(public_path() . '/public/assets/images/sliders/' . $data->photo);
                 }
             }
             $input['photo'] = $name;
@@ -144,8 +144,8 @@ class mobilesettingController extends Controller
             //--- Redirect Section Ends     
         }
         //If Photo Exist
-        if (file_exists(public_path() . '/assets/images/sliders/' . $data->photo)) {
-            unlink(public_path() . '/assets/images/sliders/' . $data->photo);
+        if (file_exists(public_path() . '/public/assets/images/sliders/' . $data->photo)) {
+            unlink(public_path() . '/public/assets/images/sliders/' . $data->photo);
         }
         $data->delete();
         //--- Redirect Section     

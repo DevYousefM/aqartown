@@ -65,7 +65,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <section class="breadcrumb-section"
-        style="background-image: url({{ asset('assets/images/' . $gs->feature_icon) }});">
+        style="background-image: url({{ asset('public/assets/images/' . $gs->feature_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>
@@ -180,9 +180,9 @@
                 <div class="col-md-6">
                     <div class="service_details_wraper">
                         @if (!empty($subcat))
-                            <img src="{{ asset('assets/images/subcategories/' . $subcat->photo) }}" alt="">
+                            <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}" alt="">
                         @elseif(!empty($cat))
-                            <img src="{{ asset('assets/images/categories/' . $cat->photo) }}" alt="">
+                            <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}" alt="">
                         @endif
                     </div>
                 </div>

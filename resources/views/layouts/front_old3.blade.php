@@ -40,7 +40,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -109,7 +109,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -119,8 +119,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}",
+    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -146,44 +146,44 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/all.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/swiper.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/animate.css') }}">
-    <!--    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/') }}slick.css">-->
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/animate.css') }}">
+    <!--    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/') }}slick.css">-->
 
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/nice-select.css') }}">
-    <!--    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/') }}slicknav.min.css">-->
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/magnific-popup.css') }}">
-    <!--    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/') }}isotope-docs.css">-->
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/nice-select.css') }}">
+    <!--    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/') }}slicknav.min.css">-->
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/magnific-popup.css') }}">
+    <!--    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/') }}isotope-docs.css">-->
     <!--============= STart header Area =============-->
 
-    <link href="{{ asset('assets/smilehouse/css/menu.css') }}" rel="stylesheet">
+    <link href="{{ asset('public/assets/smilehouse/css/menu.css') }}" rel="stylesheet">
     <!--============= End header Area =============-->
 
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/video.popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/video.popup.css') }}">
 
 
     <!-- ===================owl slid=================== -->
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/owl.theme.default.min.css') }}">
     <!-- ===================owl slid=================== -->
 
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/bootstrap-rtl.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/bootstrap-rtl.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/smilehouse/css/resp-nav.css') }}">
-
-
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/smilehouse/css/resp-nav.css') }}">
 
 
-    <link rel="stylesheet" href="{{ asset('assets/front/css/toastr.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
@@ -253,7 +253,7 @@
 
                     <div class="logo-outer">
                         <div class="logo"><a href="{{ route('front.index', $sign) }}"><img
-                                    src="{{ asset('assets/images/' . $gs->logo) }}"></a></div>
+                                    src="{{ asset('public/assets/images/' . $gs->logo) }}"></a></div>
                     </div>
 
                     <nav class="elementskit-navbar">
@@ -355,7 +355,7 @@
                     <div class="col-md-6 col-lg-3 col-12">
                         <div class="footer_content_box">
                             <div class="footer_logo">
-                                <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="">
+                                <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
                             </div>
                             <div class="Subscribe-box">
                                 <p>{!! $langg->rtl == 1 ? $gs->footer_ar : $gs->footer !!}</p>
@@ -506,30 +506,30 @@
     <!--============ End copyright ============-->
 
 
-    <script src="{{ asset('assets/smilehouse/js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/jquery-3.4.1.min.js') }}"></script>
 
-    <script src="{{ asset('assets/smilehouse/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/smilehouse/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/bootstrap.min.js') }}"></script>
 
-    <script src="{{ asset('assets/smilehouse/js/mixitup.min.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/mixitup.min.js') }}"></script>
 
-    <script src="{{ asset('assets/smilehouse/js/popper.js') }}"></script>
-    <script src="{{ asset('assets/smilehouse/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('assets/smilehouse/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/smilehouse/js/main.js') }}"></script>
-    <script src="{{ asset('assets/smilehouse/js/nav-tool.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/popper.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/main.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/nav-tool.js') }}"></script>
 
-    <script src="{{ asset('assets/smilehouse/js/video.popup.js') }}"></script>
-    <script src="{{ asset('assets/smilehouse/js/swiper.min.js') }}"></script>
-    <script src="{{ asset('assets/smilehouse/js/wow.min.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/video.popup.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/swiper.min.js') }}"></script>
+    <script src="{{ asset('public/assets/smilehouse/js/wow.min.js') }}"></script>
 
-    <script src="{{ asset('assets/smilehouse/js/custom.js') }}"></script>
-
-
+    <script src="{{ asset('public/assets/smilehouse/js/custom.js') }}"></script>
 
 
 
-    <script src="{{ asset('assets/admin/js/toastr.js') }}"></script>
+
+
+    <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
         var mainurl = "{{ url('/' . $sign) }}";
         var mainurl2 = "{{ url('/') }}";

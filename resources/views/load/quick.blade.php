@@ -3,23 +3,23 @@
 
         <div class="xzoom-container">
             <img class="quick-zoom" id="xzoom-magnific1"
-                src="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('assets/images/products/' . $product->photo) }}"
-                xoriginal="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('assets/images/products/' . $product->photo) }}" />
+                src="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('public/assets/images/products/' . $product->photo) }}"
+                xoriginal="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('public/assets/images/products/' . $product->photo) }}" />
             <div class="xzoom-thumbs">
 
                 <div class="quick-all-slider">
 
                     <a
-                        href="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('assets/images/products/' . $product->photo) }}">
+                        href="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('public/assets/images/products/' . $product->photo) }}">
                         <img class="quick-zoom-gallery" width="80"
-                            src="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('assets/images/products/' . $product->photo) }}"
+                            src="{{ filter_var($product->photo, FILTER_VALIDATE_URL) ? $product->photo : asset('public/assets/images/products/' . $product->photo) }}"
                             title="The description goes here">
                     </a>
 
                     @foreach ($product->galleries as $gal)
-                        <a href="{{ asset('assets/images/galleries/' . $gal->photo) }}">
+                        <a href="{{ asset('public/assets/images/galleries/' . $gal->photo) }}">
                             <img class="quick-zoom-gallery" width="80"
-                                src="{{ asset('assets/images/galleries/' . $gal->photo) }}"
+                                src="{{ asset('public/assets/images/galleries/' . $gal->photo) }}"
                                 title="The description goes here">
                         </a>
                     @endforeach
@@ -449,7 +449,7 @@
     }
 </style>
 
-<script src="{{ asset('assets/front/js/quicksetup.js') }}"></script>
+<script src="{{ asset('public/assets/front/js/quicksetup.js') }}"></script>
 <script type="text/javascript">
     $("li.sizes").click(function() {
         $("ul.color-lists").addClass("color-list");

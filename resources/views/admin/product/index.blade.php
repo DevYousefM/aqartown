@@ -332,7 +332,7 @@
 
              ],
              language: {
-                 processing: '<img src="{{ asset('assets/images/' . $gs->admin_loader) }}">'
+                 processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
              },
              drawCallback: function(settings) {
                  $('.select').niceSelect();
@@ -384,10 +384,10 @@
                                  '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                  '</span>' +
                                  '<a href="' +
-                                 '{{ asset('assets/images/galleries') . '/' }}' + arr[k]
+                                 '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k]
                                  ['photo'] + '" target="_blank">' +
                                  '<img src="' +
-                                 '{{ asset('assets/images/galleries') . '/' }}' + arr[
+                                 '{{ asset('public/assets/images/galleries') . '/' }}' + arr[
                                      k]['photo'] + '" alt="gallery image">' +
                                  '</a>' +
                                  '</div>' +
@@ -444,10 +444,10 @@
                                  '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                  '</span>' +
                                  '<a href="' +
-                                 '{{ asset('assets/images/galleries') . '/' }}' + arr[k]
+                                 '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k]
                                  ['photo'] + '" target="_blank">' +
                                  '<img src="' +
-                                 '{{ asset('assets/images/galleries') . '/' }}' + arr[
+                                 '{{ asset('public/assets/images/galleries') . '/' }}' + arr[
                                      k]['photo'] + '" alt="gallery image">' +
                                  '</a>' +
                                  '</div>' +

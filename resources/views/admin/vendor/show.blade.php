@@ -42,10 +42,10 @@
                                 <div class="col-md-4">
                                     <div class="user-image">
                                         @if ($data->is_provider == 1)
-                                            <img src="{{ $data->photo ? asset($data->photo) : asset('assets/images/noimage.png') }}"
+                                            <img src="{{ $data->photo ? asset($data->photo) : asset('public/assets/images/noimage.png') }}"
                                                 alt="No Image">
                                         @else
-                                            <img src="{{ $data->photo ? asset('assets/images/users/' . $data->photo) : asset('assets/images/noimage.png') }}"
+                                            <img src="{{ $data->photo ? asset('public/assets/images/users/' . $data->photo) : asset('public/assets/images/noimage.png') }}"
                                                 alt="{{ __('No Image') }}">
                                         @endif
                                         <a href="javascript:;" class="mybtn1 send" data-email="{{ $data->email }}"
@@ -334,10 +334,10 @@
                             $('.selected-image .row').append('<div class="col-sm-6">' +
                                 '<div class="img gallery-img">' +
                                 '<a class="img-popup" href="' +
-                                '{{ asset('assets/images/attachments') . '/' }}' + arr[k] +
+                                '{{ asset('public/assets/images/attachments') . '/' }}' + arr[k] +
                                 '">' +
                                 '<img  src="' +
-                                '{{ asset('assets/images/attachments') . '/' }}' + arr[k] +
+                                '{{ asset('public/assets/images/attachments') . '/' }}' + arr[k] +
                                 '" alt="gallery image">' +
                                 '</a>' +
                                 '</div>' +

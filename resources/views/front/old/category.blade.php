@@ -60,7 +60,7 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('assets/images/' . $gs->big_icon) }});"></div>
+            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->big_icon) }});"></div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
 
@@ -156,7 +156,7 @@
                                 <div class="event-grid-box mb-30 w-100">
                                     <div class="event-grid-img w-100 overflow-hidden position-relative">
                                         <img class="img-fluid w-100"
-                                            src="{{ $productt->photo ? (filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('assets/images/products/' . $productt->photo)) : asset('assets/images/noimage.png') }}"
+                                            src="{{ $productt->photo ? (filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('public/assets/images/products/' . $productt->photo)) : asset('public/assets/images/noimage.png') }}"
                                             alt="Event Image 1">
                                         <span class="position-absolute"><a class="rounded-circle" href="javascript:void(0);"
                                                 title=""><i class="fas fa-heart"></i></a></span>

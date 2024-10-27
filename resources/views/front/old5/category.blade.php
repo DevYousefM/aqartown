@@ -61,7 +61,7 @@
         $ps = App\Models\Pagesetting::find(1);
 
     @endphp
-    <div class="page-banner-area" style="background-image:url({{ asset('assets/images/' . $gs->top_icon) }})">
+    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->top_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2>
@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="services-details-image">
-                        <img src="{{ asset('assets/images/categories/' . $cat->photo) }}" alt="image">
+                        <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}" alt="image">
                     </div>
                     <div class="services-details-content">
                         <h3>
@@ -193,10 +193,10 @@
                                 @foreach ($cat->galleries as $image)
                                     <li>
                                         <div class="box">
-                                            <img src="{{ asset('assets/images/galleries/' . $image->photo) }}"
+                                            <img src="{{ asset('public/assets/images/galleries/' . $image->photo) }}"
                                                 alt="image">
                                             <i class="bx bxl-instagram"></i>
-                                            <a href="{{ asset('assets/images/galleries/' . $image->photo) }}"
+                                            <a href="{{ asset('public/assets/images/galleries/' . $image->photo) }}"
                                                 target="_blank" class="link-btn"></a>
                                         </div>
                                     </li>

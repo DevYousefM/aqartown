@@ -9,24 +9,24 @@
     <!-- Title -->
     <title>{{ $gs->title }}</title>
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
     <!-- Bootstrap -->
-    <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" />
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/admin/css/fontawesome.css') }}">
     <!-- icofont -->
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/icofont.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/admin/css/icofont.min.css') }}">
     <!-- Sidemenu Css -->
-    <link href="{{ asset('assets/admin/plugins/fullside-menu/css/dark-side-style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/plugins/fullside-menu/waves.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/plugins/fullside-menu/css/dark-side-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/plugins/fullside-menu/waves.min.css') }}" rel="stylesheet" />
 
-    <link href="{{ asset('assets/admin/css/plugin.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/jquery.tagit.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/bootstrap-coloroicker.css') }}">
+    <link href="{{ asset('public/assets/admin/css/plugin.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/jquery.tagit.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('public/assets/admin/css/bootstrap-coloroicker.css') }}">
     <!-- Main Css -->
-    <link href="{{ asset('assets/admin/css/style.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/custom.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/admin/css/responsive.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/custom.css') }}" rel="stylesheet" />
+    <link href="{{ asset('public/assets/admin/css/responsive.css') }}" rel="stylesheet" />
     @yield('styles')
 
 </head>
@@ -83,22 +83,22 @@
 
 
     <!-- Dashboard Core -->
-    <script src="{{ asset('assets/admin/js/vendors/jquery-1.12.4.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/vendors/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/jqueryui.min.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/vendors/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/vendors/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/jqueryui.min.js') }}"></script>
     <!-- Fullside-menu Js-->
-    <script src="{{ asset('assets/admin/plugins/fullside-menu/jquery.slimscroll.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/plugins/fullside-menu/waves.min.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/plugins/fullside-menu/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/plugins/fullside-menu/waves.min.js') }}"></script>
 
-    <script src="{{ asset('assets/admin/js/plugin.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/tag-it.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/nicEdit.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/bootstrap-colorpicker.min.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/load.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/plugin.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/tag-it.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/nicEdit.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/bootstrap-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/load.js') }}"></script>
     <!-- Custom Js-->
-    <script src="{{ asset('assets/admin/js/custom.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/custom.js') }}"></script>
     <!-- AJAX Js-->
-    <script src="{{ asset('assets/admin/js/myscript.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/myscript.js') }}"></script>
 
 </body>
 

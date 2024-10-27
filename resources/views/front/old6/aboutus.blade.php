@@ -18,7 +18,7 @@
 
 
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->best_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang18 }} </h1>
@@ -185,7 +185,7 @@
                 @foreach ($images as $partner)
                     <div class="swiper-slide">
                         <div class="slider-img">
-                            <img src="{{ asset('assets/images/ads/' . $partner->photo) }}" alt="img">
+                            <img src="{{ asset('public/assets/images/ads/' . $partner->photo) }}" alt="img">
                         </div>
                     </div>
                 @endforeach

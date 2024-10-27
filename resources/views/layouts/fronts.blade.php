@@ -42,7 +42,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -111,7 +111,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -121,8 +121,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}",
+    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -148,23 +148,23 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
 
 
 
-    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/jquery.fancybox.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/perfect-scrollbar.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/color.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/jquery.fancybox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/perfect-scrollbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/color.css') }}">
 
 
     @yield('css')
@@ -228,7 +228,7 @@
     <!--<div id="ac-wrapper">
     <div id="popup">
         <center>
-             <img src="{{ asset('assets/images/' . $gs->popup_background) }}">
+             <img src="{{ asset('public/assets/images/' . $gs->popup_background) }}">
             <input type="submit" name="submit" value="Submit" onClick="PopUp()" />
         </center>
     </div>
@@ -240,7 +240,7 @@
 
   
     <div class="subscribe-preloader-wrap" id="subscriptionForm" style="display: none;">
-        <div class="subscribePreloader__thumb" style="background-image: url({{ asset('assets/images/' . $gs->popup_background) }});">
+        <div class="subscribePreloader__thumb" style="background-image: url({{ asset('public/assets/images/' . $gs->popup_background) }});">
             <span class="preload-close"><i class="fas fa-times"></i></span>
            
         </div>
@@ -254,9 +254,9 @@
                 <div style="top: 50%; left: 50%; display: none;" id="dialog" class="window">
                     <div id="san">
                         <a href="#" class="close agree"><img
-                                src="{{ asset('assets/images/close-icon.png') }}" width="25"
+                                src="{{ asset('public/assets/images/close-icon.png') }}" width="25"
                                 style="float:right; margin-right: -25px; margin-top: -20px;"></a>
-                        <img src="{{ asset('assets/images/' . $gs->popup_background) }}" width="450">
+                        <img src="{{ asset('public/assets/images/' . $gs->popup_background) }}" width="450">
                     </div>
                 </div>
                 <div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;"
@@ -273,8 +273,8 @@
                     <div class="logo">
                         <h1 class="mb-0"><a href="{{ route('front.index', $sign) }}" title="Home"><img
                                     class="img-fluid imglogo" id="logo"
-                                    src="{{ asset('assets/images/' . $gs->logo) }}" alt="Logo"
-                                    srcset="{{ asset('assets/images/' . $gs->logo) }}"
+                                    src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="Logo"
+                                    srcset="{{ asset('public/assets/images/' . $gs->logo) }}"
                                     style="width: 200px;"></a></h1>
                     </div><!-- Logo -->
                     <nav class="d-inline-flex align-items-center">
@@ -408,8 +408,8 @@
         <div class="menu-wrap">
             <span class="menu-close"><i class="fas fa-times"></i></span>
             <img class="img-fluid imglogo" id="logo"
-                src="{{ asset('assets/images/' . $gs->sidebar_logo) }}" alt="Logo"
-                srcset="{{ asset('assets/images/' . $gs->sidebar_logo) }}"
+                src="{{ asset('public/assets/images/' . $gs->sidebar_logo) }}" alt="Logo"
+                srcset="{{ asset('public/assets/images/' . $gs->sidebar_logo) }}"
                 style="width: 150px;margin-top: -67px;">
             <ul class="mb-0 list-unstyled w-100">
                 <li><a href="{{ route('front.index', $sign) }}" title="">{{ $langg->lang17 }}</a>
@@ -554,7 +554,7 @@
         <footer>
             <div class="w-100 pt-90 pb-40 blue-layer opc2 position-relative">
                 <div class="fixed-bg back-blend-multiply bg-color4"
-                    style="background-image: url({{ asset('assets/images/' . $gs->feature_icon) }});"></div>
+                    style="background-image: url({{ asset('public/assets/images/' . $gs->feature_icon) }});"></div>
                 <div class="container">
                     <div class="footer-wrap2 w-100">
                         <div class="row res-caro">
@@ -731,29 +731,29 @@
         })();
     </script>
 
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
-    <script src="{{ asset('assets/js/counterup.min.js') }}"></script>
-    {{-- <script src="{{asset('assets/js/jquery.downCount.js')}}"></script> --}}
-    <script src="{{ asset('assets/js/jquery.fancybox.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.countdown.js') }}"></script>
-    <script src="{{ asset('assets/js/perfect-scrollbar.min.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
-    <script src="{{ asset('assets/js/custom-scripts.js') }}"></script>
-    <script src="{{ asset('assets/admin/js/toastr.js') }}"></script>
+    <script src="{{ asset('public/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/counterup.min.js') }}"></script>
+    {{-- <script src="{{asset('public/assets/js/jquery.downCount.js')}}"></script> --}}
+    <script src="{{ asset('public/assets/js/jquery.fancybox.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/jquery.countdown.js') }}"></script>
+    <script src="{{ asset('public/assets/js/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/isotope.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/custom-scripts.js') }}"></script>
+    <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
 
     <script>
         $(window).scroll(function() {
             if ($(document).scrollTop() == 0) {
 
-                $('#logo').prop('srcset', '{{ asset('assets/images/' . $gs->logo) }}');
+                $('#logo').prop('srcset', '{{ asset('public/assets/images/' . $gs->logo) }}');
                 $('.stick').removeClass('sticky');
             } else {
 
-                $('#logo').prop('srcset', '{{ asset('assets/images/' . $gs->logo_ar) }}');
+                $('#logo').prop('srcset', '{{ asset('public/assets/images/' . $gs->logo_ar) }}');
                 $('header.stick').addClass('sticky');
             } /**/
         });

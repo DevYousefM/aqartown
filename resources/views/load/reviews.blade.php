@@ -3,7 +3,7 @@
                           <li>
                               <div class="single-review">
                                   <div class="left-area">
-                                      <img src="{{ $review->user->photo ? asset('assets/images/users/' . $review->user->photo) : asset('assets/images/noimage.png') }}"
+                                      <img src="{{ $review->user->photo ? asset('public/assets/images/users/' . $review->user->photo) : asset('public/assets/images/noimage.png') }}"
                                           alt="">
                                       <h5 class="name">{{ $review->user->name }}</h5>
                                       <p class="date">

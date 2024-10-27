@@ -10,7 +10,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('assets/Al-Araby/css/lightgallery.css"') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/Al-Araby/css/lightgallery.css"') }}">
 @stop
 
 
@@ -20,7 +20,7 @@
 @section('content')
 
     <section class="medicen-aboutUs text-center"
-        style="background-image: url({{ asset('assets/images/' . $gs->hot_icon) }});">
+        style="background-image: url({{ asset('public/assets/images/' . $gs->hot_icon) }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-6">
@@ -62,7 +62,7 @@
 
 @stop
 @section('js')
-    <script src="{{ asset('assets/Al-Araby/js/lightgallery.js') }}"></script>
+    <script src="{{ asset('public/assets/Al-Araby/js/lightgallery.js') }}"></script>
     <script>
         // home gallery section
 

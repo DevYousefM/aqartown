@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{ asset('assets/cangrow/css/aos/aos.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/cangrow/css/aos/aos.min.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     @php
@@ -42,7 +42,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -111,7 +111,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}"
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -121,8 +121,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('assets/images/'.$gs->logo)}}",
+    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
+      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -148,14 +148,14 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
 
-    <link rel="stylesheet" href="{{ asset('assets/cangrow/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/cangrow/css/style.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
@@ -167,7 +167,7 @@
                 <div class="popup__body">
                     <div class="popup__content formBlock">
                         <button class="close" type="button">
-                            <img class="w-100" src="{{ asset('assets/cangrow/images/svg/close-mobile.svg') }}"
+                            <img class="w-100" src="{{ asset('public/assets/cangrow/images/svg/close-mobile.svg') }}"
                                 alt="Close">
                         </button>
                         <h5 class="popup__title text-center mx-auto">Enter your contact details and a convenient time to
@@ -240,7 +240,7 @@
                 <div class="row">
                     <div class="col top-panel align-items-center d-flex justify-content-between">
                         <a href="{{ route('front.index', $sign) }}" class="logo"><img
-                                src="{{ asset('assets/images/' . $gs->logo) }}" alt="Logo"></a>
+                                src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="Logo"></a>
                         <nav id="topmenu" class="topmenu d-flex">
                             <button id="burger" class="topmenu__burger ml-auto" type="button">
                                 <span class="topmenu__burgerLine">Burger menu</span>
@@ -329,7 +329,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-4 col-12 d-flex justify-content-center justify-content-md-start">
                         <a class="footer__logo logo" href="{{ route('front.index', $sign) }}"><img
-                                src="{{ asset('assets/images/' . $gs->logo) }}" alt="logo"></a>
+                                src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="logo"></a>
                     </div>
                     <div class="col-md-4 col-12 text-center">
                         <h2 class="footer__title">{{ $langg->lang200 }}</h2>
@@ -384,13 +384,13 @@
  @endif 
 </ul>
 	</div>
-	<script src="{{ asset('assets/cangrow/js/scripts.min.js') }}"></script>
-	<script src="{{ asset('assets/cangrow/js/aos/aos.min.js') }}"></script>
-	<script src="{{ asset('assets/cangrow/js/aos/aos-settings.js') }}"></script>
+	<script src="{{ asset('public/assets/cangrow/js/scripts.min.js') }}"></script>
+	<script src="{{ asset('public/assets/cangrow/js/aos/aos.min.js') }}"></script>
+	<script src="{{ asset('public/assets/cangrow/js/aos/aos-settings.js') }}"></script>
 	<!-- Magnific Popup core JS file -->
-	<script src="{{ asset('assets/cangrow/js/jquery.magnific-popup.min.js') }}"></script>
-	<script src="{{ asset('assets/cangrow/js/counters.js') }}"></script>
-	<script src="{{ asset('assets/admin/js/toastr.js') }}"></script>
+	<script src="{{ asset('public/assets/cangrow/js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ asset('public/assets/cangrow/js/counters.js') }}"></script>
+	<script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
   var mainurl = "{{ url('/' . $sign) }}";
    var mainurl2 = "{{ url('/') }}";

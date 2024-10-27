@@ -29,7 +29,7 @@ class Shipment extends Model
     public function setPhotoAttribute($image)
     {
         if ($image) {
-            $dest = 'assets/images/speakers/';
+            $dest = 'public/assets/images/speakers/';
             $name = str_random(6) . '_' . $image->getClientOriginalName();
             $image->move($dest, $name);
             $this->attributes['photo'] = $name;

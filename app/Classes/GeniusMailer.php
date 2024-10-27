@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: ShaOn
@@ -29,21 +30,21 @@ class GeniusMailer
     }
 
 
-    public function sendAutoOrderMail(array $mailData,$id)
+    public function sendAutoOrderMail(array $mailData, $id)
     {
         $setup = Generalsetting::find(1);
 
 
 
 
-        $temp = EmailTemplate::where('email_type','=',$mailData['type'])->first();
+        $temp = EmailTemplate::where('email_type', '=', $mailData['type'])->first();
 
-        $body = preg_replace("/{customer_name}/", $mailData['cname'] ,$temp->email_body);
-        $body = preg_replace("/{order_amount}/", $mailData['oamount'] ,$body);
-        $body = preg_replace("/{admin_name}/", $mailData['aname'] ,$body);
-        $body = preg_replace("/{admin_email}/", $mailData['aemail'] ,$body);
-        $body = preg_replace("/{order_number}/", $mailData['onumber'] ,$body);
-        $body = preg_replace("/{website_title}/", $setup->title ,$body);
+        $body = preg_replace("/{customer_name}/", $mailData['cname'], $temp->email_body);
+        $body = preg_replace("/{order_amount}/", $mailData['oamount'], $body);
+        $body = preg_replace("/{admin_name}/", $mailData['aname'], $body);
+        $body = preg_replace("/{admin_email}/", $mailData['aemail'], $body);
+        $body = preg_replace("/{order_number}/", $mailData['onumber'], $body);
+        $body = preg_replace("/{website_title}/", $setup->title, $body);
 
         $data = [
             'email_body' => $body
@@ -56,46 +57,40 @@ class GeniusMailer
         $objDemo->title = $setup->from_name;
         $objDemo->subject = $temp->email_subject;
 
-        try{
-            Mail::send('admin.email.mailbody',$data, function ($message) use ($objDemo,$id) {
-                $message->from($objDemo->from,$objDemo->title);
+        try {
+            Mail::send('admin.email.mailbody', $data, function ($message) use ($objDemo, $id) {
+                $message->from($objDemo->from, $objDemo->title);
                 $message->to($objDemo->to);
                 $message->subject($objDemo->subject);
-        $order = Order::findOrFail($id);
-        $cart = unserialize(bzdecompress(utf8_decode($order->cart)));
-        $fileName = public_path('assets/prints/').str_random(4).time().'.pdf';
-        $pdf = PDF::loadView('print.order', compact('order', 'cart'))->save($fileName);
+                $order = Order::findOrFail($id);
+                $cart = unserialize(bzdecompress(utf8_decode($order->cart)));
+                $fileName = public_path('public/assets/prints/') . str_random(4) . time() . '.pdf';
+                $pdf = PDF::loadView('print.order', compact('order', 'cart'))->save($fileName);
                 $message->attach($fileName);
-
-
             });
-
-        }
-        catch (\Exception $e){
+        } catch (\Exception $e) {
             //die("Not Sent!");
         }
 
-        $files = glob('assets/prints/*'); //get all file names
-        foreach($files as $file){
-            if(is_file($file))
-            unlink($file); //delete file
+        $files = glob('public/assets/prints/*'); //get all file names
+        foreach ($files as $file) {
+            if (is_file($file))
+                unlink($file); //delete file
         }
-        
-
     }
 
     public function sendAutoMail(array $mailData)
     {
         $setup = Generalsetting::find(1);
 
-        $temp = EmailTemplate::where('email_type','=',$mailData['type'])->first();
+        $temp = EmailTemplate::where('email_type', '=', $mailData['type'])->first();
 
-        $body = preg_replace("/{customer_name}/", $mailData['cname'] ,$temp->email_body);
-        $body = preg_replace("/{order_amount}/", $mailData['oamount'] ,$body);
-        $body = preg_replace("/{admin_name}/", $mailData['aname'] ,$body);
-        $body = preg_replace("/{admin_email}/", $mailData['aemail'] ,$body);
-        $body = preg_replace("/{order_number}/", $mailData['onumber'] ,$body);
-        $body = preg_replace("/{website_title}/", $setup->title ,$body);
+        $body = preg_replace("/{customer_name}/", $mailData['cname'], $temp->email_body);
+        $body = preg_replace("/{order_amount}/", $mailData['oamount'], $body);
+        $body = preg_replace("/{admin_name}/", $mailData['aname'], $body);
+        $body = preg_replace("/{admin_email}/", $mailData['aemail'], $body);
+        $body = preg_replace("/{order_number}/", $mailData['onumber'], $body);
+        $body = preg_replace("/{website_title}/", $setup->title, $body);
 
         $data = [
             'email_body' => $body
@@ -107,14 +102,13 @@ class GeniusMailer
         $objDemo->title = $setup->from_name;
         $objDemo->subject = $temp->email_subject;
 
-        try{
-            Mail::send('admin.email.mailbody',$data, function ($message) use ($objDemo) {
-                $message->from($objDemo->from,$objDemo->title);
+        try {
+            Mail::send('admin.email.mailbody', $data, function ($message) use ($objDemo) {
+                $message->from($objDemo->from, $objDemo->title);
                 $message->to($objDemo->to);
                 $message->subject($objDemo->subject);
             });
-        }
-        catch (\Exception $e){
+        } catch (\Exception $e) {
             //die("Not Sent!");
         }
     }
@@ -133,18 +127,16 @@ class GeniusMailer
         $objDemo->title = $setup->from_name;
         $objDemo->subject = $mailData['subject'];
 
-        try{
-            Mail::send('admin.email.mailbody',$data, function ($message) use ($objDemo) {
-                $message->from($objDemo->from,$objDemo->title);
+        try {
+            Mail::send('admin.email.mailbody', $data, function ($message) use ($objDemo) {
+                $message->from($objDemo->from, $objDemo->title);
                 $message->to($objDemo->to);
                 $message->subject($objDemo->subject);
             });
-        }
-        catch (\Exception $e){
+        } catch (\Exception $e) {
             die($e->getMessage());
             // return $e->getMessage();
         }
         return true;
     }
-
 }

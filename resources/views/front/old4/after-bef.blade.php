@@ -25,12 +25,12 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('assets/images/' . $gs->new_icon) }}" alt="" />
+                <img src="{{ asset('public/assets/images/' . $gs->new_icon) }}" alt="" />
             </div>
         </div>
     </section>
     <section class="page-breadcrumb">
-        <div class="image-layer" style="background-image:url({{ asset('assets/naglaa/images/background/1.png') }})"></div>
+        <div class="image-layer" style="background-image:url({{ asset('public/assets/naglaa/images/background/1.png') }})"></div>
         <div class="container">
             <div class="clearfix">
                 <div class="pull-left fll">
@@ -83,10 +83,10 @@
                         <div class="twentytwenty-wrapper twentytwenty-horizontal">
                             <div class="twentytwenty-container" id="container1" style="height: 300px;">
 
-                                <img src="{{ asset('assets/images/ads/' . $data->photo) }}"
+                                <img src="{{ asset('public/assets/images/ads/' . $data->photo) }}"
                                     class="img-fluid w-100 twentytwenty-before" alt=""
                                     style="clip: rect(0px, 196.5px, 300px, 0px);">
-                                <img src="{{ asset('assets/images/ads/' . $data->image) }}"
+                                <img src="{{ asset('public/assets/images/ads/' . $data->image) }}"
                                     class="img-fluid w-100 twentytwenty-after" alt=""
                                     style="clip: rect(0px, 393px, 300px, 196.5px);">
                                 <div class="twentytwenty-overlay">
@@ -112,8 +112,8 @@
 
 @stop
 @section('js')
-    <script src="{{ asset('assets/naglaa/assets/js/jquery.event.move.js') }}"></script>
-    <script src="{{ asset('assets/naglaa/assets/js/jquery.twentytwenty.js') }}"></script>
+    <script src="{{ asset('public/assets/naglaa/assets/js/jquery.event.move.js') }}"></script>
+    <script src="{{ asset('public/assets/naglaa/assets/js/jquery.twentytwenty.js') }}"></script>
     <script>
         $(window).load(function() {
             $(".twentytwenty-container").twentytwenty();

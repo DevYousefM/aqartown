@@ -20,7 +20,7 @@
 
     @endphp
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->top_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="left">
-                    <img src="{{ asset('assets/images/services/' . $service->photo) }}" alt="img">
+                    <img src="{{ asset('public/assets/images/services/' . $service->photo) }}" alt="img">
                 </div>
             </div>
         </div>

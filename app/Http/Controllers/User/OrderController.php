@@ -22,47 +22,46 @@ class OrderController extends Controller
     public function orders()
     {
         $user = Auth::guard('web')->user();
-        $orders = Order::where('user_id','=',$user->id)->orderBy('id','desc')->get();
-        return view('user.order.index',compact('user','orders'));
+        $orders = Order::where('user_id', '=', $user->id)->orderBy('id', 'desc')->get();
+        return view('user.order.index', compact('user', 'orders'));
     }
-    
+
     public function orders_34()
     {
         $user = Auth::guard('web')->user();
-        $orders = Order::where('user_id','=',$user->id)->orderBy('id','desc')->get();
-        return view('user.order.index_34',compact('user','orders'));
+        $orders = Order::where('user_id', '=', $user->id)->orderBy('id', 'desc')->get();
+        return view('user.order.index_34', compact('user', 'orders'));
     }
-    
- public function subscribes()
+
+    public function subscribes()
     {
         $user = Auth::guard('web')->user();
-        $orders = Subscribe::where('user_id','=',$user->id)->orderBy('id','desc')->get();
-        $now = Carbon::now()->addDays(5);  
-        return view('user.subscribe.index',compact('user','orders','now'));
+        $orders = Subscribe::where('user_id', '=', $user->id)->orderBy('id', 'desc')->get();
+        $now = Carbon::now()->addDays(5);
+        return view('user.subscribe.index', compact('user', 'orders', 'now'));
     }
-    
-     public function subscribe($id)
+
+    public function subscribe($id)
     {
         $user = Auth::guard('web')->user();
         $subscribe = Subscribe::findOrfail($id);
         $order = Order::find($subscribe->order_id);
         $pro = Product::find($subscribe->product_id);
-      
-        return view('user.subscribe.details',compact('user','order','cart','subscribe','pro'));
+
+        return view('user.subscribe.details', compact('user', 'order', 'cart', 'subscribe', 'pro'));
     }
 
     public function ordertrack()
     {
         $user = Auth::guard('web')->user();
-        return view('user.order-track',compact('user'));
+        return view('user.order-track', compact('user'));
     }
 
     public function trackload($id)
     {
-        $order = Order::where('order_number','=',$id)->first();
-        $datas = array('Pending','Processing','On Delivery','Completed');
-        return view('load.track-load',compact('order','datas'));
-
+        $order = Order::where('order_number', '=', $id)->first();
+        $datas = array('Pending', 'Processing', 'On Delivery', 'Completed');
+        return view('load.track-load', compact('order', 'datas'));
     }
 
 
@@ -71,19 +70,18 @@ class OrderController extends Controller
         $user = Auth::guard('web')->user();
         $order = Order::findOrfail($id);
         $cart = unserialize(bzdecompress(utf8_decode($order->cart)));
-        return view('user.order.details',compact('user','order','cart'));
+        return view('user.order.details', compact('user', 'order', 'cart'));
     }
 
-    public function orderdownload($slug,$id)
+    public function orderdownload($slug, $id)
     {
         $user = Auth::guard('web')->user();
-        $order = Order::where('order_number','=',$slug)->first();
+        $order = Order::where('order_number', '=', $slug)->first();
         $prod = Product::findOrFail($id);
-        if(!isset($order) || $prod->type == 'Physical' || $order->user_id != $user->id)
-        {
+        if (!isset($order) || $prod->type == 'Physical' || $order->user_id != $user->id) {
             return redirect()->back();
         }
-        return response()->download(public_path('assets/files/'.$prod->file));
+        return response()->download(public_path('public/assets/files/' . $prod->file));
     }
 
     public function orderprint($id)
@@ -91,7 +89,7 @@ class OrderController extends Controller
         $user = Auth::guard('web')->user();
         $order = Order::findOrfail($id);
         $cart = unserialize(bzdecompress(utf8_decode($order->cart)));
-        return view('user.order.print',compact('user','order','cart'));
+        return view('user.order.print', compact('user', 'order', 'cart'));
     }
 
     public function trans()
@@ -102,7 +100,6 @@ class OrderController extends Controller
         $order->txnid = $trans;
         $order->update();
         $data = $order->txnid;
-        return response()->json($data);            
-    }  
-
+        return response()->json($data);
+    }
 }

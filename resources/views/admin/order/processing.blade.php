@@ -29,7 +29,7 @@
                         @include('includes.admin.form-success')
                         <div class="table-responsiv">
                             <div class="gocover"
-                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <table id="geniustable" class="table table-hover dt-responsive" cellspacing="0" width="100%">
                                 <thead>
@@ -56,7 +56,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img src="{{ asset('assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header d-block text-center">
                     <h4 class="modal-title d-inline-block">{{ __('Update Status') }}</h4>
@@ -140,7 +140,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img src="{{ asset('assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
@@ -194,7 +194,7 @@
                 }
             ],
             language: {
-                processing: '<img src="{{ asset('assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
             },
             drawCallback: function(settings) {
                 $('.select').niceSelect();

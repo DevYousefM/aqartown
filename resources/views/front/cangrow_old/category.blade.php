@@ -167,7 +167,7 @@
             </h2>
             <div class="col-12">
                 <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-                    <img src="{{ asset('assets/images/' . $gs->top_icon) }}" alt="{{ $langg->lang16 }}">
+                    <img src="{{ asset('public/assets/images/' . $gs->top_icon) }}" alt="{{ $langg->lang16 }}">
 
                 </div><!-- Page Title Wrap -->
             </div>
@@ -180,7 +180,7 @@
                         <div class="col-12 col-md-6 col-xl-4" data-aos="fade-up" data-aos-delay="{{ $key + 1 }}00">
                             <div class="pageService__item">
                                 <div class="pageService__wrap-illustration">
-                                    <img src="{{ $productt->photo ? (filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('assets/images/products/' . $productt->photo)) : asset('assets/images/noimage.png') }}"
+                                    <img src="{{ $productt->photo ? (filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('public/assets/images/products/' . $productt->photo)) : asset('public/assets/images/noimage.png') }}"
                                         alt="Planning">
                                 </div>
                                 <h3 class="pageService__name text-uppercase">
@@ -214,9 +214,9 @@
                 <div class="col-lg-6">
                     <div class="appointment__wrapIllustration position-relative" data-aos="fade-down">
                         <img class="appointment__illustration position-relative"
-                            src="{{ asset('assets/images/' . $gs->discount_icon) }}" alt="Illustration">
+                            src="{{ asset('public/assets/images/' . $gs->discount_icon) }}" alt="Illustration">
                         <img class="appointment__arrow position-absolute"
-                            src="{{ asset('assets/cangrow/images/svg/appointment-arrow.svg') }}" alt="Arrow">
+                            src="{{ asset('public/assets/cangrow/images/svg/appointment-arrow.svg') }}" alt="Arrow">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -286,7 +286,7 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>

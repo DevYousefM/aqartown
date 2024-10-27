@@ -16,7 +16,7 @@
 
     @endphp
     <!-- end header -->
-    <section class="page-title" style="background-image:url({{ asset('assets/images/' . $gs->feature_icon) }});">
+    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->feature_icon) }});">
         <div class="auto-container">
             <h1>{{ $langg->lang16 }} </h1>
 
@@ -43,7 +43,7 @@
                     <div class="heading-left">
                         <span class="draw-line"></span>
                     </div>
-                    <img src="{{ asset('assets/images/' . $gs->logo) }}" alt="">
+                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
 
                     <div class="heading-right">
                         <span class="draw-line"></span>
@@ -60,7 +60,7 @@
             <div class="home-about-slick-slider" data-aos="zoom-in-right" data-aos-duration="1500">
                 @foreach ($images as $image)
                     <div class="img-div">
-                        <img src="{{ asset('/assets/images/ads/' . $image->photo) }}" alt="img">
+                        <img src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt="img">
                     </div>
                 @endforeach
 

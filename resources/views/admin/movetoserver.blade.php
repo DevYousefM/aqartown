@@ -23,7 +23,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
 
 
@@ -59,7 +59,7 @@
     <script type="text/javascript">
         $("#generateBkup").click(function() {
             $('#bkupData').html(
-                '<img style="height:100px;" src="{{ asset('assets/images/' . $gs->loader) }}"><br>{{ __('Generating Backup... Please wait....') }}'
+                '<img style="height:100px;" src="{{ asset('public/assets/images/' . $gs->loader) }}"><br>{{ __('Generating Backup... Please wait....') }}'
             );
             $.ajax({
                 url: "{{ url('admin/check/movescript') }}",

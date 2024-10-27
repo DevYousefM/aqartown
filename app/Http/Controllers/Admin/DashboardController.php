@@ -134,10 +134,10 @@ class DashboardController extends Controller
         $data = Auth::guard('admin')->user();
         if ($file = $request->file('photo')) {
             $name = time() . $file->getClientOriginalName();
-            $file->move('assets/images/admins/', $name);
+            $file->move('public/assets/images/admins/', $name);
             if ($data->photo != null) {
-                if (file_exists(public_path() . '/assets/images/admins/' . $data->photo)) {
-                    unlink(public_path() . '/assets/images/admins/' . $data->photo);
+                if (file_exists(public_path() . '/public/assets/images/admins/' . $data->photo)) {
+                    unlink(public_path() . '/public/assets/images/admins/' . $data->photo);
                 }
             }
             $input['photo'] = $name;

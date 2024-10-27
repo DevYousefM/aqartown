@@ -18,7 +18,7 @@
 
 
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->big_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->big_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1> {{ $langg->lang20 }}

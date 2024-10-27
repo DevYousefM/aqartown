@@ -17,7 +17,7 @@
     @endphp
 
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('assets/images/' . $gs->best_icon) }});">
+    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1> {{ $langg->lang11 }}</h1>
@@ -56,7 +56,7 @@
 
                     <div class="home-about" data-aos="zoom-in-left" data-aos-duration="1500">
                         <div class="img-div">
-                            <img src="{{ asset('assets/images/' . $gs->home_about_img1) }}" alt="img">
+                            <img src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" alt="img">
                         </div>
 
 
@@ -82,7 +82,7 @@
                 @foreach ($images as $partner)
                     <div class="swiper-slide">
                         <div class="slider-img">
-                            <img src="{{ asset('assets/images/ads/' . $partner->photo) }}" alt="img">
+                            <img src="{{ asset('public/assets/images/ads/' . $partner->photo) }}" alt="img">
                         </div>
                     </div>
                 @endforeach
