@@ -198,7 +198,6 @@ class CatalogController extends Controller
     // Capcha Code Image
     private function  code_image()
     {
-        $actual_path = str_replace('project', '', base_path());
         $image = imagecreatetruecolor(200, 50);
         $background_color = imagecolorallocate($image, 255, 255, 255);
         imagefilledrectangle($image, 0, 0, 200, 50, $background_color);
@@ -208,7 +207,7 @@ class CatalogController extends Controller
             imagesetpixel($image, rand() % 200, rand() % 50, $pixel);
         }
 
-        $font = $actual_path . 'public/assets/front/fonts/NotoSans-Bold.ttf';
+        $font = 'public/assets/front/fonts/NotoSans-Bold.ttf';
         $allowed_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $length = strlen($allowed_letters);
         $letter = $allowed_letters[rand(0, $length - 1)];
@@ -226,7 +225,7 @@ class CatalogController extends Controller
             imagesetpixel($image, rand() % 200, rand() % 50, $pixels);
         }
         session(['captcha_string' => $word]);
-        imagepng($image, $actual_path . "assets/images/capcha_code.png");
+        imagepng($image, "public/assets/images/capcha_code.png");
     }
 
     public function quick($id)
