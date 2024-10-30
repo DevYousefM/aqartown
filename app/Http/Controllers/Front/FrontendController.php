@@ -791,8 +791,8 @@ class FrontendController extends Controller
         $bcats = BlogCategory::all();
         $this->code_image();
         $archives = Blog::orderBy('created_at', 'desc')->get()->groupBy(function ($item) {
-            return $item->created_at->format('F Y');
-        })->take(5)->toArray();
+            return \Carbon\Carbon::parse($item->created_at)->format('F Y');
+        })->take(5)->toArray();        
         $blogs = Blog::orderBy('created_at', 'desc')->paginate(9);
         $rec_blogs = Blog::orderBy('created_at', 'desc')->get()->take(5);
         $images = DB::table('ads')->get();
