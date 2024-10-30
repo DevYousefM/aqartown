@@ -837,7 +837,7 @@ class FrontendController extends Controller
         $this->code_image();
         $rec_blogs = Blog::orderBy('created_at', 'desc')->get()->take(5);
         $archives = Blog::orderBy('created_at', 'desc')->get()->groupBy(function ($item) {
-            return $item->created_at->format('F Y');
+            return \Carbon\Carbon::parse($item->created_at)->format('F Y');
         })->take(5)->toArray();
         $bcats = BlogCategory::where('slug', '=', str_replace(' ', '-', $slug))->get();
         $blogs = Blog::where('tags', 'like', '%' . $slug . '%')->paginate(9);
@@ -860,7 +860,7 @@ class FrontendController extends Controller
         $rec_blogs = Blog::orderBy('created_at', 'desc')->get()->take(5);
         $search = $request->search;
         $archives = Blog::orderBy('created_at', 'desc')->get()->groupBy(function ($item) {
-            return $item->created_at->format('F Y');
+            return \Carbon\Carbon::parse($item->created_at)->format('F Y');
         })->take(5)->toArray();
         $bcats = BlogCategory::get();
         $blogs = Blog::where('title', 'like', '%' . $search . '%')->orWhere('title_ar', 'like', '%' . $search . '%')->orWhere('details', 'like', '%' . $search . '%')->orWhere('details_ar', 'like', '%' . $search . '%')->paginate(9);
@@ -881,7 +881,7 @@ class FrontendController extends Controller
         $this->code_image();
         $rec_blogs = Blog::orderBy('created_at', 'desc')->get()->take(5);
         $archives = Blog::orderBy('created_at', 'desc')->get()->groupBy(function ($item) {
-            return $item->created_at->format('F Y');
+            return \Carbon\Carbon::parse($item->created_at)->format('F Y');
         })->take(5)->toArray();
         $date = \Carbon\Carbon::parse($slug)->format('Y-m');
         $blogs = Blog::where('created_at', 'like', '%' . $date . '%')->paginate(9);
@@ -922,7 +922,7 @@ class FrontendController extends Controller
         $tags = array_unique(explode(',', $tagz));
         $rec_blogs = Blog::orderBy('created_at', 'desc')->get()->take(5);
         $archives = Blog::orderBy('created_at', 'desc')->get()->groupBy(function ($item) {
-            return $item->created_at->format('F Y');
+            return \Carbon\Carbon::parse($item->created_at)->format('F Y');
         })->take(5)->toArray();
         $blog_meta_tag = $blog->meta_tag;
         $blog_meta_description = $blog->meta_description;
