@@ -815,7 +815,7 @@ class FrontendController extends Controller
         $this->code_image();
         $rec_blogs = Blog::orderBy('created_at', 'desc')->get()->take(5);
         $archives = Blog::orderBy('created_at', 'desc')->get()->groupBy(function ($item) {
-            return $item->created_at->format('F Y');
+            return \Carbon\Carbon::parse($item->created_at)->format('F Y');
         })->take(5)->toArray();
         $bcats = BlogCategory::where('slug', '=', str_replace(' ', '-', $slug))->get();
         $bcat = BlogCategory::where('slug', '=', str_replace(' ', '-', $slug))->first();
