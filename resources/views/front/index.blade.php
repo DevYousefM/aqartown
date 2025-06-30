@@ -25,23 +25,17 @@
     <!-- Slider-Start -->
 
     <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
 
-        <div class="swiper-wrapper">
+        @foreach ($sliders as $k => $slide)
+            @php
+                $galss = $slide->photo ? str_replace(' ', '%20', $slide->photo) : 'default.jpg';
+            @endphp
 
-            @foreach ($sliders as $k => $slide)
-                @php
-
-                    $galss = str_replace(' ', '%20', $slide->photo);
-
-                @endphp
-
-                <div class="swiper-slide cover-background"
-                    style="background-image:url({{ asset('/public/assets/images/sliders/' . $galss) }})">
-
-
-
-                </div>
-            @endforeach
+            <div class="swiper-slide cover-background"
+                style="background-image:url('{{ asset('/public/assets/images/sliders/' . $galss) }}')">
+            </div>
+        @endforeach
 
 
 
@@ -426,7 +420,7 @@
 @stop
 
 @section('links')
-    <link rel="preload" href="{{ asset('/public/assets/images/sliders/' . $galss) }}" as="image">
+    <link rel="preload" href="{{ asset('/public/assets/images/sliders/default.jpg') }}" as="image">
     <link rel="preload" href="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" as="image">
     <link rel="preload" href="{{ asset('public/assets/aqar/') }}/images/s-o.png" as="image">
 @endsection
