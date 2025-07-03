@@ -61,7 +61,8 @@
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
 
-        <meta property="og:image" content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image"
+            content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
 
         <meta name="author" content="{{ $gs->title }}">
     @else
@@ -192,9 +193,11 @@
 
     <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/magnific-popup.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css"
+        type="text/css">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css"
+        type="text/css">
 
     <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/swiper.min.css" type="text/css">
 
@@ -232,22 +235,36 @@
 
     @yield('css')
 
-	<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WVRS3C5');</script>
-<!-- End Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C1Z02SYPPT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WVRS3C5');
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C1Z02SYPPT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-C1Z02SYPPT');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-C1Z02SYPPT');
+    </script>
 </head>
 
 
@@ -256,10 +273,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVRS3C5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVRS3C5" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!--
 
 <div class="loading-div">
@@ -596,8 +613,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="nav-logo">
 
                                     <a href="{{ route('front.index', $sign) }}"><img
-                                            src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" alt=""
-                                            title=""></a>
+                                            src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                            alt="" title=""></a>
 
                                 </div>
 
@@ -745,7 +762,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                                 <a href="{{ route('front.index', $sign) }}">
 
-                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}" alt="">
+                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}"
+                                        alt="">
 
                                 </a>
 
