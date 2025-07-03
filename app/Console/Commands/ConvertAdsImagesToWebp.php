@@ -13,42 +13,48 @@ class ConvertAdsImagesToWebp extends Command
 
     public function handle()
     {
-        $ads = DB::table('ads')
-            ->whereNotNull('photo')
-            ->whereRaw("LOWER(RIGHT(photo, 5)) != '.webp'")
-            ->get();
+        try {
 
-        if ($ads->isEmpty()) {
-            $this->info('✅ All ads use .webp format.');
-            return;
-        }
 
-        $this->warn("⚠️ Ads with non-webp photos:");
-        foreach ($ads as $ad) {
-            $relativePath = "assets/images/ads/{$ad->photo}";
-            $fullPath = public_path($relativePath);
-            if (!file_exists($fullPath)) {
-                $this->error("File not found: {$relativePath}");
-                continue;
+            $ads = DB::table('ads')
+                ->whereNotNull('photo')
+                ->whereRaw("LOWER(RIGHT(photo, 5)) != '.webp'")
+                ->get();
+
+            if ($ads->isEmpty()) {
+                $this->info('✅ All ads use .webp format.');
+                return;
             }
 
-            $webpPath = $this->convertToWebp($fullPath);
+            $this->warn("⚠️ Ads with non-webp photos:");
+            foreach ($ads as $ad) {
+                $relativePath = "assets/images/ads/{$ad->photo}";
+                $fullPath = public_path($relativePath);
+                if (!file_exists($fullPath)) {
+                    $this->error("File not found: {$relativePath}");
+                    continue;
+                }
 
-            if ($webpPath) {
-                $this->info("🟢 Converted to WebP: {$webpPath}");
+                $webpPath = $this->convertToWebp($fullPath);
 
-                DB::table('ads')
-                    ->where('id', $ad->id)
-                    ->update(['photo' => basename($webpPath)]);
+                if ($webpPath) {
+                    $this->info("🟢 Converted to WebP: {$webpPath}");
 
-                unlink($fullPath);
-                $this->warn("🗑️ Deleted original file: {$fullPath}");
-            } else {
-                $this->error("🔴 Failed to convert: {$fullPath}");
+                    DB::table('ads')
+                        ->where('id', $ad->id)
+                        ->update(['photo' => basename($webpPath)]);
+
+                    unlink($fullPath);
+                    $this->warn("🗑️ Deleted original file: {$fullPath}");
+                } else {
+                    $this->error("🔴 Failed to convert: {$fullPath}");
+                }
             }
-        }
 
-        $this->info("Total scanned: {$ads->count()}");
+            $this->info("Total scanned: {$ads->count()}");
+        } catch (\Exception $e) {
+            $this->error($e->getMessage());
+        }
     }
     protected function convertToWebp(string $sourcePath, int $quality = 80): ?string
     {
