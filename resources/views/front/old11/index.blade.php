@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -29,7 +29,7 @@
                 @endphp
                 <div class="swiper-slide">
                     <div class="slider-img">
-                        <img src="{{ asset('/public/assets/images/sliders/' . $galss) }}" alt="img">
+                        <img src="{{ asset('/' . access_public() . '/assets/images/sliders/' . $galss) }}" alt="img">
                     </div>
                     <div class="slider-text">
                         <div class="text-buttons">
@@ -103,7 +103,8 @@
                         <div class="row align-items-center">
 
                             <div class="about-images-2">
-                                <img src="{{ asset('public/assets/images/' . $gs->home_about_img3) }}" alt="">
+                                <img src="{{ asset(access_public() . 'assets/images/' . $gs->home_about_img3) }}"
+                                    alt="">
                             </div>
                         </div>
                     </div>
@@ -136,7 +137,7 @@
                                     <!--Start single solution style1-->
                                     <div class="single-solution-style1">
                                         <div class="img-holder">
-                                            <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
+                                            <img src="{{ asset(access_public() . 'assets/images/subcategories/' . $subcat->photo) }}"
                                                 alt="Awesome Image">
                                             <div class="icon-holder">
                                                 <div class="inner-content">
@@ -204,31 +205,31 @@
                         @endif
                     </div>
                     <!-- <ul class="about-list">
-                                    <li>
-                                        <div class="icon">
-                                            <img src="img/bg/about-icon-1.png" alt="about icon">
-                                        </div>
-                                        <div class="text">
-                                            <h5>12 Years Experince</h5>
-                                            <p>
-                                                It's difficult to find examples of lorem ipsum in use before Letraset made it
-                                                popular as a dummy text..
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <img src="img/bg/about-icon-2.png" alt="about icon">
-                                        </div>
-                                        <div class="text">
-                                            <h5>Unique Tips &amp; Design</h5>
-                                            <p>
-                                                It's difficult to find examples of lorem ipsum in use before Letraset made it
-                                                popular as a dummy text..
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul> -->
+                                            <li>
+                                                <div class="icon">
+                                                    <img src="img/bg/about-icon-1.png" alt="about icon">
+                                                </div>
+                                                <div class="text">
+                                                    <h5>12 Years Experince</h5>
+                                                    <p>
+                                                        It's difficult to find examples of lorem ipsum in use before Letraset made it
+                                                        popular as a dummy text..
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="icon">
+                                                    <img src="img/bg/about-icon-2.png" alt="about icon">
+                                                </div>
+                                                <div class="text">
+                                                    <h5>Unique Tips &amp; Design</h5>
+                                                    <p>
+                                                        It's difficult to find examples of lorem ipsum in use before Letraset made it
+                                                        popular as a dummy text..
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul> -->
                     <a href="{{ route('front.about', $sign) }}" title="Read More" class="primary-btn">
                         <span>{{ $langg->lang3 }} </span>
                         <i class="fa fa-arrow-left"></i>
@@ -236,7 +237,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-img">
-                        <img src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" alt="about image"
+                        <img src="{{ asset(access_public() . 'assets/images/' . $gs->home_about_img1) }}" alt="about image"
                             class="img-fluid">
                         <a href="{{ $gs->home_about_link }}" title="Youtube Video" data-autoplay="true" data-vbtype="video"
                             class="video-btns  venobox vbox-item">
@@ -273,7 +274,7 @@
                                     style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
                                     <div class="inner-box">
                                         <figure class="image-box">
-                                            <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
+                                            <img src="{{ asset(access_public() . 'assets/images/subcategories/' . $subcat->photo) }}"
                                                 alt="">
                                             <a href="@if ($langg->rtl == 1) {{ route('front.category', ['category' => $cat->slug_ar, 'subcategory' => $subcat->slug_ar, 'lang' => $sign]) }}
 
@@ -337,11 +338,11 @@
                 <div class="col-md-12">
                     <div class="heading-t">
                         <!-- <h2>
-                                            
-                                        </h2>
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipiscing
-                                        </p> -->
+                                                    
+                                                </h2>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet consectetur adipiscing
+                                                </p> -->
 
                     </div>
                 </div>
@@ -353,7 +354,7 @@
                         <div class="blog-box">
                             <div class="blog-img">
                                 <a href="#">
-                                    <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                    <img src="{{ $blogg->photo ? asset(access_public() . 'assets/images/blogs/' . $blogg->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                         alt="">
                                 </a>
                             </div>
@@ -436,7 +437,7 @@
                                 <div class="text-holder">
                                     <p> {!! $langg->rtl == 1 ? $review->details_ar : $review->details !!} </p>
                                     <div class="img-holder">
-                                        <img src="{{ $review->photo ? asset('public/assets/images/reviews/' . $review->photo) : asset('public/assets/images/noimage.png') }}"
+                                        <img src="{{ $review->photo ? asset(access_public() . 'assets/images/reviews/' . $review->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                             alt="Awesome Image">
                                     </div>
                                 </div>
@@ -457,109 +458,109 @@
 
     <!--Start latest blog area-->
     <!-- <section class="latest-blog-area sec-pd1">
-                        <div class="container inner-content">
-                            <div class="sec-title max-width text-center">
-                                <h3>News & Tips</h3>
-                                <h1>Latest From Our Blog</h1>
-                                <p>Your teeth play an important part in your daily life. It not only helps you to chew and eat your
-                                    food, but frames your face. Any missing tooth can have a major impact on your quality of life.
-                                </p>
-                            </div>
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                                    <div class="single-blog-post">
-                                        <div class="img-holder">
-                                            <img src="images/blog/lat-blog-1.jpg" alt="Awesome Image">
-                                            <div class="categorie-button">
-                                                <a class="btn-one" href="#">Healthy Teeth</a>
-                                            </div>
-                                        </div>
-                                        <div class="text-holder">
-                                            <div class="meta-box">
-                                                <div class="author-thumb">
-                                                    <img src="images/blog/author-1.png" alt="Image">
-                                                </div>
-                                                <ul class="meta-info">
-                                                    <li><a href="#">By Megan Clarks</a></li>
-                                                    <li><a href="#">Nov 14, 2018</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3 class="blog-title"><a href="blog-single.html">A guide for dentists and patients</a>
-                                            </h3>
-                                            <div class="text-box">
-                                                <p>No one rejects, dislikes our avoids pleasures itself, because it is all pleasure,
-                                                    but because those who do not know.</p>
-                                            </div>
-                                            <div class="readmore-button">
-                                                <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
-                                            </div>
-                                        </div>
+                                <div class="container inner-content">
+                                    <div class="sec-title max-width text-center">
+                                        <h3>News & Tips</h3>
+                                        <h1>Latest From Our Blog</h1>
+                                        <p>Your teeth play an important part in your daily life. It not only helps you to chew and eat your
+                                            food, but frames your face. Any missing tooth can have a major impact on your quality of life.
+                                        </p>
                                     </div>
-                                </div>
-                      
-                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                                    <div class="single-blog-post">
-                                        <div class="img-holder">
-                                            <img src="images/blog/lat-blog-2.jpg" alt="Awesome Image">
-                                            <div class="categorie-button">
-                                                <a class="btn-one" href="#">Technology</a>
-                                            </div>
-                                        </div>
-                                        <div class="text-holder">
-                                            <div class="meta-box">
-                                                <div class="author-thumb">
-                                                    <img src="images/blog/author-2.png" alt="Image">
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                            <div class="single-blog-post">
+                                                <div class="img-holder">
+                                                    <img src="images/blog/lat-blog-1.jpg" alt="Awesome Image">
+                                                    <div class="categorie-button">
+                                                        <a class="btn-one" href="#">Healthy Teeth</a>
+                                                    </div>
                                                 </div>
-                                                <ul class="meta-info">
-                                                    <li><a href="#">By Megan Clarks</a></li>
-                                                    <li><a href="#">Nov 14, 2018</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3 class="blog-title"><a href="blog-single.html">Should i go for a smile design?</a>
-                                            </h3>
-                                            <div class="text-box">
-                                                <p>Nor again is there anyone who love pursues or desires to obtain pain of itself,
-                                                    bepain, but occasionally circumstances.</p>
-                                            </div>
-                                            <div class="readmore-button">
-                                                <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
+                                                <div class="text-holder">
+                                                    <div class="meta-box">
+                                                        <div class="author-thumb">
+                                                            <img src="images/blog/author-1.png" alt="Image">
+                                                        </div>
+                                                        <ul class="meta-info">
+                                                            <li><a href="#">By Megan Clarks</a></li>
+                                                            <li><a href="#">Nov 14, 2018</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <h3 class="blog-title"><a href="blog-single.html">A guide for dentists and patients</a>
+                                                    </h3>
+                                                    <div class="text-box">
+                                                        <p>No one rejects, dislikes our avoids pleasures itself, because it is all pleasure,
+                                                            but because those who do not know.</p>
+                                                    </div>
+                                                    <div class="readmore-button">
+                                                        <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
                               
-                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                                    <div class="single-blog-post">
-                                        <div class="img-holder">
-                                            <img src="images/blog/lat-blog-3.jpg" alt="Awesome Image">
-                                            <div class="categorie-button">
-                                                <a class="btn-one" href="#">Dental Care</a>
+                                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                            <div class="single-blog-post">
+                                                <div class="img-holder">
+                                                    <img src="images/blog/lat-blog-2.jpg" alt="Awesome Image">
+                                                    <div class="categorie-button">
+                                                        <a class="btn-one" href="#">Technology</a>
+                                                    </div>
+                                                </div>
+                                                <div class="text-holder">
+                                                    <div class="meta-box">
+                                                        <div class="author-thumb">
+                                                            <img src="images/blog/author-2.png" alt="Image">
+                                                        </div>
+                                                        <ul class="meta-info">
+                                                            <li><a href="#">By Megan Clarks</a></li>
+                                                            <li><a href="#">Nov 14, 2018</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <h3 class="blog-title"><a href="blog-single.html">Should i go for a smile design?</a>
+                                                    </h3>
+                                                    <div class="text-box">
+                                                        <p>Nor again is there anyone who love pursues or desires to obtain pain of itself,
+                                                            bepain, but occasionally circumstances.</p>
+                                                    </div>
+                                                    <div class="readmore-button">
+                                                        <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="text-holder">
-                                            <div class="meta-box">
-                                                <div class="author-thumb">
-                                                    <img src="images/blog/author-3.png" alt="Image">
+                                      
+                                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                                            <div class="single-blog-post">
+                                                <div class="img-holder">
+                                                    <img src="images/blog/lat-blog-3.jpg" alt="Awesome Image">
+                                                    <div class="categorie-button">
+                                                        <a class="btn-one" href="#">Dental Care</a>
+                                                    </div>
                                                 </div>
-                                                <ul class="meta-info">
-                                                    <li><a href="#">By Megan Clarks</a></li>
-                                                    <li><a href="#">Nov 14, 2018</a></li>
-                                                </ul>
-                                            </div>
-                                            <h3 class="blog-title"><a href="blog-single.html">What you need to know teeth?</a></h3>
-                                            <div class="text-box">
-                                                <p>It not only helps you to chew and eat your food frames your faceany missing tooth
-                                                    can major impact your quality of life.</p>
-                                            </div>
-                                            <div class="readmore-button">
-                                                <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
+                                                <div class="text-holder">
+                                                    <div class="meta-box">
+                                                        <div class="author-thumb">
+                                                            <img src="images/blog/author-3.png" alt="Image">
+                                                        </div>
+                                                        <ul class="meta-info">
+                                                            <li><a href="#">By Megan Clarks</a></li>
+                                                            <li><a href="#">Nov 14, 2018</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <h3 class="blog-title"><a href="blog-single.html">What you need to know teeth?</a></h3>
+                                                    <div class="text-box">
+                                                        <p>It not only helps you to chew and eat your food frames your faceany missing tooth
+                                                            can major impact your quality of life.</p>
+                                                    </div>
+                                                    <div class="readmore-button">
+                                                        <a class="btn-two" href="#"><span class="flaticon-next"></span>Continue REading</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </section> -->
+                            </section> -->
     <!--End latest blog area-->
 
 @stop

@@ -16,7 +16,7 @@
 
 @section('gsearch')
 
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" />
 @stop
 
 
@@ -25,17 +25,17 @@
     <!-- Slider-Start -->
 
     <div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
 
-        @foreach ($sliders as $k => $slide)
-            @php
-                $galss = $slide->photo ? str_replace(' ', '%20', $slide->photo) : 'default.jpg';
-            @endphp
+            @foreach ($sliders as $k => $slide)
+                @php
+                    $galss = $slide->photo ? str_replace(' ', '%20', $slide->photo) : 'default.jpg';
+                @endphp
 
-            <div class="swiper-slide cover-background"
-                style="background-image:url('{{ asset('/public/assets/images/sliders/' . $galss) }}')">
-            </div>
-        @endforeach
+                <div class="swiper-slide cover-background"
+                    style="background-image:url('{{ asset((access_public() ? rtrim(access_public(), '/') . '/' : '') . 'assets/images/sliders/' . $galss) }}')">
+                </div>
+            @endforeach
 
 
 
@@ -223,7 +223,7 @@
                 </div>
                 <div class="col-md-6 pl-70 pt-50">
                     <div class="min-about pl-40 pb-40">
-                        <img src="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" alt=""
+                        <img src="{{ asset(access_public() . 'assets/images/' . $gs->home_about_img1) }}" alt=""
                             class="img-fluid">
                     </div>
                 </div>
@@ -287,14 +287,14 @@
 
                                     {{ route('front.product', ['slug' => $productt->slug, 'lang' => $sign]) }} @endif          ">
 
-                                                <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('public/assets/images/products/' . $productt->photo) }}"
+                                                <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset(access_public() . 'assets/images/products/' . $productt->photo) }}"
                                                     alt="" class="bg-pro-i">
 
                                             </a>
 
                                             {{-- <button class="chat-re" data-toggle="modal" data-target="#myModal-chat">
 
-                                                <img src="{{ asset('public/assets/aqar/') }}/images/messenger.png"
+                                                <img src="{{ asset(access_public() . 'assets/aqar/') }}/images/messenger.png"
                                                     alt="" class="mes">
 
                                             </button> --}}
@@ -332,16 +332,16 @@
                                                     </a></h3>
 
                                                 <ul class="min-f-img">
-                                                    {{-- <li><img src="{{ asset('public/assets/aqar/') }}/images/b-o.png"
+                                                    {{-- <li><img src="{{ asset(access_public() . 'assets/aqar/') }}/images/b-o.png"
                                                             alt=""> 3 Br</li>
 
-                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/ba-o.png"
+                                                    <li><img src="{{ asset(access_public() . 'assets/aqar/') }}/images/ba-o.png"
                                                             alt=""> 3 Ba</li>
 
-                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/g-o.png"
+                                                    <li><img src="{{ asset(access_public() . 'assets/aqar/') }}/images/g-o.png"
                                                             alt=""> 1 Gr</li> --}}
 
-                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/s-o.png"
+                                                    <li><img src="{{ asset(access_public() . 'assets/aqar/') }}/images/s-o.png"
                                                             alt=""> {{ $productt->location }}</li>
                                                 </ul>
                                             </div>
@@ -372,7 +372,7 @@
                         {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
                             <div class="properti_city">
                                 <div class="thumb"><img class="img-fluid w100 DistrictImgList"
-                                        src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
+                                        src="{{ asset(access_public() . 'assets/images/categories/' . $category->photo) }}"
                                         alt="@if ($langg->rtl == 1) {{ $category->name_ar }}
                                         @else
                                         {{ $category->name }} @endif ">
@@ -405,7 +405,7 @@
                     <div class="item team_member">
 
                         <a href="{{ route('front.latestwork', $sign) }}"><img class="img-fluid thumb"
-                                src="{{ asset('/public/assets/images/ads/' . $image->photo) }}"
+                                src="{{ asset((access_public() ? rtrim(access_public(), '/') . '/' : '') . 'assets/images/ads/' . $image->photo) }}"
                                 alt="{{ $langg->rtl == 1 ? $image->title_ar : $image->title }} "></a>
                         <div class="details">
                             <a class="Font_01"
@@ -420,7 +420,9 @@
 @stop
 
 @section('links')
-    <link rel="preload" href="{{ asset('/public/assets/images/sliders/default.jpg') }}" as="image">
-    <link rel="preload" href="{{ asset('public/assets/images/' . $gs->home_about_img1) }}" as="image">
-    <link rel="preload" href="{{ asset('public/assets/aqar/') }}/images/s-o.png" as="image">
+    <link rel="preload"
+        href="{{ asset((access_public() ? rtrim(access_public(), '/') . '/' : '') . 'assets/images/sliders/default.jpg') }}"
+        as="image">
+    <link rel="preload" href="{{ asset(access_public() . 'assets/images/' . $gs->home_about_img1) }}" as="image">
+    <link rel="preload" href="{{ asset(access_public() . 'assets/aqar/') }}/images/s-o.png" as="image">
 @endsection

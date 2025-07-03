@@ -1,7 +1,7 @@
 @extends('layouts.load')
 
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 
@@ -277,7 +277,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload"

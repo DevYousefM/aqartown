@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" />
 @stop
 
 @section('content')
@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-7 h-100 align-items-center d-none d-lg-flex fs-ilustratio-col" data-aos="fade-in"
                         data-aos-delay="500">
-                        <img src="{{ asset('/public/assets/images/sliders/' . $sliders[0]->photo) }}"
+                        <img src="{{ asset('/' . access_public() . '/assets/images/sliders/' . $sliders[0]->photo) }}"
                             style="max-width: 1000px;" alt="">
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                     <div class="row align-items-center">
                         <div class="col-xl-6 d-flex justify-content-lg-end" data-aos="zoom-in" data-aos-delay="300">
                             <img class="img-fluid w-100"
-                                src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                src="{{ asset(access_public() . 'assets/images/brands/' . $about_us->photo) }}"
                                 alt="{{ $about_us->name }}">
                         </div>
                         <div class="col-xl-6 content-column">
@@ -100,7 +100,7 @@
                 @endphp
                 <div class="wrap-about__bottomInfo overflow-hidden position-relative">
                     <img class="about__bottomInfoBG position-absolute"
-                        src="{{ asset('public/assets/cangrow/images/svg/about-bottom-illustration.svg') }}"
+                        src="{{ asset(access_public() . 'assets/cangrow/images/svg/about-bottom-illustration.svg') }}"
                         alt="About bottom illustration">
                     <div class="container about__bottomInfo align-items-end d-flex">
                         <div class="row">
@@ -138,7 +138,7 @@
                         <div
                             class="col-md-6 @if ($key == 0) position-relative @endif"@if ($key % 2) data-aos="fade-right"  @else data-aos="fade-left" @endif>
                             <img class="works__illustration position-absolute"
-                                src="{{ asset('public/assets/images/gallery/' . $work->photo) }}"
+                                src="{{ asset(access_public() . 'assets/images/gallery/' . $work->photo) }}"
                                 alt="{{ $langg->rtl == 1 ? $work->name_ar : $work->name }}">
                             <div class="works__blockText align-items-center d-flex position-relative text-center">
                                 <div class="works__triangle position-absolute">Triangle</div>
@@ -146,45 +146,47 @@
                             </div>
                             @if ($key == 0)
                                 <img class="works__arrowOne position-absolute"
-                                    src="{{ asset('public/assets/cangrow/images/svg/works-01.svg') }}" alt="Arrow One">
+                                    src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-01.svg') }}"
+                                    alt="Arrow One">
                             @endif
                             @if ($key == 1)
                                 <img class="works__arrowTwo position-absolute"
-                                    src="{{ asset('public/assets/cangrow/images/svg/works-02.svg') }}" alt="Arrow Two">
+                                    src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-02.svg') }}"
+                                    alt="Arrow Two">
                             @endif
                         </div>
 
 
                         <!-- <div class="col-md-6" data-aos="fade-left">
-                       <img class="works__illustration position-absolute" src="{{ asset('public/assets/cangrow/images/svg/works-illustration-2.svg') }}"
-                        alt="The quality will grow service and professionalism employees">
-                       <div class="works__blockText align-items-center d-flex position-relative text-center">
-                        <div class="works__triangle position-absolute">Triangle</div>
-                        <p>The quality will <strong>grow service and professionalism</strong> employees</p>
-                       </div>
-                      
-                      </div>
+                               <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-2.svg') }}"
+                                alt="The quality will grow service and professionalism employees">
+                               <div class="works__blockText align-items-center d-flex position-relative text-center">
+                                <div class="works__triangle position-absolute">Triangle</div>
+                                <p>The quality will <strong>grow service and professionalism</strong> employees</p>
+                               </div>
+                              
+                              </div>
 
 
-                      <div class="col-md-6" data-aos="fade-right">
-                       <img class="works__illustration position-absolute" src="{{ asset('public/assets/cangrow/images/svg/works-illustration-3.svg') }}"
-                        alt="It will decrease by 40-70% attraction cost new client">
-                       <div class="works__blockText align-items-center d-flex position-relative text-center">
-                        <div class="works__triangle position-absolute">Triangle</div>
-                        <p>It will <strong>decrease by 40-70%</strong> attraction cost new client</p>
-                       </div>
-                      </div>
+                              <div class="col-md-6" data-aos="fade-right">
+                               <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-3.svg') }}"
+                                alt="It will decrease by 40-70% attraction cost new client">
+                               <div class="works__blockText align-items-center d-flex position-relative text-center">
+                                <div class="works__triangle position-absolute">Triangle</div>
+                                <p>It will <strong>decrease by 40-70%</strong> attraction cost new client</p>
+                               </div>
+                              </div>
 
 
-                      <div class="col-md-6" data-aos="fade-left">
-                       <img class="works__illustration position-absolute" src="{{ asset('public/assets/cangrow/images/svg/works-illustration-4.svg') }}"
-                        alt="The number will increase repeat visits - will become more regular customers">
-                       <div class="works__blockText align-items-center d-flex position-relative text-center">
-                        <div class="works__triangle position-absolute">Triangle</div>
-                        <p>The <strong>number will increase repeat</strong> visits - will become more regular customers
-                        </p>
-                       </div>
-                      </div> -->
+                              <div class="col-md-6" data-aos="fade-left">
+                               <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-4.svg') }}"
+                                alt="The number will increase repeat visits - will become more regular customers">
+                               <div class="works__blockText align-items-center d-flex position-relative text-center">
+                                <div class="works__triangle position-absolute">Triangle</div>
+                                <p>The <strong>number will increase repeat</strong> visits - will become more regular customers
+                                </p>
+                               </div>
+                              </div> -->
                     @endforeach
 
                 </div>
@@ -233,7 +235,7 @@
         @if ($gs->multiple_packaging == 1)
             <div class="counters">
                 <img class="counters__illustration-left"
-                    src="{{ asset('public/assets/cangrow/images/svg/counters-left.svg') }}"
+                    src="{{ asset(access_public() . 'assets/cangrow/images/svg/counters-left.svg') }}"
                     alt="Counters Illustration left">
                 <div class="container">
                     <div class="row">
@@ -250,14 +252,14 @@
                     </div>
                 </div>
                 <img class="counters__illustration-right"
-                    src="{{ asset('public/assets/cangrow/images/svg/counters-right.svg') }}"
+                    src="{{ asset(access_public() . 'assets/cangrow/images/svg/counters-right.svg') }}"
                     alt="Counters Illustration right">
             </div>
         @endif
 
         <section class="ourClients">
-            <img class="ourClients__bg-clients" src="{{ asset('public/assets/cangrow/images/svg/bg-clients.svg') }}"
-                alt="">
+            <img class="ourClients__bg-clients"
+                src="{{ asset(access_public() . 'assets/cangrow/images/svg/bg-clients.svg') }}" alt="">
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -274,8 +276,8 @@
                                     <div class="ourClients__slide swiper-slide">
                                         <span class="sk-spinner sk-spinner-pulse"></span>
                                         <img class="swiper-lazy ourClients__image"
-                                            data-src="{{ asset('public/assets/images/partner/' . $partner->photo) }}"
-                                            src="{{ asset('public/assets/images/partner/' . $partner->photo) }}"
+                                            data-src="{{ asset(access_public() . 'assets/images/partner/' . $partner->photo) }}"
+                                            src="{{ asset(access_public() . 'assets/images/partner/' . $partner->photo) }}"
                                             alt="Pingdom">
                                     </div>
                                 @endforeach
@@ -307,8 +309,8 @@
                                                 <div class="reviews__blockImage overflow-hidden position-relative">
                                                     <div class="sk-spinner sk-spinner-pulse"></div>
                                                     <img class="swiper-lazy reviews__image position-absolute"
-                                                        data-src="{{ asset('public/assets/images/reviews/' . $review->photo) }}"
-                                                        src="{{ asset('public/assets/images/reviews/' . $review->photo) }}"
+                                                        data-src="{{ asset(access_public() . 'assets/images/reviews/' . $review->photo) }}"
+                                                        src="{{ asset(access_public() . 'assets/images/reviews/' . $review->photo) }}"
                                                         alt="{{ $langg->rtl == 1 ? $review->title_ar : $review->title }}">
                                                 </div>
                                             </div>
@@ -317,7 +319,7 @@
                                                     {{ $langg->rtl == 1 ? $review->title_ar : $review->title }}</h3>
                                                 <div class="reviews__review position-relative">
                                                     <img class="reviews__quote reviews__quote-top position-absolute"
-                                                        src="{{ asset('public/assets/cangrow/images/svg/quote.svg') }}"
+                                                        src="{{ asset(access_public() . 'assets/cangrow/images/svg/quote.svg') }}"
                                                         alt="Quote">
                                                     <div class="reviews__fullReview close">
                                                         <p>{!! $langg->rtl == 1 ? $review->details_ar : $review->details !!}</p>
@@ -330,7 +332,7 @@
                                                         </button> <!-- -->
                                                     </div>
                                                     <img class="reviews__quote reviews__quote-bottom position-absolute"
-                                                        src="{{ asset('public/assets/cangrow/images/svg/quote.svg') }}"
+                                                        src="{{ asset(access_public() . 'assets/cangrow/images/svg/quote.svg') }}"
                                                         alt="Quote">
                                                 </div>
                                                 <div
@@ -362,54 +364,54 @@
             </div>
         </section>
         <!-- <section id="news" class="lastNews position-relative overflow-hidden">
-                    <div class="container position-relative">
-                     <h2 class="section-title text-uppercase text-center" data-aos="fade-in">Last news</h2>
-                     <p class="section-under-title text-center" data-aos="fade-in" data-aos-delay="200">Best insights</p>
-                     <div class="row">
-                      <div class="col-md-4" data-aos="fade-up">
-                       <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
-                        <span class="sk-spinner sk-spinner-pulse"></span>
-                        <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-1.jpeg"
-                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                         alt="How to develop a company correctly?">
-                       </a>
-                       <div class="lastNews__separator">Separator</div>
-                       <h3 class="lastNews__title">
-                        <a href="#" class="lastNews__titleLink">How to develop a company correctly?</a>
-                       </h3>
-                       <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                      </div>
-                      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                       <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
-                        <span class="sk-spinner sk-spinner-pulse"></span>
-                        <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-2.jpeg"
-                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-                       </a>
-                       <div class="lastNews__separator">Separator</div>
-                       <h3 class="lastNews__title">
-                        <a href="#" class="lastNews__titleLink">15 Digital Marketing Mistakes to Avoid</a>
-                       </h3>
-                       <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                      </div>
-                      <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                       <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
-                        <span class="sk-spinner sk-spinner-pulse"></span>
-                        <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-3.jpeg"
-                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                         alt="Marketing strategy rules">
-                       </a>
-                       <div class="lastNews__separator">Separator</div>
-                       <h3 class="lastNews__title">
-                        <a href="#" class="lastNews__titleLink">Marketing Strategy Rules</a>
-                       </h3>
-                       <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                      </div>
-                     </div>
-                    </div>
-                   </section> -->
+                            <div class="container position-relative">
+                             <h2 class="section-title text-uppercase text-center" data-aos="fade-in">Last news</h2>
+                             <p class="section-under-title text-center" data-aos="fade-in" data-aos-delay="200">Best insights</p>
+                             <div class="row">
+                              <div class="col-md-4" data-aos="fade-up">
+                               <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
+                                <span class="sk-spinner sk-spinner-pulse"></span>
+                                <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-1.jpeg"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                 alt="How to develop a company correctly?">
+                               </a>
+                               <div class="lastNews__separator">Separator</div>
+                               <h3 class="lastNews__title">
+                                <a href="#" class="lastNews__titleLink">How to develop a company correctly?</a>
+                               </h3>
+                               <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                              </div>
+                              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                               <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
+                                <span class="sk-spinner sk-spinner-pulse"></span>
+                                <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-2.jpeg"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                               </a>
+                               <div class="lastNews__separator">Separator</div>
+                               <h3 class="lastNews__title">
+                                <a href="#" class="lastNews__titleLink">15 Digital Marketing Mistakes to Avoid</a>
+                               </h3>
+                               <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                              </div>
+                              <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                               <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
+                                <span class="sk-spinner sk-spinner-pulse"></span>
+                                <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-3.jpeg"
+                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                 alt="Marketing strategy rules">
+                               </a>
+                               <div class="lastNews__separator">Separator</div>
+                               <h3 class="lastNews__title">
+                                <a href="#" class="lastNews__titleLink">Marketing Strategy Rules</a>
+                               </h3>
+                               <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                              </div>
+                             </div>
+                            </div>
+                           </section> -->
         <div class="subscribe container position-relative">
             <div class="row">
                 <div class="col-md-6">
@@ -422,7 +424,7 @@
                         data-aos-delay="300">
                         <div class="sk-spinner sk-spinner-pulse"></div>
                         <img class="subscribe__image position-absolute b-lazy"
-                            data-src="{{ asset('public/assets/images/' . $gs->big_icon) }}"
+                            data-src="{{ asset(access_public() . 'assets/images/' . $gs->big_icon) }}"
                             src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             alt="">
                     </div>
@@ -494,7 +496,8 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1"
+                                            src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>
@@ -510,8 +513,8 @@
                             <button id="appointment-send" type="submit"
                                 class="appointment__submit">{{ $langg->lang52 }}</button>
                             <!-- <p class="appointment__text">By clicking on the button, you consent to
-                         processing your personal data and agree
-                         to the <a href="/privacy-policy.html">Privacy Policy</a></p> -->
+                                 processing your personal data and agree
+                                 to the <a href="/privacy-policy.html">Privacy Policy</a></p> -->
                         </div>
                         <input type="hidden" name="to" value="{{ $ps->contact_email }}">
                         <div id="textAfterSending"
@@ -553,7 +556,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

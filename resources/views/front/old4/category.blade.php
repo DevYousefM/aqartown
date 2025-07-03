@@ -66,12 +66,13 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('public/assets/images/' . $gs->top_icon) }}" alt="" />
+                <img src="{{ asset(access_public() . 'assets/images/' . $gs->top_icon) }}" alt="" />
             </div>
         </div>
     </section>
     <section class="page-breadcrumb">
-        <div class="image-layer" style="background-image:url({{ asset('public/assets/naglaa/images/background/1.png') }})"></div>
+        <div class="image-layer"
+            style="background-image:url({{ asset(access_public() . 'assets/naglaa/images/background/1.png') }})"></div>
         <div class="container">
             <div class="clearfix">
                 <div class="pull-left fll">
@@ -153,15 +154,15 @@
                                         <ul class="image-carousel owl-carousel owl-theme">
 
                                     @foreach ($cat->galleries as $image)
-<li><a href="{{ asset('public/assets/images/galleries/' . $image->photo) }}" class="lightbox-image"
-                                                    title="Image Caption Here"><img src="{{ asset('public/assets/images/galleries/' . $image->photo) }}"
+<li><a href="{{ asset(access_public() . 'assets/images/galleries/' . $image->photo) }}" class="lightbox-image"
+                                                    title="Image Caption Here"><img src="{{ asset(access_public() . 'assets/images/galleries/' . $image->photo) }}"
                                                         alt=""></a></li>
 @endforeach
                                         
                                         </ul>
                                         <ul class="thumbs-carousel owl-carousel owl-theme">
                                         @foreach ($cat->galleries as $image)
-<li><img src="{{ asset('public/assets/images/galleries/' . $image->photo) }}" alt=""></li>
+<li><img src="{{ asset(access_public() . 'assets/images/galleries/' . $image->photo) }}" alt=""></li>
 @endforeach
                                         </ul>
                                     </div>
@@ -236,69 +237,69 @@
 
 @section('js')
 
-     <script>
-         $(document).on('submit', '#email-form', function(e) {
-             e.preventDefault();
-             $('.gocover').show();
-             $('.submit-btn').prop('disabled', true);
-             var name = $('.fname').val();
+         <script>
+             $(document).on('submit', '#email-form', function(e) {
+                 e.preventDefault();
+                 $('.gocover').show();
+                 $('.submit-btn').prop('disabled', true);
+                 var name = $('.fname').val();
 
-             var email = $('.email').val();
+                 var email = $('.email').val();
 
-             if (name == '' || email == '') {
-                 $('#email-form .response').html(
-                     '<div class="failed alert alert-warning">Please fill the required fields.</div>');
-                 $('button.submit-btn').prop('disabled', false);
-                 return false;
-             }
-
-             $.ajax({
-                 method: "POST",
-                 url: $(this).prop('action'),
-                 data: new FormData(this),
-                 contentType: false,
-                 cache: false,
-                 processData: false,
-                 beforeSend: function() {
+                 if (name == '' || email == '') {
                      $('#email-form .response').html(
-                         '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
-                         );
-                     console.log(1);
-                 },
-                 success: function(data) {
-                     console.log(2);
-                     if ((data.errors)) {
-                         console.log(3);
-                         $('.alert-success').hide();
-                         $('.alert-danger').show();
-                         $('#email-form .response').html('');
-                         for (var error in data.errors) {
-                             console.log(4);
-                             $('#email-form .response').append('<li>' + data.errors[error] + '</li>')
-                         }
-                         $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
-                             .eq(0).focus();
-                         $('#email-form .refresh_code').trigger('click');
-
-                     } else {
-                         console.log(5);
-                         $('.alert-danger').hide();
-                         $('.alert-success').show();
-                         $('#email-form .response').html(data);
-                         $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
-                             .eq(0).focus();
-                         $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
-                             .val('');
-                         $('#email-form .refresh_code').trigger('click');
-
-                     }
-                     console.log(6);
-                     $('.gocover').hide();
+                         '<div class="failed alert alert-warning">Please fill the required fields.</div>');
                      $('button.submit-btn').prop('disabled', false);
+                     return false;
                  }
 
-             });
+                 $.ajax({
+                     method: "POST",
+                     url: $(this).prop('action'),
+                     data: new FormData(this),
+                     contentType: false,
+                     cache: false,
+                     processData: false,
+                     beforeSend: function() {
+                         $('#email-form .response').html(
+                             '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
+                         );
+                         console.log(1);
+                     },
+                     success: function(data) {
+                         console.log(2);
+                         if ((data.errors)) {
+                             console.log(3);
+                             $('.alert-success').hide();
+                             $('.alert-danger').show();
+                             $('#email-form .response').html('');
+                             for (var error in data.errors) {
+                                 console.log(4);
+                                 $('#email-form .response').append('<li>' + data.errors[error] + '</li>')
+                             }
+                             $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
+                                 .eq(0).focus();
+                             $('#email-form .refresh_code').trigger('click');
 
-         });
-     </script>
+                         } else {
+                             console.log(5);
+                             $('.alert-danger').hide();
+                             $('.alert-success').show();
+                             $('#email-form .response').html(data);
+                             $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
+                                 .eq(0).focus();
+                             $('#email-form input[type=text], #email-form input[type=email], #email-form textarea')
+                                 .val('');
+                             $('#email-form .refresh_code').trigger('click');
+
+                         }
+                         console.log(6);
+                         $('.gocover').hide();
+                         $('button.submit-btn').prop('disabled', false);
+                     }
+
+                 });
+
+             });
+         </script>
 @stop)

@@ -16,7 +16,7 @@
 
     @endphp
     <section class="medicen-aboutUs text-center"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->new_icon) }});">
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->new_icon) }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-6">

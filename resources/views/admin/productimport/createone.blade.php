@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 @endsection
 @section('content')
     @php
@@ -41,7 +41,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-import-store') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -684,7 +684,8 @@
                                         class="fas fa-check"></i> {{ __('Done') }}</a>
                             </div>
                             <div class="col-sm-12 text-center">(
-                                <small>{{ __('You can upload multiple Images.') }}</small> )</div>
+                                <small>{{ __('You can upload multiple Images.') }}</small> )
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-images">
@@ -702,8 +703,8 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
-    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         // Gallery Section Insert
@@ -767,5 +768,5 @@
         });
     </script>
 
-    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
 @endsection

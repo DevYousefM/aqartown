@@ -6,7 +6,7 @@
 
     <div class="mfa-form-wrapper">
         <div class="form-img">
-            <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="logo">
+            <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" alt="logo">
         </div>
 
         <form action="{{ route('front.contact.submit') }}" name="appointment" id="email-form" method="POST"
@@ -54,7 +54,7 @@
             @if ($gs->is_capcha == 1)
                 <ul class="captcha-area">
                     <li>
-                        <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                        <p><img class="codeimg1" src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                 alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                     </li>

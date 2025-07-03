@@ -16,7 +16,8 @@
 
     @endphp
 
-    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->hot_icon) }})">
+    <div class="page-banner-area"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->hot_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang222 }}</h2>
@@ -45,7 +46,7 @@
                             @foreach ($blogs as $blogg)
                                 <div class="blog-card text-center">
                                     <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}">
-                                        <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                        <img src="{{ $blogg->photo ? asset(access_public() . 'assets/images/blogs/' . $blogg->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                             alt="Shape">
                                     </a>
                                     <div class="b-card-text">

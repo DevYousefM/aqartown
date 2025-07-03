@@ -61,7 +61,8 @@
         $ps = App\Models\Pagesetting::find(1);
 
     @endphp
-    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->top_icon) }})">
+    <div class="page-banner-area"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->top_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2>
@@ -93,7 +94,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="services-details-image">
-                        <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}" alt="image">
+                        <img src="{{ asset(access_public() . 'assets/images/categories/' . $cat->photo) }}" alt="image">
                     </div>
                     <div class="services-details-content">
                         <h3>
@@ -117,47 +118,47 @@
                 <div class="col-lg-4 col-md-12">
                     <aside class="widget-area">
                         <!-- <div class="widget widget_search">
-                                <form class="search-form">
-                                    <input type="search" class="search-field" placeholder="Search...">
-                                    <button type="submit"><i class='bx bx-search-alt'></i></button>
-                                </form>
-                            </div>
-                            <div class="widget widget_grin_posts_thumb">
-                                <h3 class="widget-title">Recent posts</h3>
-                                <article class="item">
-                                    <a href="services-details.html" class="thumb">
-                                        <span class="fullimage cover bg1" role="img"></span>
-                                    </a>
-                                    <div class="info">
-                                        <span>November 27, 2021</span>
-                                        <h4 class="title usmall">
-                                            <a href="services-details.html">New Technology Make for Dental Operation</a>
-                                        </h4>
-                                    </div>
-                                </article>
-                                <article class="item">
-                                    <a href="services-details.html" class="thumb">
-                                        <span class="fullimage cover bg2" role="img"></span>
-                                    </a>
-                                    <div class="info">
-                                        <span>November 27, 2021</span>
-                                        <h4 class="title usmall">
-                                            <a href="services-details.html">Regular Dental care make Your Smile Brighter</a>
-                                        </h4>
-                                    </div>
-                                </article>
-                                <article class="item">
-                                    <a href="services-details.html" class="thumb">
-                                        <span class="fullimage cover bg3" role="img"></span>
-                                    </a>
-                                    <div class="info">
-                                        <span>November 27, 2021</span>
-                                        <h4 class="title usmall">
-                                            <a href="services-details.html">Dental Hygiene for All Age to Make Smile</a>
-                                        </h4>
-                                    </div>
-                                </article>
-                            </div> -->
+                                    <form class="search-form">
+                                        <input type="search" class="search-field" placeholder="Search...">
+                                        <button type="submit"><i class='bx bx-search-alt'></i></button>
+                                    </form>
+                                </div>
+                                <div class="widget widget_grin_posts_thumb">
+                                    <h3 class="widget-title">Recent posts</h3>
+                                    <article class="item">
+                                        <a href="services-details.html" class="thumb">
+                                            <span class="fullimage cover bg1" role="img"></span>
+                                        </a>
+                                        <div class="info">
+                                            <span>November 27, 2021</span>
+                                            <h4 class="title usmall">
+                                                <a href="services-details.html">New Technology Make for Dental Operation</a>
+                                            </h4>
+                                        </div>
+                                    </article>
+                                    <article class="item">
+                                        <a href="services-details.html" class="thumb">
+                                            <span class="fullimage cover bg2" role="img"></span>
+                                        </a>
+                                        <div class="info">
+                                            <span>November 27, 2021</span>
+                                            <h4 class="title usmall">
+                                                <a href="services-details.html">Regular Dental care make Your Smile Brighter</a>
+                                            </h4>
+                                        </div>
+                                    </article>
+                                    <article class="item">
+                                        <a href="services-details.html" class="thumb">
+                                            <span class="fullimage cover bg3" role="img"></span>
+                                        </a>
+                                        <div class="info">
+                                            <span>November 27, 2021</span>
+                                            <h4 class="title usmall">
+                                                <a href="services-details.html">Dental Hygiene for All Age to Make Smile</a>
+                                            </h4>
+                                        </div>
+                                    </article>
+                                </div> -->
                         <div class="widget widget_categories">
                             <h3 class="widget-title">{{ $langg->lang11 }}</h3>
                             <ul>
@@ -177,15 +178,15 @@
                             </ul>
                         </div>
                         <!-- <div class="widget widget_tag_cloud">
-                                <h3 class="widget-title">Popular Tags</h3>
-                                <div class="tagcloud">
-                                    <a href="index.html">Business</a>
-                                    <a href="index.html">Privacy</a>
-                                    <a href="index.html">Technology</a>
-                                    <a href="index.html">Tips</a>
-                                    <a href="index.html">Uncategorized</a>
-                                </div>
-                            </div> -->
+                                    <h3 class="widget-title">Popular Tags</h3>
+                                    <div class="tagcloud">
+                                        <a href="index.html">Business</a>
+                                        <a href="index.html">Privacy</a>
+                                        <a href="index.html">Technology</a>
+                                        <a href="index.html">Tips</a>
+                                        <a href="index.html">Uncategorized</a>
+                                    </div>
+                                </div> -->
                         <div class="widget widget_instagram">
                             <h3 class="widget-title"> {{ $langg->lang221 }}</h3>
                             <ul>
@@ -193,10 +194,10 @@
                                 @foreach ($cat->galleries as $image)
                                     <li>
                                         <div class="box">
-                                            <img src="{{ asset('public/assets/images/galleries/' . $image->photo) }}"
+                                            <img src="{{ asset(access_public() . 'assets/images/galleries/' . $image->photo) }}"
                                                 alt="image">
                                             <i class="bx bxl-instagram"></i>
-                                            <a href="{{ asset('public/assets/images/galleries/' . $image->photo) }}"
+                                            <a href="{{ asset(access_public() . 'assets/images/galleries/' . $image->photo) }}"
                                                 target="_blank" class="link-btn"></a>
                                         </div>
                                     </li>

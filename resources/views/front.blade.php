@@ -73,7 +73,7 @@
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
 
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
 
         <meta name="author" content="{{ $gs->title }}">
 
@@ -187,7 +187,7 @@
 
       "url": "{{url('/')}}",
 
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}"
 
     }
 
@@ -207,9 +207,9 @@
 
     "description": "",
 
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
 
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
 
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
 
@@ -261,7 +261,7 @@
 
     <!-- favicon -->
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}" />
 
     <!-- bootstrap -->
 
@@ -273,33 +273,33 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/bootstrap.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/animate.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/magnific-popup.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/swiper.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/swiper.min.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/select2.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/select2.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/default.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/default.css" type="text/css">
 
     @if ($langg->rtl == 1)
-        <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/style.css" type="text/css">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/style.css" type="text/css">
     @else
-        <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/styleltr.css" type="text/css">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/styleltr.css" type="text/css">
     @endif
 
 
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/aqar/') }}/css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/responsive.css" type="text/css">
 
 
 
@@ -313,7 +313,7 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
 
 
 
@@ -498,7 +498,7 @@
                                 <div class="logo">
 
                                     <a href="{{ route('front.index', $sign) }}"><img
-                                            src="{{ asset('public/assets/images/' . $gs->logo) }}"
+                                            src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
                                             alt=""></a>
 
                                 </div>
@@ -732,7 +732,7 @@
                                 <div class="nav-logo">
 
                                     <a href="{{ route('front.index', $sign) }}"><img
-                                            src="{{ asset('public/assets/images/' . $gs->logo) }}" alt=""
+                                            src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" alt=""
                                             title=""></a>
 
                                 </div>
@@ -881,7 +881,7 @@
 
                                 <a href="{{ route('front.index', $sign) }}">
 
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo_ar) }}" alt="">
+                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}" alt="">
 
                                 </a>
 
@@ -1382,23 +1382,23 @@
 
 
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/jquery-3.6.0.min.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/jquery-3.6.0.min.js" defer></script>
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/bootstrap.min.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/bootstrap.min.js" defer></script>
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/wow-animate.min.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/wow-animate.min.js" defer></script>
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/isotope.pkgd.min.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/isotope.pkgd.min.js" defer></script>
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/jquery.magnific-popup.min.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/jquery.magnific-popup.min.js" defer></script>
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/owl.carousel.min.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/owl.carousel.min.js" defer></script>
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/select2.min.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/select2.min.js" defer></script>
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/swiper.min.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/swiper.min.js" defer></script>
 
-    <script src="{{ asset('public/assets/aqar/') }}/js/main.js" defer></script>
+    <script src="{{ asset(access_public() . 'assets/aqar/') }}/js/main.js" defer></script>
 
 
 
@@ -1470,7 +1470,7 @@
 
 
 
-    <script src="{{ asset('public/assets/admin/js/toastr.js') }}" defer></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/toastr.js') }}" defer></script>
 
     <script type="text/javascript" defer>
         var mainurl = "{{ url('/' . $sign) }}";
@@ -1633,7 +1633,7 @@
                 beforeSend: function() {
 
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
 
                     console.log(1);
@@ -1761,7 +1761,7 @@
                 beforeSend: function() {
 
                     $('#appointment-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
 
                     console.log(1);

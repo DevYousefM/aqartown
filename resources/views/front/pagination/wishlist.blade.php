@@ -12,10 +12,10 @@
             <div class="col-lg-6">
                 <div class="single-wish">
                     <span class="remove wishlist-remove"
-                        data-href="{{ route('user-wishlist-remove',App\Models\Wishlist::where('user_id', '=', $user->id)->where('product_id', '=', $wishlist->id)->first()->id) }}"><i
+                        data-href="{{ route('user-wishlist-remove', App\Models\Wishlist::where('user_id', '=', $user->id)->where('product_id', '=', $wishlist->id)->first()->id) }}"><i
                             class="fas fa-times"></i></span>
                     <div class="left">
-                        <img src="{{ $wishlist->photo ? asset('public/assets/images/products/' . $wishlist->photo) : asset('public/assets/images/noimage.png') }}"
+                        <img src="{{ $wishlist->photo ? asset(access_public() . 'assets/images/products/' . $wishlist->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                             alt="">
                     </div>
                     <div class="right">
@@ -44,7 +44,7 @@
                         data-href="{{ route('user-wishlist-remove', $wishlist->id) }}"><i
                             class="fas fa-times"></i></span>
                     <div class="left">
-                        <img src="{{ $wishlist->product->photo ? asset('public/assets/images/products/' . $wishlist->product->photo) : asset('public/assets/images/noimage.png') }}"
+                        <img src="{{ $wishlist->product->photo ? asset(access_public() . 'assets/images/products/' . $wishlist->product->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                             alt="">
                     </div>
                     <div class="right">

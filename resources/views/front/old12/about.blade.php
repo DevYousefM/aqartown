@@ -19,9 +19,10 @@
     <!-- Start inner Page hero-->
     <section class="d-flex align-items-center page-hero hero-vegas-slider inner-page-hero " id="page-hero">
         <div class="overlay-color"></div>
-        <div class="vegas-slider-content" data-vegas-slide-1="{{ asset('public/assets/images/' . $gs->feature_icon) }}"
-            data-vegas-slide-2="{{ asset('public/assets/images/' . $gs->best_icon) }}"
-            data-vegas-slide-3="{{ asset('public/assets/images/' . $gs->trending_icon) }}">
+        <div class="vegas-slider-content"
+            data-vegas-slide-1="{{ asset(access_public() . 'assets/images/' . $gs->feature_icon) }}"
+            data-vegas-slide-2="{{ asset(access_public() . 'assets/images/' . $gs->best_icon) }}"
+            data-vegas-slide-3="{{ asset(access_public() . 'assets/images/' . $gs->trending_icon) }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12 hero-text-area ">
@@ -62,11 +63,11 @@
                                 @endif
                             </p>
                             <!-- <p class="about-text ">
-                      هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
-                      النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى
-                      يولدها التطبيق.
-                      إذا كنت تحتاج إلى عدد أكبر من الفقرات
-                    </p> -->
+                          هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد
+                          النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى
+                          يولدها التطبيق.
+                          إذا كنت تحتاج إلى عدد أكبر من الفقرات
+                        </p> -->
                             <div class="cta-area wow fadeInUp" data-wow-delay=".8s">
 
                                 <div class="signature ">
@@ -80,12 +81,13 @@
                         data-wow-delay="0.4s">
                         <div class="img-area  " data-tilt data-tilt-glare data-tilt-max-glare="0.5">
                             <!-- <div class="photo-banner-end"><span class="number">46 </span>
-                      <p class="banner-text">years of Exprince</p>
-                      <div class="line line-on-center   my-1"></div>
-                    </div> -->
+                          <p class="banner-text">years of Exprince</p>
+                          <div class="line line-on-center   my-1"></div>
+                        </div> -->
                             <div class="image">
                                 <div class="overlay-color"></div><img class="img-fluid about-img  video-thumb "
-                                    src="{{ asset('public/assets/images/' . $gs->home_about_img2) }}" alt="Our vision">
+                                    src="{{ asset(access_public() . 'assets/images/' . $gs->home_about_img2) }}"
+                                    alt="Our vision">
                             </div>
                             <div class="video-wrapper on-start">
                                 <div class="play-btn-col-dir"><a class="video-link" href="{{ $gs->home_about_link }}"

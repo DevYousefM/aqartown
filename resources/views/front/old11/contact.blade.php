@@ -19,7 +19,7 @@
     <!-- =====slider home ===== -->
     <!-- Main Slider -->
     <section class="breadcrumb-area"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->discount_icon) }});">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -81,7 +81,7 @@
                                         <ul class="captcha-area">
                                             <li>
                                                 <p><img class="codeimg1"
-                                                        src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                                        src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                                         alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i>
                                                 </p>
 

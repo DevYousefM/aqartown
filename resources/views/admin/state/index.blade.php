@@ -60,7 +60,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
@@ -147,7 +147,7 @@
 
             ],
             language: {
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}">'
             },
             drawCallback: function(settings) {
                 $('.select').niceSelect();
@@ -162,13 +162,13 @@
                 '</div>');
         });
         /* $(function() {
-            $(".btn-area").append('<div class="col-sm-4 table-contents">'+
-            	'<a class="add-btn" data-href="{{ route('admin-country-create') }}" id="add-data" data-toggle="modal" data-target="#modal1">'+
-              '<i class="fas fa-plus"></i> {{ __('Add New Gallery Category') }}'+
-              '</a>'+
-              '</div>');
-          });											
-    			*/
+                $(".btn-area").append('<div class="col-sm-4 table-contents">'+
+                	'<a class="add-btn" data-href="{{ route('admin-country-create') }}" id="add-data" data-toggle="modal" data-target="#modal1">'+
+                  '<i class="fas fa-plus"></i> {{ __('Add New Gallery Category') }}'+
+                  '</a>'+
+                  '</div>');
+              });											
+        			*/
 
 
         {{-- DATA TABLE ENDS --}}

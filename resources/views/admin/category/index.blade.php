@@ -267,41 +267,41 @@
 
                                 <!--
 
-             <form  action="{{ route('admin-cat-all') }}" method="post" enctype="multipart/form-data" id="mass_deactivate_form"  style="margin-right: 5px;" >
+                 <form  action="{{ route('admin-cat-all') }}" method="post" enctype="multipart/form-data" id="mass_deactivate_form"  style="margin-right: 5px;" >
 
-             {{ csrf_field() }}
+                 {{ csrf_field() }}
 
-             <input type="hidden" id="selected_products" name="selected_products" value="">
+                 <input type="hidden" id="selected_products" name="selected_products" value="">
 
-              <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit" value="{{ __('deactivate Selected') }}">
+                  <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit" value="{{ __('deactivate Selected') }}">
 
-             </form>
+                 </form>
 
-              
+                  
 
-             <form  action="{{ route('admin-cat-activate') }}" method="post" enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
+                 <form  action="{{ route('admin-cat-activate') }}" method="post" enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
 
-             {{ csrf_field() }}
+                 {{ csrf_field() }}
 
-             <input type="hidden" id="selected_products_activate" name="selected_products_activate" value="">
+                 <input type="hidden" id="selected_products_activate" name="selected_products_activate" value="">
 
-              <input class="btn btn-xs btn-success" id="activate-selected" type="submit" value="{{ __('activate Selected') }}">
+                  <input class="btn btn-xs btn-success" id="activate-selected" type="submit" value="{{ __('activate Selected') }}">
 
-             </form>
+                 </form>
 
-             
+                 
 
-             <form  action="{{ route('admin-cat-deleted') }}" method="post" enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
+                 <form  action="{{ route('admin-cat-deleted') }}" method="post" enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
 
-             {{ csrf_field() }}
+                 {{ csrf_field() }}
 
-             <input type="hidden" id="selected_products_delete" name="selected_products_delete" value="">
+                 <input type="hidden" id="selected_products_delete" name="selected_products_delete" value="">
 
-              <input class="btn btn-xs btn-danger" id="delete-selected" type="submit" value="{{ __('Delete Selected') }}">
+                  <input class="btn btn-xs btn-danger" id="delete-selected" type="submit" value="{{ __('Delete Selected') }}">
 
-             </form>
+                 </form>
 
-             -->
+                 -->
 
 
 
@@ -389,7 +389,8 @@
                             </div>
 
                             <div class="col-sm-12 text-center">(
-                                <small>{{ __('You can upload multiple Images') }}.</small> )</div>
+                                <small>{{ __('You can upload multiple Images') }}.</small> )
+                            </div>
 
                         </div>
 
@@ -441,7 +442,7 @@
 
                 <div class="submit-loader">
 
-                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}" alt="">
 
                 </div>
 
@@ -496,7 +497,7 @@
 
                 <div class="submit-loader">
 
-                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}" alt="">
 
                 </div>
 
@@ -656,7 +657,7 @@
 
             language: {
 
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}">'
 
             },
 
@@ -1041,11 +1042,13 @@
 
                                 '</span>' +
 
-                                '<a href="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '<a href="' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[k]['photo'] + '" target="_blank">' +
 
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
 
@@ -1160,10 +1163,12 @@
 
                                 '</span>' +
 
-                                '<a href="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '<a href="' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[k]['photo'] + '" target="_blank">' +
 
-                                '<img src="' + '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '<img src="' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[k]['photo'] + '" alt="gallery image">' +
 
                                 '</a>' +

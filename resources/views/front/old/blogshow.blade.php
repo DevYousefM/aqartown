@@ -13,7 +13,7 @@
         "@id": "{{url('/item',$blog->slug)}}"
       },
       "headline": "{{$blog->title}}",
-      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('public/assets/images/blogs/'.$blog->photo)}}",
+      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset(access_public() . 'assets/images/blogs/'.$blog->photo)}}",
 
 
       "datePublished": "{{$blog->created_at}}",
@@ -45,7 +45,8 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->hot_icon) }});"></div>
+            <div class="fixed-bg"
+                style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->hot_icon) }});"></div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
                     <h1 class="mb-0">
@@ -81,7 +82,7 @@
                             <div class="blog-detail w-100">
                                 <div class="blog-detail-info w-100">
                                     <img class="img-fluid w-100"
-                                        src="{{ $blog->image ? asset('public/assets/images/blogs/' . $blog->image) : asset('public/assets/images/noimage.png') }}"
+                                        src="{{ $blog->image ? asset(access_public() . 'assets/images/blogs/' . $blog->image) : asset(access_public() . 'assets/images/noimage.png') }}"
                                         alt="Blog Detail Image">
                                     <h2 class="mb-0">
                                         @if ($langg->rtl == 1)
@@ -123,7 +124,7 @@
                                             </svg>
                                         </a>
                                         <img class="img-fluid w-100" style="height: 360px;"
-                                            src="{{ $blog->image ? asset('public/assets/images/blogs/' . $blog->image) : asset('public/assets/images/noimage.png') }}"
+                                            src="{{ $blog->image ? asset(access_public() . 'assets/images/blogs/' . $blog->image) : asset(access_public() . 'assets/images/noimage.png') }}"
                                             alt="Blog Detail Image 5">
                                     </div>
                                 @endif
@@ -175,7 +176,7 @@
                                                     <div class="comment w-100">
                                                         <div class="comment-thumb rounded-circle"><img
                                                                 class="img-fluid rounded-circle"
-                                                                src="{{ asset('public/assets/images/user-admin.png') }}"
+                                                                src="{{ asset(access_public() . 'assets/images/user-admin.png') }}"
                                                                 alt="Comment Image 1"></div>
                                                         <div class="comment-info">
                                                             <h4 class="mb-0">{{ $comment->name }}</h4>
@@ -322,7 +323,7 @@
                                             <div class="recent-event w-100">
                                                 <a href="{{ route('front.product', ['slug' => $data->slug, 'lang' => $sign]) }}"
                                                     title=""><img class="img-fluid w-100"
-                                                        src="{{ $data->photo ? (filter_var($data->photo, FILTER_VALIDATE_URL) ? $data->photo : asset('public/assets/images/products/' . $data->photo)) : asset('public/assets/images/noimage.png') }}"
+                                                        src="{{ $data->photo ? (filter_var($data->photo, FILTER_VALIDATE_URL) ? $data->photo : asset(access_public() . 'assets/images/products/' . $data->photo)) : asset(access_public() . 'assets/images/noimage.png') }}"
                                                         alt="Recent Image 1"></a>
                                                 <div class="recent-event-info">
                                                     <h4 class="mb-0"><a
@@ -350,7 +351,7 @@
                                         @foreach ($blogs as $b)
                                             <li><a href="javascript:void(0);" title=""><img class="img-fluid w-100"
                                                         style="width: 80px ; height: 80px"
-                                                        src="{{ $b->photo ? asset('public/assets/images/blogs/' . $b->photo) : asset('public/assets/images/noimage.png') }}"
+                                                        src="{{ $b->photo ? asset(access_public() . 'assets/images/blogs/' . $b->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                                         alt="Flickr Image 1"></a></li>
                                         @endforeach
 
@@ -389,8 +390,8 @@
 @stop
 
 @section('js')
-    <script src="{{ asset('public/assets/js/ResizeSensor.min.js') }}"></script>
-    <script src="{{ asset('public/assets/js/theia-sticky-sidebar.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/js/ResizeSensor.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/js/theia-sticky-sidebar.min.js') }}"></script>
     <script>
         $(document).on('submit', '#comment-form', function(e) {
             e.preventDefault();
@@ -409,7 +410,7 @@
 
                     $('.comments-list').prepend('<li>' + '<div class="comment w-100">' +
                         '<div class="comment-thumb rounded-circle">' +
-                        '<img class="img-fluid rounded-circle" src="{{ asset('public/assets/images/user-admin.png') }}" alt="Comment Image 1">' +
+                        '<img class="img-fluid rounded-circle" src="{{ asset(access_public() . 'assets/images/user-admin.png') }}" alt="Comment Image 1">' +
                         '</div>' +
                         '<div class="comment-info">' +
                         '<h4 class="mb-0">' + data[1] + '</h4>' +

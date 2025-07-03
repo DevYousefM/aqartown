@@ -40,7 +40,8 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image"
+            content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -109,7 +110,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -119,8 +120,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -146,7 +147,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
@@ -162,27 +163,27 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link href="{{ asset('public/assets/naglaa/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/jquery-ui.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/icomoon-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/flaticon.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/aos.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/owl.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/animation.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('public/assets/naglaa/css/magnific-popup.css') }}">
-    <link href="{{ asset('public/assets/naglaa/css/jquery.fancybox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/jquery.mCustomScrollbar.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/menu.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/naglaa/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/jquery-ui.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/icomoon-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/owl.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/animation.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/naglaa/css/magnific-popup.css') }}">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/jquery.fancybox.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/jquery.mCustomScrollbar.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/menu.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/naglaa/css/responsive.css') }}" rel="stylesheet">
 
 
 
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
@@ -221,8 +222,8 @@
                     <div class="xs-navbar clearfix">
                         <div class="logo-outer">
                             <div class="logo"><a href="{{ route('front.index', $sign) }}"><img
-                                        src="{{ asset('public/assets/images/' . $gs->logo) }}" alt=""
-                                        title=""></a>
+                                        src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                        alt="" title=""></a>
                             </div>
                         </div>
                         <nav class="elementskit-navbar">
@@ -344,7 +345,7 @@
                                     <div class="footer__widget-title mb-30">
                                         <div class="logo">
                                             <a href="index.html"><img
-                                                    src="{{ asset('public/assets/images/' . $gs->logo_ar) }}"
+                                                    src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}"
                                                     style="
         width: 145px;
             margin-right: 92px;
@@ -522,7 +523,8 @@
                         <div class="content-inner">
                             <div class="logo">
                                 <a href="{{ route('front.index', $sign) }}"><img
-                                        src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="" /></a>
+                                        src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                        alt="" /></a>
                             </div>
                             <div class="content-box">
                                 <h2>About Us</h2>
@@ -625,22 +627,22 @@
 
 
     <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="{{ asset('public/assets/naglaa/js/jquery.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/popper.min.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/jquery-ui.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/jquery.fancybox.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/owl.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/paroller.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/wow.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/main.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/nav-tool.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/jquery-ui.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/aos.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/appear.js') }}"></script>
-    <script src="{{ asset('public/assets/naglaa/js/script.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/jquery.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/popper.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/jquery.fancybox.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/owl.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/paroller.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/wow.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/main.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/nav-tool.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/jquery-ui.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/aos.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/appear.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/naglaa/js/script.js') }}"></script>
     <script>
         AOS.init();
     </script>
@@ -650,7 +652,7 @@
 
 
 
-    <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
         var mainurl = "{{ url('/' . $sign) }}";
         var mainurl2 = "{{ url('/') }}";

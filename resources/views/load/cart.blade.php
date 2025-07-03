@@ -80,7 +80,7 @@
                     <figure class="product-image-container">
                         <a href="{{ route('front.product', ['slug' => $product['item']['slug'], 'lang' => $sign]) }}"
                             class="product-image">
-                            <img src="{{ $product['item']['photo'] ? (filter_var($product['item']['photo'], FILTER_VALIDATE_URL) ? $product['item']['photo'] : asset('public/assets/images/products/' . $product['item']['photo'])) : asset('public/assets/images/noimage.png') }}"
+                            <img src="{{ $product['item']['photo'] ? (filter_var($product['item']['photo'], FILTER_VALIDATE_URL) ? $product['item']['photo'] : asset(access_public() . 'assets/images/products/' . $product['item']['photo'])) : asset(access_public() . 'assets/images/noimage.png') }}"
                                 alt="product">
                         </a>
                         <div class="cart-remove btn-remove"

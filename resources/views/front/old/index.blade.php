@@ -9,7 +9,7 @@
 @stop
 
 @section('gsearch')
-    <meta property="og:image" content="{{ asset('public/assets/images/' . $gs->logo) }}" />
+    <meta property="og:image" content="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" />
 @stop
 
 @section('content')
@@ -30,7 +30,7 @@
                                 <div class="feat-item-wrap">
                                     <div class="feat-item pb-240 d-flex flex-wrap align-items-end">
                                         <div class="feat-img position-absolute w-100"
-                                            style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }})">
+                                            style="background-image: url({{ asset('/' . access_public() . '/assets/images/sliders/' . $galss) }})">
                                         </div>
                                         <div class="container">
                                             <div class="row justify-content-between align-items-end">
@@ -91,7 +91,7 @@
                             <div class="feat-item-wrap">
                                 <div class="feat-item pb-240 d-flex flex-wrap align-items-end">
                                     <div class="feat-img position-absolute w-100"
-                                        style="background-image: url({{ asset('/public/assets/images/sliders/' . $galss) }})">
+                                        style="background-image: url({{ asset('/' . access_public() . '/assets/images/sliders/' . $galss) }})">
                                     </div>
                                     <div class="container">
                                         <div class="row justify-content-between align-items-end">
@@ -177,7 +177,7 @@
                                         </a>
                                     @endif
                                     <img class="img-fluid w-100"
-                                        src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                        src="{{ asset(access_public() . 'assets/images/brands/' . $about_us->photo) }}"
                                         alt="{{ $about_us->name }}">
                                 </div>
                             </div>
@@ -294,7 +294,7 @@
                                 <div class="post-img overflow-hidden position-relative w-100">
                                     <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}"
                                         title=""><img class="img-fluid w-100"
-                                            src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                            src="{{ $blogg->photo ? asset(access_public() . 'assets/images/blogs/' . $blogg->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                             alt="{{ $langg->rtl == 1 ? $blogg->alt_ar : $blogg->alt }}"></a>
                                 </div>
                                 <div class="post-info w-100">
@@ -392,7 +392,7 @@
                                                     <ul class="captcha-area">
                                                         <li>
                                                             <p><img class="codeimg1"
-                                                                    src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                                                    src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                                                     alt=""> <i
                                                                     class="fas fa-sync-alt pointer refresh_code"></i></p>
 
@@ -429,7 +429,7 @@
                         @foreach ($partners as $partner)
                             <div class="text-center w-100">
                                 <a href="{{ $partner->link }}" title=""><img class="img-fluid d-inline-block"
-                                        src="{{ asset('public/assets/images/partner/' . $partner->photo) }}"
+                                        src="{{ asset(access_public() . 'assets/images/partner/' . $partner->photo) }}"
                                         alt="Sponsor Image 1"></a>
                             </div>
                         @endforeach
@@ -439,7 +439,7 @@
         </div>
     </section>
     <!--            </section>
-                -->
+                        -->
 
 
 @stop
@@ -491,7 +491,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

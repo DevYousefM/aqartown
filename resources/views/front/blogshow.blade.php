@@ -36,7 +36,7 @@
 
       "headline": "{{$blog->title}}",
 
-      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset('public/assets/images/blogs/'.$blog->photo)}}",
+      "image":"{{filter_var($blog->photo, FILTER_VALIDATE_URL) ?$blog->photo:asset(access_public() . 'assets/images/blogs/'.$blog->photo)}}",
 
 
 
@@ -92,7 +92,7 @@
 
 @section('css')
 
-    <link href="{{ asset('public/assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
 
 @stop
 
@@ -113,7 +113,8 @@
 
 
 
-    <div class="sub-banner pt-90 pb-90" style="background-image:url({{ asset('public/assets/images/' . $gs->hot_icon) }});">
+    <div class="sub-banner pt-90 pb-90"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->hot_icon) }});">
 
         <div class="container">
 
@@ -179,10 +180,12 @@
 
                         <div class="blog_full_content">
 
-                            <img class="" data-src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}"
-                                data-srcset="{{ asset('public/assets/images/blogs/' . $blog->photo) }} 2x"
-                                alt=" {{ $blog->title }}" src="{{ asset('public/assets/images/blogs/' . $blog->photo) }}"
-                                srcset="{{ asset('public/assets/images/blogs/' . $blog->photo) }} 2x">
+                            <img class=""
+                                data-src="{{ asset(access_public() . 'assets/images/blogs/' . $blog->photo) }}"
+                                data-srcset="{{ asset(access_public() . 'assets/images/blogs/' . $blog->photo) }} 2x"
+                                alt=" {{ $blog->title }}"
+                                src="{{ asset(access_public() . 'assets/images/blogs/' . $blog->photo) }}"
+                                srcset="{{ asset(access_public() . 'assets/images/blogs/' . $blog->photo) }} 2x">
 
                             <h4>
                                 @if ($langg->rtl == 1)
@@ -229,7 +232,7 @@
                                     class="single_recent_post">
 
                                     <span class="rp_img"
-                                        style="background-image: url({{ asset('public/assets/images/blogs/' . $blog->photo) }});"></span>
+                                        style="background-image: url({{ asset(access_public() . 'assets/images/blogs/' . $blog->photo) }});"></span>
 
                                     <h4>
                                         @if ($langg->rtl == 1)

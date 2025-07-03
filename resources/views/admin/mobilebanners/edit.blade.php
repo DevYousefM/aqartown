@@ -30,7 +30,7 @@
                     <div class="product-description">
                         <div class="body-area">
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-sl-update', $data->id) }}" method="POST"
                                 enctype="multipart/form-data">
@@ -99,7 +99,8 @@
                                                                 {{ $data->subtitle_anime == 'fadeInUp' ? 'selected' : '' }}>
                                                                 fadeInUp</option>
                                                             <option value="flip"
-                                                                {{ $data->subtitle_anime == 'flip' ? 'selected' : '' }}>flip
+                                                                {{ $data->subtitle_anime == 'flip' ? 'selected' : '' }}>
+                                                                flip
                                                             </option>
                                                             <option value="flipInX"
                                                                 {{ $data->subtitle_anime == 'flipInX' ? 'selected' : '' }}>
@@ -333,7 +334,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload full-width-img">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->photo ? asset('public/assets/images/sliders/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/sliders/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload"

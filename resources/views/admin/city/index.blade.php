@@ -30,13 +30,13 @@
                                 <thead>
                                     <tr>
                                         <!-- <th  width="2%"><div class="">
-             <label class="container">{{ __('Check All') }}
-             <input type="checkbox" name="checkall" id="checkall">
-             
+                 <label class="container">{{ __('Check All') }}
+                 <input type="checkbox" name="checkall" id="checkall">
+                 
 
-                                                                      <span class="checkmark"></span>
-                                                                    </label>
-             </div></th> -->
+                                                                          <span class="checkmark"></span>
+                                                                        </label>
+                 </div></th> -->
                                         <th>{{ __('name') }}</th>
 
 
@@ -52,23 +52,23 @@
                             <div class="col-lg-12" style="display:contents">
 
                                 <!-- <form  action="{{ route('admin-city-all') }}" method="post" enctype="multipart/form-data" id="mass_deactivate_form"  style="margin-right: 5px;" >
-             {{ csrf_field() }}
-             <input type="hidden" id="selected_products" name="selected_products" value="">
-              <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit" value="{{ __('deactivate Selected') }}">
-             </form>
-              
-             <form  action="{{ route('admin-city-activate') }}" method="post" enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
-             {{ csrf_field() }}
-             <input type="hidden" id="selected_products_activate" name="selected_products_activate" value="">
-              <input class="btn btn-xs btn-success" id="activate-selected" type="submit" value="{{ __('activate Selected') }}">
-             </form>
-             
-             <form  action="{{ route('admin-city-deleted') }}" method="post" enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
-             {{ csrf_field() }}
-             <input type="hidden" id="selected_products_delete" name="selected_products_delete" value="">
-              <input class="btn btn-xs btn-danger" id="delete-selected" type="submit" value="{{ __('Delete Selected') }}">
-             </form>
-             -->
+                 {{ csrf_field() }}
+                 <input type="hidden" id="selected_products" name="selected_products" value="">
+                  <input class="btn btn-xs btn-warning" id="deactivate-selected" type="submit" value="{{ __('deactivate Selected') }}">
+                 </form>
+                  
+                 <form  action="{{ route('admin-city-activate') }}" method="post" enctype="multipart/form-data" id="mass_activate_form" style="margin-right: 5px;">
+                 {{ csrf_field() }}
+                 <input type="hidden" id="selected_products_activate" name="selected_products_activate" value="">
+                  <input class="btn btn-xs btn-success" id="activate-selected" type="submit" value="{{ __('activate Selected') }}">
+                 </form>
+                 
+                 <form  action="{{ route('admin-city-deleted') }}" method="post" enctype="multipart/form-data" id="mass_delete_form" style="margin-right: 5px;">
+                 {{ csrf_field() }}
+                 <input type="hidden" id="selected_products_delete" name="selected_products_delete" value="">
+                  <input class="btn btn-xs btn-danger" id="delete-selected" type="submit" value="{{ __('Delete Selected') }}">
+                 </form>
+                 -->
 
 
 
@@ -94,7 +94,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
@@ -180,7 +180,7 @@
 
             ],
             language: {
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}">'
             },
             drawCallback: function(settings) {
                 $('.select').niceSelect();

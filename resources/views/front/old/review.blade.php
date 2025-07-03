@@ -13,7 +13,8 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
+            <div class="fixed-bg"
+                style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->discount_icon) }});">
             </div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">

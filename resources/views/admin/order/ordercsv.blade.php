@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/product.css') }}" rel="stylesheet" />
 @endsection
 @section('content')
     <div class="content-area">
@@ -28,7 +28,7 @@
                 <div class="col-lg-12 p-5">
 
                     <div class="gocover"
-                        style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                        style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                     </div>
                     <form id="geniusform" action="{{ route('order.import') }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
@@ -38,11 +38,11 @@
                         <div class="row">
                             <div class="col-lg-12 text-right">
                                 <span style="margin-top:10px;"><a class="btn btn-primary"
-                                        href="{{ asset('public/assets/test-order.xlsx') }}">{{ __('Download Sample Excal') }}</a></span>
+                                        href="{{ asset(access_public() . 'assets/test-order.xlsx') }}">{{ __('Download Sample Excal') }}</a></span>
                                 <a class="btn btn-warning" href="{{ route('order.export') }}">Export Order Data</a>
                                 <a class="btn btn-warning" href="{{ route('order.export2') }}">Export Order transfer</a>
 
-                                <!--<span style="margin-top:10px;"><a class="btn btn-primary" href="{{ asset('public/assets/product-csv-format.csv') }}">{{ __('Download Sample CSV') }}</a></span>-->
+                                <!--<span style="margin-top:10px;"><a class="btn btn-primary" href="{{ asset(access_public() . 'assets/product-csv-format.csv') }}">{{ __('Download Sample CSV') }}</a></span>-->
 
 
                             </div>
@@ -65,11 +65,11 @@
 
                             </div>
                             <!--   <div class="col-lg-12 d-flex justify-content-center text-center">
-                <b>Convert Excel File To CSV Before Upload it</b>
-                </div>
-                <div class="col-lg-12 d-flex justify-content-center text-center">
-                <b><a style="color:red" href="https://www.beautifyconverter.com/excel-to-csv-converter.php" target="_blank">Convert Excel To CSV</a> </b>
-                </div>-->
+                    <b>Convert Excel File To CSV Before Upload it</b>
+                    </div>
+                    <div class="col-lg-12 d-flex justify-content-center text-center">
+                    <b><a style="color:red" href="https://www.beautifyconverter.com/excel-to-csv-converter.php" target="_blank">Convert Excel To CSV</a> </b>
+                    </div>-->
 
 
                         </div>
@@ -88,5 +88,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
 @endsection

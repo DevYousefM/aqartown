@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
     <style>
         /*DSADSADASD*/
 
@@ -155,7 +155,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-store') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -405,9 +405,9 @@
                                                         </div>
 
                                                         <!--	<a href="javascript:;" id="crop-image" class="d-inline-block mybtn1">
-                                                    <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
-                                                    </a>
-    --> <input class="d-inline-block mybtn1 sm-btn" type="file"
+                                                        <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
+                                                        </a>
+        --> <input class="d-inline-block mybtn1 sm-btn" type="file"
                                                             onchange="document.getElementById('landscapes2').src = window.URL.createObjectURL(this.files[0])"
                                                             id="hover_photo" name="hover_photo" value="">
                                                         <span class='span-img-size'>Image size 205px X 205px</span>
@@ -1089,67 +1089,67 @@
 
 
                                             <!--    	<div class="row">
-                 <div class="col-lg-4">
-                  <div class="left-area">
-                   
-                  </div>
-                 </div>
-                 <div class="col-lg-7">
-                 
-          <div class="checkbox-wrapper">
-          <input type="checkbox" name="feature" value="1" class="checkclick3" id="allowProductfeature" >
-          <label for="allowProductfeature">{{ __('Subscription feature settings ') }}</label>
-          </div>
-                 </div>
-                </div>
-          
-          <div class="showbox subs" >
-          <div class="row">
-          <div class="col-lg-4">
-          <div class="left-area">
-          <h4 class="heading">{{ __('Subscription type') }}: </h4>
-          </div>
-          </div>
-          <div class="col-lg-7">
-          <select name="subscription_type" class>
-          <option value="Days">Days</option>
-          <option value="Months">Months</option>
-          <option value="Years">Years</option>
-          </select>
-          </div>
-          </div>
+                     <div class="col-lg-4">
+                      <div class="left-area">
+                       
+                      </div>
+                     </div>
+                     <div class="col-lg-7">
+                     
+              <div class="checkbox-wrapper">
+              <input type="checkbox" name="feature" value="1" class="checkclick3" id="allowProductfeature" >
+              <label for="allowProductfeature">{{ __('Subscription feature settings ') }}</label>
+              </div>
+                     </div>
+                    </div>
+              
+              <div class="showbox subs" >
+              <div class="row">
+              <div class="col-lg-4">
+              <div class="left-area">
+              <h4 class="heading">{{ __('Subscription type') }}: </h4>
+              </div>
+              </div>
+              <div class="col-lg-7">
+              <select name="subscription_type" class>
+              <option value="Days">Days</option>
+              <option value="Months">Months</option>
+              <option value="Years">Years</option>
+              </select>
+              </div>
+              </div>
 
-          <div class="row">
-          <div class="col-lg-4">
-          <div class="left-area">
-          <h4 class="heading">
-          {{ __('subscription period') }} :
-          </h4>
-          </div>
-          </div>
-          <div class="col-lg-7">
-          <div class="text-editor">
-          <input name="subscription_period" type="number" min="0" class="input-field" placeholder="{{ __('subscription period') }}" value="0">
-          </div>
-          </div>
-          </div>
-          
-          <div class="row">
-          <div class="col-lg-4">
-          <div class="left-area">
-          <h4 class="heading">
-          {{ __('subscription trial period') }} :
-          </h4>
-          </div>
-          </div>
-          <div class="col-lg-7">
-          <div class="text-editor">
-          <input name="trial_period" type="number" min="0" class="input-field" placeholder="{{ __('trial period') }}" value="0">
-          </div>
-          </div>
-          </div>
-          
-          </div>-->
+              <div class="row">
+              <div class="col-lg-4">
+              <div class="left-area">
+              <h4 class="heading">
+              {{ __('subscription period') }} :
+              </h4>
+              </div>
+              </div>
+              <div class="col-lg-7">
+              <div class="text-editor">
+              <input name="subscription_period" type="number" min="0" class="input-field" placeholder="{{ __('subscription period') }}" value="0">
+              </div>
+              </div>
+              </div>
+              
+              <div class="row">
+              <div class="col-lg-4">
+              <div class="left-area">
+              <h4 class="heading">
+              {{ __('subscription trial period') }} :
+              </h4>
+              </div>
+              </div>
+              <div class="col-lg-7">
+              <div class="text-editor">
+              <input name="trial_period" type="number" min="0" class="input-field" placeholder="{{ __('trial period') }}" value="0">
+              </div>
+              </div>
+              </div>
+              
+              </div>-->
 
 
 
@@ -1282,10 +1282,10 @@
                                                     </div>
 
                                                     <!--	<a href="javascript:;" id="crop-image" class="d-inline-block mybtn1">
-                                                    <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
-                                                    </a>
-                                                    
-    --> <input class="sm-btn d-inline-block mybtn1" type="file"
+                                                        <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
+                                                        </a>
+                                                        
+        --> <input class="sm-btn d-inline-block mybtn1" type="file"
                                                         onchange="document.getElementById('landscapes').src = window.URL.createObjectURL(this.files[0])"
                                                         id="feature_mobile_photo" name="mobile_photo" value="">
                                                     <span class='span-img-size'>Image size 205px X 205px</span>
@@ -1445,7 +1445,8 @@
                             </div>
                             <div class="col-sm-12 text-center">(
                                 <small>{{ __('You can upload multiple Images.') }}</small> )<span
-                                    class='ml-2 span-img-size'>image size 205px X 205px</span></div>
+                                    class='ml-2 span-img-size'>image size 205px X 205px</span>
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-images">
@@ -1486,7 +1487,8 @@
                             </div>
                             <div class="col-sm-12 text-center">(
                                 <small>{{ __('You can upload multiple Images.') }}</small> ) <span
-                                    class='span-img-size'>Image size 205px X 205px</span></div>
+                                    class='span-img-size'>Image size 205px X 205px</span>
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-images">
@@ -1505,8 +1507,8 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
-    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         // Gallery Section Insert
@@ -1611,8 +1613,8 @@
         });
     </script>
 
-    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
-    <script src="{{ asset('public/assets/admin/js/jscolor.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jscolor.js') }}"></script>
 
 
     <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>

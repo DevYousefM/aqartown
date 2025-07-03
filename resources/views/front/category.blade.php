@@ -156,7 +156,8 @@
 
                             <div class="card-img">
 
-                                <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}" alt="...">
+                                <img src="{{ asset(access_public() . 'assets/images/categories/' . $cat->photo) }}"
+                                    alt="...">
 
                             </div>
 
@@ -231,14 +232,14 @@
 
                                             {{ route('front.product', ['slug' => $productt->slug, 'lang' => $sign]) }} @endif          ">
 
-                                                <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset('public/assets/images/products/' . $productt->photo) }}"
+                                                <img src="{{ filter_var($productt->photo, FILTER_VALIDATE_URL) ? $productt->photo : asset(access_public() . 'assets/images/products/' . $productt->photo) }}"
                                                     alt="" class="bg-pro-i">
 
                                             </a>
 
                                             {{-- <button class="chat-re" data-toggle="modal" data-target="#myModal-chat">
 
-                                                 <img src="{{asset('public/assets/aqar/')}}/images/messenger.png" alt="" class="mes">
+                                                 <img src="{{asset(access_public() . 'assets/aqar/')}}/images/messenger.png" alt="" class="mes">
 
                                              </button> --}}
 
@@ -276,13 +277,13 @@
 
                                                 <ul class="min-f-img">
 
-                                                    {{--  <li><img src="{{asset('public/assets/aqar/')}}/images/b-o.png" alt=""> 3 Br</li>
+                                                    {{--  <li><img src="{{asset(access_public() . 'assets/aqar/')}}/images/b-o.png" alt=""> 3 Br</li>
 
-                                                      <li><img src="{{asset('public/assets/aqar/')}}/images/ba-o.png" alt=""> 3 Ba</li>
+                                                      <li><img src="{{asset(access_public() . 'assets/aqar/')}}/images/ba-o.png" alt=""> 3 Ba</li>
 
-                                                      <li><img src="{{asset('public/assets/aqar/')}}/images/g-o.png" alt=""> 1 Gr</li> --}}
+                                                      <li><img src="{{asset(access_public() . 'assets/aqar/')}}/images/g-o.png" alt=""> 1 Gr</li> --}}
 
-                                                    <li><img src="{{ asset('public/assets/aqar/') }}/images/s-o.png"
+                                                    <li><img src="{{ asset(access_public() . 'assets/aqar/') }}/images/s-o.png"
                                                             alt=""> {{ $productt->location }}</li>
 
                                                 </ul>

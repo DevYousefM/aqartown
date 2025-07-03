@@ -11,7 +11,7 @@
 
 @section('content')
     <section class="medicen-aboutUs text-center"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->discount_icon) }});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-6">
@@ -50,7 +50,7 @@
                                 <div class="response w-100"></div>
                             </div>
                             <!-- <input type="hidden" name="after_sending" value="https://webdesign.be4em.info/high.tower.new/thanks-page.html" id="after-sending">
-                      -->
+                          -->
                             <div class="row">
 
 
@@ -95,35 +95,35 @@
                                 </div>
 
                                 <!-- <div class="col-md-6">
-              
-                          <div class="form-div">
-                            <span>
-                              نوع المشروع*
-                            </span>
-                            <div class="input-wrapper">
-                              <select name="project" id="project" required="">
-                                <option value="سكني">سكني</option>
-                                <option value="طبي">طبي</option>
-                                <option value="تجاري">تجاري</option>
-                              </select>
-                              <i class="fal fa-tasks"></i>
-                            </div>
-                          </div>
-                                       </div>
-                                                                    
-                                                                                                                <div class="col-md-12">
-              
-                           <div class="form-div cost">
-                            <span>
-                          تحديد الميزانية*
-                            </span>
-                            <div class="input-wrapper">
-                                <input type="text" name="amount" required="">
-              
-                               </div>
-                          </div>
-                          </div>
-                           -->
+                  
+                              <div class="form-div">
+                                <span>
+                                  نوع المشروع*
+                                </span>
+                                <div class="input-wrapper">
+                                  <select name="project" id="project" required="">
+                                    <option value="سكني">سكني</option>
+                                    <option value="طبي">طبي</option>
+                                    <option value="تجاري">تجاري</option>
+                                  </select>
+                                  <i class="fal fa-tasks"></i>
+                                </div>
+                              </div>
+                                           </div>
+                                                                        
+                                                                                                                    <div class="col-md-12">
+                  
+                               <div class="form-div cost">
+                                <span>
+                              تحديد الميزانية*
+                                </span>
+                                <div class="input-wrapper">
+                                    <input type="text" name="amount" required="">
+                  
+                                   </div>
+                              </div>
+                              </div>
+                               -->
 
                                 <div class="col-md-12">
 
@@ -143,7 +143,8 @@
                             @if ($gs->is_capcha == 1)
                                 <ul class="captcha-area">
                                     <li>
-                                        <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                        <p><img class="codeimg1"
+                                                src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                                 alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                     </li>
@@ -207,7 +208,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

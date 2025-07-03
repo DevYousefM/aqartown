@@ -18,7 +18,7 @@
 
     <!-- ============================ Page Title Start================================== -->
     <section class="breadcrumb-section"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->discount_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang1 }}</h1>
@@ -100,15 +100,16 @@
                             <input type="text" name="phone" required="" placeholder="{{ $langg->lang48 }}">
                         </div>
                         <!-- <div class="form-div">
-                              <input type="text" name="subject-title" id="" placeholder="Leave Massege ">
-                            </div> -->
+                                  <input type="text" name="subject-title" id="" placeholder="Leave Massege ">
+                                </div> -->
                         <div class="form-div">
                             <textarea name="text" placeholder="{{ $langg->lang50 }}"></textarea>
                         </div>
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1"
+                                            src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>

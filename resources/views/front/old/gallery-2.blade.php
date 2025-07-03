@@ -11,7 +11,8 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->trending_icon) }});">
+            <div class="fixed-bg"
+                style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->trending_icon) }});">
             </div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
@@ -35,7 +36,7 @@
                             <div class="col-md-6 col-sm-6 col-lg-4 fltr-itm">
                                 <div class="gallery-item2 text-center mb-30 w-100 positi    on-relative overflow-hidden">
                                     <img class="img-fluid w-100" style="width: 370px;height: 380px"
-                                        src="{{ asset('public/assets/images/banners/' . $gallery->photo) }}"
+                                        src="{{ asset(access_public() . 'assets/images/banners/' . $gallery->photo) }}"
                                         alt="Portfolio Image 1">
                                     <div class="gallery-info2 position-absolute">
                                         <h4 class="mb-0">
@@ -52,7 +53,7 @@
                                                 {{ $gallery->subtitle }}
                                             @endif
                                         </span>
-                                        <a href="{{ asset('public/assets/images/banners/' . $gallery->photo) }}"
+                                        <a href="{{ asset(access_public() . 'assets/images/banners/' . $gallery->photo) }}"
                                             data-fancybox="gallery" title=""><i class="flaticon-loupe"></i></a>
                                     </div>
                                 </div>

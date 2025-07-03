@@ -40,7 +40,7 @@
                         <div class="product-description">
                             <div class="body-area">
                                 <div class="gocover"
-                                    style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                    style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                                 </div>
                                 <form id="geniusform" action="{{ route('admin-mobilesetting-store') }}" method="POST"
                                     enctype="multipart/form-data">
@@ -64,7 +64,7 @@
                                         <div class="col-lg-7">
                                             <div class="img-upload full-width-img">
                                                 <div id="image-preview" class="img-preview"
-                                                    style="background: url({{ asset('public/assets/admin/images/upload.png') }});">
+                                                    style="background: url({{ asset(access_public() . 'assets/admin/images/upload.png') }});">
                                                     <label for="image-upload" class="img-label" id="image-label"><i
                                                             class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                     <input type="file" name="photo" class="img-upload"
@@ -90,20 +90,20 @@
                                     <!--</div>-->
 
                                     <!--  <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Text Position') }}*</h4>
-                                </div>
-                              </div>
-                              <div class="col-lg-7">
-                                  <select  name="position" required="">
-                                      <option value="">{{ __('Select Position') }}</option>
-                                      <option value="slide-one">{{ __('Left') }}</option>
-                                      <option value="slide-two">{{ __('Center') }}</option>
-                                      <option value="slide-three">{{ __('Right') }}</option>
-                                    </select>
-                              </div>
-                            </div>-->
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Text Position') }}*</h4>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                      <select  name="position" required="">
+                                          <option value="">{{ __('Select Position') }}</option>
+                                          <option value="slide-one">{{ __('Left') }}</option>
+                                          <option value="slide-two">{{ __('Center') }}</option>
+                                          <option value="slide-three">{{ __('Right') }}</option>
+                                        </select>
+                                  </div>
+                                </div>-->
 
                                     <div class="row">
                                         <div class="col-lg-4">

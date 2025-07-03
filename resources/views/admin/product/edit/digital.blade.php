@@ -5,9 +5,9 @@
  @endphp
 @section('styles')
 
-<link href="{{asset('public/assets/admin/css/product.css')}}" rel="stylesheet"/>
-<link href="{{asset('public/assets/admin/css/jquery.Jcrop.css')}}" rel="stylesheet"/>
-<link href="{{asset('public/assets/admin/css/Jcrop-style.css')}}" rel="stylesheet"/>
+<link href="{{asset(access_public() . 'assets/admin/css/product.css')}}" rel="stylesheet"/>
+<link href="{{asset(access_public() . 'assets/admin/css/jquery.Jcrop.css')}}" rel="stylesheet"/>
+<link href="{{asset(access_public() . 'assets/admin/css/Jcrop-style.css')}}" rel="stylesheet"/>
 
 @endsection
 @section('content')
@@ -39,7 +39,7 @@
 										<div class="product-description">
 											<div class="body-area">
 
-					                      <div class="gocover" style="background: url({{asset('public/assets/images/'.$gs->admin_loader)}}) no-repeat scroll center center rgba(45, 45, 45, 0.5);"></div>
+					                      <div class="gocover" style="background: url({{asset(access_public() . 'assets/images/'.$gs->admin_loader)}}) no-repeat scroll center center rgba(45, 45, 45, 0.5);"></div>
 					                      <form id="geniusform" action="{{route('admin-prod-update',$data->id)}}" method="POST" enctype="multipart/form-data">
 					                        {{csrf_field()}}
 
@@ -237,7 +237,7 @@
 							                        <div class="col-lg-7">
                                                 	<div class="row">
                                                 	<div class="panel panel-body">
-                                                		<img class="span4 mobile text-center" id="landscapes2" src="{{asset('public/assets/images/products/'.$data->hover_photo)}}" style="width: 400px; height: 400px; border: 1px dashed black;">
+                                                		<img class="span4 mobile text-center" id="landscapes2" src="{{asset(access_public() . 'assets/images/products/'.$data->hover_photo)}}" style="width: 400px; height: 400px; border: 1px dashed black;">
                                                          
                                                 </div>
                                                 	</div>
@@ -779,8 +779,8 @@
                                             '<span class="remove-img"><i class="fas fa-times"></i>'+
                                             '<input type="hidden" value="'+arr[k]['id']+'">'+
                                             '</span>'+
-                                            '<a href="'+'{{asset('public/assets/images/galleries').'/'}}'+arr[k]['photo']+'" target="_blank">'+
-                                            '<img src="'+'{{asset('public/assets/images/galleries').'/'}}'+arr[k]['photo']+'" alt="gallery image">'+
+                                            '<a href="'+'{{asset(access_public() . 'assets/images/galleries').'/'}}'+arr[k]['photo']+'" target="_blank">'+
+                                            '<img src="'+'{{asset(access_public() . 'assets/images/galleries').'/'}}'+arr[k]['photo']+'" alt="gallery image">'+
                                             '</a>'+
                                         '</div>'+
                                   	'</div>');
@@ -835,8 +835,8 @@
                                             '<span class="remove-img"><i class="fas fa-times"></i>'+
                                             '<input type="hidden" value="'+arr[k]['id']+'">'+
                                             '</span>'+
-                                            '<a href="'+'{{asset('public/assets/images/galleries').'/'}}'+arr[k]['photo']+'" target="_blank">'+
-                                            '<img src="'+'{{asset('public/assets/images/galleries').'/'}}'+arr[k]['photo']+'" alt="gallery image">'+
+                                            '<a href="'+'{{asset(access_public() . 'assets/images/galleries').'/'}}'+arr[k]['photo']+'" target="_blank">'+
+                                            '<img src="'+'{{asset(access_public() . 'assets/images/galleries').'/'}}'+arr[k]['photo']+'" alt="gallery image">'+
                                             '</a>'+
                                         '</div>'+
                                   	'</div>');
@@ -854,9 +854,9 @@
 
 </script>
 
-<script src="{{asset('public/assets/admin/js/jquery.Jcrop.js')}}"></script>
+<script src="{{asset(access_public() . 'assets/admin/js/jquery.Jcrop.js')}}"></script>
 
-<script src="{{asset('public/assets/admin/js/jquery.SimpleCropper.js')}}"></script>
+<script src="{{asset(access_public() . 'assets/admin/js/jquery.SimpleCropper.js')}}"></script>
 
 <script type="text/javascript">
 	
@@ -870,7 +870,7 @@ $('.cropme').click();
   <script type="text/javascript">
   $(document).ready(function() {
 
-    let html = `<img src="{{ empty($data->photo) ? asset('public/assets/images/noimage.png') : asset('public/assets/images/products/'.$data->photo) }}" alt="">`;
+    let html = `<img src="{{ empty($data->photo) ? asset(access_public() . 'assets/images/noimage.png') : asset(access_public() . 'assets/images/products/'.$data->photo) }}" alt="">`;
     $(".span4.cropme").html(html);
 
     $.ajaxSetup({
@@ -922,7 +922,7 @@ $('.cropme').click();
         });
   </script>
 
-<script src="{{asset('public/assets/admin/js/product.js')}}"></script>
+<script src="{{asset(access_public() . 'assets/admin/js/product.js')}}"></script>
 
  <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
 <script type="text/javascript">

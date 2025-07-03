@@ -5,9 +5,9 @@
 @endphp
 @section('styles')
 
-    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -19,9 +19,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
     @if ($gs->light_dark == 0)
-        <link href="{{ asset('public/assets/admin/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+        <link href="{{ asset(access_public() . 'assets/admin/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     @else
-        <link href="{{ asset('public/assets/admin/css/light/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+        <link href="{{ asset(access_public() . 'assets/admin/css/light/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     @endif
     <style>
         * {
@@ -196,7 +196,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-update', $data->id) }}" method="POST"
                                 enctype="multipart/form-data">
@@ -206,26 +206,26 @@
                                 @include('includes.admin.form-both')
 
                                 <!--    <button class="tablink" onclick="openPage('Home', this, '#1F224F')" id="defaultOpen">{{ __('WebSite Setting') }}</button>
-                                                <button class="tablink" onclick="openPage('News', this, '#1F224F')" >{{ __('Mobile Setting') }}</button>
-                                                
-                                                
-                                                <div id="Home" class="tabcontent">
+                                                    <button class="tablink" onclick="openPage('News', this, '#1F224F')" >{{ __('Mobile Setting') }}</button>
                                                     
                                                     
-                                           
-                                                
-               
-                                                </div>
-                                                 <div id="News" class="tabcontent">
-                                                 
-                                                         
-                                                 
-                                                </div>
+                                                    <div id="Home" class="tabcontent">
+                                                        
+                                                        
+                                               
+                                                    
+                   
+                                                    </div>
+                                                     <div id="News" class="tabcontent">
+                                                     
+                                                             
+                                                     
+                                                    </div>
 
-                                                
-                                                
-                                                
-                                                -->
+                                                    
+                                                    
+                                                    
+                                                    -->
                                 <div class="tabs">
                                     <div class="tab-2">
                                         <label for="tab2-1" class="label"
@@ -748,16 +748,16 @@
                                                         <div class="row">
                                                             <div class="panel panel-body">
                                                                 <img class="span4 mobile text-center" id="landscapes2"
-                                                                    src="{{ asset('public/assets/images/products/' . $data->hover_photo) }}"
+                                                                    src="{{ asset(access_public() . 'assets/images/products/' . $data->hover_photo) }}"
                                                                     style="width: 400px; height: 400px; border: 1px dashed black;">
 
                                                             </div>
                                                         </div>
 
                                                         <!--	<a href="javascript:;" id="crop-image" class="d-inline-block mybtn1">
-                                                    <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
-                                                    </a>
-    --> <input class="d-inline-block mybtn1" type="file"
+                                                        <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
+                                                        </a>
+        --> <input class="d-inline-block mybtn1" type="file"
                                                             onchange="document.getElementById('landscapes2').src = window.URL.createObjectURL(this.files[0])"
                                                             id="hover_photo" name="hover_photo"
                                                             value="{{ $data->hover_photo }}">
@@ -846,7 +846,8 @@
                                                     <ul class="list">
                                                         <li>
                                                             <input name="size_check" type="checkbox" id="size-check"
-                                                                value="1" {{ !empty($data->size) ? 'checked' : '' }}>
+                                                                value="1"
+                                                                {{ !empty($data->size) ? 'checked' : '' }}>
                                                             <label
                                                                 for="size-check">{{ __('Allow Product Sizes') }}</label>
                                                         </li>
@@ -1166,7 +1167,8 @@
 
 
 
-                                            <div class="{{ !empty($data->color) ? '' : 'showbox' }}" id="colors-display">
+                                            <div class="{{ !empty($data->color) ? '' : 'showbox' }}"
+                                                id="colors-display">
 
                                                 <div class="row">
                                                     @if (!empty($data->color))
@@ -1657,68 +1659,68 @@
 
 
                                             <!--<div class="row">
-                 <div class="col-lg-4">
-                  <div class="left-area">
-                   
-                  </div>
-                 </div>
-                 <div class="col-lg-7">
-                 
-          <div class="checkbox-wrapper">
-          <input type="checkbox" name="feature" value="1" class="checkclick3" id="allowProductfeature" {{ $data->feature != 0 ? 'checked' : '' }}>
-          <label for="allowProductfeature">{{ __('Allow Product feature settings ') }}</label>
-          </div>
-                 </div>
-                </div>
-          -->
+                     <div class="col-lg-4">
+                      <div class="left-area">
+                       
+                      </div>
+                     </div>
+                     <div class="col-lg-7">
+                     
+              <div class="checkbox-wrapper">
+              <input type="checkbox" name="feature" value="1" class="checkclick3" id="allowProductfeature" {{ $data->feature != 0 ? 'checked' : '' }}>
+              <label for="allowProductfeature">{{ __('Allow Product feature settings ') }}</label>
+              </div>
+                     </div>
+                    </div>
+              -->
 
                                             <!--      <div class="{{ $data->feature == 0 ? 'showbox ' : ' ' }} subs" >
-          <div class="row">
-          <div class="col-lg-4">
-          <div class="left-area">
-          <h4 class="heading">{{ __('Subscription type') }}: </h4>
-          </div>
-          </div>
-          <div class="col-lg-7">
-          <select name="subscription_type" class>
-          <option value="Days" {{ $data->subscription_type == 'Days' ? 'selected' : '' }}>Days</option>
-          <option value="Months" {{ $data->subscription_type == 'Months' ? 'selected' : '' }}>Months</option>
-          <option value="Years" {{ $data->subscription_type == 'Years' ? 'selected' : '' }}>Years</option>
-          </select>
-          </div>
-          </div>
+              <div class="row">
+              <div class="col-lg-4">
+              <div class="left-area">
+              <h4 class="heading">{{ __('Subscription type') }}: </h4>
+              </div>
+              </div>
+              <div class="col-lg-7">
+              <select name="subscription_type" class>
+              <option value="Days" {{ $data->subscription_type == 'Days' ? 'selected' : '' }}>Days</option>
+              <option value="Months" {{ $data->subscription_type == 'Months' ? 'selected' : '' }}>Months</option>
+              <option value="Years" {{ $data->subscription_type == 'Years' ? 'selected' : '' }}>Years</option>
+              </select>
+              </div>
+              </div>
 
-          <div class="row">
-          <div class="col-lg-4">
-          <div class="left-area">
-          <h4 class="heading">
-          {{ __('subscription period') }} :
-          </h4>
-          </div>
-          </div>
-          <div class="col-lg-7">
-          <div class="text-editor">
-          <input name="subscription_period" type="number" min="0" class="input-field" placeholder="{{ __('subscription period') }}" value="{{ $data->subscription_period }}">
-          </div>
-          </div>
-          </div>
-          
-          <div class="row">
-          <div class="col-lg-4">
-          <div class="left-area">
-          <h4 class="heading">
-          {{ __('subscription trial period') }} :
-          </h4>
-          </div>
-          </div>
-          <div class="col-lg-7">
-          <div class="text-editor">
-          <input name="trial_period" type="number" min="0" class="input-field" placeholder="{{ __('trial period') }}" value="{{ $data->trial_period }}">
-          </div>
-          </div>
-          </div>
-          
-          </div>-->
+              <div class="row">
+              <div class="col-lg-4">
+              <div class="left-area">
+              <h4 class="heading">
+              {{ __('subscription period') }} :
+              </h4>
+              </div>
+              </div>
+              <div class="col-lg-7">
+              <div class="text-editor">
+              <input name="subscription_period" type="number" min="0" class="input-field" placeholder="{{ __('subscription period') }}" value="{{ $data->subscription_period }}">
+              </div>
+              </div>
+              </div>
+              
+              <div class="row">
+              <div class="col-lg-4">
+              <div class="left-area">
+              <h4 class="heading">
+              {{ __('subscription trial period') }} :
+              </h4>
+              </div>
+              </div>
+              <div class="col-lg-7">
+              <div class="text-editor">
+              <input name="trial_period" type="number" min="0" class="input-field" placeholder="{{ __('trial period') }}" value="{{ $data->trial_period }}">
+              </div>
+              </div>
+              </div>
+              
+              </div>-->
 
                                             <div class="row">
                                                 <div class="col-lg-4">
@@ -1916,7 +1918,7 @@
                                                     <div class="row">
                                                         <div class="panel panel-body">
                                                             <img class="span4 cropme2 mobile text-center"
-                                                                src="{{ (empty($data->mobile_photo) ? asset('public/assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset('public/assets/images/products/' . $data->mobile_photo) }}"
+                                                                src="{{ (empty($data->mobile_photo) ? asset(access_public() . 'assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset(access_public() . 'assets/images/products/' . $data->mobile_photo) }}"
                                                                 id="landscapes"
                                                                 style="width: 400px; height: 400px; border: 1px dashed black;">
 
@@ -1924,7 +1926,7 @@
                                                     </div>
 
                                                     <!--	<a href="javascript:;" id="crop-images" class="d-inline-block mybtn1"></a>
-                        <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}-->
+                            <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}-->
                                                     <input class="d-inline-block mybtn1" type="file"
                                                         onchange="document.getElementById('landscapes').src = window.URL.createObjectURL(this.files[0])"
                                                         id="feature_mobile_photo" name="mobile_photo"
@@ -2037,15 +2039,15 @@
                                             </div>
 
                                             <!--   <div class="row">
-                 <div class="col-lg-4">
-                  <div class="left-area">
+                     <div class="col-lg-4">
+                      <div class="left-area">
 
-                  </div>
-                 </div>
-                 <div class="col-lg-7 text-center">
-                  <button class="addProductSubmit-btn" type="submit">{{ __('Save') }}</button>
-                 </div>
-                </div>-->
+                      </div>
+                     </div>
+                     <div class="col-lg-7 text-center">
+                      <button class="addProductSubmit-btn" type="submit">{{ __('Save') }}</button>
+                     </div>
+                    </div>-->
 
                                         </div>
                                     </div>
@@ -2095,7 +2097,8 @@
                                         class="fas fa-check"></i> {{ __('Done') }}</a>
                             </div>
                             <div class="col-sm-12 text-center">(
-                                <small>{{ __('You can upload multiple Images.') }}</small> )</div>
+                                <small>{{ __('You can upload multiple Images.') }}</small> )
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-images">
@@ -2140,7 +2143,8 @@
                                         class="fas fa-check"></i> {{ __('Done') }}</a>
                             </div>
                             <div class="col-sm-12 text-center">(
-                                <small>{{ __('You can upload multiple Images.') }}</small> )</div>
+                                <small>{{ __('You can upload multiple Images.') }}</small> )
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-images">
@@ -2190,11 +2194,13 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -2234,11 +2240,13 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -2303,11 +2311,13 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -2344,11 +2354,13 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -2367,9 +2379,9 @@
         // Gallery Section Update Ends
     </script>
 
-    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.Jcrop.js') }}"></script>
 
-    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         $('.cropme').simpleCropper();
@@ -2388,11 +2400,11 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ (empty($data->photo) ? asset('public/assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset('public/assets/images/products/' . $data->photo) }}" alt="">`;
+                `<img src="{{ (empty($data->photo) ? asset(access_public() . 'assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset(access_public() . 'assets/images/products/' . $data->photo) }}" alt="">`;
             $(".span4.cropme").html(html);
 
             let htmls =
-                `<img src="{{ (empty($data->mobile_photo) ? asset('public/assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset('public/assets/images/products/' . $data->mobile_photo) }}" alt="">`;
+                `<img src="{{ (empty($data->mobile_photo) ? asset(access_public() . 'assets/images/noimage.png') : filter_var($data->mobile_photo, FILTER_VALIDATE_URL)) ? $data->mobile_photo : asset(access_public() . 'assets/images/products/' . $data->mobile_photo) }}" alt="">`;
             $(".mobile").html(htmls);
 
             $.ajaxSetup({
@@ -2517,8 +2529,8 @@
             }
         });
     </script>
-    <script type="text/javascript" src="{{ asset('public/assets/admin/js/bootstrap-tagsinput.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script type="text/javascript" src="{{ asset(access_public() . 'assets/admin/js/bootstrap-tagsinput.js') }}"></script>
+    <script type="text/javascript" src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
 
     <script type="text/javascript">
         $('.size-color').val();
@@ -2536,21 +2548,21 @@
     </script>
     <script>
         /*function openPage(pageName,elmnt,color) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablink");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].style.backgroundColor = "";
-      }
-      document.getElementById(pageName).style.display = "block";
-      elmnt.style.backgroundColor = color;
-    }
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = color;
+        }
 
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();*/
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();*/
     </script>
 
 

@@ -16,7 +16,8 @@
 
     @endphp
 
-    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+    <section class="page-title"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->best_icon) }});">
         <div class="auto-container">
             <h1>{{ $langg->lang11 }} </h1>
 
@@ -55,7 +56,8 @@
           {{ route('front.category', ['category' => $cat->slug, 'lang' => $sign]) }} @endif"
                             class="product-card">
                             <div class="img-div lazy-div">
-                                <img class="lazy" data-src="{{ asset('public/assets/images/categories/' . $cat->photo) }}"
+                                <img class="lazy"
+                                    data-src="{{ asset(access_public() . 'assets/images/categories/' . $cat->photo) }}"
                                     alt="png">
                                 <div class="next-lazy-img"></div>
                             </div>

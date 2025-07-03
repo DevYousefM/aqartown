@@ -67,17 +67,17 @@
 
 
                                 <!--
-                              <div class="row">
-                                  <div class="col-lg-4">
-                                      <div class="left-area">
-                                          <h4 class="heading">{{ __('About Section video link') }}* </h4>
+                                  <div class="row">
+                                      <div class="col-lg-4">
+                                          <div class="left-area">
+                                              <h4 class="heading">{{ __('About Section video link') }}* </h4>
 
+                                          </div>
                                       </div>
-                                  </div>
-                                  <div class="col-lg-7">
-                                      <input type="text" class="input-field" placeholder="{{ __('Enter About Section video link') }}"   name="video" value="{{ $data->video }}">
-                                  </div>
-                              </div> -->
+                                      <div class="col-lg-7">
+                                          <input type="text" class="input-field" placeholder="{{ __('Enter About Section video link') }}"   name="video" value="{{ $data->video }}">
+                                      </div>
+                                  </div> -->
 
 
                                 <div class="row">
@@ -119,7 +119,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->photo ? asset('public/assets/images/brands/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/brands/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload" id="image-upload">

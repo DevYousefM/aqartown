@@ -18,7 +18,8 @@
 
 
 
-    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->top_icon) }})">
+    <div class="page-banner-area"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->top_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang11 }}</h2>
@@ -55,7 +56,7 @@
                                             
                                                 {{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }} @endif">
                             <div class="boxmoth boxmoth-1"
-                                style="background-image: url({{ asset('public/assets/images/categories/' . $category->photo) }});">
+                                style="background-image: url({{ asset(access_public() . 'assets/images/categories/' . $category->photo) }});">
                                 <h6>0{{ $key + 1 }}.</h6>
                                 <h5>
                                     @if ($langg->rtl == 1)

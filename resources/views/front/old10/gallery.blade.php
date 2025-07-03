@@ -17,7 +17,8 @@
 @section('content')
 
 
-    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+    <section class="page-title"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->top_icon) }});">
         <div class="auto-container">
             <h1> {{ $langg->lang18 }} </h1>
 
@@ -44,10 +45,10 @@
 
 
                     @foreach ($images as $key => $service)
-                        <a href="{{ asset('public/assets/images/banners/' . $service->photo) }}">
+                        <a href="{{ asset(access_public() . 'assets/images/banners/' . $service->photo) }}">
                             <div class="img-div lazy-div">
                                 <img class="lazy"
-                                    data-src="{{ asset('public/assets/images/banners/' . $service->photo) }}" />
+                                    data-src="{{ asset(access_public() . 'assets/images/banners/' . $service->photo) }}" />
                                 <div class="next-lazy-img"></div>
                             </div>
                         </a>

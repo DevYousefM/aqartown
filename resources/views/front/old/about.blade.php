@@ -14,7 +14,8 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});"></div>
+            <div class="fixed-bg"
+                style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->best_icon) }});"></div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
                     <h1 class="mb-0">{{ $langg->lang16 }}</h1>
@@ -112,7 +113,7 @@
                                             </a>
                                         @endif
                                         <img class="img-fluid w-100"
-                                            src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                            src="{{ asset(access_public() . 'assets/images/brands/' . $about_us->photo) }}"
                                             alt="{{ $about_us->name }}">
                                     </div>
                                 </div>
@@ -149,7 +150,7 @@
                                             </a>
                                         @endif
                                         <img class="img-fluid w-100"
-                                            src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}"
+                                            src="{{ asset(access_public() . 'assets/images/brands/' . $about_us->photo) }}"
                                             alt="{{ $about_us->name }}">
                                     </div>
                                 </div>
@@ -211,7 +212,7 @@
                                     <figure style="
     height: 345px;
 ">
-                                        <img src="{{ asset('public/assets/images/services/' . $data->photo) }}"
+                                        <img src="{{ asset(access_public() . 'assets/images/services/' . $data->photo) }}"
                                             alt="" class="img-responsive">
                                         <figcaption>
                                             <p>
@@ -289,7 +290,7 @@
                             <div class="col-md-3 col-sm-6 col-lg-3">
                                 <div class=" text-center mb-30 w-100">
                                     <a href="javascript:void(0);" title=""><img class="img-fluid"
-                                            src="{{ asset('public/assets/images/ads/' . $data->photo) }}"
+                                            src="{{ asset(access_public() . 'assets/images/ads/' . $data->photo) }}"
                                             alt="Sponsor Image 1"></a>
                                 </div>
                             </div>

@@ -12,17 +12,17 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{ asset('public/assets/print/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/print/bootstrap/dist/css/bootstrap.min.css') }}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('public/assets/print/font-awesome/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/print/font-awesome/css/font-awesome.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('public/assets/print/Ionicons/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/print/Ionicons/css/ionicons.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('public/assets/print/css/style.css') }}">
-    <link href="{{ asset('public/assets/print/css/print.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/print/css/style.css') }}">
+    <link href="{{ asset(access_public() . 'assets/print/css/print.css') }}" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <link rel="icon" type="image/png" href="{{ asset('public/assets/images/' . $gs->favicon) }}">
+    <link rel="icon" type="image/png" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}">
     <style type="text/css">
         @page {
             size: auto;
@@ -59,7 +59,8 @@
             <div class="row">
                 <div class="col-sm-6">
                     <div class="invoice__logo text-left">
-                        <img src="{{ asset('public/assets/images/' . $gs->invoice_logo) }}" alt="woo commerce logo">
+                        <img src="{{ asset(access_public() . 'assets/images/' . $gs->invoice_logo) }}"
+                            alt="woo commerce logo">
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/assets/qoudorat/assets/css/lightgallery.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/qoudorat/assets/css/lightgallery.css') }}">
 
 @stop
 
@@ -22,7 +22,8 @@
 
 
 
-    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->trending_icon) }})">
+    <div class="page-banner-area"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->trending_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang221 }}</h2>
@@ -42,14 +43,14 @@
             <div class="section_title">
                 <h1>{{ $langg->lang221 }}</h1>
                 <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy. </p> -->
+                            been the industry's standard dummy. </p> -->
                 <div class="divider_effect_section"></div>
             </div>
             <div class="gallery-layout">
                 <div class="home-light-gallery">
                     @foreach ($services as $key => $service)
-                        <a href="{{ asset('public/assets/images/services/' . $service->photo) }}">
-                            <img src="{{ asset('public/assets/images/services/' . $service->photo) }}">
+                        <a href="{{ asset(access_public() . 'assets/images/services/' . $service->photo) }}">
+                            <img src="{{ asset(access_public() . 'assets/images/services/' . $service->photo) }}">
                         </a>
                     @endforeach
 
@@ -62,9 +63,9 @@
 
 @section('js')
 
-    <script src="{{ asset('public/assets/qoudorat/assets/js/lightgallery.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/qoudorat/assets/js/lightgallery.js') }}"></script>
 
-    <script src="{{ asset('public/assets/qoudorat/assets/js/lg-thumbnail.umd.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/qoudorat/assets/js/lg-thumbnail.umd.js') }}"></script>
 
 
     <script>

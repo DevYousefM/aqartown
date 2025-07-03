@@ -29,9 +29,9 @@
 
                         <div class="col-sm-4 table-contents">
                             <!--     <select class="process select droplinks {{ $gs->shipment == 1 ? 'drop-success' : 'drop-danger' }}">
-                                            <option data-val="1" value="{{ route('admin-gs-shipment', 1) }}" {{ $gs->shipment == 1 ? 'selected' : '' }}>{{ __('Activated') }}</option>
-                                            <option data-val="0" value="{{ route('admin-gs-shipment', 0) }}" {{ $gs->shipment == 0 ? 'selected' : '' }}>{{ __('Deactivated') }}</option>
-                                          </select>-->
+                                                <option data-val="1" value="{{ route('admin-gs-shipment', 1) }}" {{ $gs->shipment == 1 ? 'selected' : '' }}>{{ __('Activated') }}</option>
+                                                <option data-val="0" value="{{ route('admin-gs-shipment', 0) }}" {{ $gs->shipment == 0 ? 'selected' : '' }}>{{ __('Deactivated') }}</option>
+                                              </select>-->
 
                             <a class="add-btn " data-href="{{ route('admin-city-zone-create') }}" id="add-data"
                                 data-toggle="modal" data-target="#modal1">
@@ -72,7 +72,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
@@ -151,7 +151,7 @@
 
             ],
             language: {
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}">'
             }
         });
 

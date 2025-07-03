@@ -24,7 +24,7 @@
                     <div class="product-description">
                         <div class="body-area">
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-gs-update') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -34,40 +34,40 @@
 
 
                                 <!--
-                              <div class="row justify-content-center">
-                                  <div class="col-lg-3">
-                                    <div class="left-area">
-                                      <h4 class="heading">
-                                          {{ __('about us section') }} *
-                                          <p class="sub-heading">{{ __('(In Any Language)') }}</p>
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-12">
-                                      <div class="tawk-area">
-                                        <textarea class="ckeditor form-control" name="management" required="">{{ $gs->management }}</textarea>
+                                  <div class="row justify-content-center">
+                                      <div class="col-lg-3">
+                                        <div class="left-area">
+                                          <h4 class="heading">
+                                              {{ __('about us section') }} *
+                                              <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                          </h4>
+                                        </div>
                                       </div>
-                                  </div>
-                                </div>
-
-
-                                <div class="row justify-content-center">
-                                  <div class="col-lg-3">
-                                    <div class="left-area">
-                                      <h4 class="heading">
-                                          {{ __('about us section') }} *
-                                          <p class="sub-heading">{{ __('(Arabic)') }}</p>
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-12">
-                                      <div class="tawk-area">
-                                        <textarea class="ckeditor form-control" name="management_ar" required="">{{ $gs->management_ar }}</textarea>
+                                      <div class="col-lg-12">
+                                          <div class="tawk-area">
+                                            <textarea class="ckeditor form-control" name="management" required="">{{ $gs->management }}</textarea>
+                                          </div>
                                       </div>
-                                  </div>
-                                </div>
+                                    </div>
 
-                                -->
+
+                                    <div class="row justify-content-center">
+                                      <div class="col-lg-3">
+                                        <div class="left-area">
+                                          <h4 class="heading">
+                                              {{ __('about us section') }} *
+                                              <p class="sub-heading">{{ __('(Arabic)') }}</p>
+                                          </h4>
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-12">
+                                          <div class="tawk-area">
+                                            <textarea class="ckeditor form-control" name="management_ar" required="">{{ $gs->management_ar }}</textarea>
+                                          </div>
+                                      </div>
+                                    </div>
+
+                                    -->
                                 <div class="row justify-content-center">
                                     <div class="col-lg-3">
                                         <div class="left-area">
@@ -110,7 +110,7 @@
 
 
                                         <div class="currrent-logo">
-                                            <img src="{{ $gs->home_about_img3 ? asset('public/assets/images/' . $gs->home_about_img3) : asset('public/assets/images/noimage.png') }}"
+                                            <img src="{{ $gs->home_about_img3 ? asset(access_public() . 'assets/images/' . $gs->home_about_img3) : asset(access_public() . 'assets/images/noimage.png') }}"
                                                 alt="">
                                         </div>
                                         <div class="set-logo">

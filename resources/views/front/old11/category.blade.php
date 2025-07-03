@@ -66,7 +66,8 @@
 
     <!-- =====slider home ===== -->
     <!-- Main Slider -->
-    <section class="breadcrumb-area" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+    <section class="breadcrumb-area"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->best_icon) }});">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -165,14 +166,14 @@
 
                                 <div class="clearfix"></div>
                                 <!-- <div class="pro-rating sin-pro-rating f-right">
-                                    <a href="#" tabindex="0"><i class="fa fa-star-half-o" aria-hidden="true"></i></a>
-                                    <a href="#" tabindex="0"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                    <a href="#" tabindex="0"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                    <a href="#" tabindex="0"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                    <a href="#" tabindex="0"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                    <span class="text-black-5">( 27 Rating )</span>
+                                        <a href="#" tabindex="0"><i class="fa fa-star-half-o" aria-hidden="true"></i></a>
+                                        <a href="#" tabindex="0"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                        <a href="#" tabindex="0"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                        <a href="#" tabindex="0"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                        <a href="#" tabindex="0"><i class="fa fa-star" aria-hidden="true"></i></a>
+                                        <span class="text-black-5">( 27 Rating )</span>
 
-                                </div> -->
+                                    </div> -->
                             </div>
                             <div class="clearfix"></div>
                             @if ($langg->rtl == 1)
@@ -189,7 +190,8 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-7">
-                        <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}" alt="">
+                        <img src="{{ asset(access_public() . 'assets/images/subcategories/' . $subcat->photo) }}"
+                            alt="">
                     </div>
                 </div>
             </div>
@@ -218,7 +220,7 @@
                                     <!--Start single solution style1-->
                                     <div class="single-solution-style1">
                                         <div class="img-holder">
-                                            <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
+                                            <img src="{{ asset(access_public() . 'assets/images/subcategories/' . $subcat->photo) }}"
                                                 alt="@if ($langg->rtl == 1) {{ $subcat->name_ar }}
                                      @else
 

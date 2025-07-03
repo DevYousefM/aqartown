@@ -1,8 +1,8 @@
 @extends('layouts.vendor')
 @section('styles')
-    <link href="{{ asset('public/assets/vendor/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/vendor/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 @endsection
 @section('content')
     <div class="content-area">
@@ -35,7 +35,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('vendor-prod-catalog-update', $data->id) }}"
                                 method="POST" enctype="multipart/form-data">
@@ -840,8 +840,7 @@
                                     <div class="col-lg-7">
                                         <input name="previous_price" step="0.1" type="number" class="input-field"
                                             placeholder="{{ $langg->lang666 }}"
-                                            value="{{ round($data->previous_price * $sign->value, 2) }}"
-                                            min="0">
+                                            value="{{ round($data->previous_price * $sign->value, 2) }}" min="0">
                                     </div>
                                 </div>
                                 <div class="{{ !empty($data->size) ? 'showbox' : '' }}" id="stckprod">
@@ -1141,8 +1140,8 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
-    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         // Gallery Section Insert
@@ -1200,12 +1199,12 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ (empty($data->photo) ? asset('public/assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset('public/assets/images/products/' . $data->photo) }}" alt="">`;
+                `<img src="{{ (empty($data->photo) ? asset(access_public() . 'assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset(access_public() . 'assets/images/products/' . $data->photo) }}" alt="">`;
             $(".span4.cropme").html(html);
 
 
         });
     </script>
 
-    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
 @endsection

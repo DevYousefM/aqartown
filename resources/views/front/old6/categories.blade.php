@@ -16,7 +16,8 @@
 
     @endphp
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+    <section class="breadcrumb-section"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->top_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1> {{ $langg->lang223 }}
@@ -65,7 +66,7 @@ display: grid;">
   width: 330px;
   padding: 20px;
 }">
-                            <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
+                            <img src="{{ asset(access_public() . 'assets/images/categories/' . $category->photo) }}"
                                 style="width: 100%;
 height: 278px;
 border-radius: 30px;

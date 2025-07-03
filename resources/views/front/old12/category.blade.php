@@ -66,9 +66,10 @@
     <!-- Start inner Page hero-->
     <section class="d-flex align-items-center page-hero hero-vegas-slider inner-page-hero " id="page-hero">
         <div class="overlay-color"></div>
-        <div class="vegas-slider-content" data-vegas-slide-1="{{ asset('public/assets/images/' . $gs->feature_icon) }}"
-            data-vegas-slide-2="{{ asset('public/assets/images/' . $gs->best_icon) }}"
-            data-vegas-slide-3="{{ asset('public/assets/images/' . $gs->trending_icon) }}">
+        <div class="vegas-slider-content"
+            data-vegas-slide-1="{{ asset(access_public() . 'assets/images/' . $gs->feature_icon) }}"
+            data-vegas-slide-2="{{ asset(access_public() . 'assets/images/' . $gs->best_icon) }}"
+            data-vegas-slide-3="{{ asset(access_public() . 'assets/images/' . $gs->trending_icon) }}">
             <div class="container">
                 <div class="row">
                     <div class="col-12 hero-text-area ">
@@ -207,7 +208,8 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-7">
-                        <img src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}" alt="">
+                        <img src="{{ asset(access_public() . 'assets/images/subcategories/' . $subcat->photo) }}"
+                            alt="">
                     </div>
                 </div>
             </div>
@@ -236,7 +238,7 @@
                                 <div class="item "><a class="portfolio-img-link "
                                         href="{{ route('front.category', ['category' => $subcat->category->slug_ar, 'subcategory' => $subcat->slug_ar, 'lang' => $sign]) }}">
                                         <div class="overlay overlay-color"></div><img class="  portfolio-img img-fluid  "
-                                            src="{{ asset('public/assets/images/subcategories/' . $subcat->photo) }}"
+                                            src="{{ asset(access_public() . 'assets/images/subcategories/' . $subcat->photo) }}"
                                             alt=" ">
                                     </a>
                                     <div class="item-info "><span></span>

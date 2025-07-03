@@ -31,7 +31,7 @@
                         <div class="left-area">
 
                             @if (!empty($comment->user))
-                                <img src="{{ $comment->user->photo != null ? asset('public/assets/images/users/' . $comment->user->photo) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $comment->user->photo != null ? asset(access_public() . 'assets/images/users/' . $comment->user->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                     alt="">
                                 <h5 class="name">{{ $comment->user->name }}</h5>
                             @endif
@@ -80,7 +80,7 @@
                             <div class="single-comment replay-review hidden">
                                 <div class="left-area">
                                     @if (!empty($reply->user))
-                                        <img src="{{ $reply->user->photo != null ? asset('public/assets/images/users/' . $reply->user->photo) : asset('public/assets/images/noimage.png') }}"
+                                        <img src="{{ $reply->user->photo != null ? asset(access_public() . 'assets/images/users/' . $reply->user->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                             alt="">
                                         <h5 class="name">{{ $reply->user->name }}</h5>
                                     @endif
@@ -154,7 +154,7 @@
                         <div class="left-area">
 
                             @if (!empty($comment->user))
-                                <img src="{{ $comment->user->photo != null ? asset('public/assets/images/users/' . $comment->user->photo) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $comment->user->photo != null ? asset(access_public() . 'assets/images/users/' . $comment->user->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                     alt="">
                                 <h5 class="name">{{ $comment->user->name }}</h5>
                             @endif
@@ -185,7 +185,7 @@
                                 <div class="left-area">
 
                                     @if (!empty($reply->user))
-                                        <img src="{{ $reply->user->photo != null ? asset('public/assets/images/users/' . $reply->user->photo) : asset('public/assets/images/noimage.png') }}"
+                                        <img src="{{ $reply->user->photo != null ? asset(access_public() . 'assets/images/users/' . $reply->user->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                             alt="">
                                         <h5 class="name">{{ $reply->user->name }}</h5>
                                     @endif

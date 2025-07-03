@@ -18,7 +18,8 @@
 
 
     <!-- end header -->
-    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->big_icon) }});">
+    <section class="page-title"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->big_icon) }});">
         <div class="auto-container">
             <h1>{{ $langg->lang223 }} </h1>
 

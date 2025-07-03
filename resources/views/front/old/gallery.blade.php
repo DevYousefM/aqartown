@@ -30,7 +30,8 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->trending_icon) }});">
+            <div class="fixed-bg"
+                style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->trending_icon) }});">
             </div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
@@ -73,7 +74,7 @@
                                         <div class="Card-shadow"></div>
                                         <div class="Card-shadow"></div>
                                         <div class="Card-image"
-                                            style="background-image: url({{ $data->photo ? asset('public/assets/images/gallery/' . $data->photo) : asset('public/assets/images/noimage.png') }});background-size: 100%;">
+                                            style="background-image: url({{ $data->photo ? asset(access_public() . 'assets/images/gallery/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});background-size: 100%;">
                                         </div>
                                     </div>
                                     <div class="Card-title"><span>Super interesting card</span></div>
@@ -98,7 +99,7 @@
 
                                     @foreach ($data->images as $d)
                                         <div class="col-lg-6">
-                                            <img src="{{ asset('public/assets/images/gallery/' . $d->photo) }}">
+                                            <img src="{{ asset(access_public() . 'assets/images/gallery/' . $d->photo) }}">
 
                                         </div>
                                     @endforeach
@@ -107,32 +108,32 @@
 
                                 </div>
                                 <!-- <div class="Gallery-images">
-                            <div class="Gallery-left">
+                                <div class="Gallery-left">
+                                    <div class="Gallery-image"></div>
+                                    <div class="Gallery-image"></div>
+                                </div>
+                                <div class="Gallery-image Gallery-image--primary" style="background-image: url(https://robohash.org/1)"></div>
+                            </div>
+                            <div class="Gallery-images">
+                                <div class="Gallery-image"></div>
                                 <div class="Gallery-image"></div>
                                 <div class="Gallery-image"></div>
                             </div>
-                            <div class="Gallery-image Gallery-image--primary" style="background-image: url(https://robohash.org/1)"></div>
-                        </div>
-                        <div class="Gallery-images">
-                            <div class="Gallery-image"></div>
-                            <div class="Gallery-image"></div>
-                            <div class="Gallery-image"></div>
-                        </div>
-                        <div class="Gallery-images">
-                            <div class="Gallery-image"></div>
-                            <div class="Gallery-image"></div>
-                            <div class="Gallery-image"></div>
-                        </div>
-                        <div class="Gallery-images">
-                            <div class="Gallery-image"></div>
-                            <div class="Gallery-image"></div>
-                            <div class="Gallery-image"></div>
-                        </div>
-                        <div class="Gallery-images">
-                            <div class="Gallery-image"></div>
-                            <div class="Gallery-image"></div>
-                            <div class="Gallery-image"></div>
-                        </div>-->
+                            <div class="Gallery-images">
+                                <div class="Gallery-image"></div>
+                                <div class="Gallery-image"></div>
+                                <div class="Gallery-image"></div>
+                            </div>
+                            <div class="Gallery-images">
+                                <div class="Gallery-image"></div>
+                                <div class="Gallery-image"></div>
+                                <div class="Gallery-image"></div>
+                            </div>
+                            <div class="Gallery-images">
+                                <div class="Gallery-image"></div>
+                                <div class="Gallery-image"></div>
+                                <div class="Gallery-image"></div>
+                            </div>-->
                             </section>
                         @endforeach
                     </div>

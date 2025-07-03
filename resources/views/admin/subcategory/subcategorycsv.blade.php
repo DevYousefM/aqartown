@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/product.css') }}" rel="stylesheet" />
 @endsection
 @section('content')
     <div class="content-area">
@@ -28,7 +28,7 @@
                 <div class="col-lg-12 p-5">
 
                     <div class="gocover"
-                        style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                        style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                     </div>
                     <form id="geniusform" action="{{ route('admin-subcat-importsubmit') }}" method="POST"
                         enctype="multipart/form-data">
@@ -39,8 +39,8 @@
                         <div class="row">
                             <div class="col-lg-12 text-right">
                                 <span style="margin-top:10px;"><a class="btn btn-primary"
-                                        href="{{ asset('public/assets/test-subcategory.xlsx') }}">{{ __('Download Sample Excal') }}</a></span>
-                                <!--<span style="margin-top:10px;"><a class="btn btn-primary" href="{{ asset('public/assets/product-csv-format.csv') }}">{{ __('Download Sample CSV') }}</a></span>-->
+                                        href="{{ asset(access_public() . 'assets/test-subcategory.xlsx') }}">{{ __('Download Sample Excal') }}</a></span>
+                                <!--<span style="margin-top:10px;"><a class="btn btn-primary" href="{{ asset(access_public() . 'assets/product-csv-format.csv') }}">{{ __('Download Sample CSV') }}</a></span>-->
 
 
                             </div>
@@ -87,5 +87,5 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.load')
 
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 
@@ -43,37 +43,38 @@
                                                 {{ __('For All') }}</option>
                                             @foreach ($users as $item)
                                                 <option value="{{ $item->id }}"
-                                                    {{ $data->user_id == $item->id ? 'selected' : '' }}>{{ $item->name }}
+                                                    {{ $data->user_id == $item->id ? 'selected' : '' }}>
+                                                    {{ $item->name }}
                                                 </option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <!--       <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Type') }} *</h4>
-                                </div>
-                              </div>
-                              <div class="col-lg-7">
-                                  <select id="type" name="type" required="">
-                                    <option value="">{{ __('Choose a type') }}</option>
-                                    <option value="0" {{ $data->type == 0 ? 'selected' : '' }}>{{ __('Discount By Percentage') }}</option>
-                                    <option value="1" {{ $data->type == 1 ? 'selected' : '' }}>{{ __('Discount By Amount') }}</option>
-                                  </select>
-                              </div>
-                            </div>-->
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Type') }} *</h4>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                      <select id="type" name="type" required="">
+                                        <option value="">{{ __('Choose a type') }}</option>
+                                        <option value="0" {{ $data->type == 0 ? 'selected' : '' }}>{{ __('Discount By Percentage') }}</option>
+                                        <option value="1" {{ $data->type == 1 ? 'selected' : '' }}>{{ __('Discount By Amount') }}</option>
+                                      </select>
+                                  </div>
+                                </div>-->
 
                                 <!-- <div class="row hidden">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading"></h4>
-                                </div>
-                              </div>
-                              <div class="col-lg-3">
-                                <input type="text" class="input-field less-width" name="price" placeholder="" required="" value="{{ $data->price }}"><span></span>
-                              </div>
-                            </div>-->
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading"></h4>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <input type="text" class="input-field less-width" name="price" placeholder="" required="" value="{{ $data->price }}"><span></span>
+                                  </div>
+                                </div>-->
 
                                 <div class="row">
                                     <div class="col-lg-4">
@@ -166,7 +167,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->photo ? asset('public/assets/images/coupon/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/coupon/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload"

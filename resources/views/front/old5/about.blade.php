@@ -18,7 +18,8 @@
 
 
 
-    <div class="page-banner-area" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+    <div class="page-banner-area"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->best_icon) }});">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang16 }}</h2>
@@ -60,50 +61,51 @@
                                     @endif
                                 </p>
                                 <div class="divider_effect_section"style="
-        margin-right: auto;
-        margin-left: 0;
-    "></div>
+            margin-right: auto;
+            margin-left: 0;
+        "></div>
                             </div>
                             <!-- <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <ul class="about-list">
-                                        <li>
-                                            <i class="flaticon-check"></i>
-                                            Complete Crown
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-check"></i>
-                                            Dental Implants
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-check"></i>
-                                            Dental X-Ray
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <ul class="about-list">
-                                        <li>
-                                            <i class="flaticon-check"></i>
-                                            Cosmetic Filling
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-check"></i>
-                                            Cosmetic Filling
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-check"></i>
-                                            Root Canal
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> -->
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul class="about-list">
+                                            <li>
+                                                <i class="flaticon-check"></i>
+                                                Complete Crown
+                                            </li>
+                                            <li>
+                                                <i class="flaticon-check"></i>
+                                                Dental Implants
+                                            </li>
+                                            <li>
+                                                <i class="flaticon-check"></i>
+                                                Dental X-Ray
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul class="about-list">
+                                            <li>
+                                                <i class="flaticon-check"></i>
+                                                Cosmetic Filling
+                                            </li>
+                                            <li>
+                                                <i class="flaticon-check"></i>
+                                                Cosmetic Filling
+                                            </li>
+                                            <li>
+                                                <i class="flaticon-check"></i>
+                                                Root Canal
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> -->
 
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="about-image">
-                            <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}" alt="image">
+                            <img src="{{ asset(access_public() . 'assets/images/brands/' . $about_us->photo) }}"
+                                alt="image">
                         </div>
                     </div>
                 </div>
@@ -131,43 +133,43 @@
 
 
     <!-- <section class="fun-facts-area pt-100 pb-70">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="549">00</span>
-                            </h3>
-                            <p>Expert Doctors</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="single-fun-fact">
+                                <h3>
+                                    <span class="odometer" data-count="549">00</span>
+                                </h3>
+                                <p>Expert Doctors</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="867">00</span>
-                            </h3>
-                            <p>Problem Solve</p>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="single-fun-fact">
+                                <h3>
+                                    <span class="odometer" data-count="867">00</span>
+                                </h3>
+                                <p>Problem Solve</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="169">00</span>
-                            </h3>
-                            <p>Award Winning</p>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="single-fun-fact">
+                                <h3>
+                                    <span class="odometer" data-count="169">00</span>
+                                </h3>
+                                <p>Award Winning</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-fun-fact">
-                            <h3>
-                                <span class="odometer" data-count="79">00</span>
-                            </h3>
-                            <p>Experiences</p>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="single-fun-fact">
+                                <h3>
+                                    <span class="odometer" data-count="79">00</span>
+                                </h3>
+                                <p>Experiences</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section> -->
+            </section> -->
 
 
 
@@ -184,15 +186,15 @@
                         <h2><span>{{ $langg->lang230 }}</span></h2>
                         <p>{{ $langg->lang201 }}</p>
                         <div class="divider_effect_section"style="
-        margin-right: auto;
-        margin-left: 0;
-    "></div>
+            margin-right: auto;
+            margin-left: 0;
+        "></div>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <!-- <div class="section-warp-btn">
-                            <a href="testimonials.html" class="default-btn">View All</a>
-                        </div> -->
+                                <a href="testimonials.html" class="default-btn">View All</a>
+                            </div> -->
                 </div>
             </div>
             <div class="review-slides owl-carousel owl-theme">
@@ -204,7 +206,8 @@
                         </div>
                         <p>{!! $langg->rtl == 1 ? $review->details_ar : $review->details !!}</p>
                         <div class="review-info">
-                            <img src="{{ asset('public/assets/images/reviews/' . $review->photo) }}" alt="image">
+                            <img src="{{ asset(access_public() . 'assets/images/reviews/' . $review->photo) }}"
+                                alt="image">
                             <h3>{{ $langg->rtl == 1 ? $review->title_ar : $review->title }}</h3>
                             <span>{{ $langg->rtl == 1 ? $review->subtitle_ar : $review->subtitle }}</span>
                         </div>

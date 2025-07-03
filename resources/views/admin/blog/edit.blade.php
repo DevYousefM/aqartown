@@ -33,20 +33,20 @@
 
 
                                 <!-- <div class="row">
-                                              <div class="col-lg-4">
-                                                <div class="left-area">
-                                                    <h4 class="heading">{{ __('Category') }}*</h4>
-                                                </div>
-                                              </div>
-                                              <div class="col-lg-7">
-                                                  <select name="category_id" required="">
-                                                      <option value="">{{ __('Select Category') }}</option>
-                                                        @foreach ($cats as $cat)
+                                                  <div class="col-lg-4">
+                                                    <div class="left-area">
+                                                        <h4 class="heading">{{ __('Category') }}*</h4>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-lg-7">
+                                                      <select name="category_id" required="">
+                                                          <option value="">{{ __('Select Category') }}</option>
+                                                            @foreach ($cats as $cat)
     <option value="{{ $cat->id }}" {{ $data->category_id == $cat->id ? 'selected' : '' }}>{{ $cat->name }}</option>
     @endforeach
-                                                    </select>
-                                              </div>
-                                            </div> -->
+                                                        </select>
+                                                  </div>
+                                                </div> -->
 
                                 <div class="row">
                                     <div class="col-lg-4">
@@ -75,42 +75,42 @@
 
 
                                 <!-- <div class="row">
-                           <div class="col-lg-4">
-                            <div class="left-area">
-                              <h4 class="heading">{{ __('Blog Alt') }}* </h4>
-                              <p class="sub-heading">{{ __('(In Any Language)') }}</p>
-                            </div>
-                           </div>
-                           <div class="col-lg-7">
-                            <input type="text" class="input-field" placeholder="{{ __('Enter Product ALt') }}" name="alt" value="{{ $data->alt }}" required="">
-                           </div>
-                          </div>
-                          <div class="row">
-                           <div class="col-lg-4">
-                            <div class="left-area">
-                              <h4 class="heading">{{ __('Blog ALt') }}* </h4>
-                              <p class="sub-heading">{{ __('(Arabic)') }}</p>
-                            </div>
-                           </div>
-                           <div class="col-lg-7">
-                            <input type="text" class="input-field" placeholder="{{ __('Enter Product Arabic ALt') }}" name="alt_ar" value="{{ $data->alt_ar }}" required="">
-                           </div>
-                          </div>
-                          
-                          
-                          
-                                             <div class="row">
-                                              <div class="col-lg-4">
-                                                <div class="left-area">
-                                                    <h4 class="heading">{{ __('Author') }} *</h4>
-                                                    <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                               <div class="col-lg-4">
+                                <div class="left-area">
+                                  <h4 class="heading">{{ __('Blog Alt') }}* </h4>
+                                  <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                </div>
+                               </div>
+                               <div class="col-lg-7">
+                                <input type="text" class="input-field" placeholder="{{ __('Enter Product ALt') }}" name="alt" value="{{ $data->alt }}" required="">
+                               </div>
+                              </div>
+                              <div class="row">
+                               <div class="col-lg-4">
+                                <div class="left-area">
+                                  <h4 class="heading">{{ __('Blog ALt') }}* </h4>
+                                  <p class="sub-heading">{{ __('(Arabic)') }}</p>
+                                </div>
+                               </div>
+                               <div class="col-lg-7">
+                                <input type="text" class="input-field" placeholder="{{ __('Enter Product Arabic ALt') }}" name="alt_ar" value="{{ $data->alt_ar }}" required="">
+                               </div>
+                              </div>
+                              
+                              
+                              
+                                                 <div class="row">
+                                                  <div class="col-lg-4">
+                                                    <div class="left-area">
+                                                        <h4 class="heading">{{ __('Author') }} *</h4>
+                                                        <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-lg-7">
+                                                    <input type="text" class="input-field" name="author" placeholder="{{ __('Author') }}"  value="{{ $data->author }}">
+                                                  </div>
                                                 </div>
-                                              </div>
-                                              <div class="col-lg-7">
-                                                <input type="text" class="input-field" name="author" placeholder="{{ __('Author') }}"  value="{{ $data->author }}">
-                                              </div>
-                                            </div>
-                                             -->
+                                                 -->
 
                                 <div class="row">
                                     <div class="col-lg-4">
@@ -121,7 +121,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->photo ? asset('public/assets/images/blogs/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/blogs/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload"
@@ -132,49 +132,49 @@
                                     </div>
                                 </div>
                                 <!-- <div class="row">
-                                                  <div class="col-lg-4">
-                                                      <div class="left-area">
-                                                          <h4 class="heading">{{ __('Current Featured Inside Image') }} *</h4>
-                                                      </div>
-                                                  </div>
-                                                  <div class="col-lg-7">
-                                                      <div class="img-upload">
-                                                          <div id="image-preview" class="img-preview" style="background: url({{ $data->image ? asset('public/assets/images/blogs/' . $data->image) : asset('public/assets/images/noimage.png') }});">
-                                                              <label for="image-uploade" class="img-label" id="image-labell"><i class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
-                                                              <input type="file" name="image" class="img-upload" id="image-uploade">
+                                                      <div class="col-lg-4">
+                                                          <div class="left-area">
+                                                              <h4 class="heading">{{ __('Current Featured Inside Image') }} *</h4>
                                                           </div>
                                                       </div>
+                                                      <div class="col-lg-7">
+                                                          <div class="img-upload">
+                                                              <div id="image-preview" class="img-preview" style="background: url({{ $data->image ? asset(access_public() . 'assets/images/blogs/' . $data->image) : asset(access_public() . 'assets/images/noimage.png') }});">
+                                                                  <label for="image-uploade" class="img-label" id="image-labell"><i class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
+                                                                  <input type="file" name="image" class="img-upload" id="image-uploade">
+                                                              </div>
+                                                          </div>
 
-                                                  </div>
-                                              </div>
-                                              <div class="row">
-                                                  <div class="col-lg-4">
-                                                      <div class="left-area">
-                                                          <h4 class="heading">
-                                                              {{ __('Mini Description') }} *
-                                                          </h4>
                                                       </div>
                                                   </div>
-                                                  <div class="col-lg-7">
-                                                      <textarea class="form-control" name="mobile_details" placeholder="{{ __('Mini Description') }}">{{ $data->mobile_details }}</textarea>
+                                                  <div class="row">
+                                                      <div class="col-lg-4">
+                                                          <div class="left-area">
+                                                              <h4 class="heading">
+                                                                  {{ __('Mini Description') }} *
+                                                              </h4>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-lg-7">
+                                                          <textarea class="form-control" name="mobile_details" placeholder="{{ __('Mini Description') }}">{{ $data->mobile_details }}</textarea>
 
-                                                  </div>
-                                              </div>
-
-
-                                              <div class="row">
-                                                  <div class="col-lg-4">
-                                                      <div class="left-area">
-                                                          <h4 class="heading">
-                                                              {{ __('Mini Arabic Description') }} *
-                                                          </h4>
                                                       </div>
                                                   </div>
-                                                  <div class="col-lg-7">
-                                                      <textarea class=" form-control" name="mobile_details_ar" placeholder="{{ __('Mini Arabic Description') }}">{{ $data->mobile_details_ar }}</textarea>
 
-                                                  </div>
-                                              </div> -->
+
+                                                  <div class="row">
+                                                      <div class="col-lg-4">
+                                                          <div class="left-area">
+                                                              <h4 class="heading">
+                                                                  {{ __('Mini Arabic Description') }} *
+                                                              </h4>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-lg-7">
+                                                          <textarea class=" form-control" name="mobile_details_ar" placeholder="{{ __('Mini Arabic Description') }}">{{ $data->mobile_details_ar }}</textarea>
+
+                                                      </div>
+                                                  </div> -->
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="left-area">
@@ -215,27 +215,27 @@
                                         </div>
                                     </div>
                                     <!--
-                                              <div class="row">
-                                                  <div class="col-lg-4">
-                                                      <div class="left-area">
-                                                          <h4 class="heading">{{ __('video') }} *</h4>
+                                                  <div class="row">
+                                                      <div class="col-lg-4">
+                                                          <div class="left-area">
+                                                              <h4 class="heading">{{ __('video') }} *</h4>
+                                                          </div>
+                                                      </div>
+                                                      <div class="col-lg-7">
+                                                          <input type="text" class="input-field" name="video" placeholder="{{ __('video') }}"  value="{{ $data->video }}">
+
+
+
                                                       </div>
                                                   </div>
-                                                  <div class="col-lg-7">
-                                                      <input type="text" class="input-field" name="video" placeholder="{{ __('video') }}"  value="{{ $data->video }}">
 
-
-
+                                                <div class="row">
+                                                  <div class="col-lg-4">
+                                                    <div class="left-area">
+                                                        <h4 class="heading">{{ __('Source') }} *</h4>
+                                                    </div>
                                                   </div>
-                                              </div>
-
-                                            <div class="row">
-                                              <div class="col-lg-4">
-                                                <div class="left-area">
-                                                    <h4 class="heading">{{ __('Source') }} *</h4>
-                                                </div>
-                                              </div>
-                                            </div> -->
+                                                </div> -->
                                     <div class="col-lg-7">
 
                                         <div class="checkbox-wrapper">

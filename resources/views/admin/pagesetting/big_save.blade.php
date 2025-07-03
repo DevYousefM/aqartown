@@ -26,7 +26,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-ps-update') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -44,7 +44,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->big_save_banner ? asset('public/assets/images/' . $data->big_save_banner) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->big_save_banner ? asset(access_public() . 'assets/images/' . $data->big_save_banner) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="big_save_banner" class="img-upload"
@@ -80,7 +80,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->big_save_banner1 ? asset('public/assets/images/' . $data->big_save_banner1) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->big_save_banner1 ? asset(access_public() . 'assets/images/' . $data->big_save_banner1) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="big_save_banner1" class="img-upload"

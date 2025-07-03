@@ -16,7 +16,8 @@
 
     @endphp
 
-    <div class="page-banner-area" style="background-image: url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
+    <div class="page-banner-area"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->discount_icon) }});">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang20 }}</h2>
@@ -35,7 +36,7 @@
             <div class="section_title">
                 <h2> <span>{{ $langg->lang20 }}</span></h2>
                 <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy. </p> -->
+                                been the industry's standard dummy. </p> -->
                 <div class="divider_effect_section"></div>
             </div>
             <div class="contact-form">
@@ -85,7 +86,8 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1"
+                                            src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>
@@ -117,11 +119,11 @@
                     </h2>
                     <ul class="social">
                         <!--
-                                <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li>
-                                <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li>
-                                <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li>
-                                <li><a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
-                                <li><a href="#" target="_blank"><i class='bx bxl-instagram'></i></a></li> -->
+                                    <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li>
+                                    <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li>
+                                    <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li>
+                                    <li><a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a></li>
+                                    <li><a href="#" target="_blank"><i class='bx bxl-instagram'></i></a></li> -->
 
                         @if (App\Models\Socialsetting::find(1)->f_status == 1)
                             <li> <a target="_blank" href="{{ App\Models\Socialsetting::find(1)->facebook }}"
@@ -175,7 +177,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

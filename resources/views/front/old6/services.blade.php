@@ -51,7 +51,8 @@
                         <li>
                             <a href="{{ route('front.service', ['service' => $service->title, 'lang' => $sign]) }}">
                                 <div class="img-div">
-                                    <img src="{{ asset('public/assets/images/services/' . $service->photo) }}" alt="img">
+                                    <img src="{{ asset(access_public() . 'assets/images/services/' . $service->photo) }}"
+                                        alt="img">
                                 </div>
                                 <div class="body">
                                     <div class="name">

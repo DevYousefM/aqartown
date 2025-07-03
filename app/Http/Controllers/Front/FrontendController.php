@@ -792,7 +792,7 @@ class FrontendController extends Controller
         $this->code_image();
         $archives = Blog::orderBy('created_at', 'desc')->get()->groupBy(function ($item) {
             return \Carbon\Carbon::parse($item->created_at)->format('F Y');
-        })->take(5)->toArray();        
+        })->take(5)->toArray();
         $blogs = Blog::orderBy('created_at', 'desc')->paginate(9);
         $rec_blogs = Blog::orderBy('created_at', 'desc')->get()->take(5);
         $images = DB::table('ads')->get();
@@ -1414,7 +1414,7 @@ class FrontendController extends Controller
             imagesetpixel($image, rand() % 200, rand() % 50, $pixel);
         }
 
-        $font = 'public/assets/front/fonts/NotoSans-Bold.ttf'; // Correct path for the font file
+        $font = access_public() . 'assets/front/fonts/NotoSans-Bold.ttf'; // Correct path for the font file
 
         $allowed_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $length = strlen($allowed_letters);
@@ -1433,7 +1433,7 @@ class FrontendController extends Controller
             imagesetpixel($image, rand() % 200, rand() % 50, $pixels);
         }
         session(['captcha_string' => $word]);
-        imagepng($image, "public/assets/images/capcha_code.png");
+        imagepng($image, access_public() . "assets/images/capcha_code.png");
     }
 
     // -------------------------------- CONTACT SECTION ENDS----------------------------------------

@@ -18,7 +18,7 @@
 
 
     <section class="breadcrumb-section"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->contact_icon) }});">
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->contact_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang221 }} </h1>
@@ -40,9 +40,9 @@
                 <div class="home-light-gallery">
 
                     @foreach ($reviews as $review)
-                        <a href="{{ asset('public/assets/images/reviews/' . $review->photo) }}" data-aos="zoom-in"
-                            data-aos-duration="1500">
-                            <img src="{{ asset('public/assets/images/reviews/' . $review->photo) }}">
+                        <a href="{{ asset(access_public() . 'assets/images/reviews/' . $review->photo) }}"
+                            data-aos="zoom-in" data-aos-duration="1500">
+                            <img src="{{ asset(access_public() . 'assets/images/reviews/' . $review->photo) }}">
                             <div class="text text-center">
                                 <h2>{{ $langg->rtl == 1 ? $review->title_ar : $review->title }}</h2>
                             </div>
@@ -69,7 +69,8 @@
                 @foreach ($images as $partner)
                     <div class="swiper-slide">
                         <div class="slider-img">
-                            <img src="{{ asset('public/assets/images/ads/' . $partner->photo) }}" alt="img">
+                            <img src="{{ asset(access_public() . 'assets/images/ads/' . $partner->photo) }}"
+                                alt="img">
                         </div>
                     </div>
                 @endforeach

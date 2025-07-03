@@ -20,7 +20,8 @@
 
     <!-- =====slider home ===== -->
     <!-- Main Slider -->
-    <section class="breadcrumb-area" style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+    <section class="breadcrumb-area"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->top_icon) }});">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -50,10 +51,10 @@
             <div class="gallery-layout">
                 <div class="mfa-gallery">
                     @foreach ($images as $key => $service)
-                        <a href="{{ asset('public/assets/images/banners/' . $service->photo) }}">
+                        <a href="{{ asset(access_public() . 'assets/images/banners/' . $service->photo) }}">
                             <div class="img-div lazy-div">
                                 <img class="lazy"
-                                    data-src="{{ asset('public/assets/images/banners/' . $service->photo) }}" />
+                                    data-src="{{ asset(access_public() . 'assets/images/banners/' . $service->photo) }}" />
                                 <div class="next-lazy-img"></div>
                             </div>
                         </a>

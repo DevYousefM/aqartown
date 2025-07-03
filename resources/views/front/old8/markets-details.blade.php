@@ -51,7 +51,8 @@
 
 
     <!-- ============================ Page Title Start================================== -->
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->big_icon) }});">
+    <section class="breadcrumb-section"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->big_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>
@@ -108,7 +109,8 @@
 
                 <div class="col-md-6">
                     <div class="service_details_wraper">
-                        <img src="{{ asset('public/assets/images/products/' . $market->hover_photo) }}" alt="">
+                        <img src="{{ asset(access_public() . 'assets/images/products/' . $market->hover_photo) }}"
+                            alt="">
                     </div>
                 </div>
             </div>
@@ -125,11 +127,11 @@
                     <div class="mfa-gallery">
 
                         @foreach ($market->galleries as $image)
-                            <a href="{{ asset('public/assets/images/galleries/' . $image->photo) }}">
+                            <a href="{{ asset(access_public() . 'assets/images/galleries/' . $image->photo) }}">
                                 <div class="img-div lazy-div">
                                     <img class="lazy"
-                                        data-src="{{ asset('public/assets/images/galleries/' . $image->photo) }}"
-                                        src="{{ asset('public/assets/images/galleries/' . $image->photo) }}">
+                                        data-src="{{ asset(access_public() . 'assets/images/galleries/' . $image->photo) }}"
+                                        src="{{ asset(access_public() . 'assets/images/galleries/' . $image->photo) }}">
 
 
                                 </div>

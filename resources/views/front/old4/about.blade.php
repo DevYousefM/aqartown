@@ -19,14 +19,15 @@
     <section class="page-title">
         <div class="outer-container">
             <div class="image">
-                <img src="{{ asset('public/assets/images/' . $gs->best_icon) }}" alt="" />
+                <img src="{{ asset(access_public() . 'assets/images/' . $gs->best_icon) }}" alt="" />
             </div>
         </div>
     </section>
 
 
     <section class="page-breadcrumb">
-        <div class="image-layer" style="background-image:url({{ asset('public/assets/naglaa/images/background/1.png') }})"></div>
+        <div class="image-layer"
+            style="background-image:url({{ asset(access_public() . 'assets/naglaa/images/background/1.png') }})"></div>
         <div class="container">
             <div class="clearfix">
                 <div class="pull-left fll">
@@ -50,7 +51,7 @@
             <div class="first-section container">
 
                 <div class="img-div aos-init aos-animate" data-aos="fade-right" data-aos-duration="2000">
-                    <img src="{{ asset('public/assets/images/brands/' . $about_us->photo) }}" alt="img">
+                    <img src="{{ asset(access_public() . 'assets/images/brands/' . $about_us->photo) }}" alt="img">
                 </div>
                 <div class="ceo aos-init aos-animate" data-aos="fade-left" data-aos-duration="2000">
                     <div class="text">
@@ -110,8 +111,8 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
-                        );
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
+                    );
                     console.log(1);
                 },
                 success: function(data) {

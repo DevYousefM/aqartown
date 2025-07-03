@@ -25,7 +25,7 @@
                     <div class="product-description">
                         <div class="body-area">
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-gs-update') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -67,39 +67,39 @@
                                 </div>
 
                                 <!--
-                              <div class="row justify-content-center">
-                                  <div class="col-lg-3">
-                                    <div class="left-area">
-                                      <h4 class="heading">
-                                          {{ __('About') }} *
-                                          <p class="sub-heading">{{ __('(In Any Language)') }}</p>
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-12">
-                                      <div class="tawk-area">
-                                        <textarea class="ckeditor form-control" name="home_about" required="">{{ $gs->home_about }}</textarea>
+                                  <div class="row justify-content-center">
+                                      <div class="col-lg-3">
+                                        <div class="left-area">
+                                          <h4 class="heading">
+                                              {{ __('About') }} *
+                                              <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                          </h4>
+                                        </div>
                                       </div>
-                                  </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                  <div class="col-lg-3">
-                                    <div class="left-area">
-                                      <h4 class="heading">
-                                          {{ __('About') }} *
-                                          <p class="sub-heading">{{ __('(Arabic)') }}</p>
-                                      </h4>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-12">
-                                      <div class="tawk-area">
-                                        <textarea class="ckeditor form-control" name="home_about_ar" required="">{{ $gs->home_about_ar }}</textarea>
+                                      <div class="col-lg-12">
+                                          <div class="tawk-area">
+                                            <textarea class="ckeditor form-control" name="home_about" required="">{{ $gs->home_about }}</textarea>
+                                          </div>
                                       </div>
-                                  </div>
-                                </div>-->
+                                    </div>
+                                    <div class="row justify-content-center">
+                                      <div class="col-lg-3">
+                                        <div class="left-area">
+                                          <h4 class="heading">
+                                              {{ __('About') }} *
+                                              <p class="sub-heading">{{ __('(Arabic)') }}</p>
+                                          </h4>
+                                        </div>
+                                      </div>
+                                      <div class="col-lg-12">
+                                          <div class="tawk-area">
+                                            <textarea class="ckeditor form-control" name="home_about_ar" required="">{{ $gs->home_about_ar }}</textarea>
+                                          </div>
+                                      </div>
+                                    </div>-->
                                 <div class="add-logo-area">
                                     <div class="gocover"
-                                        style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                        style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                                     </div>
                                     <div class="row justify-content-center">
                                         <div class="col-xl-6 col-md-6">
@@ -112,7 +112,7 @@
 
 
                                                 <div class="currrent-logo">
-                                                    <img src="{{ $gs->home_about_img2 ? asset('public/assets/images/' . $gs->home_about_img2) : asset('public/assets/images/noimage.png') }}"
+                                                    <img src="{{ $gs->home_about_img2 ? asset(access_public() . 'assets/images/' . $gs->home_about_img2) : asset(access_public() . 'assets/images/noimage.png') }}"
                                                         alt="">
                                                 </div>
                                                 <div class="set-logo">
@@ -126,155 +126,155 @@
 
 
                                         <!--       <div class="col-xl-6 col-md-6">
-                          <div class="special-box bg-gray">
-                              <div class="heading-area">
-                                  <h4 class="title">
-                                      {{ __('home_about_img4') }}
-                                  </h4>
-                              </div>
+                              <div class="special-box bg-gray">
+                                  <div class="heading-area">
+                                      <h4 class="title">
+                                          {{ __('home_about_img4') }}
+                                      </h4>
+                                  </div>
 
-                              <div class="currrent-logo">
-                                  <img src="{{ $gs->home_about_img4 ? asset('public/assets/images/' . $gs->home_about_img4) : asset('public/assets/images/noimage.png') }}" alt="">
-                              </div>
-                              <div class="set-logo">
-                                  <input class="img-upload1" type="file" name="home_about_img4">
-                              </div>
+                                  <div class="currrent-logo">
+                                      <img src="{{ $gs->home_about_img4 ? asset(access_public() . 'assets/images/' . $gs->home_about_img4) : asset(access_public() . 'assets/images/noimage.png') }}" alt="">
+                                  </div>
+                                  <div class="set-logo">
+                                      <input class="img-upload1" type="file" name="home_about_img4">
+                                  </div>
 
 
+                              </div>
                           </div>
-                      </div>
 
-                      <div class="col-xl-6 col-md-6">
-                          <div class="special-box bg-gray">
-                              <div class="heading-area">
-                                  <h4 class="title">
-                                      {{ __('home_about_img5') }}
-                                  </h4>
+                          <div class="col-xl-6 col-md-6">
+                              <div class="special-box bg-gray">
+                                  <div class="heading-area">
+                                      <h4 class="title">
+                                          {{ __('home_about_img5') }}
+                                      </h4>
+                                  </div>
+
+                                  <div class="currrent-logo">
+                                      <img src="{{ $gs->home_about_img5 ? asset(access_public() . 'assets/images/' . $gs->home_about_img5) : asset(access_public() . 'assets/images/noimage.png') }}" alt="">
+                                  </div>
+                                  <div class="set-logo">
+                                      <input class="img-upload1" type="file" name="home_about_img5">
+                                  </div>
+
+
                               </div>
-
-                              <div class="currrent-logo">
-                                  <img src="{{ $gs->home_about_img5 ? asset('public/assets/images/' . $gs->home_about_img5) : asset('public/assets/images/noimage.png') }}" alt="">
-                              </div>
-                              <div class="set-logo">
-                                  <input class="img-upload1" type="file" name="home_about_img5">
-                              </div>
-
-
                           </div>
-                      </div>
 
-                         <div class="col-xl-6 col-md-6">
-                          <div class="special-box bg-gray">
-                              <div class="heading-area">
-                                  <h4 class="title">
-                                      {{ __('home_about_img3') }}
-                                  </h4>
+                             <div class="col-xl-6 col-md-6">
+                              <div class="special-box bg-gray">
+                                  <div class="heading-area">
+                                      <h4 class="title">
+                                          {{ __('home_about_img3') }}
+                                      </h4>
+                                  </div>
+
+
+                                  <div class="currrent-logo">
+                                      <img src="{{ $gs->home_about_img3 ? asset(access_public() . 'assets/images/' . $gs->home_about_img3) : asset(access_public() . 'assets/images/noimage.png') }}" alt="">
+                                  </div>
+                                  <div class="set-logo">
+                                      <input class="img-upload1" type="file" name="home_about_img3">
+                                  </div>
+
+
                               </div>
-
-
-                              <div class="currrent-logo">
-                                  <img src="{{ $gs->home_about_img3 ? asset('public/assets/images/' . $gs->home_about_img3) : asset('public/assets/images/noimage.png') }}" alt="">
-                              </div>
-                              <div class="set-logo">
-                                  <input class="img-upload1" type="file" name="home_about_img3">
-                              </div>
-
-
                           </div>
-                      </div>
 
 
-                                <div class="col-xl-6 col-md-6">
-                        <div class="special-box bg-gray">
-                            <div class="heading-area">
-                                <h4 class="title">
-                                  {{ __('about_img1') }}
-                                </h4>
-                            </div>
+                                    <div class="col-xl-6 col-md-6">
+                            <div class="special-box bg-gray">
+                                <div class="heading-area">
+                                    <h4 class="title">
+                                      {{ __('about_img1') }}
+                                    </h4>
+                                </div>
 
-                           
-                                
-                              <div class="currrent-logo">
-                                <img src="{{ $gs->home_about_img1 ? asset('public/assets/images/' . $gs->home_about_img1) : asset('public/assets/images/noimage.png') }}" alt="">
-                              </div>
-                              <div class="set-logo">
-                                <input class="img-upload1" type="file" name="home_about_img1">
-                              </div>
+                               
+                                    
+                                  <div class="currrent-logo">
+                                    <img src="{{ $gs->home_about_img1 ? asset(access_public() . 'assets/images/' . $gs->home_about_img1) : asset(access_public() . 'assets/images/noimage.png') }}" alt="">
+                                  </div>
+                                  <div class="set-logo">
+                                    <input class="img-upload1" type="file" name="home_about_img1">
+                                  </div>
 
+                                 
                              
-                         
+                            </div>
                         </div>
-                    </div>
 
 
-                  <input type="text" name="home_about_link" value="{{ $gs->home_about_link }}" placeholder="{{ __('link') }}"  class="input-field"/>-->
+                      <input type="text" name="home_about_link" value="{{ $gs->home_about_link }}" placeholder="{{ __('link') }}"  class="input-field"/>-->
                                     </div>
                                 </div>
 
 
 
                                 <!--    <div class="row">
-                 <div class="col-lg-4">
-                  <div class="left-area">
+                     <div class="col-lg-4">
+                      <div class="left-area">
 
-                  </div>
-                 </div>
-                 <div class="col-lg-7">
-                  <div class="featured-keyword-area">
-                   <div class="heading-area">
-                    <h4 class="title">{{ __('Informations') }}</h4>
-                   </div>
+                      </div>
+                     </div>
+                     <div class="col-lg-7">
+                      <div class="featured-keyword-area">
+                       <div class="heading-area">
+                        <h4 class="title">{{ __('Informations') }}</h4>
+                       </div>
 
-                   <div class="feature-tag-top-filds" id="feature-section2">
-                    @if (!empty($gs->percent_title))
+                       <div class="feature-tag-top-filds" id="feature-section2">
+                        @if (!empty($gs->percent_title))
     @php
         $title = explode(',', $gs->percent_title);
 
         $title_ar = explode(',', $gs->percent_title_ar);
 
     @endphp
-                     @foreach ($title as $key => $data1)
+                         @foreach ($title as $key => $data1)
     <div class="feature-area">
-                     <span class="remove feature-remove"><i class="fas fa-times"></i></span>
-                     <div class="row">
-                      <div class="col-lg-6">
-                      <input type="text" name="percent_title[]" class="input-field" placeholder="{{ __('days') }}" value="{{ $title[$key] }}">
-                      </div>
+                         <span class="remove feature-remove"><i class="fas fa-times"></i></span>
+                         <div class="row">
+                          <div class="col-lg-6">
+                          <input type="text" name="percent_title[]" class="input-field" placeholder="{{ __('days') }}" value="{{ $title[$key] }}">
+                          </div>
 
-                      <div class="col-lg-6">
-               
-               <input type="text" name="percent_title_ar[]" placeholder="{{ __('times') }}" value="{{ $title_ar[$key] }}" class="input-field"/>
-               
-               
-                      </div>
-                     </div>
-                                                            
-                    </div>
+                          <div class="col-lg-6">
+                   
+                   <input type="text" name="percent_title_ar[]" placeholder="{{ __('times') }}" value="{{ $title_ar[$key] }}" class="input-field"/>
+                   
+                   
+                          </div>
+                         </div>
+                                                                
+                        </div>
     @endforeach
 @else
     <div class="feature-area">
-                     <span class="remove feature-remove"><i class="fas fa-times"></i></span>
-                     <div class="row">
-                      <div class="col-lg-6">
-                      <input type="text" name="percent_title[]" class="input-field" placeholder="{{ __('days') }}" >
-                      </div>
+                         <span class="remove feature-remove"><i class="fas fa-times"></i></span>
+                         <div class="row">
+                          <div class="col-lg-6">
+                          <input type="text" name="percent_title[]" class="input-field" placeholder="{{ __('days') }}" >
+                          </div>
 
-                      <div class="col-lg-6">
-               
-               <input type="text" name="percent_title_ar[]" placeholder="{{ __('times') }}"  class="input-field"/>
-               
-               
+                          <div class="col-lg-6">
+                   
+                   <input type="text" name="percent_title_ar[]" placeholder="{{ __('times') }}"  class="input-field"/>
+                   
+                   
+                          </div>
+                         </div>
+                                          
+                        </div>
+    @endif
+                       </div>
+
+                       <a href="javascript:;" id="feature-btn2" class="add-fild-btn"><i class="icofont-plus"></i> {{ __('Add More Field') }}</a>
                       </div>
                      </div>
-                                      
-                    </div>
-    @endif
-                   </div>
-
-                   <a href="javascript:;" id="feature-btn2" class="add-fild-btn"><i class="icofont-plus"></i> {{ __('Add More Field') }}</a>
-                  </div>
-                 </div>
-                </div> -->
+                    </div> -->
 
 
 

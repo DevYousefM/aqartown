@@ -141,7 +141,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset(access_public() . 'assets/images/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if (!$slang)
@@ -182,7 +182,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/products/'.$gs->logo)}}"
+      "logo": "{{asset(access_public() . 'assets/images/products/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -192,8 +192,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/products/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/products/'.$gs->logo)}}",
+    "image": "{{asset(access_public() . 'assets/images/products/'.$gs->logo)}}",
+      "logo": "{{asset(access_public() . 'assets/images/products/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -305,45 +305,45 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/bootstrap.min.css') }}">
     <!-- Plugin css -->
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/plugin.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/plugin.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
 
     <!-- jQuery Ui Css-->
-    <link rel="stylesheet" href="{{ asset('public/assets/front/jquery-ui/jquery-ui.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/front/jquery-ui/jquery-ui.structure.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/jquery-ui/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/jquery-ui/jquery-ui.structure.min.css') }}">
 
     @if ($langg->rtl == '1')
 
         <!-- stylesheet -->
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/rtl/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/rtl/custom.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/rtl/plugin.rtl.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/common.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/rtl/style.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/rtl/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/rtl/plugin.rtl.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/common.css') }}">
         <!-- responsive -->
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/rtl/responsive.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/common-responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/rtl/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/common-responsive.css') }}">
 
         <!--Updated CSS-->
         <link rel="stylesheet"
-            href="{{ asset('public/assets/front/css/rtl/styles.php?color=' . str_replace('#', '', $gs->colors) . '&amp;' . 'header_color=' . str_replace('#', '', $gs->header_color) . '&amp;' . 'footer_color=' . str_replace('#', '', $gs->footer_color) . '&amp;' . 'copyright_color=' . str_replace('#', '', $gs->copyright_color) . '&amp;' . 'menu_color=' . str_replace('#', '', $gs->menu_color) . '&amp;' . 'menu_hover_color=' . str_replace('#', '', $gs->menu_hover_color)) }}">
+            href="{{ asset(access_public() . 'assets/front/css/rtl/styles.php?color=' . str_replace('#', '', $gs->colors) . '&amp;' . 'header_color=' . str_replace('#', '', $gs->header_color) . '&amp;' . 'footer_color=' . str_replace('#', '', $gs->footer_color) . '&amp;' . 'copyright_color=' . str_replace('#', '', $gs->copyright_color) . '&amp;' . 'menu_color=' . str_replace('#', '', $gs->menu_color) . '&amp;' . 'menu_hover_color=' . str_replace('#', '', $gs->menu_hover_color)) }}">
     @else
         <!-- stylesheet -->
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/custom.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/common.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/common.css') }}">
         <!-- responsive -->
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/responsive.css') }}">
-        <link rel="stylesheet" href="{{ asset('public/assets/front/css/common-responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/responsive.css') }}">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/common-responsive.css') }}">
 
         <!--Updated CSS-->
         <link rel="stylesheet"
-            href="{{ asset('public/assets/front/css/styles.php?color=' . str_replace('#', '', $gs->colors) . '&amp;' . 'header_color=' . str_replace('#', '', $gs->header_color) . '&amp;' . 'footer_color=' . str_replace('#', '', $gs->footer_color) . '&amp;' . 'copyright_color=' . str_replace('#', '', $gs->copyright_color) . '&amp;' . 'menu_color=' . str_replace('#', '', $gs->menu_color) . '&amp;' . 'menu_hover_color=' . str_replace('#', '', $gs->menu_hover_color)) }}">
+            href="{{ asset(access_public() . 'assets/front/css/styles.php?color=' . str_replace('#', '', $gs->colors) . '&amp;' . 'header_color=' . str_replace('#', '', $gs->header_color) . '&amp;' . 'footer_color=' . str_replace('#', '', $gs->footer_color) . '&amp;' . 'copyright_color=' . str_replace('#', '', $gs->copyright_color) . '&amp;' . 'menu_color=' . str_replace('#', '', $gs->menu_color) . '&amp;' . 'menu_hover_color=' . str_replace('#', '', $gs->menu_hover_color)) }}">
 
     @endif
 
@@ -365,7 +365,7 @@
 
     @if ($gs->is_loader == 1)
         <div class="preloader" id="preloader"
-            style="background: url({{ asset('public/assets/images/' . $gs->loader) }}) no-repeat scroll center center #FFF;">
+            style="background: url({{ asset(access_public() . 'assets/images/' . $gs->loader) }}) no-repeat scroll center center #FFF;">
         </div>
     @endif
 
@@ -373,13 +373,13 @@
 
         @if (isset($visited))
             <div style="display:none">
-                <img src="{{ asset('public/assets/images/' . $gs->popup_background) }}">
+                <img src="{{ asset(access_public() . 'assets/images/' . $gs->popup_background) }}">
             </div>
 
             <!--  Starting of subscribe-pre-loader Area   -->
             <div class="subscribe-preloader-wrap" id="subscriptionForm" style="display: none;">
                 <div class="subscribePreloader__thumb"
-                    style="background-image: url({{ asset('public/assets/images/' . $gs->popup_background) }});">
+                    style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->popup_background) }});">
                     <span class="preload-close"><i class="fas fa-times"></i></span>
                     <div class="subscribePreloader__text text-center">
                         <h1>{{ $gs->popup_title }}</h1>
@@ -551,16 +551,20 @@
 
                             @if (!$slang)
                                 @if ($lang->id == 2)
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo_ar) }}" alt="">
+                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}"
+                                        alt="">
                                 @else
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                        alt="">
 
                                 @endif
                             @else
                                 @if ($slang == 2)
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo_ar) }}" alt="">
+                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}"
+                                        alt="">
                                 @else
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                        alt="">
                                 @endif
                             @endif
 
@@ -734,7 +738,7 @@
                                         class="{{ count($category->subs) > 0 ? 'dropdown_list' : '' }} {{ $i >= 15 ? 'rx-child' : '' }}">
                                         @if (count($category->subs) > 0)
                                             <div class="img">
-                                                <img src="{{ asset('public/assets/images/categories/' . $category->photo) }}"
+                                                <img src="{{ asset(access_public() . 'assets/images/categories/' . $category->photo) }}"
                                                     alt="">
                                             </div>
                                             <div class="link-area">
@@ -786,24 +790,24 @@
                                                 @if ($lang->id == 2)
                                                     <a
                                                         href="{{ route('front.category', ['category' => $category->slug_ar, 'lang' => $sign]) }}"><img
-                                                            src="{{ asset('public/assets/images/categories/' . $category->photo) }}">
+                                                            src="{{ asset(access_public() . 'assets/images/categories/' . $category->photo) }}">
                                                         {{ $category->name_ar }}
                                                     @else
                                                         <a
                                                             href="{{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }}"><img
-                                                                src="{{ asset('public/assets/images/categories/' . $category->photo) }}">
+                                                                src="{{ asset(access_public() . 'assets/images/categories/' . $category->photo) }}">
                                                             {{ $category->name }}
                                                 @endif
                                             @else
                                                 @if ($slang == 2)
                                                     <a
                                                         href="{{ route('front.category', ['category' => $category->slug_ar, 'lang' => $sign]) }}"><img
-                                                            src="{{ asset('public/assets/images/categories/' . $category->photo) }}">
+                                                            src="{{ asset(access_public() . 'assets/images/categories/' . $category->photo) }}">
                                                         {{ $category->name_ar }}
                                                     @else
                                                         <a
                                                             href="{{ route('front.category', ['category' => $category->slug, 'lang' => $sign]) }}"><img
-                                                                src="{{ asset('public/assets/images/categories/' . $category->photo) }}">
+                                                                src="{{ asset(access_public() . 'assets/images/categories/' . $category->photo) }}">
                                                             {{ $category->name }}
                                                 @endif
                                             @endif
@@ -899,109 +903,109 @@
                                             <a href="{{ route('front.categories', $sign) }}"><i
                                                     class="fas fa-plus"></i> {{ $langg->lang15 }} </a>
                                         </li>
-                                    @break
-                                @endif
+                                        @break
+                                    @endif
 
 
-                            @endforeach
+                                @endforeach
 
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
+                    <!--categorie menu end-->
                 </div>
-                <!--categorie menu end-->
-            </div>
-            <div class="col-lg-9 col-md-6 mainmenu-wrapper remove-padding">
-                <nav hidden>
-                    <div class="nav-header">
-                        <button class="toggle-bar"><span class="fa fa-bars"></span></button>
-                    </div>
-                    <ul class="menu">
-                        @if ($gs->is_home == 1)
-                            <li><a href="{{ route('front.index', $sign) }}">{{ $langg->lang17 }}</a></li>
-                        @endif
-                        @if ($gs->is_shop == 1)
-                            <li><a href="{{ route('front.products', $sign) }}">{{ $langg->lang25 }}</a></li>
-                        @endif
-                        @if ($gs->is_brand == 1)
-                            <li><a href="{{ route('front.brannds', $sign) }}">{{ $langg->lang236 }}</a></li>
-                        @endif
+                <div class="col-lg-9 col-md-6 mainmenu-wrapper remove-padding">
+                    <nav hidden>
+                        <div class="nav-header">
+                            <button class="toggle-bar"><span class="fa fa-bars"></span></button>
+                        </div>
+                        <ul class="menu">
+                            @if ($gs->is_home == 1)
+                                <li><a href="{{ route('front.index', $sign) }}">{{ $langg->lang17 }}</a></li>
+                            @endif
+                            @if ($gs->is_shop == 1)
+                                <li><a href="{{ route('front.products', $sign) }}">{{ $langg->lang25 }}</a></li>
+                            @endif
+                            @if ($gs->is_brand == 1)
+                                <li><a href="{{ route('front.brannds', $sign) }}">{{ $langg->lang236 }}</a></li>
+                            @endif
 
 
-                        <li><a href="{{ route('front.blog', $sign) }}">{{ $langg->lang18 }}</a></li>
+                            <li><a href="{{ route('front.blog', $sign) }}">{{ $langg->lang18 }}</a></li>
 
-                        @if ($gs->is_faq == 1)
-                            <li><a href="{{ route('front.faq', $sign) }}">{{ $langg->lang19 }}</a></li>
-                        @endif
-                        @foreach (DB::table('pages')->where('header', '=', 1)->get() as $data)
-                            <li>
-                                @if (!$slang)
-                                    @if ($lang->id == 2)
-                                        <a
-                                            href="{{ route('front.page', ['slug' => $data->slug_ar, 'lang' => $sign]) }}">
-                                            {{ $data->title_ar }}
-                                        @else
-                                            <a
-                                                href="{{ route('front.page', ['slug' => $data->slug, 'lang' => $sign]) }}">
-                                                {{ $data->title }}
-                                    @endif
-                                @else
-                                    @if ($slang == 2)
-                                        <a
-                                            href="{{ route('front.page', ['slug' => $data->slug_ar, 'lang' => $sign]) }}">
-                                            {{ $data->title_ar }}
-                                        @else
-                                            <a
-                                                href="{{ route('front.page', ['slug' => $data->slug, 'lang' => $sign]) }}">
-                                                {{ $data->title }}
-                                    @endif
-                                @endif
-                                </a>
-                            </li>
-                        @endforeach
-                        @if ($features[5]->status == 1 && $features[5]->active == 1)
-                            @foreach (DB::table('offers')->where('header', '=', 1)->get() as $data)
+                            @if ($gs->is_faq == 1)
+                                <li><a href="{{ route('front.faq', $sign) }}">{{ $langg->lang19 }}</a></li>
+                            @endif
+                            @foreach (DB::table('pages')->where('header', '=', 1)->get() as $data)
                                 <li>
-
                                     @if (!$slang)
                                         @if ($lang->id == 2)
                                             <a
-                                                href="{{ route('front.offers', ['slug' => $data->slug_ar, 'lang' => $sign]) }}">
-                                                <span class="newicon"></span>
-                                                {{ $data->name_ar }}
+                                                href="{{ route('front.page', ['slug' => $data->slug_ar, 'lang' => $sign]) }}">
+                                                {{ $data->title_ar }}
                                             @else
                                                 <a
-                                                    href="{{ route('front.offers', ['slug' => $data->slug, 'lang' => $sign]) }}">
-                                                    <span class="newicon"></span>
-                                                    {{ $data->name }}
+                                                    href="{{ route('front.page', ['slug' => $data->slug, 'lang' => $sign]) }}">
+                                                    {{ $data->title }}
                                         @endif
                                     @else
                                         @if ($slang == 2)
                                             <a
-                                                href="{{ route('front.offers', ['slug' => $data->slug_ar, 'lang' => $sign]) }}">
-                                                <span class="newicon"></span>
-                                                {{ $data->name_ar }}
+                                                href="{{ route('front.page', ['slug' => $data->slug_ar, 'lang' => $sign]) }}">
+                                                {{ $data->title_ar }}
                                             @else
                                                 <a
-                                                    href="{{ route('front.offers', ['slug' => $data->slug, 'lang' => $sign]) }}">
-                                                    <span class="newicon"></span>
-                                                    {{ $data->name }}
+                                                    href="{{ route('front.page', ['slug' => $data->slug, 'lang' => $sign]) }}">
+                                                    {{ $data->title }}
                                         @endif
                                     @endif
                                     </a>
                                 </li>
                             @endforeach
-                        @endif
-                        @if ($gs->is_contact == 1)
-                            <li><a href="{{ route('front.contact', $sign) }}">{{ $langg->lang20 }}</a></li>
-                        @endif
-                        <li>
-                            <a href="javascript:;" data-toggle="modal" data-target="#track-order-modal"
-                                class="track-btn">{{ $langg->lang16 }}</a>
-                        </li>
-                    </ul>
+                            @if ($features[5]->status == 1 && $features[5]->active == 1)
+                                @foreach (DB::table('offers')->where('header', '=', 1)->get() as $data)
+                                    <li>
 
-                </nav>
+                                        @if (!$slang)
+                                            @if ($lang->id == 2)
+                                                <a
+                                                    href="{{ route('front.offers', ['slug' => $data->slug_ar, 'lang' => $sign]) }}">
+                                                    <span class="newicon"></span>
+                                                    {{ $data->name_ar }}
+                                                @else
+                                                    <a
+                                                        href="{{ route('front.offers', ['slug' => $data->slug, 'lang' => $sign]) }}">
+                                                        <span class="newicon"></span>
+                                                        {{ $data->name }}
+                                            @endif
+                                        @else
+                                            @if ($slang == 2)
+                                                <a
+                                                    href="{{ route('front.offers', ['slug' => $data->slug_ar, 'lang' => $sign]) }}">
+                                                    <span class="newicon"></span>
+                                                    {{ $data->name_ar }}
+                                                @else
+                                                    <a
+                                                        href="{{ route('front.offers', ['slug' => $data->slug, 'lang' => $sign]) }}">
+                                                        <span class="newicon"></span>
+                                                        {{ $data->name }}
+                                            @endif
+                                        @endif
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @endif
+                            @if ($gs->is_contact == 1)
+                                <li><a href="{{ route('front.contact', $sign) }}">{{ $langg->lang20 }}</a></li>
+                            @endif
+                            <li>
+                                <a href="javascript:;" data-toggle="modal" data-target="#track-order-modal"
+                                    class="track-btn">{{ $langg->lang16 }}</a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
-</div>

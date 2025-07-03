@@ -9,7 +9,7 @@
     @if ($prod->status == 1)
         <div class="docname">
             <a href="{{ route('front.product', ['slug' => $prod->slug, 'lang' => $sign]) }}">
-                <img src="{{ asset('public/assets/images/thumbnails/' . $prod->thumbnail) }}" alt="">
+                <img src="{{ asset(access_public() . 'assets/images/thumbnails/' . $prod->thumbnail) }}" alt="">
                 <div class="search-content">
                     <p>
                         @if (!$slang)

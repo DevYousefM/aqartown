@@ -74,9 +74,9 @@
 
                             <!-- <p>
 
-                                                 
+                                                     
 
-                                                </p> -->
+                                                    </p> -->
 
                         </div>
 
@@ -129,9 +129,9 @@
 
                                         <!-- <div class="col-md-6">
 
-                                                                <a href="#" class="lost-p">هل نسيت كلمةالسر؟</a>
+                                                                    <a href="#" class="lost-p">هل نسيت كلمةالسر؟</a>
 
-                                                            </div>-->
+                                                                </div>-->
 
                                     </div>
 
@@ -227,7 +227,7 @@
 
                     <div class="log-img">
 
-                        <img src="{{ asset('public/assets/images/253418027_2228630604111347_3213032108329630617_n.png') }}"
+                        <img src="{{ asset(access_public() . 'assets/images/253418027_2228630604111347_3213032108329630617_n.png') }}"
                             alt="" class="img-fluid">
 
                         <div class="po-a-re">
@@ -238,7 +238,8 @@
 
 
 
-                                <span class="reg-i"><img src="{{ asset('public/assets/') }}/images/register-i.png" alt=""
+                                <span class="reg-i"><img
+                                        src="{{ asset(access_public() . 'assets/') }}/images/register-i.png" alt=""
                                         class="po-i-reg"></span>
 
                             </a>

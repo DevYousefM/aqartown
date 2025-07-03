@@ -13,7 +13,8 @@
 
     <!--============= Start breadvroumb =============-->
 
-    <div class="breadvroumb_area" style="background-image: url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
+    <div class="breadvroumb_area"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->discount_icon) }});">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -33,51 +34,51 @@
 
             </div>
             <!-- <div class="row">
-                         <div class="contact_inf_area col-lg-6">
-                        <div class="single_contact_inf">
-                            <div class="contact_icon"><img src="customize/frontend/images/contact/contact_icon1.png" alt=""></div>
-                            <div class="ccontact_inf_content">
-                                <h5>رقم الطوارئ</h5>
-                                <span>طوارئ 24/ 7</span>
-                                <a>+201069000434</a>
+                             <div class="contact_inf_area col-lg-6">
+                            <div class="single_contact_inf">
+                                <div class="contact_icon"><img src="customize/frontend/images/contact/contact_icon1.png" alt=""></div>
+                                <div class="ccontact_inf_content">
+                                    <h5>رقم الطوارئ</h5>
+                                    <span>طوارئ 24/ 7</span>
+                                    <a>+201069000434</a>
+                                </div>
+                            </div>
+                            <div class="single_contact_inf">
+                                <div class="contact_icon"><img src="customize/frontend/images/contact/contact_icon2.png" alt=""></div>
+                                <div class="ccontact_inf_content">
+                                    <h5>زيارة المنزل</h5>
+                                    <a>01097000494</a>
+                                </div>
+                            </div>
+                            <div class="single_contact_inf">
+                                <div class="contact_icon"><img src="customize/frontend/images/contact/contact_icon3.png" alt=""></div>
+                                <div class="ccontact_inf_content">
+                                    <h5>رقم المركز</h5>
+                                    <a>+201069000494</a>
+                                </div>
+                            </div>
+                            <div class="single_contact_inf">
+                                <div class="contact_icon"><img src="customize/frontend/images/contact/contact_icon4.png" alt=""></div>
+                                <div class="ccontact_inf_content">
+                                    <h5>البريد الاليكتروني</h5>
+                                    <a>Smilehousedentalcenter@gmail.com</a>
+                                </div>
                             </div>
                         </div>
-                        <div class="single_contact_inf">
-                            <div class="contact_icon"><img src="customize/frontend/images/contact/contact_icon2.png" alt=""></div>
-                            <div class="ccontact_inf_content">
-                                <h5>زيارة المنزل</h5>
-                                <a>01097000494</a>
+                        <div class="opening-hours bg-light col-lg-6">
+                                <h3>مواعيد العمل</h3>
+                                <ul class="list-style-none">
+                                    <li><strong>الاحد</strong> <span class="text-red"> مغلق</span></li>
+                                    <li><strong>الاثنين</strong> <span> 10 AM - 8 PM</span></li>
+                                    <li><strong>الثلاثاء </strong> <span> 10 AM - 8 PM</span></li>
+                                    <li><strong>الاربعاء </strong> <span> 10 AM - 8 PM</span></li>
+                                    <li><strong>الخميس </strong> <span> 10 AM - 8 PM</span></li>
+                                    <li><strong>الجمعة </strong> <span> 10 AM - 8 PM</span></li>
+                                    <li><strong>السبت </strong> <span> 10 AM - 8 PM</span></li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="single_contact_inf">
-                            <div class="contact_icon"><img src="customize/frontend/images/contact/contact_icon3.png" alt=""></div>
-                            <div class="ccontact_inf_content">
-                                <h5>رقم المركز</h5>
-                                <a>+201069000494</a>
-                            </div>
-                        </div>
-                        <div class="single_contact_inf">
-                            <div class="contact_icon"><img src="customize/frontend/images/contact/contact_icon4.png" alt=""></div>
-                            <div class="ccontact_inf_content">
-                                <h5>البريد الاليكتروني</h5>
-                                <a>Smilehousedentalcenter@gmail.com</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="opening-hours bg-light col-lg-6">
-                            <h3>مواعيد العمل</h3>
-                            <ul class="list-style-none">
-                                <li><strong>الاحد</strong> <span class="text-red"> مغلق</span></li>
-                                <li><strong>الاثنين</strong> <span> 10 AM - 8 PM</span></li>
-                                <li><strong>الثلاثاء </strong> <span> 10 AM - 8 PM</span></li>
-                                <li><strong>الاربعاء </strong> <span> 10 AM - 8 PM</span></li>
-                                <li><strong>الخميس </strong> <span> 10 AM - 8 PM</span></li>
-                                <li><strong>الجمعة </strong> <span> 10 AM - 8 PM</span></li>
-                                <li><strong>السبت </strong> <span> 10 AM - 8 PM</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                   -->
+                       -->
             <div class="row">
                 <div class="col-lg-12 col-md-6">
                     <form action="{{ route('front.contact.submit') }}" name="appointment" id="email-form" method="POST"
@@ -103,7 +104,8 @@
                             @if ($gs->is_capcha == 1)
                                 <ul class="captcha-area">
                                     <li>
-                                        <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                        <p><img class="codeimg1"
+                                                src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                                 alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                     </li>
@@ -180,7 +182,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

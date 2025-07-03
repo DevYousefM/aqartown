@@ -18,7 +18,8 @@
 
 
 
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->best_icon) }});">
+    <section class="breadcrumb-section"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->best_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang18 }} </h1>
@@ -76,30 +77,30 @@
 
 
                         <!-- <div class="sidebar-widget free-quote">
-                            <div class="widget-title">
-                                <h3>تواصل معنا</h3>
-                                <div class="shape"></div>
-                            </div>
-                            <div class="widget-content">
-                                <form action="contact.html" method="post" class="quote-form">
-                                    <div class="form-group">
-                                        <input type="text" name="name" placeholder="الاسم بالكامل" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" name="email" placeholder="البريد الالكتروني" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="phone" placeholder="رقم الهاتف" required="">
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea name="message" placeholder="نص الرسالة"></textarea>
-                                    </div>
-                                    <div class="form-group message-btn">
-                                        <button type="submit" class="theme-btn-one">إرســــــال</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> -->
+                                <div class="widget-title">
+                                    <h3>تواصل معنا</h3>
+                                    <div class="shape"></div>
+                                </div>
+                                <div class="widget-content">
+                                    <form action="contact.html" method="post" class="quote-form">
+                                        <div class="form-group">
+                                            <input type="text" name="name" placeholder="الاسم بالكامل" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" placeholder="البريد الالكتروني" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="phone" placeholder="رقم الهاتف" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="message" placeholder="نص الرسالة"></textarea>
+                                        </div>
+                                        <div class="form-group message-btn">
+                                            <button type="submit" class="theme-btn-one">إرســــــال</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div> -->
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12 col-sm-12 content-side" data-aos="zoom-in-left" data-aos-duration="1500">
@@ -185,7 +186,8 @@
                 @foreach ($images as $partner)
                     <div class="swiper-slide">
                         <div class="slider-img">
-                            <img src="{{ asset('public/assets/images/ads/' . $partner->photo) }}" alt="img">
+                            <img src="{{ asset(access_public() . 'assets/images/ads/' . $partner->photo) }}"
+                                alt="img">
                         </div>
                     </div>
                 @endforeach

@@ -43,7 +43,8 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image"
+            content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -112,7 +113,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -122,8 +123,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -149,34 +150,36 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
 
     <!-- bootstarp -->
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/vendors/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/vendors/bootstrap.min.css">
 
     <!-- Fancybox -->
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/vendors/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/linearicons.css" />
+    <link rel="stylesheet"
+        href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/vendors/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/linearicons.css" />
     <!-- animate.css file -->
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/vendors/animate.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/vendors/animate.css">
 
     <!-- Swiper -->
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/vendors/swiper.min.css">
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/lightgallery.css" />
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/vendors/swiper.min.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/lightgallery.css" />
     <!-- vegas -->
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/vendors/vegas.min.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/vendors/vegas.min.css">
     <!-- fontAwesome -->
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/vendors/all.min.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/vendors/all.min.css">
 
     <!-- Font Family -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&amp;display=swap">
 
     <!-- main-RTL -->
-    <link rel="stylesheet" href="{{ asset('public/assets/beautifulhouse/') }}/css/index.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/beautifulhouse/') }}/css/index.css">
     <!-- Fixing Internet Explorer-->
 
 
@@ -185,7 +188,7 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
@@ -224,7 +227,8 @@
                             <div class="info-list-inner">
                                 <div class="info info-panel-logo">
                                     <div class="logo"><img class="logo-img light-logo"
-                                            src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="logo"></div>
+                                            src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                            alt="logo"></div>
                                     <h3 class="info-title ">Who We Are?</h3>
                                     <div class="info-text">
                                         <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -294,9 +298,11 @@
             <div class="container">
                 <nav class="menu-navbar">
                     <div class="header-logo"><a class="logo-link" href="{{ route('front.index', $sign) }}"><img
-                                class="logo-img light-logo" src="{{ asset('public/assets/images/' . $gs->logo) }}"
+                                class="logo-img light-logo"
+                                src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
                                 alt="logo" /><img class="logo-img  dark-logo"
-                                src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="logo" /></a></div>
+                                src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                alt="logo" /></a></div>
                     <div class="links menu-wrapper ">
                         <ul class="list-js links-list">
                             <li class="menu-item"><a class="menu-link"
@@ -403,8 +409,8 @@
         <div class="container">
             <div class="row footer-cols">
                 <div class="col-12 col-md-8 col-lg-4  footer-col wow fadeInUp " data-wow-delay="0.3s"><img
-                        class="img-fluid footer-logo" src="{{ asset('public/assets/images/' . $gs->logo) }}"
-                        alt="logo" />
+                        class="img-fluid footer-logo"
+                        src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" alt="logo" />
                     <div class="footer-col-content-wrapper">
                         <p class="footer-text-about-us ">
                             @if ($langg->rtl == 1)
@@ -555,36 +561,36 @@
 
 
     <!--     JQuery     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/jquery-3.4.1.min.js"></script>
 
     <!--     bootstrap     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/bootstrap.bundle.min.js"></script>
 
     <!--     fancybox     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/jquery.fancybox.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/jquery.fancybox.min.js"></script>
 
     <!--     countTo     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/jquery.countTo.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/jquery.countTo.js"></script>
 
     <!--     wow     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/wow.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/wow.min.js"></script>
 
     <!--     swiper     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/swiper.min.js"></script>
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/vegas.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/swiper.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/vegas.min.js"></script>
     <!--     Vanilla-tilt     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/vanilla-tilt.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/vanilla-tilt.min.js"></script>
 
     <!--     isotope     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/isotope-min.js"></script>
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/lightgallery.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/isotope-min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/lightgallery.js"></script>
 
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/lg-thumbnail.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/lg-thumbnail.js"></script>
     <!--     ajaxchimp     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/vendors/jquery.ajaxchimp.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/vendors/jquery.ajaxchimp.min.js"></script>
 
     <!--     main     -->
-    <script src="{{ asset('public/assets/beautifulhouse/') }}/js/main.js"></script>
+    <script src="{{ asset(access_public() . 'assets/beautifulhouse/') }}/js/main.js"></script>
 
 
 
@@ -601,7 +607,7 @@
     </script>
 
 
-    <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
         var mainurl = "{{ url('/' . $sign) }}";
         var mainurl2 = "{{ url('/') }}";
@@ -682,8 +688,8 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
-                        );
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
+                    );
                     console.log(1);
                 },
                 success: function(data) {
@@ -746,8 +752,8 @@
                 processData: false,
                 beforeSend: function() {
                     $('#appointment-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
-                        );
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
+                    );
                     console.log(1);
                 },
                 success: function(data) {

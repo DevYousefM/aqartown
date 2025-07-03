@@ -9,7 +9,7 @@
     @endif
 @stop
 @section('css')
-    <link href="{{ asset('public/assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
 @stop
 @section('content')
     @php
@@ -18,7 +18,8 @@
 
     @endphp
     <!-- ============================ Page Title Start================================== -->
-    <section class="breadcrumb-section" style="background-image: url({{ asset('public/assets/images/' . $gs->hot_icon) }});">
+    <section class="breadcrumb-section"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->hot_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1>{{ $langg->lang13 }}</h1>
@@ -50,7 +51,7 @@
                             style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
                             <div class="inner-box">
                                 <figure class="image-box">
-                                    <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                    <img src="{{ $blogg->photo ? asset(access_public() . 'assets/images/blogs/' . $blogg->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                         alt="">
                                     <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}"
                                         class="link"><i class="fal fa-link"></i></a>

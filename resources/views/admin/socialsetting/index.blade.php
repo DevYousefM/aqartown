@@ -22,7 +22,7 @@
         </div>
         <div class="social-links-area">
             <div class="gocover"
-                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
             </div>
             <form id="geniusform" class="form-horizontal" action="{{ route('admin-social-update-all') }}" method="POST">
                 {{ csrf_field() }}
@@ -38,24 +38,25 @@
                     </div>
                     <div class="col-sm-3">
                         <label class="switch">
-                            <input type="checkbox" name="f_status" value="1" {{ $data->f_status == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" name="f_status" value="1"
+                                {{ $data->f_status == 1 ? 'checked' : '' }}>
                             <span class="slider round"></span>
                         </label>
                     </div>
                 </div>
 
                 <!--   <div class="row">
-                      <label class="control-label col-sm-3" for="gplus">{{ __('Google Plus') }} *</label>
-                      <div class="col-sm-6">
-                        <input class="form-control" name="gplus" id="gplus" placeholder="{{ __('http://google.com/') }}" required="" type="text" value="{{ $data->gplus }}">
-                      </div>
-                      <div class="col-sm-3">
-                        <label class="switch">
-                          <input type="checkbox" name="g_status" value="1" {{ $data->g_status == 1 ? 'checked' : '' }}>
-                          <span class="slider round"></span>
-                        </label>
-                      </div>
-                    </div>     -->
+                          <label class="control-label col-sm-3" for="gplus">{{ __('Google Plus') }} *</label>
+                          <div class="col-sm-6">
+                            <input class="form-control" name="gplus" id="gplus" placeholder="{{ __('http://google.com/') }}" required="" type="text" value="{{ $data->gplus }}">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="switch">
+                              <input type="checkbox" name="g_status" value="1" {{ $data->g_status == 1 ? 'checked' : '' }}>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>     -->
 
                 <div class="row">
                     <label class="control-label col-sm-3" for="twitter">{{ __('Twitter') }} *</label>
@@ -66,7 +67,8 @@
                     </div>
                     <div class="col-sm-3">
                         <label class="switch">
-                            <input type="checkbox" name="t_status" value="1" {{ $data->t_status == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" name="t_status" value="1"
+                                {{ $data->t_status == 1 ? 'checked' : '' }}>
                             <span class="slider round"></span>
                         </label>
                     </div>
@@ -81,40 +83,41 @@
                     </div>
                     <div class="col-sm-3">
                         <label class="switch">
-                            <input type="checkbox" name="l_status" value="1" {{ $data->l_status == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" name="l_status" value="1"
+                                {{ $data->l_status == 1 ? 'checked' : '' }}>
                             <span class="slider round"></span>
                         </label>
                     </div>
                 </div>
 
                 <!--
-                    <div class="row">
-                      <label class="control-label col-sm-3" for="dribble">{{ __('Dribble') }} *</label>
-                      <div class="col-sm-6">
-                        <input class="form-control" name="dribble" id="dribble" placeholder="{{ __('https://dribbble.com/') }}" required="" type="text" value="{{ $data->dribble }}">
-                      </div>
-                      <div class="col-sm-3">
-                        <label class="switch">
-                          <input type="checkbox" name="d_status" value="1" {{ $data->d_status == 1 ? 'checked' : '' }}>
-                          <span class="slider round"></span>
-                        </label>
-                      </div>
-                    </div>
+                        <div class="row">
+                          <label class="control-label col-sm-3" for="dribble">{{ __('Dribble') }} *</label>
+                          <div class="col-sm-6">
+                            <input class="form-control" name="dribble" id="dribble" placeholder="{{ __('https://dribbble.com/') }}" required="" type="text" value="{{ $data->dribble }}">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="switch">
+                              <input type="checkbox" name="d_status" value="1" {{ $data->d_status == 1 ? 'checked' : '' }}>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
 
-                    
-                      <div class="row">
-                      <label class="control-label col-sm-3" for="dribble">{{ __('Youtube') }} *</label>
-                      <div class="col-sm-6">
-                        <input class="form-control" name="youtube" id="youtube" placeholder="{{ __('https://youtube.com/') }}" required="" type="text" value="{{ $data->youtube }}">
-                      </div>
-                      <div class="col-sm-3">
-                        <label class="switch">
-                          <input type="checkbox" name="ystatus" value="1" {{ $data->ystatus == 1 ? 'checked' : '' }}>
-                          <span class="slider round"></span>
-                        </label>
-                      </div>
-                    </div>
-                    -->
+                        
+                          <div class="row">
+                          <label class="control-label col-sm-3" for="dribble">{{ __('Youtube') }} *</label>
+                          <div class="col-sm-6">
+                            <input class="form-control" name="youtube" id="youtube" placeholder="{{ __('https://youtube.com/') }}" required="" type="text" value="{{ $data->youtube }}">
+                          </div>
+                          <div class="col-sm-3">
+                            <label class="switch">
+                              <input type="checkbox" name="ystatus" value="1" {{ $data->ystatus == 1 ? 'checked' : '' }}>
+                              <span class="slider round"></span>
+                            </label>
+                          </div>
+                        </div>
+                        -->
 
 
                 <!--   -->
@@ -127,7 +130,8 @@
                     </div>
                     <div class="col-sm-3">
                         <label class="switch">
-                            <input type="checkbox" name="i_status" value="1" {{ $data->i_status == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" name="i_status" value="1"
+                                {{ $data->i_status == 1 ? 'checked' : '' }}>
                             <span class="slider round"></span>
                         </label>
                     </div>

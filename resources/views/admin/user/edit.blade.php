@@ -21,10 +21,10 @@
                                         <div class="img-upload">
                                             @if ($data->is_provider == 1)
                                                 <div id="image-preview" class="img-preview"
-                                                    style="background: url({{ $data->photo ? asset($data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                    style="background: url({{ $data->photo ? asset($data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 @else
                                                     <div id="image-preview" class="img-preview"
-                                                        style="background: url({{ $data->photo ? asset('public/assets/images/users/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                        style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/users/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                                             @endif
                                             @if ($data->is_provider != 1)
                                                 <label for="image-upload" class="img-label" id="image-label"><i

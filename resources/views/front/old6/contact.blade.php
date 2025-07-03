@@ -13,7 +13,7 @@
 
 
     <section class="breadcrumb-section"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->discount_icon) }});">
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->discount_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1> {{ $langg->lang3 }}
@@ -44,62 +44,62 @@
                             <div class="working-hours">
                                 {!! $langg->rtl == 1 ? $ps->contact_title_ar : $ps->contact_title !!}
                                 <!--   <ul class="week-days">
-                                           <li>
-                                                <span>
-                                                    السبت
-                                                </span>
-                                                <span>
-                                                    12 مساء : 12 صباحا
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                    الأحد
-                                                </span>
-                                                <span>
-                                                    12 مساء : 12 صباحا
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                    الإثنين
-                                                </span>
-                                                <span>
-                                                    12 مساء : 12 صباحا
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                    الثلاثاء
-                                                </span>
-                                                <span>
-                                                    12 مساء : 12 صباحا
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                    الأربعاء
-                                                </span>
-                                                <span>
-                                                     12 مساء : 12 صباحا
-                                                </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                    الخميس
-                                                </span>
-                                                <span>
-           12 مساء : 12 صباحا                                       </span>
-                                            </li>
-                                            <li>
-                                                <span>
-                                                    الجمعة
-                                                </span>
-                                                <span>
-                                                    مغلق
-                                                </span>
-                                            </li>
-                                        </ul> -->
+                                               <li>
+                                                    <span>
+                                                        السبت
+                                                    </span>
+                                                    <span>
+                                                        12 مساء : 12 صباحا
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                        الأحد
+                                                    </span>
+                                                    <span>
+                                                        12 مساء : 12 صباحا
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                        الإثنين
+                                                    </span>
+                                                    <span>
+                                                        12 مساء : 12 صباحا
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                        الثلاثاء
+                                                    </span>
+                                                    <span>
+                                                        12 مساء : 12 صباحا
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                        الأربعاء
+                                                    </span>
+                                                    <span>
+                                                         12 مساء : 12 صباحا
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                        الخميس
+                                                    </span>
+                                                    <span>
+               12 مساء : 12 صباحا                                       </span>
+                                                </li>
+                                                <li>
+                                                    <span>
+                                                        الجمعة
+                                                    </span>
+                                                    <span>
+                                                        مغلق
+                                                    </span>
+                                                </li>
+                                            </ul> -->
                             </div>
                             <ul class="phones">
                                 <li>
@@ -155,7 +155,8 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1"
+                                            src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>
@@ -211,7 +212,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

@@ -16,7 +16,8 @@
 
     @endphp
 
-    <div class="page-banner-area" style="background-image:url({{ asset('public/assets/images/' . $gs->new_icon) }})">
+    <div class="page-banner-area"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->new_icon) }})">
         <div class="container">
             <div class="page-banner-content">
                 <h2>{{ $langg->lang223 }}</h2>
@@ -35,7 +36,7 @@
             <div class="section_title">
                 <h2><span>{{ $langg->lang250 }}</span></h2>
                 <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy. </p> -->
+                                been the industry's standard dummy. </p> -->
                 <div class="divider_effect_section"></div>
             </div>
             <div class="row">
@@ -90,7 +91,7 @@
                                     <ul class="captcha-area">
                                         <li>
                                             <p><img class="codeimg1"
-                                                    src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                                    src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                                     alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                         </li>
@@ -173,7 +174,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

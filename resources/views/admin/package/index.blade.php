@@ -27,16 +27,16 @@
 
 
                     <!-- <div class="heading-area">
-                      <h4 class="title">
-                        {{ __('show Home counter') }} :
-                      </h4>
-                                      <div class="action-list">
-                                          <select class="process select droplinks {{ $gs->multiple_packaging == 1 ? 'drop-success' : 'drop-danger' }}">
-                                            <option data-val="1" value="{{ route('admin-gs-mpackage', 1) }}" {{ $gs->multiple_packaging == 1 ? 'selected' : '' }}>{{ __('Activated') }}</option>
-                                            <option data-val="0" value="{{ route('admin-gs-mpackage', 0) }}" {{ $gs->multiple_packaging == 0 ? 'selected' : '' }}>{{ __('Deactivated') }}</option>
-                                          </select>
-                                        </div>
-                    </div> -->
+                          <h4 class="title">
+                            {{ __('show Home counter') }} :
+                          </h4>
+                                          <div class="action-list">
+                                              <select class="process select droplinks {{ $gs->multiple_packaging == 1 ? 'drop-success' : 'drop-danger' }}">
+                                                <option data-val="1" value="{{ route('admin-gs-mpackage', 1) }}" {{ $gs->multiple_packaging == 1 ? 'selected' : '' }}>{{ __('Activated') }}</option>
+                                                <option data-val="0" value="{{ route('admin-gs-mpackage', 0) }}" {{ $gs->multiple_packaging == 0 ? 'selected' : '' }}>{{ __('Deactivated') }}</option>
+                                              </select>
+                                            </div>
+                        </div> -->
 
                     <div class="mr-table allproduct">
 
@@ -67,7 +67,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="submit-loader">
-                    <img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}" alt="">
+                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}" alt="">
                 </div>
                 <div class="modal-header">
                     <h5 class="modal-title"></h5>
@@ -142,7 +142,7 @@
 
             ],
             language: {
-                processing: '<img src="{{ asset('public/assets/images/' . $gs->admin_loader) }}">'
+                processing: '<img src="{{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}">'
             }
         });
 

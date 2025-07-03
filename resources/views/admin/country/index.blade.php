@@ -25,7 +25,7 @@
                     <div class="product-description">
                         <div class="body-area">
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-gs-update') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -76,7 +76,7 @@
 
 
                                         <div class="currrent-logo">
-                                            <img src="{{ $gs->home_about_img1 ? asset('public/assets/images/' . $gs->home_about_img1) : asset('public/assets/images/noimage.png') }}"
+                                            <img src="{{ $gs->home_about_img1 ? asset(access_public() . 'assets/images/' . $gs->home_about_img1) : asset(access_public() . 'assets/images/noimage.png') }}"
                                                 alt="">
                                         </div>
                                         <div class="set-logo">
@@ -90,115 +90,115 @@
                                 <input type="text" name="home_about_link" value="{{ $gs->home_about_link }}"
                                     placeholder="{{ __('link') }}" class="input-field" />
                                 <!--        <div class="col-xl-6 col-md-6">
-                        <div class="special-box bg-gray">
-                            <div class="heading-area">
-                                <h4 class="title">
-                                  {{ __('home_about_img2') }}
-                                </h4>
+                            <div class="special-box bg-gray">
+                                <div class="heading-area">
+                                    <h4 class="title">
+                                      {{ __('home_about_img2') }}
+                                    </h4>
+                                </div>
+
+
+                                  <div class="currrent-logo">
+                                    <img src="{{ $gs->home_about_img2 ? asset(access_public() . 'assets/images/' . $gs->home_about_img2) : asset(access_public() . 'assets/images/noimage.png') }}" alt="">
+                                  </div>
+                                  <div class="set-logo">
+                                    <input class="img-upload1" type="file" name="home_about_img2">
+                                  </div>
+
+
                             </div>
-
-
-                              <div class="currrent-logo">
-                                <img src="{{ $gs->home_about_img2 ? asset('public/assets/images/' . $gs->home_about_img2) : asset('public/assets/images/noimage.png') }}" alt="">
-                              </div>
-                              <div class="set-logo">
-                                <input class="img-upload1" type="file" name="home_about_img2">
-                              </div>
-
-
                         </div>
-                    </div>
 
 
 
-                            <div class="row">
-                 <div class="col-lg-4">
-                  <div class="left-area">
+                                <div class="row">
+                     <div class="col-lg-4">
+                      <div class="left-area">
 
-                  </div>
-                 </div>
-                 <div class="col-lg-7">
-                  <div class="featured-keyword-area">
-                   <div class="heading-area">
-                    <h4 class="title">{{ __('why Choose us') }}</h4>
-                   </div>
+                      </div>
+                     </div>
+                     <div class="col-lg-7">
+                      <div class="featured-keyword-area">
+                       <div class="heading-area">
+                        <h4 class="title">{{ __('why Choose us') }}</h4>
+                       </div>
 
-                   <div class="feature-tag-top-filds" id="feature-section">
-                    @if (!empty($gs->choose_title))
+                       <div class="feature-tag-top-filds" id="feature-section">
+                        @if (!empty($gs->choose_title))
     @php
         $title = explode(',', $gs->choose_title);
         $detail = explode(',', $gs->choose_detail);
         $title_ar = explode(',', $gs->choose_title_ar);
         $detail_ar = explode(',', $gs->choose_detail_ar);
     @endphp
-                     @foreach ($title as $key => $data1)
+                         @foreach ($title as $key => $data1)
     <div class="feature-area">
-                     <span class="remove feature-remove"><i class="fas fa-times"></i></span>
-                     <div class="row">
-                      <div class="col-lg-6">
-                      <input type="text" name="choose_title[]" class="input-field" placeholder="{{ __('English title') }}" value="{{ $title[$key] }}">
-                      </div>
+                         <span class="remove feature-remove"><i class="fas fa-times"></i></span>
+                         <div class="row">
+                          <div class="col-lg-6">
+                          <input type="text" name="choose_title[]" class="input-field" placeholder="{{ __('English title') }}" value="{{ $title[$key] }}">
+                          </div>
 
-                      <div class="col-lg-6">
-               
-               <input type="text" name="choose_detail[]" placeholder="{{ __('English detail') }}" value="{{ $detail[$key] }}" class="input-field"/>
-               
-               
-                      </div>
-                     </div>
-                                      <div class="row">
-                      <div class="col-lg-6">
-                      <input type="text" name="choose_title_ar[]" class="input-field" placeholder="{{ __('Arabic title') }}" value="{{ $title_ar[$key] }}">
-                      </div>
+                          <div class="col-lg-6">
+                   
+                   <input type="text" name="choose_detail[]" placeholder="{{ __('English detail') }}" value="{{ $detail[$key] }}" class="input-field"/>
+                   
+                   
+                          </div>
+                         </div>
+                                          <div class="row">
+                          <div class="col-lg-6">
+                          <input type="text" name="choose_title_ar[]" class="input-field" placeholder="{{ __('Arabic title') }}" value="{{ $title_ar[$key] }}">
+                          </div>
 
-                      <div class="col-lg-6">
-               
-               <input type="text" name="choose_detail_ar[]" value="{{ $detail_ar[$key] }}" placeholder="{{ __('Arabic detail') }}" class="input-field"/>
-               
-               
-                      </div>
-                     </div>
-                    </div>
+                          <div class="col-lg-6">
+                   
+                   <input type="text" name="choose_detail_ar[]" value="{{ $detail_ar[$key] }}" placeholder="{{ __('Arabic detail') }}" class="input-field"/>
+                   
+                   
+                          </div>
+                         </div>
+                        </div>
     @endforeach
 @else
     <div class="feature-area">
-                     <span class="remove feature-remove"><i class="fas fa-times"></i></span>
-                     <div class="row">
-                      <div class="col-lg-6">
-                      <input type="text" name="choose_title[]" class="input-field" placeholder="{{ __('English title') }}" >
-                      </div>
+                         <span class="remove feature-remove"><i class="fas fa-times"></i></span>
+                         <div class="row">
+                          <div class="col-lg-6">
+                          <input type="text" name="choose_title[]" class="input-field" placeholder="{{ __('English title') }}" >
+                          </div>
 
-                      <div class="col-lg-6">
-               
-               <input type="text" name="choose_detail[]" placeholder="{{ __('English detail') }}"  class="input-field"/>
-               
-               
-                      </div>
-                     </div>
-                                      <div class="row">
-                      <div class="col-lg-6">
-                      <input type="text" name="choose_title_ar[]" class="input-field" placeholder="{{ __('Arabic title') }}" >
-                      </div>
+                          <div class="col-lg-6">
+                   
+                   <input type="text" name="choose_detail[]" placeholder="{{ __('English detail') }}"  class="input-field"/>
+                   
+                   
+                          </div>
+                         </div>
+                                          <div class="row">
+                          <div class="col-lg-6">
+                          <input type="text" name="choose_title_ar[]" class="input-field" placeholder="{{ __('Arabic title') }}" >
+                          </div>
 
-                      <div class="col-lg-6">
-               
-               <input type="text" name="choose_detail_ar[]" placeholder="{{ __('Arabic detail') }}" class="input-field"/>
-               
-               
+                          <div class="col-lg-6">
+                   
+                   <input type="text" name="choose_detail_ar[]" placeholder="{{ __('Arabic detail') }}" class="input-field"/>
+                   
+                   
+                          </div>
+                         </div>
+                        </div>
+    @endif
+                       </div>
+
+                       <a href="javascript:;" id="feature-btn" class="add-fild-btn"><i class="icofont-plus"></i> {{ __('Add More Field') }}</a>
                       </div>
                      </div>
                     </div>
-    @endif
-                   </div>
-
-                   <a href="javascript:;" id="feature-btn" class="add-fild-btn"><i class="icofont-plus"></i> {{ __('Add More Field') }}</a>
-                  </div>
-                 </div>
-                </div>
 
 
 
-                           -->
+                               -->
 
 
                                 <div class="row justify-content-center">

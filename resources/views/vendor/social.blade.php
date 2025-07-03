@@ -22,7 +22,7 @@
         </div>
         <div class="social-links-area">
             <div class="gocover"
-                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
             </div>
             <form id="geniusform" class="form-horizontal" action="{{ route('vendor-social-update') }}" method="POST">
                 {{ csrf_field() }}
@@ -37,7 +37,8 @@
                     </div>
                     <div class="col-sm-3">
                         <label class="switch">
-                            <input type="checkbox" name="f_check" value="1" {{ $data->f_check == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" name="f_check" value="1"
+                                {{ $data->f_check == 1 ? 'checked' : '' }}>
                             <span class="slider round"></span>
                         </label>
                     </div>
@@ -51,7 +52,8 @@
                     </div>
                     <div class="col-sm-3">
                         <label class="switch">
-                            <input type="checkbox" name="g_check" value="1" {{ $data->g_check == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" name="g_check" value="1"
+                                {{ $data->g_check == 1 ? 'checked' : '' }}>
                             <span class="slider round"></span>
                         </label>
                     </div>
@@ -65,7 +67,8 @@
                     </div>
                     <div class="col-sm-3">
                         <label class="switch">
-                            <input type="checkbox" name="t_check" value="1" {{ $data->t_check == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" name="t_check" value="1"
+                                {{ $data->t_check == 1 ? 'checked' : '' }}>
                             <span class="slider round"></span>
                         </label>
                     </div>
@@ -79,7 +82,8 @@
                     </div>
                     <div class="col-sm-3">
                         <label class="switch">
-                            <input type="checkbox" name="l_check" value="1" {{ $data->l_check == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" name="l_check" value="1"
+                                {{ $data->l_check == 1 ? 'checked' : '' }}>
                             <span class="slider round"></span>
                         </label>
                     </div>

@@ -10,7 +10,7 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/lightgallery.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/lightgallery.css') }}">
 
 @stop
 
@@ -21,7 +21,7 @@
 @section('content')
 
     <section class="breadcrumb-section"
-        style="background-image: url({{ asset('public/assets/images/' . $gs->trending_icon) }});">
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->trending_icon) }});">
         <div class="container">
             <div class="breadcrumb-text">
                 <h1> {{ $langg->lang1 }}
@@ -44,10 +44,11 @@
             <div class="gallery-layout">
                 <div class="mfa-gallery">
                     @foreach ($images as $key => $service)
-                        <a href="{{ asset('public/assets/images/banners/' . $service->photo) }}">
+                        <a href="{{ asset(access_public() . 'assets/images/banners/' . $service->photo) }}">
                             <div class="img-div lazy-div">
-                                <img class="" data-src="{{ asset('public/assets/images/banners/' . $service->photo) }}"
-                                    src="{{ asset('public/assets/images/banners/' . $service->photo) }}">
+                                <img class=""
+                                    data-src="{{ asset(access_public() . 'assets/images/banners/' . $service->photo) }}"
+                                    src="{{ asset(access_public() . 'assets/images/banners/' . $service->photo) }}">
 
 
                             </div>

@@ -1,7 +1,7 @@
 @extends('layouts.load')
 
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 
@@ -67,58 +67,58 @@
                                     </div>
                                 </div>
                                 <!--        <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Gallery link') }} *</h4>
-                                  
-                                </div>
-                              </div>
-                              <div class="col-lg-7">
-                              <input type="text" name="link" class="input-field" value="{{ $data->link }}">
-                              </div>
-                       
-                            </div>   -->
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Gallery link') }} *</h4>
+                                      
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                  <input type="text" name="link" class="input-field" value="{{ $data->link }}">
+                                  </div>
+                           
+                                </div>   -->
 
                                 <!--    <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Country Name') }} *</h4>
-                                    <p class="sub-heading">{{ __('(In Any Language)') }}</p>
-                                </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <input type="text" class="input-field" name="name_ar" placeholder="{{ __('Enter name') }}" required="" value="{{ $data->name_ar }}">
-                              </div>
-                            </div>-->
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Country Name') }} *</h4>
+                                        <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" class="input-field" name="name_ar" placeholder="{{ __('Enter name') }}" required="" value="{{ $data->name_ar }}">
+                                  </div>
+                                </div>-->
 
                                 <!--    <div class="col-lg-7">
-                                <input type="text" class="input-field" name="phonecode" placeholder="{{ __('Enter Phone Code') }}" required="" value="{{ $data->phonecode }}">
-                              </div>
-                            </div>
+                                    <input type="text" class="input-field" name="phonecode" placeholder="{{ __('Enter Phone Code') }}" required="" value="{{ $data->phonecode }}">
+                                  </div>
+                                </div>
 
 
 
-                  
-                          
+                      
+                              
 
-                  
-                       <div class="row">
-                                          <div class="col-lg-4">
-                                            <div class="left-area">
-                                                <h4 class="heading"> {{ __('Image') }} *</h4>
-                                                <small>{{ __('(Preferred SIze: 285 X 410 Pixel)') }}</small>
-                                            </div>
-                                          </div>
-                                          <div class="col-lg-7">
-                                            <div class="img-upload">
-                                                <div id="image-preview" class="img-preview" style="background: url({{ $data->photo ? asset('public/assets/images/gallery/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
-                                                    <label for="image-upload" class="img-label" id="image-label"><i class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
-                                                    <input type="file" name="photo" class="img-upload" id="image-upload">
-                                                  </div>
+                      
+                           <div class="row">
+                                              <div class="col-lg-4">
+                                                <div class="left-area">
+                                                    <h4 class="heading"> {{ __('Image') }} *</h4>
+                                                    <small>{{ __('(Preferred SIze: 285 X 410 Pixel)') }}</small>
+                                                </div>
+                                              </div>
+                                              <div class="col-lg-7">
+                                                <div class="img-upload">
+                                                    <div id="image-preview" class="img-preview" style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/gallery/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
+                                                        <label for="image-upload" class="img-label" id="image-label"><i class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
+                                                        <input type="file" name="photo" class="img-upload" id="image-upload">
+                                                      </div>
 
-                                            </div>
-                                          </div>
-                                        </div>     --><!--   -->
+                                                </div>
+                                              </div>
+                                            </div>     --><!--   -->
                                 <br>
                                 <div class="row">
                                     <div class="col-lg-4">

@@ -43,7 +43,8 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image"
+            content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -112,7 +113,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -122,8 +123,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -149,33 +150,35 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/css/style.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/css/style.css">
     <!-- Responsive stylesheet -->
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/css/responsive.css">
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/css/bootstrap.css">
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/css/swiper.min.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/css/swiper.min.css">
     <!--Color Switcher Mockup-->
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/css/color-switcher-design.css">
-    <link href="{{ asset('public/assets/wketchien/') }}/css/plugins/line-icons.css" rel="stylesheet">
-    <link href="{{ asset('public/assets/wketchien/') }}/css/plugins/iconfont.css" rel="stylesheet">
-    <link href="{{ asset('public/assets/wketchien/') }}/css/plugins/flaticon.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/css/venobox.css">
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/js/lightgallery.css">
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/css/odometer.min.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/css/color-switcher-design.css">
+    <link href="{{ asset(access_public() . 'assets/wketchien/') }}/css/plugins/line-icons.css" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/wketchien/') }}/css/plugins/iconfont.css" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/wketchien/') }}/css/plugins/flaticon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/css/venobox.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/js/lightgallery.css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/css/odometer.min.css">
     <!--Color Themes-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/wketchien/') }}/plugins/themify/themify-icons.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/wketchien/') }}/css/banner-rotator.css">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/themify/themify-icons.css">
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset(access_public() . 'assets/wketchien/') }}/css/banner-rotator.css">
 
-    <link rel="stylesheet" href="{{ asset('public/assets/wketchien/') }}/css/color-themes/default-theme.css"
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/wketchien/') }}/css/color-themes/default-theme.css"
         id="theme-color-file">
     <!-- Favicon -->
 
@@ -188,7 +191,7 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
@@ -216,7 +219,8 @@
                         <div class="inner-content clearfix">
                             <div class="header-style1-logo float-left">
                                 <a href="{{ route('front.index', $sign) }}">
-                                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="Awesome Logo">
+                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                        alt="Awesome Logo">
                                 </a>
                             </div>
                             <div class="header-contact-info float-left">
@@ -270,7 +274,8 @@
                     <nav class="main-menu style1 clearfix">
                         <div class="navbar-header clearfix">
                             <a href="{{ route('front.index', $sign) }}">
-                                <img src="{{ asset('public/assets/images/' . $gs->sidebar_logo) }}" alt="">
+                                <img src="{{ asset(access_public() . 'assets/images/' . $gs->sidebar_logo) }}"
+                                    alt="">
                             </a>
                             <button type="button" class="navbar-toggle" data-toggle="collapse"
                                 data-target=".navbar-collapse">
@@ -324,7 +329,8 @@
                                     <ul>
                                         <li><a href="{{ route('front.gallery', $sign) }}">{{ $langg->lang18 }}</a>
                                         </li>
-                                        <li><a href="{{ route('front.video', $sign) }}">{{ $langg->lang221 }}</a></li>
+                                        <li><a href="{{ route('front.video', $sign) }}">{{ $langg->lang221 }}</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li><a href="{{ route('front.offerss', $sign) }}"> {{ $langg->lang7 }}</a></li>
@@ -395,7 +401,7 @@
                             <div class="about-us">
                                 <div class="footer-logo fix">
                                     <a href="{{ route('front.index', $sign) }}">
-                                        <img src="{{ asset('public/assets/images/' . $gs->logo_ar) }}"
+                                        <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}"
                                             alt="Awesome Logo">
                                     </a>
                                 </div>
@@ -586,79 +592,92 @@
 
 
     <!-- main jQuery -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/jquery.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/jquery.js"></script>
     <!-- Wow Script -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/wow.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/wow.js"></script>
     <!-- bootstrap -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/bootstrap.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/bootstrap.min.js"></script>
     <!-- bx slider -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/jquery.bxslider.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/jquery.bxslider.min.js"></script>
     <!-- count to -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/jquery.countTo.js"></script>
-    <script src="{{ asset('public/assets/wketchien/') }}/js/appear.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/jquery.countTo.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/appear.js"></script>
     <!-- owl carousel -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/owl.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/owl.js"></script>
     <!-- validate -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/validation.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/validation.js"></script>
     <!-- mixit up -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/jquery.mixitup.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/jquery.mixitup.min.js"></script>
     <!-- isotope script-->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/isotope.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/isotope.js"></script>
     <!-- Easing -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/jquery.easing.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/jquery.easing.min.js"></script>
     <!-- Gmap helper -->
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>
     <!--Gmap script-->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/gmaps.js"></script>
-    <script src="{{ asset('public/assets/wketchien/') }}/js/map-helper.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/gmaps.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/map-helper.js"></script>
     <!-- jQuery ui js -->
-    <script src="{{ asset('public/assets/wketchien/') }}/assets/jquery-ui-1.11.4/jquery-ui.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/assets/jquery-ui-1.11.4/jquery-ui.js"></script>
     <!-- Language Switche  -->
-    <script src="{{ asset('public/assets/wketchien/') }}/assets/language-switcher/jquery.polyglot.language.switcher.js"></script>
+    <script
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/assets/language-switcher/jquery.polyglot.language.switcher.js">
+    </script>
     <!-- jQuery timepicker js -->
-    <script src="{{ asset('public/assets/wketchien/') }}/assets/timepicker/timePicker.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/assets/timepicker/timePicker.js"></script>
     <!-- Bootstrap select picker js -->
-    <script src="{{ asset('public/assets/wketchien/') }}/assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/assets/bootstrap-sl-1.12.1/bootstrap-select.js">
+    </script>
     <!-- html5lightbox js -->
-    <script src="{{ asset('public/assets/wketchien/') }}/assets/html5lightbox/html5lightbox.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/assets/html5lightbox/html5lightbox.js"></script>
     <!-- html5lightbox js -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <!--Color Switcher-->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/color-settings.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/color-settings.js"></script>
 
     <!--Revolution Slider-->
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.actions.min.js">
+    <script
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/jquery.themepunch.revolution.min.js">
     </script>
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.carousel.min.js">
-    </script>
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js">
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/jquery.themepunch.tools.min.js">
     </script>
     <script
-        src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js">
-    </script>
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/venobox.min.js"></script>
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.migration.min.js">
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.actions.min.js">
     </script>
     <script
-        src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.navigation.min.js">
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.carousel.min.js">
     </script>
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.parallax.min.js">
-    </script>
-    <script src="{{ asset('public/assets/wketchien/') }}/js/jquery.banner-rotator.js"></script><!-- COMBINING JS  -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/odometer.min.js"></script><!-- COMBINING JS  -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/jquery.easing.1.3.min.js"></script><!-- COMBINING JS  -->
     <script
-        src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js">
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js">
     </script>
-    <script src="{{ asset('public/assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.video.min.js">
+    <script
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js">
     </script>
-    <script src="{{ asset('public/assets/wketchien/') }}/js/main-slider-script.js"></script>
-    <script src="{{ asset('public/assets/wketchien/') }}/js/swiper.min.js"></script>
-    <script src="{{ asset('public/assets/wketchien/') }}/js/lightgallery.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/venobox.min.js">
+    </script>
+    <script
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.migration.min.js">
+    </script>
+    <script
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.navigation.min.js">
+    </script>
+    <script
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.parallax.min.js">
+    </script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/jquery.banner-rotator.js"></script><!-- COMBINING JS  -->
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/odometer.min.js"></script><!-- COMBINING JS  -->
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/jquery.easing.1.3.min.js"></script><!-- COMBINING JS  -->
+    <script
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js">
+    </script>
+    <script
+        src="{{ asset(access_public() . 'assets/wketchien/') }}/plugins/revolution/js/extensions/revolution.extension.video.min.js">
+    </script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/main-slider-script.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/swiper.min.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/lightgallery.js"></script>
     <!-- thm custom script -->
-    <script src="{{ asset('public/assets/wketchien/') }}/js/custom.js"></script>
+    <script src="{{ asset(access_public() . 'assets/wketchien/') }}/js/custom.js"></script>
 
 
     <script>
@@ -674,7 +693,7 @@
     </script>
 
 
-    <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
         var mainurl = "{{ url('/' . $sign) }}";
         var mainurl2 = "{{ url('/') }}";
@@ -755,8 +774,8 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
-                        );
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
+                    );
                     console.log(1);
                 },
                 success: function(data) {
@@ -819,8 +838,8 @@
                 processData: false,
                 beforeSend: function() {
                     $('#appointment-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
-                        );
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
+                    );
                     console.log(1);
                 },
                 success: function(data) {

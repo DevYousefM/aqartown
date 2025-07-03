@@ -17,7 +17,8 @@
     @endphp
 
     <!-- end header -->
-    <section class="page-title" style="background-image:url({{ asset('public/assets/images/' . $gs->feature_icon) }});">
+    <section class="page-title"
+        style="background-image:url({{ asset(access_public() . 'assets/images/' . $gs->feature_icon) }});">
         <div class="auto-container">
             <h1>{{ $langg->lang16 }} </h1>
 
@@ -46,7 +47,7 @@
                     <div class="heading-left">
                         <span class="draw-line"></span>
                     </div>
-                    <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="">
+                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" alt="">
 
                     <div class="heading-right">
                         <span class="draw-line"></span>
@@ -64,7 +65,7 @@
 
                 @foreach ($images as $image)
                     <div class="img-div">
-                        <img src="{{ asset('/public/assets/images/ads/' . $image->photo) }}" alt="img">
+                        <img src="{{ asset('/' . access_public() . '/assets/images/ads/' . $image->photo) }}" alt="img">
                     </div>
                 @endforeach
 

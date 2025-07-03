@@ -16,7 +16,7 @@
 
 @section('css')
 
-    <link href="{{ asset('public/assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -88,7 +88,7 @@
 
                             <a href="{{ route('front.blogshow', ['id' => $blogg->slug, 'lang' => $sign]) }}">
 
-                                <img src="{{ $blogg->photo ? asset('public/assets/images/blogs/' . $blogg->photo) : asset('public/assets/images/noimage.png') }}"
+                                <img src="{{ $blogg->photo ? asset(access_public() . 'assets/images/blogs/' . $blogg->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                     alt="Shape">
 
                             </a>

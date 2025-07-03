@@ -17,18 +17,18 @@
       <!-- Title -->
       <title>{{ $gs->title }}</title>
       <!-- favicon -->
-      <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+      <link rel="icon" type="image/x-icon" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}" />
       <!-- Bootstrap -->
 
       @if ($gs->light_dark == 0)
-          <link href="{{ asset('public/assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" />
       @else
-          <link href="{{ asset('public/assets/admin/css/light/bootstrap.min.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/light/bootstrap.min.css') }}" rel="stylesheet" />
       @endif
 
       <!-- Fontawesome -->
-      <link rel="stylesheet" href="{{ asset('public/assets/admin/css/fontawesome.css') }}">
-      <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
+      <link rel="stylesheet" href="{{ asset(access_public() . 'assets/admin/css/fontawesome.css') }}">
+      <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
   </head>
 
   <body>
@@ -38,20 +38,20 @@
   </html>
 
   <!-- icofont -->
-  <link rel="stylesheet" href="{{ asset('public/assets/admin/css/checkbox.css') }}">
-  <link rel="stylesheet" href="{{ asset('public/assets/admin/css/icofont.min.css') }}">
+  <link rel="stylesheet" href="{{ asset(access_public() . 'assets/admin/css/checkbox.css') }}">
+  <link rel="stylesheet" href="{{ asset(access_public() . 'assets/admin/css/icofont.min.css') }}">
   <!-- Sidemenu Css -->
   @if ($gs->light_dark == 0)
-      <link href="{{ asset('public/assets/admin/plugins/fullside-menu/css/dark-side-style.css') }}" rel="stylesheet" />
+      <link href="{{ asset(access_public() . 'assets/admin/plugins/fullside-menu/css/dark-side-style.css') }}" rel="stylesheet" />
   @else
-      <link href="{{ asset('public/assets/admin/plugins/fullside-menu/css/light/dark-side-style.css') }}" rel="stylesheet" />
+      <link href="{{ asset(access_public() . 'assets/admin/plugins/fullside-menu/css/light/dark-side-style.css') }}" rel="stylesheet" />
   @endif
-  <link href="{{ asset('public/assets/admin/plugins/fullside-menu/waves.min.css') }}" rel="stylesheet" />
+  <link href="{{ asset(access_public() . 'assets/admin/plugins/fullside-menu/waves.min.css') }}" rel="stylesheet" />
 
-  <!--		<link href="{{ asset('public/assets/admin/css/plugin.css') }}" rel="stylesheet" />
+  <!--		<link href="{{ asset(access_public() . 'assets/admin/css/plugin.css') }}" rel="stylesheet" />
 -->
-  <link href="{{ asset('public/assets/admin/css/jquery.tagit.css') }}" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ asset('public/assets/admin/css/bootstrap-coloroicker.css') }}">
+  <link href="{{ asset(access_public() . 'assets/admin/css/jquery.tagit.css') }}" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ asset(access_public() . 'assets/admin/css/bootstrap-coloroicker.css') }}">
   <!-- Main Css -->
 
   <!-- stylesheet -->
@@ -62,24 +62,24 @@
 
 
       @if ($gs->light_dark == 1)
-          <link href="{{ asset('public/assets/admin/rtl/light/style.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/css/rtl/customs.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/rtl/light/responsive.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/rtl/light/style.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/rtl/customs.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/rtl/light/responsive.css') }}" rel="stylesheet" />
       @else
-          <link href="{{ asset('public/assets/admin/css/rtl/style.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/css/rtl/custom.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/css/rtl/responsive.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/rtl/style.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/rtl/custom.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/rtl/responsive.css') }}" rel="stylesheet" />
       @endif
   @else
       @if ($gs->light_dark == 1)
-          <link href="{{ asset('public/assets/admin/css/light/style.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/css/light/style_lite.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/css/light/custom.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/css/light/responsive.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/light/style.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/light/style_lite.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/light/custom.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/light/responsive.css') }}" rel="stylesheet" />
       @else
-          <link href="{{ asset('public/assets/admin/css/style.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/css/custom.css') }}" rel="stylesheet" />
-          <link href="{{ asset('public/assets/admin/css/responsive.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/style.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/custom.css') }}" rel="stylesheet" />
+          <link href="{{ asset(access_public() . 'assets/admin/css/responsive.css') }}" rel="stylesheet" />
       @endif
 
 
@@ -96,16 +96,16 @@
 
 
 
-  <link href="{{ asset('public/assets/admin/css/common.css') }}" rel="stylesheet" />
+  <link href="{{ asset(access_public() . 'assets/admin/css/common.css') }}" rel="stylesheet" />
   <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" />
   @if ($gs->light_dark == 0)
-      <link href="{{ asset('public/assets/admin/css/plugin.css') }}" rel="stylesheet" />
+      <link href="{{ asset(access_public() . 'assets/admin/css/plugin.css') }}" rel="stylesheet" />
   @else
-      <link href="{{ asset('public/assets/admin/css/light/plugin.css') }}" rel="stylesheet" />
+      <link href="{{ asset(access_public() . 'assets/admin/css/light/plugin.css') }}" rel="stylesheet" />
   @endif
 
   <link href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ asset('public/assets/front/css/sweetalert.css') }}">
+  <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/sweetalert.css') }}">
 
 
 
@@ -207,7 +207,7 @@
                                   <li class="login-profile-area">
                                       <a class="dropdown-toggle-1" href="javascript:;">
                                           <div class="user-img">
-                                              <img src="{{ Auth::guard('admin')->user()->photo ? asset('public/assets/images/admins/' . Auth::guard('admin')->user()->photo) : asset('public/assets/images/noimage.png') }}"
+                                              <img src="{{ Auth::guard('admin')->user()->photo ? asset(access_public() . 'assets/images/admins/' . Auth::guard('admin')->user()->photo) : asset(access_public() . 'assets/images/noimage.png') }}"
                                                   alt="">
                                           </div>
                                       </a>
@@ -276,33 +276,33 @@
       </script>
 
       <!-- Dashboard Core -->
-      <script src="{{ asset('public/assets/admin/js/vendors/jquery-1.12.4.min.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/vendors/vue.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/vendors/bootstrap.min.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/jqueryui.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/vendors/jquery-1.12.4.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/vendors/vue.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/vendors/bootstrap.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/jqueryui.min.js') }}"></script>
       <!-- Fullside-menu Js-->
-      <script src="{{ asset('public/assets/admin/plugins/fullside-menu/jquery.slimscroll.min.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/plugins/fullside-menu/waves.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/plugins/fullside-menu/jquery.slimscroll.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/plugins/fullside-menu/waves.min.js') }}"></script>
       <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
-      <script src="{{ asset('public/assets/admin/js/plugin.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/Chart.min.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/tag-it.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/nicEdit.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/bootstrap-colorpicker.min.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/notify.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/jquery.canvasjs.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/plugin.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/Chart.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/tag-it.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/nicEdit.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/bootstrap-colorpicker.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/notify.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/jquery.canvasjs.min.js') }}"></script>
 
-      <script src="{{ asset('public/assets/admin/js/load.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/load.js') }}"></script>
       <!-- Custom Js-->
-      <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
-      <script src="{{ asset('public/assets/front/js/toastr.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/toastr.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/front/js/toastr.js') }}"></script>
       <!-- AJAX Js-->
-      <script src="{{ asset('public/assets/admin/js/myscript.js') }}"></script>
-      <script src="{{ asset('public/assets/front/js/sweetalert-dev.js') }}"></script>
-      <script src="{{ asset('public/assets/front/js/sweetalert.min.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/atag-it.js') }}"></script>
-      <script src="{{ asset('public/assets/admin/js/custom.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/myscript.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/front/js/sweetalert-dev.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/front/js/sweetalert.min.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/atag-it.js') }}"></script>
+      <script src="{{ asset(access_public() . 'assets/admin/js/custom.js') }}"></script>
 
       {{-- <script>
           tinymce.init({

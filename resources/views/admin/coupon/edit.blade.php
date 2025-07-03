@@ -1,7 +1,7 @@
 @extends('layouts.load')
 
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 
@@ -47,7 +47,8 @@
                                                 {{ __('For All') }}</option>
                                             @foreach ($users as $item)
                                                 <option value="{{ $item->id }}"
-                                                    {{ $data->user_id == $item->id ? 'selected' : '' }}>{{ $item->name }}
+                                                    {{ $data->user_id == $item->id ? 'selected' : '' }}>
+                                                    {{ $item->name }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -154,7 +155,8 @@
                                 <option value=" ">{{ __('Select Child Category') }}</option>
                                 @foreach ($childcats as $item)
                                     <option value="{{ $item->id }}"
-                                        {{ $item->id == $data->childcat_id ? 'selected' : '' }}>{{ $item->name }}</option>
+                                        {{ $item->id == $data->childcat_id ? 'selected' : '' }}>{{ $item->name }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
@@ -200,7 +202,8 @@
                 <div class="col-lg-7">
                     <select id="type" name="type" required="">
                         <option value="">{{ __('Choose a type') }}</option>
-                        <option value="0" {{ $data->type == 0 ? 'selected' : '' }}>{{ __('Discount By Percentage') }}
+                        <option value="0" {{ $data->type == 0 ? 'selected' : '' }}>
+                            {{ __('Discount By Percentage') }}
                         </option>
                         <option value="1" {{ $data->type == 1 ? 'selected' : '' }}>{{ __('Discount By Amount') }}
                         </option>
@@ -228,7 +231,8 @@
                 </div>
                 <div class="col-lg-7">
                     <select id="times" required="">
-                        <option value="0" {{ $data->times == null ? 'selected' : '' }}>{{ __('Unlimited') }}</option>
+                        <option value="0" {{ $data->times == null ? 'selected' : '' }}>{{ __('Unlimited') }}
+                        </option>
                         <option value="1" {{ $data->times != null ? 'selected' : '' }}>{{ __('Limited') }}</option>
                     </select>
                 </div>
@@ -295,7 +299,7 @@
                 <div class="col-lg-7">
                     <div class="img-upload">
                         <div id="image-preview" class="img-preview"
-                            style="background: url({{ $data->photo ? asset('public/assets/images/coupon/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                            style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/coupon/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                             <label for="image-upload" class="img-label" id="image-label"><i
                                     class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                             <input type="file" name="photo" class="img-upload" id="image-upload">

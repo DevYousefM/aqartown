@@ -159,7 +159,7 @@ class CatalogController extends Controller
     public function product($lang, $slug)
     {
 
-
+        // dd("Dvdvd");
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
             Session::put('language', $id->id);
@@ -207,7 +207,7 @@ class CatalogController extends Controller
             imagesetpixel($image, rand() % 200, rand() % 50, $pixel);
         }
 
-        $font = 'public/assets/front/fonts/NotoSans-Bold.ttf';
+        $font = access_public() . 'assets/front/fonts/NotoSans-Bold.ttf';
         $allowed_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         $length = strlen($allowed_letters);
         $letter = $allowed_letters[rand(0, $length - 1)];
@@ -225,7 +225,7 @@ class CatalogController extends Controller
             imagesetpixel($image, rand() % 200, rand() % 50, $pixels);
         }
         session(['captcha_string' => $word]);
-        imagepng($image, "public/assets/images/capcha_code.png");
+        imagepng($image, access_public() . "assets/images/capcha_code.png");
     }
 
     public function quick($id)

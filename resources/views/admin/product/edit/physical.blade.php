@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -14,9 +14,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.js"></script>
     @if ($gs->light_dark == 0)
-        <link href="{{ asset('public/assets/admin/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+        <link href="{{ asset(access_public() . 'assets/admin/css/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     @else
-        <link href="{{ asset('public/assets/admin/css/light/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+        <link href="{{ asset(access_public() . 'assets/admin/css/light/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     @endif
     <style>
         * {
@@ -188,7 +188,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-update', $data->id) }}" method="POST"
                                 enctype="multipart/form-data">
@@ -198,26 +198,26 @@
                                 @include('includes.admin.form-both')
 
                                 <!--    <button class="tablink" onclick="openPage('Home', this, '#1F224F')" id="defaultOpen">{{ __('WebSite Setting') }}</button>
-                                                                                                                                                                                    <button class="tablink" onclick="openPage('News', this, '#1F224F')" >{{ __('Mobile Setting') }}</button>
-                                                                                                                                                                                    
-                                                                                                                                                                                    
-                                                                                                                                                                                    <div id="Home" class="tabcontent">
+                                                                                                                                                                                        <button class="tablink" onclick="openPage('News', this, '#1F224F')" >{{ __('Mobile Setting') }}</button>
                                                                                                                                                                                         
                                                                                                                                                                                         
-                                                                                                                                                                               
-                                                                                                                                                                                    
-                                                                                                                                                   
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                     <div id="News" class="tabcontent">
-                                                                                                                                                                                     
-                                                                                                                                                                                             
-                                                                                                                                                                                     
-                                                                                                                                                                                    </div>
+                                                                                                                                                                                        <div id="Home" class="tabcontent">
+                                                                                                                                                                                            
+                                                                                                                                                                                            
+                                                                                                                                                                                   
+                                                                                                                                                                                        
+                                                                                                                                                       
+                                                                                                                                                                                        </div>
+                                                                                                                                                                                         <div id="News" class="tabcontent">
+                                                                                                                                                                                         
+                                                                                                                                                                                                 
+                                                                                                                                                                                         
+                                                                                                                                                                                        </div>
 
-                                                                                                                                                                                    
-                                                                                                                                                                                    
-                                                                                                                                                                                    
-                                                                                                                                                                                    -->
+                                                                                                                                                                                        
+                                                                                                                                                                                        
+                                                                                                                                                                                        
+                                                                                                                                                                                        -->
 
 
                                 <div>
@@ -395,34 +395,34 @@
                                         </div>
                                     </div>
                                     <!--
-                                                                                                                                                     <div class="row">
-                                                                                                                                                     <div class="col-lg-4">
-                                                                                                                                                      <div class="left-area">
-                                                                                                                                                        <h4 class="heading">{{ __('solution image Alt') }}* </h4>
-                                                                                                                                                        <p class="sub-heading">{{ __('(In Any Language)') }}</p>
-                                                                                                                                                      </div>
-                                                                                                                                                     </div>
-                                                                                                                                                     <div class="col-lg-7">
-                                                                                                                                                      <input type="text" class="input-field" placeholder="{{ __('Enter solution image ALt') }}" name="alt"  value="{{ $data->alt }}">
-                                                                                                                                                     </div>
-                                                                                                                                                    </div>
-                                                                                                                                                    <div class="row">
-                                                                                                                                                     <div class="col-lg-4">
-                                                                                                                                                      <div class="left-area">
-                                                                                                                                                        <h4 class="heading">{{ __('solution image ALt') }}* </h4>
-                                                                                                                                                        <p class="sub-heading">{{ __('(Arabic)') }}</p>
-                                                                                                                                                      </div>
-                                                                                                                                                     </div>
-                                                                                                                                                     <div class="col-lg-7">
-                                                                                                                                                      <input type="text" class="input-field" placeholder="{{ __('Enter solution Arabic image ALt') }}" name="alt_ar"  value="{{ $data->alt_ar }}">
-                                                                                                                                                     </div>
-                                                                                                                                                    </div>
-                                                                                                                                                   
-                                                                                                                                                    
+                                                                                                                                                         <div class="row">
+                                                                                                                                                         <div class="col-lg-4">
+                                                                                                                                                          <div class="left-area">
+                                                                                                                                                            <h4 class="heading">{{ __('solution image Alt') }}* </h4>
+                                                                                                                                                            <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                                                                                                                                          </div>
+                                                                                                                                                         </div>
+                                                                                                                                                         <div class="col-lg-7">
+                                                                                                                                                          <input type="text" class="input-field" placeholder="{{ __('Enter solution image ALt') }}" name="alt"  value="{{ $data->alt }}">
+                                                                                                                                                         </div>
+                                                                                                                                                        </div>
+                                                                                                                                                        <div class="row">
+                                                                                                                                                         <div class="col-lg-4">
+                                                                                                                                                          <div class="left-area">
+                                                                                                                                                            <h4 class="heading">{{ __('solution image ALt') }}* </h4>
+                                                                                                                                                            <p class="sub-heading">{{ __('(Arabic)') }}</p>
+                                                                                                                                                          </div>
+                                                                                                                                                         </div>
+                                                                                                                                                         <div class="col-lg-7">
+                                                                                                                                                          <input type="text" class="input-field" placeholder="{{ __('Enter solution Arabic image ALt') }}" name="alt_ar"  value="{{ $data->alt_ar }}">
+                                                                                                                                                         </div>
+                                                                                                                                                        </div>
+                                                                                                                                                       
+                                                                                                                                                        
 
 
-                                                                                                                                                     <!--
-                                                                                                                                                     {{--							<!---->
+                                                                                                                                                         <!--
+                                                                                                                                                         {{--							<!---->
 
 												<div class="row">
 													<div class="col-lg-4">
@@ -451,30 +451,30 @@
 
 
 
-                                                                                                                                               <!--	        <div class="row">
-                                                                                                                                               <div class="col-lg-4">
-                                                                                                                                               <div class="left-area">
-                                                                                                                                               <h4 class="heading">{{ __('Feature home Image') }} *</h4>
-                                                                                                                                               </div>
-                                                                                                                                               </div>
-                                                                                                                                               <div class="col-lg-7">
-                                                                                                                                         <div class="row">
-                                                                                                                                         <div class="panel panel-body">
-                                                                                                                                          <div class="span4 cropme text-center" id="landscape" style="width: 400px; height: 400px; border: 1px dashed black;">
-                                                                                                                                          </div>
-                                                                                                                                          </div>
-                                                                                                                                         </div>
+                                                                                                                                                   <!--	        <div class="row">
+                                                                                                                                                   <div class="col-lg-4">
+                                                                                                                                                   <div class="left-area">
+                                                                                                                                                   <h4 class="heading">{{ __('Feature home Image') }} *</h4>
+                                                                                                                                                   </div>
+                                                                                                                                                   </div>
+                                                                                                                                                   <div class="col-lg-7">
+                                                                                                                                             <div class="row">
+                                                                                                                                             <div class="panel panel-body">
+                                                                                                                                              <div class="span4 cropme text-center" id="landscape" style="width: 400px; height: 400px; border: 1px dashed black;">
+                                                                                                                                              </div>
+                                                                                                                                              </div>
+                                                                                                                                             </div>
 
-                                                                                                                                           <a href="javascript:;" id="crop-image" class="d-inline-block mybtn1">
-                                                                                                                                            <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
-                                                                                                                                           </a>
+                                                                                                                                               <a href="javascript:;" id="crop-image" class="d-inline-block mybtn1">
+                                                                                                                                                <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
+                                                                                                                                               </a>
 
 
-                                                                                                                                               </div>
-                                                                                                                                               </div>
+                                                                                                                                                   </div>
+                                                                                                                                                   </div>
 
-                                                                                                                                               <input type="hidden" id="feature_photo" name="photo" value="{{ $data->photo }}" accept="image/*">
-                                                                                                                                                     -->
+                                                                                                                                                   <input type="hidden" id="feature_photo" name="photo" value="{{ $data->photo }}" accept="image/*">
+                                                                                                                                                         -->
 
 
                                     <!--image-->
@@ -489,7 +489,7 @@
                                             <div class="row">
                                                 <div class="panel panel-body">
                                                     <img class="span4 mobile text-center" id="landscapes2"
-                                                        src="{{ asset('public/assets/images/products/' . $data->hover_photo) }}"
+                                                        src="{{ asset(access_public() . 'assets/images/products/' . $data->hover_photo) }}"
                                                         style="width: 400px; height: 400px; border: 1px dashed black;">
 
                                                 </div>
@@ -660,7 +660,7 @@
                                         </div>
                                     </div>
                                     <!--
-                                                                                                                                                                                             -->
+                                                                                                                                                                                                 -->
 
 
                                     <div class="row">
@@ -797,180 +797,180 @@
 
 
                                 <!-- <div class="row">
-                                                                                                                                                     <div class="col-lg-4">
-                                                                                                                                                      <div class="left-area">
-                                                                                                                                                        <h4 class="heading">{{ __('register link URL') }}*</h4>
-                                                                                                                                                        <p class="sub-heading">{{ __('(Optional)') }}</p>
-                                                                                                                                                      </div>
-                                                                                                                                                     </div>
-                                                                                                                                                     <div class="col-lg-7">
-                                                                                                                                                      <input  name="reg_link" type="text" class="input-field" placeholder="register link URL" value="{{ $data->reg_link }}">
-                                                                                                                                              
+                                                                                                                                                         <div class="col-lg-4">
+                                                                                                                                                          <div class="left-area">
+                                                                                                                                                            <h4 class="heading">{{ __('register link URL') }}*</h4>
+                                                                                                                                                            <p class="sub-heading">{{ __('(Optional)') }}</p>
+                                                                                                                                                          </div>
+                                                                                                                                                         </div>
+                                                                                                                                                         <div class="col-lg-7">
+                                                                                                                                                          <input  name="reg_link" type="text" class="input-field" placeholder="register link URL" value="{{ $data->reg_link }}">
+                                                                                                                                                  
 
-                                                                                                                                                     <div class="row">
-                                                                                                                                                      <div class="col-lg-4">
-                                                                                                                                                       <div class="left-area">
-                                                                                                                                                        <h4 class="heading">
-                                                                                                                                                         {{ __('solution map') }} :
-                                                                                                                                                        </h4>
-                                                                                                                                                       </div>
-                                                                                                                                                      </div>
-                                                                                                                                                      <div class="col-lg-7">
-                                                                                                                                                       <div class="text-editor">
-                                                                                                                                                        <input name="map" type="text" class="input-field" placeholder="{{ __('solution map') }}" >
-                                                                                                                                                       </div>
-                                                                                                                                                      </div>
-                                                                                                                                                     </div> -->
+                                                                                                                                                         <div class="row">
+                                                                                                                                                          <div class="col-lg-4">
+                                                                                                                                                           <div class="left-area">
+                                                                                                                                                            <h4 class="heading">
+                                                                                                                                                             {{ __('solution map') }} :
+                                                                                                                                                            </h4>
+                                                                                                                                                           </div>
+                                                                                                                                                          </div>
+                                                                                                                                                          <div class="col-lg-7">
+                                                                                                                                                           <div class="text-editor">
+                                                                                                                                                            <input name="map" type="text" class="input-field" placeholder="{{ __('solution map') }}" >
+                                                                                                                                                           </div>
+                                                                                                                                                          </div>
+                                                                                                                                                         </div> -->
 
                                 <!--<div class="row">
-                                                                                                                                                     <div class="col-lg-4">
-                                                                                                                                                      <div class="left-area">
-                                                                                                                                                       
-                                                                                                                                                      </div>
-                                                                                                                                                     </div>
-                                                                                                                                                     <div class="col-lg-7">
-                                                                                                                                                     
-                                                                                                                                              <div class="checkbox-wrapper">
-                                                                                                                                              <input type="checkbox" name="feature" value="1" class="checkclick3" id="allowProductfeature" {{ $data->feature != 0 ? 'checked' : '' }}>
-                                                                                                                                              <label for="allowProductfeature">{{ __('Allow Product feature settings ') }}</label>
-                                                                                                                                              </div>
-                                                                                                                                                     </div>
-                                                                                                                                                    </div>
-                                                                                                                                              -->
+                                                                                                                                                         <div class="col-lg-4">
+                                                                                                                                                          <div class="left-area">
+                                                                                                                                                           
+                                                                                                                                                          </div>
+                                                                                                                                                         </div>
+                                                                                                                                                         <div class="col-lg-7">
+                                                                                                                                                         
+                                                                                                                                                  <div class="checkbox-wrapper">
+                                                                                                                                                  <input type="checkbox" name="feature" value="1" class="checkclick3" id="allowProductfeature" {{ $data->feature != 0 ? 'checked' : '' }}>
+                                                                                                                                                  <label for="allowProductfeature">{{ __('Allow Product feature settings ') }}</label>
+                                                                                                                                                  </div>
+                                                                                                                                                         </div>
+                                                                                                                                                        </div>
+                                                                                                                                                  -->
 
                                 <!--      <div class="{{ $data->feature == 0 ? 'showbox ' : ' ' }} subs" >
-                                                                                                                                              <div class="row">
-                                                                                                                                              <div class="col-lg-4">
-                                                                                                                                              <div class="left-area">
-                                                                                                                                              <h4 class="heading">{{ __('Subscription type') }}: </h4>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              <div class="col-lg-7">
-                                                                                                                                              <select name="subscription_type" class>
-                                                                                                                                              <option value="Days" {{ $data->subscription_type == 'Days' ? 'selected' : '' }}>Days</option>
-                                                                                                                                              <option value="Months" {{ $data->subscription_type == 'Months' ? 'selected' : '' }}>Months</option>
-                                                                                                                                              <option value="Years" {{ $data->subscription_type == 'Years' ? 'selected' : '' }}>Years</option>
-                                                                                                                                              </select>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
+                                                                                                                                                  <div class="row">
+                                                                                                                                                  <div class="col-lg-4">
+                                                                                                                                                  <div class="left-area">
+                                                                                                                                                  <h4 class="heading">{{ __('Subscription type') }}: </h4>
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
+                                                                                                                                                  <div class="col-lg-7">
+                                                                                                                                                  <select name="subscription_type" class>
+                                                                                                                                                  <option value="Days" {{ $data->subscription_type == 'Days' ? 'selected' : '' }}>Days</option>
+                                                                                                                                                  <option value="Months" {{ $data->subscription_type == 'Months' ? 'selected' : '' }}>Months</option>
+                                                                                                                                                  <option value="Years" {{ $data->subscription_type == 'Years' ? 'selected' : '' }}>Years</option>
+                                                                                                                                                  </select>
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
 
-                                                                                                                                              <div class="row">
-                                                                                                                                              <div class="col-lg-4">
-                                                                                                                                              <div class="left-area">
-                                                                                                                                              <h4 class="heading">
-                                                                                                                                              {{ __('subscription period') }} :
-                                                                                                                                              </h4>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              <div class="col-lg-7">
-                                                                                                                                              <div class="text-editor">
-                                                                                                                                              <input name="subscription_period" type="number" min="0" class="input-field" placeholder="{{ __('subscription period') }}" value="{{ $data->subscription_period }}">
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              
-                                                                                                                                              <div class="row">
-                                                                                                                                              <div class="col-lg-4">
-                                                                                                                                              <div class="left-area">
-                                                                                                                                              <h4 class="heading">
-                                                                                                                                              {{ __('subscription trial period') }} :
-                                                                                                                                              </h4>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              <div class="col-lg-7">
-                                                                                                                                              <div class="text-editor">
-                                                                                                                                              <input name="trial_period" type="number" min="0" class="input-field" placeholder="{{ __('trial period') }}" value="{{ $data->trial_period }}">
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              
-                                                                                                                                              </div>-->
+                                                                                                                                                  <div class="row">
+                                                                                                                                                  <div class="col-lg-4">
+                                                                                                                                                  <div class="left-area">
+                                                                                                                                                  <h4 class="heading">
+                                                                                                                                                  {{ __('subscription period') }} :
+                                                                                                                                                  </h4>
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
+                                                                                                                                                  <div class="col-lg-7">
+                                                                                                                                                  <div class="text-editor">
+                                                                                                                                                  <input name="subscription_period" type="number" min="0" class="input-field" placeholder="{{ __('subscription period') }}" value="{{ $data->subscription_period }}">
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
+                                                                                                                                                  
+                                                                                                                                                  <div class="row">
+                                                                                                                                                  <div class="col-lg-4">
+                                                                                                                                                  <div class="left-area">
+                                                                                                                                                  <h4 class="heading">
+                                                                                                                                                  {{ __('subscription trial period') }} :
+                                                                                                                                                  </h4>
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
+                                                                                                                                                  <div class="col-lg-7">
+                                                                                                                                                  <div class="text-editor">
+                                                                                                                                                  <input name="trial_period" type="number" min="0" class="input-field" placeholder="{{ __('trial period') }}" value="{{ $data->trial_period }}">
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
+                                                                                                                                                  
+                                                                                                                                                  </div>-->
                                 <!--
-                                                                                                                                                    <div class="row">
-                                                                                                                                                     <div class="col-lg-4">
-                                                                                                                                                      <div class="left-area">
-
-                                                                                                                                                      </div>
-                                                                                                                                                     </div>
-                                                                                                                                                     <div class="col-lg-7">
-                                                                                                                                                      <div class="featured-keyword-area">
-                                                                                                                                                       <div class="heading-area">
-                                                                                                                                                        <h4 class="title">{{ __('Feature Tags') }}</h4>
-                                                                                                                                                       </div>
-
-                                                                                                                                                       <div class="feature-tag-top-filds" id="feature-section">
-                                                                                                                                                        @if (!empty($data->features))
-    @foreach ($data->features as $key => $data1)
-    <div class="feature-area">
-                                                                                                                                                         <span class="remove feature-remove"><i class="fas fa-times"></i></span>
-                                                                                                                                                         <div class="row">
-                                                                                                                                                          <div class="col-lg-6">
-                                                                                                                                                          <input type="text" name="features[]" class="input-field" placeholder="{{ __('Enter Your Keyword') }}" value="{{ $data->features[$key] }}">
-                                                                                                                                                          </div>
-
-                                                                                                                                                          <div class="col-lg-6">
-
-                                                                                                                                                   <input type="text" name="colors[]" value="{{ $data->colors[$key] }}" class="input-field "/>
-
+                                                                                                                                                        <div class="row">
+                                                                                                                                                         <div class="col-lg-4">
+                                                                                                                                                          <div class="left-area">
 
                                                                                                                                                           </div>
                                                                                                                                                          </div>
-                                                                                                                                                        </div>
+                                                                                                                                                         <div class="col-lg-7">
+                                                                                                                                                          <div class="featured-keyword-area">
+                                                                                                                                                           <div class="heading-area">
+                                                                                                                                                            <h4 class="title">{{ __('Feature Tags') }}</h4>
+                                                                                                                                                           </div>
+
+                                                                                                                                                           <div class="feature-tag-top-filds" id="feature-section">
+                                                                                                                                                            @if (!empty($data->features))
+    @foreach ($data->features as $key => $data1)
+    <div class="feature-area">
+                                                                                                                                                             <span class="remove feature-remove"><i class="fas fa-times"></i></span>
+                                                                                                                                                             <div class="row">
+                                                                                                                                                              <div class="col-lg-6">
+                                                                                                                                                              <input type="text" name="features[]" class="input-field" placeholder="{{ __('Enter Your Keyword') }}" value="{{ $data->features[$key] }}">
+                                                                                                                                                              </div>
+
+                                                                                                                                                              <div class="col-lg-6">
+
+                                                                                                                                                       <input type="text" name="colors[]" value="{{ $data->colors[$key] }}" class="input-field "/>
+
+
+                                                                                                                                                              </div>
+                                                                                                                                                             </div>
+                                                                                                                                                            </div>
     @endforeach
 @else
     <div class="feature-area">
-                                                                                                                                                         <span class="remove feature-remove"><i class="fas fa-times"></i></span>
-                                                                                                                                                         <div class="row">
-                                                                                                                                                          <div class="col-lg-6">
-                                                                                                                                                          <input type="text" name="features[]" class="input-field" placeholder="{{ __('Enter Your Keyword') }}">
-                                                                                                                                                          </div>
+                                                                                                                                                             <span class="remove feature-remove"><i class="fas fa-times"></i></span>
+                                                                                                                                                             <div class="row">
+                                                                                                                                                              <div class="col-lg-6">
+                                                                                                                                                              <input type="text" name="features[]" class="input-field" placeholder="{{ __('Enter Your Keyword') }}">
+                                                                                                                                                              </div>
 
-                                                                                                                                                          <div class="col-lg-6">
+                                                                                                                                                              <div class="col-lg-6">
 
-                                                                                                                                                   <input type="text" name="colors[]" value="" class="input-field "/>
+                                                                                                                                                       <input type="text" name="colors[]" value="" class="input-field "/>
 
 
+                                                                                                                                                              </div>
+                                                                                                                                                             </div>
+                                                                                                                                                            </div>
+    @endif
+                                                                                                                                                           </div>
+
+                                                                                                                                                           <a href="javascript:;" id="feature-btn" class="add-fild-btn"><i class="icofont-plus"></i> {{ __('Add More Field') }}</a>
                                                                                                                                                           </div>
                                                                                                                                                          </div>
                                                                                                                                                         </div>
-    @endif
-                                                                                                                                                       </div>
-
-                                                                                                                                                       <a href="javascript:;" id="feature-btn" class="add-fild-btn"><i class="icofont-plus"></i> {{ __('Add More Field') }}</a>
-                                                                                                                                                      </div>
-                                                                                                                                                     </div>
-                                                                                                                                                    </div>
 
 
-                                                                                                                                              <div class="row">
-                                                                                                                                              <div class="col-lg-4">
-                                                                                                                                              <div class="left-area">
-                                                                                                                                              <h4 class="heading">{{ __('Tags') }} *</h4>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
-                                                                                                                                              <div class="col-lg-7">
-                                                                                                                                              <ul id="tags" class="myTags">
-                                                                                                                                              @if (!empty($data->tags))
+                                                                                                                                                  <div class="row">
+                                                                                                                                                  <div class="col-lg-4">
+                                                                                                                                                  <div class="left-area">
+                                                                                                                                                  <h4 class="heading">{{ __('Tags') }} *</h4>
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
+                                                                                                                                                  <div class="col-lg-7">
+                                                                                                                                                  <ul id="tags" class="myTags">
+                                                                                                                                                  @if (!empty($data->tags))
     @foreach ($data->tags as $element)
     <li>{{ $element }}</li>
     @endforeach
     @endif
-                                                                                                                                              </ul>
-                                                                                                                                              </div>
-                                                                                                                                              </div>
+                                                                                                                                                  </ul>
+                                                                                                                                                  </div>
+                                                                                                                                                  </div>
 
-                                                                                                                                                    <div class="row">
-                                                                                                                                                     <div class="col-lg-4">
-                                                                                                                                                      <div class="left-area">
-                                                                                                                                                        <h4 class="heading">{{ __('Youtube Video URL') }}*</h4>
-                                                                                                                                                        <p class="sub-heading">{{ __('(Optional)') }}</p>
-                                                                                                                                                      </div>
-                                                                                                                                                     </div>
-                                                                                                                                                     <div class="col-lg-7">
-                                                                                                                                                      <input  name="youtube" type="text" class="input-field" placeholder="{{ __('Enter Youtube Video URL') }}" value="{{ $data->youtube }}">
-                                                                                                                                               
-                                                                                                                                                     </div>
-                                                                                                                                                    </div>-->
+                                                                                                                                                        <div class="row">
+                                                                                                                                                         <div class="col-lg-4">
+                                                                                                                                                          <div class="left-area">
+                                                                                                                                                            <h4 class="heading">{{ __('Youtube Video URL') }}*</h4>
+                                                                                                                                                            <p class="sub-heading">{{ __('(Optional)') }}</p>
+                                                                                                                                                          </div>
+                                                                                                                                                         </div>
+                                                                                                                                                         <div class="col-lg-7">
+                                                                                                                                                          <input  name="youtube" type="text" class="input-field" placeholder="{{ __('Enter Youtube Video URL') }}" value="{{ $data->youtube }}">
+                                                                                                                                                   
+                                                                                                                                                         </div>
+                                                                                                                                                        </div>-->
                                 {{-- <div class="row">
 													<div class="col-lg-4">
 														<div class="left-area">
@@ -1112,9 +1112,9 @@
                                                 <span class="remove-img"><i class="fas fa-times"></i>
                                                     <input type="hidden" value="{{ $image->id }}">
                                                 </span>
-                                                <a href="{{ asset('public/assets/images/galleries') . '/' . $image->photo }}"
+                                                <a href="{{ asset(access_public() . 'assets/images/galleries') . '/' . $image->photo }}"
                                                     target="_blank">
-                                                    <img src="{{ asset('public/assets/images/galleries') . '/' . $image->photo }}"
+                                                    <img src="{{ asset(access_public() . 'assets/images/galleries') . '/' . $image->photo }}"
                                                         alt="gallery image">
                                                 </a>
                                             </div>
@@ -1209,11 +1209,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1278,11 +1278,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1319,11 +1319,11 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' +
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
                                 arr[
                                     k]['photo'] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1342,9 +1342,9 @@
         // Gallery Section Update Ends
     </script>
 
-    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.Jcrop.js') }}"></script>
 
-    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         $('.cropme').simpleCropper();
@@ -1363,11 +1363,11 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ !empty($data->photo) ? (filter_var($data->photo, FILTER_VALIDATE_URL) ? $data->photo : asset('public/assets/images/products/' . $data->photo)) : asset('public/assets/images/noimage.png') }}" alt="">`;
+                `<img src="{{ !empty($data->photo) ? (filter_var($data->photo, FILTER_VALIDATE_URL) ? $data->photo : asset(access_public() . 'assets/images/products/' . $data->photo)) : asset(access_public() . 'assets/images/noimage.png') }}" alt="">`;
             $(".span4.cropme").html(html);
 
             let htmls =
-                `<img src="{{ !empty($data->mobile_photo) ? (filter_var($data->mobile_photo, FILTER_VALIDATE_URL) ? $data->mobile_photo : asset('public/assets/images/products/' . $data->mobile_photo)) : asset('public/assets/images/noimage.png') }}" alt="">`;
+                `<img src="{{ !empty($data->mobile_photo) ? (filter_var($data->mobile_photo, FILTER_VALIDATE_URL) ? $data->mobile_photo : asset(access_public() . 'assets/images/products/' . $data->mobile_photo)) : asset(access_public() . 'assets/images/noimage.png') }}" alt="">`;
             $(".mobile").html(htmls);
 
             $.ajaxSetup({
@@ -1464,8 +1464,8 @@
             }
         });
     </script>
-    <script type="text/javascript" src="{{ asset('public/assets/admin/js/bootstrap-tagsinput.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script type="text/javascript" src="{{ asset(access_public() . 'assets/admin/js/bootstrap-tagsinput.js') }}"></script>
+    <script type="text/javascript" src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
 
     <script type="text/javascript">
         $('.size-color').val();
@@ -1483,21 +1483,21 @@
     </script>
     <script>
         /*function openPage(pageName,elmnt,color) {
-                                        var i, tabcontent, tablinks;
-                                        tabcontent = document.getElementsByClassName("tabcontent");
-                                        for (i = 0; i < tabcontent.length; i++) {
-                                        tabcontent[i].style.display = "none";
+                                            var i, tabcontent, tablinks;
+                                            tabcontent = document.getElementsByClassName("tabcontent");
+                                            for (i = 0; i < tabcontent.length; i++) {
+                                            tabcontent[i].style.display = "none";
+                                            }
+                                            tablinks = document.getElementsByClassName("tablink");
+                                            for (i = 0; i < tablinks.length; i++) {
+                                            tablinks[i].style.backgroundColor = "";
+                                            }
+                                            document.getElementById(pageName).style.display = "block";
+                                            elmnt.style.backgroundColor = color;
                                         }
-                                        tablinks = document.getElementsByClassName("tablink");
-                                        for (i = 0; i < tablinks.length; i++) {
-                                        tablinks[i].style.backgroundColor = "";
-                                        }
-                                        document.getElementById(pageName).style.display = "block";
-                                        elmnt.style.backgroundColor = color;
-                                    }
 
-                                    // Get the element with id="defaultOpen" and click on it
-                                    document.getElementById("defaultOpen").click();*/
+                                        // Get the element with id="defaultOpen" and click on it
+                                        document.getElementById("defaultOpen").click();*/
     </script>
 
 

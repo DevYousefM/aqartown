@@ -4,9 +4,9 @@
 
 @endphp
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 @endsection
 @section('content')
     <div class="content-area">
@@ -43,7 +43,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-prod-store') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -234,9 +234,9 @@
                                             </div>
 
                                             <!--	<a href="javascript:;" id="crop-image" class="d-inline-block mybtn1">
-                                                    <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
-                                                    </a>
-    --> <input class="d-inline-block mybtn1" type="file"
+                                                        <i class="icofont-upload-alt"></i> {{ __('Upload Image Here') }}
+                                                        </a>
+        --> <input class="d-inline-block mybtn1" type="file"
                                                 onchange="document.getElementById('landscapes2').src = window.URL.createObjectURL(this.files[0])"
                                                 id="hover_photo" name="hover_photo" value="">
 
@@ -673,8 +673,8 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
-    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         // Gallery Section Insert
@@ -732,7 +732,7 @@
     </script>
 
 
-    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
 
     <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
     <script type="text/javascript">

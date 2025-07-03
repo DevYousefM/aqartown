@@ -62,7 +62,8 @@
 
     @endphp
     <!--============= Start breadvroumb =============-->
-    <div class="breadvroumb_area" style="background-image: url({{ asset('public/assets/images/' . $gs->top_icon) }});">
+    <div class="breadvroumb_area"
+        style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->top_icon) }});">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -96,7 +97,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="service_details_wraper">
-                        <img src="{{ asset('public/assets/images/categories/' . $cat->photo) }}"
+                        <img src="{{ asset(access_public() . 'assets/images/categories/' . $cat->photo) }}"
                             alt="{{ $cat->name_ar }}">
                         <div class="text-p">
                             <p>
@@ -142,10 +143,10 @@
                                 <input type="email" name="email" placeholder="{{ $langg->lang49 }}">
                             </div>
                             <!-- <div class="col-lg-6 col-md-12">
-                                        <div class="calender">
-                                            <input type="text" placeholder="تاريخ الميلاد">
-                                        </div>
-                                    </div> -->
+                                            <div class="calender">
+                                                <input type="text" placeholder="تاريخ الميلاد">
+                                            </div>
+                                        </div> -->
                         </div>
                         <div class="row">
 
@@ -180,13 +181,13 @@
                             </div>
                         </div>
                         <!-- <div class="row">
-                               
-                                    <div class="col-lg-6 col-md-12">
-                                        <div class="calender">
-                                            <input type="text" placeholder="موعد الحضور">
+                                   
+                                        <div class="col-lg-6 col-md-12">
+                                            <div class="calender">
+                                                <input type="text" placeholder="موعد الحضور">
+                                            </div>
                                         </div>
-                                    </div>
-                                </div> -->
+                                    </div> -->
                         <div class="row">
                             <div class="col">
                                 <textarea name="text" placeholder="{{ $langg->lang50 }}"></textarea>
@@ -195,7 +196,8 @@
                         @if ($gs->is_capcha == 1)
                             <ul class="captcha-area">
                                 <li>
-                                    <p><img class="codeimg1" src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                    <p><img class="codeimg1"
+                                            src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                             alt=""> <i class="fas fa-sync-alt pointer refresh_code"></i></p>
 
                                 </li>
@@ -250,7 +252,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

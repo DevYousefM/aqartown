@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/product.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
-    <link href="{{ asset('public/assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/product.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery.Jcrop.css') }}" rel="stylesheet" />
+    <link href="{{ asset(access_public() . 'assets/admin/css/Jcrop-style.css') }}" rel="stylesheet" />
 @endsection
 @section('content')
 
@@ -36,7 +36,7 @@
                         <div class="body-area">
 
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form id="geniusform" action="{{ route('admin-import-update', $data->id) }}" method="POST"
                                 enctype="multipart/form-data">
@@ -589,8 +589,7 @@
                                     <div class="col-lg-7">
                                         <input name="previous_price" step="0.1" type="number" class="input-field"
                                             placeholder="{{ __('e.g 20') }}"
-                                            value="{{ round($data->previous_price * $sign->value, 2) }}"
-                                            min="0">
+                                            value="{{ round($data->previous_price * $sign->value, 2) }}" min="0">
                                     </div>
                                 </div>
                                 <div class="{{ !empty($data->size) ? 'showbox' : '' }}" id="stckprod">
@@ -878,7 +877,8 @@
                                         class="fas fa-check"></i> {{ __('Done') }}</a>
                             </div>
                             <div class="col-sm-12 text-center">(
-                                <small>{{ __('You can upload multiple Images.') }}</small> )</div>
+                                <small>{{ __('You can upload multiple Images.') }}</small> )
+                            </div>
                         </div>
                     </div>
                     <div class="gallery-images">
@@ -928,11 +928,13 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -990,11 +992,13 @@
                                 '<input type="hidden" value="' + arr[k]['id'] + '">' +
                                 '</span>' +
                                 '<a href="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" target="_blank">' +
                                 '<img src="' +
-                                '{{ asset('public/assets/images/galleries') . '/' }}' + arr[k][
+                                '{{ asset(access_public() . 'assets/images/galleries') . '/' }}' +
+                                arr[k][
                                     'photo'
                                 ] + '" alt="gallery image">' +
                                 '</a>' +
@@ -1013,9 +1017,9 @@
         // Gallery Section Update Ends	
     </script>
 
-    <script src="{{ asset('public/assets/admin/js/jquery.Jcrop.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.Jcrop.js') }}"></script>
 
-    <script src="{{ asset('public/assets/admin/js/jquery.SimpleCropper.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/jquery.SimpleCropper.js') }}"></script>
 
     <script type="text/javascript">
         $('.cropme').simpleCropper();
@@ -1028,7 +1032,7 @@
         $(document).ready(function() {
 
             let html =
-                `<img src="{{ (empty($data->photo) ? asset('public/assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset('public/assets/images/products/' . $data->photo) }}" alt="">`;
+                `<img src="{{ (empty($data->photo) ? asset(access_public() . 'assets/images/noimage.png') : filter_var($data->photo, FILTER_VALIDATE_URL)) ? $data->photo : asset(access_public() . 'assets/images/products/' . $data->photo) }}" alt="">`;
             $(".span4.cropme").html(html);
 
             $.ajaxSetup({
@@ -1085,5 +1089,5 @@
         });
     </script>
 
-    <script src="{{ asset('public/assets/admin/js/product.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/product.js') }}"></script>
 @endsection

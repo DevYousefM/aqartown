@@ -41,7 +41,7 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image" content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -110,7 +110,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -120,8 +120,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -147,33 +147,33 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/jquery-ui.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/lineaer-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/ionicons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/swiper.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/fotorama.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/lineaer-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/ionicons.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/fotorama.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/lightgallery.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/aos.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/hamburgers.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/arabslab/css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/lightgallery.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/hamburgers.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/arabslab/css/index.css') }}">
 
 
 
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
@@ -184,7 +184,7 @@
             <div class="container">
                 <div class="logo-img">
                     <a href="{{ route('front.index', $sign) }}">
-                        <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="img">
+                        <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" alt="img">
                     </a>
                 </div>
                 <div class="lines hamburger hamburger--elastic">
@@ -334,7 +334,7 @@
                 <ul class="main-header-lg-ul">
                     <li class="img-li">
                         <a href="{{ route('front.index', $sign) }}">
-                            <img src="{{ asset('public/assets/images/' . $gs->logo) }}" alt="img">
+                            <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" alt="img">
                         </a>
                     </li>
                     <li class="active-li">
@@ -592,20 +592,20 @@
         </div>
     </footer>
     <button class="scroltop fa fa-arrow-up style5"></button>
-    <script src="{{ asset('public/assets/arabslab/js/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/popper.min.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/jquery.counterup.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/swiper.min.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/slick.min.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/aos.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/fotorama.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/lightgallery.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/lg-thumbnail.js') }}"></script>
-    <script src="{{ asset('public/assets/arabslab/js/index.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/popper.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/jquery.counterup.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/swiper.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/slick.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/aos.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/fotorama.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/lightgallery.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/lg-thumbnail.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/arabslab/js/index.js') }}"></script>
 
 
 
@@ -616,7 +616,7 @@
 
 
 
-    <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
         var mainurl = "{{ url('/' . $sign) }}";
         var mainurl2 = "{{ url('/') }}";

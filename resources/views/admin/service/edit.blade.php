@@ -67,38 +67,38 @@
                                     </div>
                                 </div>
                                 <!--     <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                  <h4 class="heading">{{ __('facebook') }} *</h4>
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                      <h4 class="heading">{{ __('facebook') }} *</h4>
 
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" class="input-field" name="facebook" placeholder="{{ __('facebook link') }}"  value="{{ $data->facebook }}">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <input type="text" class="input-field" name="facebook" placeholder="{{ __('facebook link') }}"  value="{{ $data->facebook }}">
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                  <h4 class="heading">{{ __('twiter') }} *</h4>
+                                <div class="row">
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                      <h4 class="heading">{{ __('twiter') }} *</h4>
 
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" class="input-field" name="twiter" placeholder="{{ __('twiter link') }}"  value="{{ $data->twiter }}">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <input type="text" class="input-field" name="twiter" placeholder="{{ __('twiter link') }}"  value="{{ $data->twiter }}">
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                  <h4 class="heading">{{ __('linkedin') }} *</h4>
+                                <div class="row">
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                      <h4 class="heading">{{ __('linkedin') }} *</h4>
 
-                                </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <input type="text" class="input-field" name="linkedin" placeholder="{{ __('linkedin link') }}"  value="{{ $data->linkedin }}">
-                              </div>
-                            </div> -->
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" class="input-field" name="linkedin" placeholder="{{ __('linkedin link') }}"  value="{{ $data->linkedin }}">
+                                  </div>
+                                </div> -->
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="left-area">
@@ -108,7 +108,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->photo ? asset('public/assets/images/services/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/services/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload"

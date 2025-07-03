@@ -26,7 +26,7 @@
                     <div class="product-description">
                         <div class="body-area">
                             <div class="gocover"
-                                style="background: url({{ asset('public/assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                style="background: url({{ asset(access_public() . 'assets/images/' . $gs->admin_loader) }}) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
                             </div>
                             <form action="{{ route('admin-gs-update') }}" id="geniusform" method="POST"
                                 enctype="multipart/form-data">
@@ -69,7 +69,7 @@
                                     <div class="col-lg-6">
                                         <div class="img-upload full-width-img">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $gs->popup_background ? asset('public/assets/images/' . $gs->popup_background) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $gs->popup_background ? asset(access_public() . 'assets/images/' . $gs->popup_background) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="popup_background" class="img-upload"
@@ -83,31 +83,31 @@
                                 <br>
 
                                 <!--
-                            <div class="row justify-content-center">
-                              <div class="col-lg-3">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Popup Title') }} *
-                                      </h4>
+                                <div class="row justify-content-center">
+                                  <div class="col-lg-3">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Popup Title') }} *
+                                          </h4>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-6">
+                                    <input type="text" class="input-field" placeholder="{{ __('Popup Title') }}" name="popup_title" value="{{ $gs->popup_title }}" required="">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-lg-6">
-                                <input type="text" class="input-field" placeholder="{{ __('Popup Title') }}" name="popup_title" value="{{ $gs->popup_title }}" required="">
-                              </div>
-                            </div>
 
-                               <div class="row justify-content-center">
-                              <div class="col-lg-3">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Popup Arabic Title') }} *
-                                      </h4>
+                                   <div class="row justify-content-center">
+                                  <div class="col-lg-3">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Popup Arabic Title') }} *
+                                          </h4>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-6">
+                                    <input type="text" class="input-field" placeholder="{{ __('Popup Arabic Title') }}" name="popup_title_ar" value="{{ $gs->popup_title_ar }}" required="">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-lg-6">
-                                <input type="text" class="input-field" placeholder="{{ __('Popup Arabic Title') }}" name="popup_title_ar" value="{{ $gs->popup_title_ar }}" required="">
-                              </div>
-                            </div>
 
-    -->
+        -->
 
                                 <div class="row justify-content-center">
                                     <div class="col-lg-3">

@@ -39,40 +39,40 @@
                                     </div>
                                 </div>
                                 <!-- <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Sub Title') }} *</h4>
-                                    <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Sub Title') }} *</h4>
+                                        <p class="sub-heading">{{ __('(In Any Language)') }}</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" class="input-field" name="subtitle" placeholder="{{ __('Sub Title') }}" value="{{ $data->subtitle }}" required="">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <input type="text" class="input-field" name="subtitle" placeholder="{{ __('Sub Title') }}" value="{{ $data->subtitle }}" required="">
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Arabic Sub Title') }} *</h4>
-                                    <p class="sub-heading">{{ __('(Arabic)') }}</p>
+                                <div class="row">
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Arabic Sub Title') }} *</h4>
+                                        <p class="sub-heading">{{ __('(Arabic)') }}</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" class="input-field" name="subtitle_ar" placeholder="{{ __('Arabic Sub Title') }}" value="{{ $data->subtitle_ar }}" required="">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <input type="text" class="input-field" name="subtitle_ar" placeholder="{{ __('Arabic Sub Title') }}" value="{{ $data->subtitle_ar }}" required="">
-                              </div>
-                            </div>
 
-                            <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Rate') }} *</h4>
-                                    <p class="sub-heading">{{ __('(1 : 5)') }}</p>
+                                <div class="row">
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Rate') }} *</h4>
+                                        <p class="sub-heading">{{ __('(1 : 5)') }}</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="number" class="input-field" name="rate" placeholder="{{ __('Rate') }}" value="{{ $data->rate }}" required="">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <input type="number" class="input-field" name="rate" placeholder="{{ __('Rate') }}" value="{{ $data->rate }}" required="">
-                              </div>
-                            </div>
-    -->
+        -->
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="left-area">
@@ -82,7 +82,7 @@
                                     <div class="col-lg-7">
                                         <div class="img-upload">
                                             <div id="image-preview" class="img-preview"
-                                                style="background: url({{ $data->photo ? asset('public/assets/images/reviews/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
+                                                style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/reviews/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
                                                 <label for="image-upload" class="img-label" id="image-label"><i
                                                         class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
                                                 <input type="file" name="photo" class="img-upload" id="image-upload">

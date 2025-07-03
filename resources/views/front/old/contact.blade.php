@@ -13,7 +13,8 @@
 
     <section>
         <div class="w-100 pt-180 pb-180 page-title-wrap text-center black-layer opc5 position-relative">
-            <div class="fixed-bg" style="background-image: url({{ asset('public/assets/images/' . $gs->contact_icon) }});">
+            <div class="fixed-bg"
+                style="background-image: url({{ asset(access_public() . 'assets/images/' . $gs->contact_icon) }});">
             </div>
             <div class="container">
                 <div class="page-title-inner d-inline-block">
@@ -100,7 +101,7 @@
                                                 <ul class="captcha-area">
                                                     <li>
                                                         <p><img class="codeimg1"
-                                                                src="{{ asset('public/assets/images/capcha_code.png') }}"
+                                                                src="{{ asset(access_public() . 'assets/images/capcha_code.png') }}"
                                                                 alt=""> <i
                                                                 class="fas fa-sync-alt pointer refresh_code"></i></p>
 
@@ -128,33 +129,33 @@
         </div>
     </section>
     <!--   <section>
-                        <div class="w-100 pt-100 pb-100 position-relative">
-                            <div class="container">
-                                <div class="sponsors-wrap w-100">
-                                    <div class="sponsor-caro">
-                                        <div class="sr-box text-center w-100">
-                                            <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-1.png" alt="Sponsor Image 1"></a>
-                                        </div>
-                                        <div class="sr-box text-center w-100">
-                                            <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-2.png" alt="Sponsor Image 2"></a>
-                                        </div>
-                                        <div class="sr-box text-center w-100">
-                                            <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-3.png" alt="Sponsor Image 3"></a>
-                                        </div>
-                                        <div class="sr-box text-center w-100">
-                                            <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-4.png" alt="Sponsor Image 4"></a>
-                                        </div>
-                                        <div class="sr-box text-center w-100">
-                                            <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-5.png" alt="Sponsor Image 5"></a>
-                                        </div>
-                                        <div class="sr-box text-center w-100">
-                                            <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-6.png" alt="Sponsor Image 6"></a>
+                            <div class="w-100 pt-100 pb-100 position-relative">
+                                <div class="container">
+                                    <div class="sponsors-wrap w-100">
+                                        <div class="sponsor-caro">
+                                            <div class="sr-box text-center w-100">
+                                                <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-1.png" alt="Sponsor Image 1"></a>
+                                            </div>
+                                            <div class="sr-box text-center w-100">
+                                                <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-2.png" alt="Sponsor Image 2"></a>
+                                            </div>
+                                            <div class="sr-box text-center w-100">
+                                                <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-3.png" alt="Sponsor Image 3"></a>
+                                            </div>
+                                            <div class="sr-box text-center w-100">
+                                                <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-4.png" alt="Sponsor Image 4"></a>
+                                            </div>
+                                            <div class="sr-box text-center w-100">
+                                                <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-5.png" alt="Sponsor Image 5"></a>
+                                            </div>
+                                            <div class="sr-box text-center w-100">
+                                                <a href="javascript:void(0);" title=""><img class="img-fluid d-inline-block" src="assets/images/resources/sponsor-img1-6.png" alt="Sponsor Image 6"></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>-->
+                        </section>-->
 @stop
 
 @section('js')
@@ -184,7 +185,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
                     );
                     console.log(1);
                 },

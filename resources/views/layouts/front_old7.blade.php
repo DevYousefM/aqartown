@@ -43,7 +43,8 @@
         <meta property="og:id" content="{{ $productt->id }}" />
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
-        <meta property="og:image" content="{{ asset('public/assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image"
+            content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
         <meta name="author" content="{{ $gs->title }}">
         <title>
             @if ($langg->rtl == 1)
@@ -112,7 +113,7 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "url": "{{url('/')}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}"
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}"
     }
     </script>
     <script type="application/ld+json">
@@ -122,8 +123,8 @@
     "name": "{{$gs->title}}",
     "url": "{{url('/')}}",
     "description": "",
-    "image": "{{asset('public/assets/images/'.$gs->logo)}}",
-      "logo": "{{asset('public/assets/images/'.$gs->logo)}}",
+    "image": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
+      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
       "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
     "telephone": "{{$ps->phone}}",
     "address": {
@@ -149,7 +150,7 @@
     <!-- Google Font -->
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('public/assets/images/' . $gs->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset(access_public() . 'assets/images/' . $gs->favicon) }}" />
     <!-- bootstrap -->
 
 
@@ -157,37 +158,38 @@
 
 
     <!-- Custom CSS -->
-    <link href="{{ asset('public/assets/canbest/css/styles.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/animation.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/date-picker.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/dropzone.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/light-box.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/ion.rangeSlider.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/slick.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/slick-theme.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/animation.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/swiper.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/themify.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/morris.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/magnifypopup.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/animation.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/date-picker.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/dropzone.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/light-box.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/ion.rangeSlider.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/slick-theme.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/animation.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/swiper.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/themify.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/morris.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/magnifypopup.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('public/assets/canbest/css/plugins/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/owl.theme.default.min.css') }}"
+        rel="stylesheet">
 
-    <link href="{{ asset('public/assets/canbest/css/plugins/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/pxp-carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/pxp-carousel.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('public/assets/canbest/css/plugins/line-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/iconfont.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/canbest/css/plugins/flaticon.css') }}" rel="stylesheet">
-
-
-    <link href="{{ asset('public/assets/canbest/css/plugins/font-awesome.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/line-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/iconfont.css') }}" rel="stylesheet">
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/flaticon.css') }}" rel="stylesheet">
 
 
+    <link href="{{ asset(access_public() . 'assets/canbest/css/plugins/font-awesome.css') }}" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="{{ asset('public/assets/front/css/toastr.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
 
     @yield('css')
 </head>
@@ -215,7 +217,8 @@
                 <nav id="navigation" class="navigation navigation-landscape">
                     <div class="nav-header">
                         <a class="nav-brand" href="{{ route('front.index', $sign) }}">
-                            <img src="{{ asset('public/assets/images/' . $gs->logo) }}" class="logo" alt="" />
+                            <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" class="logo"
+                                alt="" />
                         </a>
                         <div class="nav-toggle"></div>
                         <div class="mobile_nav">
@@ -571,32 +574,32 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{ asset('public/assets/canbest/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/popper.min.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/ion.rangeSlider.min.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/select2.min.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/slick.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/jquery.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/popper.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/ion.rangeSlider.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/select2.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/slick.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/owl.carousel.min.js') }}"></script>
 
-    <script src="{{ asset('public/assets/canbest/js/swiper.min.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/slider-bg.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/lightbox.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/imagesloaded.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/daterangepicker.js') }}"></script>
-    <script src="{{ asset('public/assets/canbest/js/custom.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/swiper.min.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/slider-bg.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/lightbox.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/imagesloaded.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/daterangepicker.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/custom.js') }}"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
 
-    <script src="{{ asset('public/assets/canbest/js/script.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/canbest/js/script.js') }}"></script>
 
 
 
 
 
-    <script src="{{ asset('public/assets/admin/js/toastr.js') }}"></script>
+    <script src="{{ asset(access_public() . 'assets/admin/js/toastr.js') }}"></script>
     <script type="text/javascript">
         var mainurl = "{{ url('/' . $sign) }}";
         var mainurl2 = "{{ url('/') }}";
@@ -677,8 +680,8 @@
                 processData: false,
                 beforeSend: function() {
                     $('#email-form .response').html(
-                        '<div class="text-info"><img src="{{ asset('public/assets/images/preloader.gif') }}"> Loading...</div>'
-                        );
+                        '<div class="text-info"><img src="{{ asset(access_public() . 'assets/images/preloader.gif') }}"> Loading...</div>'
+                    );
                     console.log(1);
                 },
                 success: function(data) {

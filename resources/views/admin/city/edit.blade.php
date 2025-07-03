@@ -1,7 +1,7 @@
 @extends('layouts.load')
 
 @section('styles')
-    <link href="{{ asset('public/assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset(access_public() . 'assets/admin/css/jquery-ui.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 
@@ -21,22 +21,22 @@
 
 
                                 <!-- <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('History title') }} *</h4>
-                                  
-                                </div>
-                              </div>
-                              <div class="col-lg-7">
-                                   <select name="country_id">
-                                   @foreach (DB::table('countries')->get() as $dat)
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('History title') }} *</h4>
+                                      
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                       <select name="country_id">
+                                       @foreach (DB::table('countries')->get() as $dat)
     <option value="{{ $dat->id }}" {{ $data->country_id == $dat->id ? 'selected' : '' }} >{{ $dat->country_name }}</option>
     @endforeach
-                                  </select>
-                              
-                              </div>
-                       
-                            </div>    -->
+                                      </select>
+                                  
+                                  </div>
+                           
+                                </div>    -->
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="left-area">
@@ -63,33 +63,33 @@
                                     </div>
                                 </div>
                                 <!-- <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Video link') }} *</h4>
-                                    
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Video link') }} *</h4>
+                                        
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <input type="text" class="input-field" name="auther" placeholder="{{ __('Enter Arabic name') }}"  value="{{ $data->auther }}">
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <input type="text" class="input-field" name="auther" placeholder="{{ __('Enter Arabic name') }}"  value="{{ $data->auther }}">
-                              </div>
-                            </div>
-                 <div class="row">
-                              <div class="col-lg-4">
-                                <div class="left-area">
-                                    <h4 class="heading">{{ __('Current Image') }} *</h4>
-                                </div>
-                              </div>
-                              <div class="col-lg-7">
-                                <div class="img-upload">
-                                    <div id="image-preview" class="img-preview" style="background: url({{ $data->photo ? asset('public/assets/images/gallery/' . $data->photo) : asset('public/assets/images/noimage.png') }});">
-                                        <label for="image-upload" class="img-label" id="image-label"><i class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
-                                        <input type="file" name="photo" class="img-upload" id="image-upload">
-                                      </div>
-                                </div>
+                     <div class="row">
+                                  <div class="col-lg-4">
+                                    <div class="left-area">
+                                        <h4 class="heading">{{ __('Current Image') }} *</h4>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-7">
+                                    <div class="img-upload">
+                                        <div id="image-preview" class="img-preview" style="background: url({{ $data->photo ? asset(access_public() . 'assets/images/gallery/' . $data->photo) : asset(access_public() . 'assets/images/noimage.png') }});">
+                                            <label for="image-upload" class="img-label" id="image-label"><i class="icofont-upload-alt"></i>{{ __('Upload Image') }}</label>
+                                            <input type="file" name="photo" class="img-upload" id="image-upload">
+                                          </div>
+                                    </div>
 
-                              </div>
-                            </div>
-                              -->
+                                  </div>
+                                </div>
+                                  -->
 
                                 <br>
                                 <div class="row">
