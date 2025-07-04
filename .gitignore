@@ -16,3 +16,5 @@ assets/admin/css/light.zip
 app/Http/Controllers/Vendor.zip
 public/assets/admin/css/rtl.zip
 public/assets/admin/css/light.zip
+public/assets/images/ads/*
+public/assets/images/capcha_code.png
