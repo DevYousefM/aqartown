@@ -1520,7 +1520,6 @@ Route::group(['middleware' => 'maintenance'], function () {
 
   Route::get('{lang}/markets', 'Front\FrontendController@markets')->name('front.markets');
   Route::get('{lang}/markets-details/{slug?}', 'Front\FrontendController@markets_details')->name('front.markets_details');
-
   Route::get('{lang}/brand/{slug}', 'Front\FrontendController@brand')->name('front.singlebrands');
   // TAG SECTION
   Route::get('{lang}/tag/{slug}', 'Front\CatalogController@tag')->name('front.tag');
