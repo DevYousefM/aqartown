@@ -29,6 +29,8 @@ class SecurityHeaders
 
         $response->headers->set('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';");
 
+        $response->headers->set('Permissions-Policy', 'geolocation=(self), microphone=(), camera=(), fullscreen=(self)');
+
         return $response;
     }
 }
