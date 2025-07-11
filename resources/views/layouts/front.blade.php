@@ -187,35 +187,44 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/bootstrap.min.css" type="text/css"
+        media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/animate.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/animate.min.css" type="text/css"
+        media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/magnific-popup.css" type="text/css"
+        media="print" onload="this.media='all'">
 
     <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css"
-        type="text/css">
+        type="text/css" media="print" onload="this.media='all'">
 
     <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css"
-        type="text/css">
+        type="text/css" media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/swiper.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/swiper.min.css" type="text/css"
+        media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/select2.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/select2.css" type="text/css"
+        media="print" onload="this.media='all'">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/default.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/default.css" type="text/css"
+        media="print" onload="this.media='all'">
 
     @if ($langg->rtl == 1)
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/style.css" type="text/css">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/style.css" type="text/css"
+            media="print" onload="this.media='all'">
     @else
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/styleltr.css" type="text/css">
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/styleltr.css" type="text/css"
+            media="print" onload="this.media='all'">
     @endif
 
 
 
 
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/responsive.css" type="text/css"
+        media="print" onload="this.media='all'">
 
 
 
@@ -229,7 +238,8 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}" type="text/css" media="print"
+        onload="this.media='all'">
 
 
 
