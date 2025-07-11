@@ -132,7 +132,7 @@
       "addressLocality": "{{$ps->street_ar}}",
       "addressRegion": "Cairo",
       "postalCode": "11341",
-      "addressCountry": "Egypt"
+      "addressCountry": "EG"
     }
   }
 </script>

@@ -141,7 +141,7 @@
 
       "postalCode": "11341",
 
-      "addressCountry": "Egypt"
+      "addressCountry": "EG"
 
     }
 

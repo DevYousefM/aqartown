@@ -73,7 +73,8 @@
         <meta property="og:description"
             content="{{ $productt->meta_description != null ? $productt->meta_description : strip_tags($productt->description) }}" />
 
-        <meta property="og:image" content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
+        <meta property="og:image"
+            content="{{ asset(access_public() . 'assets/images/products/' . $productt->photo) }}" />
 
         <meta name="author" content="{{ $gs->title }}">
 
@@ -227,7 +228,7 @@
 
       "postalCode": "11341",
 
-      "addressCountry": "Egypt"
+      "addressCountry": "EG"
 
     }
 
@@ -279,9 +280,11 @@
 
     <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/magnific-popup.css" type="text/css">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css"
+        type="text/css">
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css"
+        type="text/css">
 
     <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/swiper.min.css" type="text/css">
 
@@ -732,8 +735,8 @@
                                 <div class="nav-logo">
 
                                     <a href="{{ route('front.index', $sign) }}"><img
-                                            src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" alt=""
-                                            title=""></a>
+                                            src="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}"
+                                            alt="" title=""></a>
 
                                 </div>
 
@@ -881,7 +884,8 @@
 
                                 <a href="{{ route('front.index', $sign) }}">
 
-                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}" alt="">
+                                    <img src="{{ asset(access_public() . 'assets/images/' . $gs->logo_ar) }}"
+                                        alt="">
 
                                 </a>
 
