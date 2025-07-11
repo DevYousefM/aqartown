@@ -33,7 +33,7 @@ class SecurityHeaders
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
             "font-src 'self' https://fonts.gstatic.com data:",
             "img-src 'self' data: https://www.google-analytics.com https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com https://googleads.g.doubleclick.net",
-            "connect-src 'self' https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.facebook.com",
+            "connect-src 'self' https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.eg https://www.facebook.com",
             "frame-src 'self' https://td.doubleclick.net https://www.facebook.com"
         ]));
 
