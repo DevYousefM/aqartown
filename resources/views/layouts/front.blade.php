@@ -406,8 +406,8 @@
 
 
                                         <li class="menu-item-has-children">
+                                            <a href="#">{{ $langg->lang18 }}</a>
 
-                                            <a href="javascript:void(0)">{{ $langg->lang18 }}</a>
 
                                             <ul class="submenu">
 
