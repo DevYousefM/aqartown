@@ -238,8 +238,8 @@
 
 
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}" type="text/css" media="print"
-        onload="this.media='all'">
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}" type="text/css"
+        media="print" onload="this.media='all'">
 
 
 
@@ -275,6 +275,37 @@
 
         gtag('config', 'G-C1Z02SYPPT');
     </script>
+    <style>
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            /* Or dark: #000 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Spinner animation */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ccc;
+            border-top-color: #3498db;
+            border-radius: 50%;
+            animation: spin 0.9s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 
 
@@ -304,7 +335,9 @@
     <!-- start header -->
 
 
-
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
     <!-- Scroll-top -->
 
     <button class="scroll-top scroll-to-target" data-target="html">
@@ -1501,6 +1534,16 @@
     <script>
         jQuery.noConflict();
     </script>
+    <script>
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            preloader.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => preloader.remove(), 600); // Optional cleanup
+        });
+    </script>
+
 </body>
 
 </html>
