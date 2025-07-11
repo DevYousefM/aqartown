@@ -108,36 +108,48 @@
 
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "url": "{{url('/')}}",
-      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}"
-    }
-    </script>
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "{{$gs->title}}",
-    "url": "{{url('/')}}",
-    "description": "",
-    "image": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
-      "logo": "{{asset(access_public() . 'assets/images/'.$gs->logo)}}",
-      "sameAs": ["{{ App\Models\Socialsetting::find(1)->facebook }}", "{{ App\Models\Socialsetting::find(1)->twitter }}", "{{ App\Models\Socialsetting::find(1)->instagram }}"],
-    "telephone": "{{$ps->phone}}",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "{{$ps->street}}",
-      "addressLocality": "{{$ps->street_ar}}",
-      "addressRegion": "Cairo",
-      "postalCode": "11341",
-      "addressCountry": "EG"
-    }
-  }
+{!! json_encode([
+  "@context" => "https://schema.org",
+  "@graph" => [
+    [
+      "@type" => "RealEstateAgent",
+      "@id" => url('/'),
+      "name" => "عقار تاون",
+      "url" => url('/ar'),
+      "logo" => asset(access_public() . 'assets/images/' . $gs->logo),
+      "description" => "عقار تاون هي شركة مصرية متخصصة في إدارة وتأجير العقارات التجارية، تربط بين الملاك، المطورين، ورواد الأعمال الباحثين عن مواقع استراتيجية.",
+      "address" => [
+        "@type" => "PostalAddress",
+        "streetAddress" => "24 شارع أحمد فخري – مدينة نصر",
+        "addressLocality" => "القاهرة",
+        "addressRegion" => "القاهرة",
+        "postalCode" => "11341",
+        "addressCountry" => "EG"
+      ],
+      "inLanguage" => "ar",
+      "telephone" => ["01148222118", "01100659191"]
+    ],
+    [
+      "@type" => "RealEstateAgent",
+      "@id" => url('/en'),
+      "name" => "Aqar Town",
+      "url" => url('/en'),
+      "logo" => asset(access_public() . 'assets/images/' . $gs->logo),
+      "description" => "Aqar Town is an Egyptian company specialized in managing and leasing commercial properties, connecting landlords, developers, and entrepreneurs.",
+      "address" => [
+        "@type" => "PostalAddress",
+        "streetAddress" => "24 Ahmed Fakhry Street – Nasr City",
+        "addressLocality" => "Cairo",
+        "addressRegion" => "Cairo",
+        "postalCode" => "11341",
+        "addressCountry" => "EG"
+      ],
+      "inLanguage" => "en",
+      "telephone" => ["01148222118", "01100659191"]
+    ]
+  ]
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
 </script>
-
-
 
 
 
