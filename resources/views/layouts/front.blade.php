@@ -8,7 +8,22 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta property="og:url" content="{{ url('/') }}" />
+    @php
+        $currentUrl = url()->current();
+        $currentLocale = app()->getLocale();
+
+        $path = request()->path();
+        $path = preg_replace('#^(ar|en)(/)?#', '', $path);
+
+        $arUrl = url('ar' . ($path ? '/' . ltrim($path, '/') : ''));
+        $enUrl = url('en' . ($path ? '/' . ltrim($path, '/') : ''));
+    @endphp
+
+    <link rel="alternate" hreflang="ar" href="{{ $arUrl }}" />
+    <link rel="alternate" hreflang="en" href="{{ $enUrl }}" />
+
     @yield('links')
+
     @php
         $ps = App\Models\Pagesetting::find(1);
         $services = DB::table('our_teams')->get();
