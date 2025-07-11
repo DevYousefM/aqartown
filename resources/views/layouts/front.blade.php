@@ -179,79 +179,58 @@
 
     <!-- bootstrap -->
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/bootstrap.min.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/bootstrap.min.css">
-    </noscript>
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/animate.min.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/animate.min.css">
-    </noscript>
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/magnific-popup.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/magnific-popup.css">
-    </noscript>
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css">
-    </noscript>
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css">
-    </noscript>
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/swiper.min.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/swiper.min.css">
-    </noscript>
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/select2.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/select2.css">
-    </noscript>
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/default.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/default.css">
-    </noscript>
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/bootstrap.min.css" type="text/css" media="print" onload="this.media='all'">
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/animate.min.css" type="text/css" >
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/magnific-popup.css" type="text/css" >
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/font-awesome.min.css"
+        type="text/css" >
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/owl.carousel.min.css"
+        type="text/css" >
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/swiper.min.css" type="text/css" >
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/select2.css" type="text/css" >
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/default.css" type="text/css" >
 
     @if ($langg->rtl == 1)
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/style.css" media="print"
-            onload="this.media='all'">
-        <noscript>
-            <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/style.css">
-        </noscript>
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/style.css" type="text/css" >
     @else
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/styleltr.css" media="print"
-            onload="this.media='all'">
-        <noscript>
-            <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/styleltr.css">
-        </noscript>
+        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/styleltr.css" type="text/css" >
     @endif
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/responsive.css" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/responsive.css">
-    </noscript>
 
-    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}" media="print"
-        onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
-    </noscript>
+
+
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/aqar/') }}/css/responsive.css" type="text/css" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="{{ asset(access_public() . 'assets/front/css/toastr.css') }}">
+
 
 
     @yield('css')
@@ -286,37 +265,6 @@
 
         gtag('config', 'G-C1Z02SYPPT');
     </script>
-    <style>
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff;
-            /* Or dark: #000 */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        /* Spinner animation */
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #ccc;
-            border-top-color: #3498db;
-            border-radius: 50%;
-            animation: spin 0.9s linear infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
 </head>
 
 
@@ -346,9 +294,7 @@
     <!-- start header -->
 
 
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
+
     <!-- Scroll-top -->
 
     <button class="scroll-top scroll-to-target" data-target="html">
@@ -1545,16 +1491,6 @@
     <script>
         jQuery.noConflict();
     </script>
-    <script>
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            preloader.style.opacity = '0';
-            preloader.style.visibility = 'hidden';
-            preloader.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => preloader.remove(), 600); // Optional cleanup
-        });
-    </script>
-
 </body>
 
 </html>
