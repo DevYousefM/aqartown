@@ -8,19 +8,9 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta property="og:url" content="{{ url('/') }}" />
-    @php
-        $currentUrl = url()->current();
-        $currentLocale = app()->getLocale();
 
-        $path = request()->path();
-        $path = preg_replace('#^(ar|en)(/)?#', '', $path);
-
-        $arUrl = url('ar' . ($path ? '/' . ltrim($path, '/') : ''));
-        $enUrl = url('en' . ($path ? '/' . ltrim($path, '/') : ''));
-    @endphp
-
-    <link rel="alternate" hreflang="ar" href="{{ $arUrl }}" />
-    <link rel="alternate" hreflang="en" href="{{ $enUrl }}" />
+    <link rel="alternate" hreflang="ar" href="https://aqartown.com/ar" />
+    <link rel="alternate" hreflang="en" href="https://aqartown.com/en" />
 
     @yield('links')
 
