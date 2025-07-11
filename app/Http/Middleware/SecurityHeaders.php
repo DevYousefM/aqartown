@@ -32,9 +32,9 @@ class SecurityHeaders
             "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://cdnjs.cloudflare.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google-analytics.com",
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
             "font-src 'self' https://fonts.gstatic.com data:",
-            "img-src 'self' data: https://www.google-analytics.com https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net",
-            "connect-src 'self' https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
-            "frame-src 'self' https://td.doubleclick.net"
+            "img-src 'self' data: https://www.google-analytics.com https://www.googleadservices.com https://www.googletagmanager.com https://connect.facebook.net https://www.facebook.com https://googleads.g.doubleclick.net",
+            "connect-src 'self' https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.facebook.com",
+            "frame-src 'self' https://td.doubleclick.net https://www.facebook.com"
         ]));
 
         $response->headers->set('Permissions-Policy', 'geolocation=(self), microphone=(), camera=(), fullscreen=(self)');
