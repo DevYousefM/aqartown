@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/robots.txt', function () {
-    return response()->file(public_path('robots.txt'));
+  return response()->file(public_path('robots.txt'));
 });
 Route::get('/sitemap.xml', function () {
-    return response()->file(public_path('sitemap.xml'));
+  return response()->make(file_get_contents(public_path('sitemap.xml')), 200, [
+    'Content-Type' => 'application/xml'
+  ]);
 });
 
 // ************************************ ADMIN SECTION **********************************************
