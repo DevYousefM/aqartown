@@ -1444,13 +1444,12 @@ Route::prefix('vendor')->group(function () {
 });
 Route::group(['middleware' => 'maintenance'], function () {
 
-  Route::get('/', function () {
-    $data = DB::table('languages')->where('is_default', '=', 1)->first();
-    return Redirect::to('/' . $data->sign);
-  });
+  // Route::get('/', function () {
+  //   $data = DB::table('languages')->where('is_default', '=', 1)->first();
+  //   return Redirect::to('/' . $data->sign);
+  // });
 
-
-  Route::get('/{lang}', 'Front\FrontendController@index')->name('front.index');
+  Route::get('/{lang?}', 'Front\FrontendController@index')->name('front.index');
 
   Route::get('/extras', 'Front\FrontendController@extraIndex')->name('front.extraIndex');
   Route::get('/currency/{id}', 'Front\FrontendController@currency')->name('front.currency');

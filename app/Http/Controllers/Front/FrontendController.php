@@ -139,7 +139,7 @@ class FrontendController extends Controller
 
     // -------------------------------- HOME PAGE SECTION ----------------------------------------
 
-    public function index(Request $request, $lang)
+    public function index(Request $request, $lang = 'ar')
     {
 
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
@@ -193,7 +193,7 @@ class FrontendController extends Controller
 
     // -------------------------------- HOME PAGE SECTION ENDS ----------------------------------------
 
-    public function about(Request $request, $lang)
+    public function about(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -214,7 +214,7 @@ class FrontendController extends Controller
         return view('front.about', compact('about', 'about_uss', 'our_teams', 'sponsers', 'historis', 'reviews', 'counters', 'images'));
     }
 
-    public function aboutus(Request $request, $lang)
+    public function aboutus(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -233,7 +233,7 @@ class FrontendController extends Controller
         $images =  DB::table('ads')->get();
         return view('front.aboutus', compact('about', 'about_uss', 'our_teams', 'sponsers', 'historis', 'reviews', 'counters', 'images'));
     }
-    public function jobs(Request $request, $lang)
+    public function jobs(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -254,7 +254,7 @@ class FrontendController extends Controller
         return view('front.jobs', compact('about', 'about_uss', 'our_teams', 'sponsers', 'historis', 'reviews', 'counters', 'images', 'jobs'));
     }
 
-    public function latestwork(Request $request, $lang)
+    public function latestwork(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -275,7 +275,7 @@ class FrontendController extends Controller
 
         return view('front.latestwork', compact('about', 'about_uss', 'our_teams', 'sponsers', 'historis', 'reviews', 'counters', 'images', 'jobs'));
     }
-    public function profits(Request $request, $lang)
+    public function profits(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -296,7 +296,7 @@ class FrontendController extends Controller
         return view('front.profits', compact('about', 'about_uss', 'our_teams', 'sponsers', 'historis', 'reviews', 'counters', 'images', 'jobs'));
     }
 
-    public function management(Request $request, $lang)
+    public function management(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -316,7 +316,7 @@ class FrontendController extends Controller
         $images =  DB::table('ads')->get();
         return view('front.management', compact('about', 'about_uss', 'our_teams', 'sponsers', 'historis', 'reviews', 'counters', 'images', 'jobs'));
     }
-    public function what_we_do(Request $request, $lang)
+    public function what_we_do(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -332,7 +332,7 @@ class FrontendController extends Controller
     }
 
 
-    public function gallery(Request $request, $lang)
+    public function gallery(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -350,7 +350,7 @@ class FrontendController extends Controller
         return view('front.gallery', compact('galleries', 'cats', 'images', 'services'));
     }
 
-    public function products(Request $request, $lang)
+    public function products(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -415,7 +415,7 @@ class FrontendController extends Controller
 
         return view('front.products-de', compact('product', 'curr', 'vendors'));
     }
-    public function video(Request $request, $lang)
+    public function video(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -432,7 +432,7 @@ class FrontendController extends Controller
     }
 
 
-    public function product_video(Request $request, $lang)
+    public function product_video(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -449,7 +449,7 @@ class FrontendController extends Controller
         return view('front.videos', compact('videos', 'type'));
     }
 
-    public function project_video(Request $request, $lang)
+    public function project_video(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -605,7 +605,7 @@ class FrontendController extends Controller
 
         return view('front.support', compact('markets', 'curr', 'vendors'));
     }
-    public function afterbefore(Request $request, $lang)
+    public function afterbefore(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -620,7 +620,7 @@ class FrontendController extends Controller
         return view('front.after-bef', compact('images'));
     }
 
-    public function service(Request $request, $lang, $slug)
+    public function service(Request $request, $lang = 'ar', $slug)
     {
 
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
@@ -639,7 +639,7 @@ class FrontendController extends Controller
 
         return view('front.service-details', compact('service'));
     }
-    public function services(Request $request, $lang)
+    public function services(Request $request, $lang = 'ar')
     {
 
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
@@ -778,7 +778,7 @@ class FrontendController extends Controller
 
     // -------------------------------- BLOG SECTION ----------------------------------------
 
-    public function blog(Request $request, $lang)
+    public function blog(Request $request, $lang = 'ar')
     {
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
         if ($id) {
@@ -801,7 +801,7 @@ class FrontendController extends Controller
 
 
 
-    public function blogcategory(Request $request, $lang, $slug)
+    public function blogcategory(Request $request, $lang = 'ar', $slug)
     {
 
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
@@ -824,7 +824,7 @@ class FrontendController extends Controller
 
         return view('front.blog', compact('bcat', 'blogs', 'bcats', 'archives', 'rec_blogs', 'images'));
     }
-    public function blogtags(Request $request, $lang, $slug)
+    public function blogtags(Request $request, $lang = 'ar', $slug)
     {
 
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
@@ -845,7 +845,7 @@ class FrontendController extends Controller
         return view('front.blog', compact('blogs', 'slug', 'bcats', 'archives', 'rec_blogs', 'images'));
     }
 
-    public function blogsearch(Request $request, $lang)
+    public function blogsearch(Request $request, $lang = 'ar')
     {
 
         $id = DB::table('languages')->where('sign', '=', $lang)->first();
@@ -868,7 +868,7 @@ class FrontendController extends Controller
         return view('front.blog', compact('blogs', 'search', 'archives', 'rec_blogs', 'images'));
     }
 
-    public function blogarchive(Request $request, $lang, $slug)
+    public function blogarchive(Request $request, $lang = 'ar', $slug)
     {
 
         $id = DB::table('languages')->where('sign', '=', $lang)->first();

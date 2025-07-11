@@ -47,7 +47,7 @@
                 @foreach ($images as $image)
                     <div class="item team_member">
                         <a href="{{ route('front.latestwork', $sign) }}"><img class="img-fluid thumb"
-                                src="{{ asset('/' . access_public() . '/assets/images/ads/' . $image->photo) }}"
+                                src="{{ access_public() ? asset(rtrim(access_public(), '/') . '/assets/images/ads/' . $image->photo) : asset('assets/images/ads/' . $image->photo) }}"
                                 alt="{{ $langg->rtl == 1 ? $image->title_ar : $image->title }} "></a>
                         <div class="details">
                             <a class="Font_01"

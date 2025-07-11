@@ -37,6 +37,7 @@
                     <div class="col-7 h-100 align-items-center d-none d-lg-flex fs-ilustratio-col" data-aos="fade-in"
                         data-aos-delay="500">
                         <img src="{{ asset('/' . access_public() . '/assets/images/sliders/' . $sliders[0]->photo) }}"
+                            src="{{ access_public() ? asset(rtrim(access_public(), '/') . '/assets/images/sliders/' . $sliders[0]->photo) : asset('assets/images/sliders/' . $sliders[0]->photo) }}"
                             style="max-width: 1000px;" alt="">
                     </div>
                 </div>
@@ -158,35 +159,35 @@
 
 
                         <!-- <div class="col-md-6" data-aos="fade-left">
-                               <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-2.svg') }}"
-                                alt="The quality will grow service and professionalism employees">
-                               <div class="works__blockText align-items-center d-flex position-relative text-center">
-                                <div class="works__triangle position-absolute">Triangle</div>
-                                <p>The quality will <strong>grow service and professionalism</strong> employees</p>
-                               </div>
-                              
-                              </div>
+                                   <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-2.svg') }}"
+                                    alt="The quality will grow service and professionalism employees">
+                                   <div class="works__blockText align-items-center d-flex position-relative text-center">
+                                    <div class="works__triangle position-absolute">Triangle</div>
+                                    <p>The quality will <strong>grow service and professionalism</strong> employees</p>
+                                   </div>
+                                  
+                                  </div>
 
 
-                              <div class="col-md-6" data-aos="fade-right">
-                               <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-3.svg') }}"
-                                alt="It will decrease by 40-70% attraction cost new client">
-                               <div class="works__blockText align-items-center d-flex position-relative text-center">
-                                <div class="works__triangle position-absolute">Triangle</div>
-                                <p>It will <strong>decrease by 40-70%</strong> attraction cost new client</p>
-                               </div>
-                              </div>
+                                  <div class="col-md-6" data-aos="fade-right">
+                                   <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-3.svg') }}"
+                                    alt="It will decrease by 40-70% attraction cost new client">
+                                   <div class="works__blockText align-items-center d-flex position-relative text-center">
+                                    <div class="works__triangle position-absolute">Triangle</div>
+                                    <p>It will <strong>decrease by 40-70%</strong> attraction cost new client</p>
+                                   </div>
+                                  </div>
 
 
-                              <div class="col-md-6" data-aos="fade-left">
-                               <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-4.svg') }}"
-                                alt="The number will increase repeat visits - will become more regular customers">
-                               <div class="works__blockText align-items-center d-flex position-relative text-center">
-                                <div class="works__triangle position-absolute">Triangle</div>
-                                <p>The <strong>number will increase repeat</strong> visits - will become more regular customers
-                                </p>
-                               </div>
-                              </div> -->
+                                  <div class="col-md-6" data-aos="fade-left">
+                                   <img class="works__illustration position-absolute" src="{{ asset(access_public() . 'assets/cangrow/images/svg/works-illustration-4.svg') }}"
+                                    alt="The number will increase repeat visits - will become more regular customers">
+                                   <div class="works__blockText align-items-center d-flex position-relative text-center">
+                                    <div class="works__triangle position-absolute">Triangle</div>
+                                    <p>The <strong>number will increase repeat</strong> visits - will become more regular customers
+                                    </p>
+                                   </div>
+                                  </div> -->
                     @endforeach
 
                 </div>
@@ -364,54 +365,54 @@
             </div>
         </section>
         <!-- <section id="news" class="lastNews position-relative overflow-hidden">
-                            <div class="container position-relative">
-                             <h2 class="section-title text-uppercase text-center" data-aos="fade-in">Last news</h2>
-                             <p class="section-under-title text-center" data-aos="fade-in" data-aos-delay="200">Best insights</p>
-                             <div class="row">
-                              <div class="col-md-4" data-aos="fade-up">
-                               <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
-                                <span class="sk-spinner sk-spinner-pulse"></span>
-                                <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-1.jpeg"
-                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                 alt="How to develop a company correctly?">
-                               </a>
-                               <div class="lastNews__separator">Separator</div>
-                               <h3 class="lastNews__title">
-                                <a href="#" class="lastNews__titleLink">How to develop a company correctly?</a>
-                               </h3>
-                               <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                              </div>
-                              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                               <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
-                                <span class="sk-spinner sk-spinner-pulse"></span>
-                                <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-2.jpeg"
-                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-                               </a>
-                               <div class="lastNews__separator">Separator</div>
-                               <h3 class="lastNews__title">
-                                <a href="#" class="lastNews__titleLink">15 Digital Marketing Mistakes to Avoid</a>
-                               </h3>
-                               <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                              </div>
-                              <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                               <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
-                                <span class="sk-spinner sk-spinner-pulse"></span>
-                                <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-3.jpeg"
-                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                 alt="Marketing strategy rules">
-                               </a>
-                               <div class="lastNews__separator">Separator</div>
-                               <h3 class="lastNews__title">
-                                <a href="#" class="lastNews__titleLink">Marketing Strategy Rules</a>
-                               </h3>
-                               <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                              </div>
-                             </div>
-                            </div>
-                           </section> -->
+                                <div class="container position-relative">
+                                 <h2 class="section-title text-uppercase text-center" data-aos="fade-in">Last news</h2>
+                                 <p class="section-under-title text-center" data-aos="fade-in" data-aos-delay="200">Best insights</p>
+                                 <div class="row">
+                                  <div class="col-md-4" data-aos="fade-up">
+                                   <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
+                                    <span class="sk-spinner sk-spinner-pulse"></span>
+                                    <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-1.jpeg"
+                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                     alt="How to develop a company correctly?">
+                                   </a>
+                                   <div class="lastNews__separator">Separator</div>
+                                   <h3 class="lastNews__title">
+                                    <a href="#" class="lastNews__titleLink">How to develop a company correctly?</a>
+                                   </h3>
+                                   <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                  </div>
+                                  <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                                   <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
+                                    <span class="sk-spinner sk-spinner-pulse"></span>
+                                    <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-2.jpeg"
+                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                                   </a>
+                                   <div class="lastNews__separator">Separator</div>
+                                   <h3 class="lastNews__title">
+                                    <a href="#" class="lastNews__titleLink">15 Digital Marketing Mistakes to Avoid</a>
+                                   </h3>
+                                   <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                  </div>
+                                  <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                                   <a href="#" class="lastNews__BlockImage overflow-hidden position-relative">
+                                    <span class="sk-spinner sk-spinner-pulse"></span>
+                                    <img class="lastNews__image position-absolute b-lazy" data-src="images/last-new-3.jpeg"
+                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                     alt="Marketing strategy rules">
+                                   </a>
+                                   <div class="lastNews__separator">Separator</div>
+                                   <h3 class="lastNews__title">
+                                    <a href="#" class="lastNews__titleLink">Marketing Strategy Rules</a>
+                                   </h3>
+                                   <p class="lastNews__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                                  </div>
+                                 </div>
+                                </div>
+                               </section> -->
         <div class="subscribe container position-relative">
             <div class="row">
                 <div class="col-md-6">
@@ -513,8 +514,8 @@
                             <button id="appointment-send" type="submit"
                                 class="appointment__submit">{{ $langg->lang52 }}</button>
                             <!-- <p class="appointment__text">By clicking on the button, you consent to
-                                 processing your personal data and agree
-                                 to the <a href="/privacy-policy.html">Privacy Policy</a></p> -->
+                                     processing your personal data and agree
+                                     to the <a href="/privacy-policy.html">Privacy Policy</a></p> -->
                         </div>
                         <input type="hidden" name="to" value="{{ $ps->contact_email }}">
                         <div id="textAfterSending"
