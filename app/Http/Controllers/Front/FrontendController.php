@@ -6,6 +6,7 @@ use App;
 use App\Classes\GeniusMailer;
 use App\Classes\Markury\src\Adapter\MarkuryPost;
 use App\Http\Controllers\Controller;
+use App\Jobs\SendLeadToVtiger;
 use App\Models\ads;
 use App\Models\Appointment;
 use App\Models\Banner;
@@ -1089,6 +1090,8 @@ class FrontendController extends Controller
         $dates = $request->date;
         $times = $request->time;
         $msg = "Name: " . $name . "\nEmail: " . $from . "\nPhone: " . $request->phone . "\ndate: " . $request->date . "\ntime: " . $request->time . "\nMessage: " . $request->message;
+
+        SendLeadToVtiger::dispatch($request->name, $request->email, $phone, $request->text);
 
         if (!empty($gs->contact_emails)) {
 
