@@ -66,6 +66,10 @@ if ($('.menu-area li.menu-item-has-children ul').length) {
 
     });
 
+    $('#space').select2({
+        placeholder: "Space",
+        allowClear: true
+    });
     // Select Property Types
 
     $('#ptypes').select2({

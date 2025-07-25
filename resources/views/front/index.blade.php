@@ -19,7 +19,13 @@
     <meta property="og:image" content="{{ asset(access_public() . 'assets/images/' . $gs->logo) }}" />
 @stop
 
-
+@section('css')
+    <style>
+        .select2-container {
+            width: 100% !important;
+        }
+    </style>
+@endsection
 
 @section('content')
     <!-- Slider-Start -->
@@ -63,9 +69,44 @@
 
                                         {{ csrf_field() }}
 
-                                        <div class="row">
+                                        <div class="row justify-content-center">
 
-                                            <div class="col-lg-4 col-md-3 col-sm-12">
+                                            <div class="col-lg-2 col-md-2 col-sm-12">
+
+                                                <div class="form-group">
+
+                                                    <label
+                                                        for="space">{{ app()->getLocale() == 'ar' ? 'المساحة' : 'Space' }}</label>
+
+                                                    <div class="input-with-icon">
+                                                        <select id="space" name="space" style="color:#16447d"
+                                                            class="form-control">
+                                                            <option value="" selected style="color: #16447d">
+                                                                {{ app()->getLocale() == 'ar' ? 'المساحة' : 'Space' }}
+                                                            </option>
+                                                            <option value="1">
+                                                                {{ app()->getLocale() == 'ar' ? 'أقل من 100 متر' : 'Less than 100 meters' }}
+                                                            </option>
+                                                            <option value="2">
+                                                                {{ app()->getLocale() == 'ar' ? '100-200 متر' : '100-200 meters' }}
+                                                            </option>
+                                                            <option value="3">
+                                                                {{ app()->getLocale() == 'ar' ? '200-300 متر' : '200-300 meters' }}
+                                                            </option>
+                                                            <option value="4">
+                                                                {{ app()->getLocale() == 'ar' ? '300-400 متر' : '300-400 meters' }}
+                                                            </option>
+                                                            <option value="5">
+                                                                {{ app()->getLocale() == 'ar' ? 'اكثر من 400 متر' : 'More than 400 meters' }}
+                                                            </option>
+                                                        </select>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
 
                                                 <div class="form-group">
 
@@ -131,7 +172,7 @@
 
 
 
-                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
 
                                                 <div class="form-group none">
 
@@ -160,8 +201,6 @@
                                                 </div>
 
                                             </div>
-
-
 
                                             <div class="col-lg-1 col-md-2 col-sm-12 small-padd">
 

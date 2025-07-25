@@ -375,6 +375,54 @@ class FrontendController extends Controller
         $location = $request->location;
         $ptypes = $request->ptypes;
         $price = $request->price;
+
+
+        // <option value="1">
+        //     {{ app()->getLocale() == 'ar' ? 'أقل من 100 متر' : 'Less than 100 meters' }}
+        // </option>
+        // <option value="2">
+        //     {{ app()->getLocale() == 'ar' ? '100-200 متر' : '100-200 meters' }}
+        // </option>
+        // <option value="3">
+        //     {{ app()->getLocale() == 'ar' ? '200-300 متر' : '200-300 meters' }}
+        // </option>
+        // <option value="4">
+        //     {{ app()->getLocale() == 'ar' ? '300-400 متر' : '300-400 meters' }}
+        // </option>
+        // <option value="5">
+        //     {{ app()->getLocale() == 'ar' ? 'اكثر من 400 متر' : 'More than 400 meters' }}
+        // </option>
+
+        $space_rang_start = 0;
+        $space_rang_end = 0;
+
+        switch ($request->space) {
+            case '1':
+                $space_rang_start = 0;
+                $space_rang_end = 100;
+                break;
+            case '2':
+                $space_rang_start = 100;
+                $space_rang_end = 200;
+                break;
+            case '3':
+                $space_rang_start = 200;
+                $space_rang_end = 300;
+                break;
+            case '4':
+                $space_rang_start = 300;
+                $space_rang_end = 400;
+                break;
+            case '5':
+                $space_rang_start = 400;
+                $space_rang_end = 0;
+                break;
+            default:
+                $space_rang_start = 0;
+                $space_rang_end = 0;
+                break;
+        }
+
         $prods = Product::when($location, function ($query, $location) {
             return $query->where('location_id', '=', $location);
         })
@@ -383,6 +431,12 @@ class FrontendController extends Controller
             })
             ->when($price, function ($query, $price) {
                 return $query->where('range_id', '=', $price);
+            })
+            ->when($space_rang_start, function ($query, $space_rang_start) {
+                return $query->where('location', '>=', $space_rang_start);
+            })
+            ->when($space_rang_end, function ($query, $space_rang_end) {
+                return $query->where('location', '<=', $space_rang_end);
             });
         $products = $prods->where('status', 1)->get();
         return view('front.products', ['products' => $products, 'sign' => $this->lang()]);
