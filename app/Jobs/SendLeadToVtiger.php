@@ -60,7 +60,7 @@ class SendLeadToVtiger implements ShouldQueue
                 'leadsource' => 'Web site',
                 'leadstatus' => 'New Lead',
                 'description' => $this->message,
-                'assigned_user_id' => config('vtiger.assigned_user_id'),
+                'assigned_user_id' => config('vtiger.assigned_user_id', '19x9'),
                 'company' => $this->name,
             ];
 

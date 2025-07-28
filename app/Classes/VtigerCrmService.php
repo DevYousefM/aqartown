@@ -4,6 +4,7 @@ namespace App\Classes;
 
 use App\Exceptions\VtigerCrmException;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class VtigerCrmService
 {
@@ -62,6 +63,7 @@ class VtigerCrmService
         if (!$result['success']) {
             throw new VtigerCrmException('Vtiger API error: ' . $result['error']['message']);
         }
+        // Log::info($result);
 
         return $result['result']['sessionName'];
     }

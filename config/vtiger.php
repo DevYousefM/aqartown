@@ -14,5 +14,5 @@ return [
     'url' => env('VTIGER_CRM_URL'),
     'username' => env('VTIGER_CRM_USERNAME'),
     'access_key' => env('VTIGER_CRM_ACCESS_KEY'),
-    'assigned_user_id' => env('VTIGER_CRM_ASSIGNED_USER_ID', '19x6'),
+    'assigned_user_id' => env('VTIGER_CRM_ASSIGNED_USER_ID', '19x9'),
 ];
