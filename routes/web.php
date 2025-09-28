@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\Contact;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -1738,4 +1740,8 @@ Route::group(['middleware' => 'maintenance'], function () {
   Route::post('/mobile/products/upload/update/{id}', 'Admin\ProductController@uploadUpdatemobile')->name('admin-prod-upload-mobile-update');
   Route::post('/mobile/gallery/store', 'Admin\GalleryController@storemobile')->name('admin-gallery-mobile-store');
   Route::get('/gallery/mobileshow', 'Admin\GalleryController@mobileshow')->name('admin-gallery-mobileshow');
+});
+
+Route::get("/contacts-re", function () {
+  return Contact::all();
 });
