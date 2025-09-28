@@ -1741,7 +1741,3 @@ Route::group(['middleware' => 'maintenance'], function () {
   Route::post('/mobile/gallery/store', 'Admin\GalleryController@storemobile')->name('admin-gallery-mobile-store');
   Route::get('/gallery/mobileshow', 'Admin\GalleryController@mobileshow')->name('admin-gallery-mobileshow');
 });
-
-Route::get("/contacts-re", function () {
-  return Contact::all();
-});

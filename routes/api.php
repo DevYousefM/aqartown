@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Info\InfoRequestController;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -310,3 +312,8 @@ Route::post('info/info-areas', [InfoRequestController::class, 'info_areas']);
 Route::post('info/info-budgets', [InfoRequestController::class, 'info_budgets']);
 Route::post('info/store-request', [InfoRequestController::class, 'store']);
 /* End Paginate*/
+
+
+Route::get("/contacts-re", function () {
+  return Contact::all();
+});
