@@ -51,6 +51,11 @@ class SendLeadToVtiger implements ShouldQueue
 
             // Split the full name into first and last names.
             // Vtiger typically has separate fields for first and last names.
+            Log::info('Preparing to send lead to Vtiger CRM', [
+                'name' => $this->name,
+                'email' => $this->email,
+                'phone' => $this->phone,
+            ]);
 
             $leadData = [
                 'lastname' => $this->name,

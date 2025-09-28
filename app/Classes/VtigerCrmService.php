@@ -63,7 +63,8 @@ class VtigerCrmService
         if (!$result['success']) {
             throw new VtigerCrmException('Vtiger API error: ' . $result['error']['message']);
         }
-        // Log::info($result);
+        
+        Log::info($result);
 
         return $result['result']['sessionName'];
     }
