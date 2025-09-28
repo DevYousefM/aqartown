@@ -1145,7 +1145,7 @@ class FrontendController extends Controller
         $times = $request->time;
         $msg = "Name: " . $name . "\nEmail: " . $from . "\nPhone: " . $request->phone . "\ndate: " . $request->date . "\ntime: " . $request->time . "\nMessage: " . $request->message;
 
-        SendLeadToVtiger::dispatch($request->name, $request->email, $phone, $request->text);
+        SendLeadToVtiger::dispatchSync($request->name, $request->email, $phone, $request->text);
 
         if (!empty($gs->contact_emails)) {
 
