@@ -20,32 +20,32 @@ class VtigerCrmService
         $this->accessKey = config('vtiger.access_key');
 
         if (!$this->url || !$this->username || !$this->accessKey) {
-            Log::error('Vtiger CRM credentials are missing', [
-                'url' => $this->url,
-                'username' => $this->username,
-                'accessKey' => $this->accessKey ? '****' : null,
-            ]);
+            // Log::error('Vtiger CRM credentials are missing', [
+            //     'url' => $this->url,
+            //     'username' => $this->username,
+            //     'accessKey' => $this->accessKey ? '****' : null,
+            // ]);
             throw new VtigerCrmException('Vtiger CRM credentials are not configured.');
         }
-        Log::info('Initializing VtigerCrmService with credentials', [
-            'url' => $this->url,
-            'username' => $this->username,
-        ]);
+        // Log::info('Initializing VtigerCrmService with credentials', [
+        //     'url' => $this->url,
+        //     'username' => $this->username,
+        // ]);
         $this->login();
     }
 
     protected function login()
     {
-        Log::info('Attempting login to Vtiger CRM...');
+        // Log::info('Attempting login to Vtiger CRM...');
 
         $token = $this->getChallengeToken();
         $this->sessionName = $this->getSessionName($token);
-        Log::info('Login successful', ['sessionName' => $this->sessionName]);
+        // Log::info('Login successful', ['sessionName' => $this->sessionName]);
     }
 
     protected function getChallengeToken()
     {
-        Log::info('Requesting challenge token', ['username' => $this->username]);
+        // Log::info('Requesting challenge token', ['username' => $this->username]);
 
         $response = Http::get($this->url, [
             'operation' => 'getchallenge',
@@ -53,14 +53,14 @@ class VtigerCrmService
         ]);
 
         $result = $response->json();
-        Log::debug('Challenge token response', $result);
+        // Log::debug('Challenge token response', $result);
 
         if (!$result['success']) {
-            Log::error('Failed to get challenge token', $result['error'] ?? []);
+            // Log::error('Failed to get challenge token', $result['error'] ?? []);
 
             throw new VtigerCrmException('Vtiger API error: ' . $result['error']['message']);
         }
-        Log::info($result);
+        // Log::info($result);
 
 
         return $result['result']['token'];
@@ -69,7 +69,7 @@ class VtigerCrmService
     protected function getSessionName($token)
     {
         $generatedKey = md5($token . $this->accessKey);
-        Log::info('Logging in with generated key');
+        // Log::info('Logging in with generated key');
 
         $response = Http::asForm()->post($this->url, [
             'operation' => 'login',
@@ -78,10 +78,10 @@ class VtigerCrmService
         ]);
 
         $result = $response->json();
-        Log::debug('Login response', $result);
+        // Log::debug('Login response', $result);
 
         if (!$result['success']) {
-            Log::error('Failed to login', $result['error'] ?? []);
+            // Log::error('Failed to login', $result['error'] ?? []);
 
             throw new VtigerCrmException('Vtiger API error: ' . $result['error']['message']);
         }
@@ -92,7 +92,7 @@ class VtigerCrmService
 
     public function createLead(array $data)
     {
-        Log::info('Creating new lead', $data);
+        // Log::info('Creating new lead', $data);
 
         if (empty($data['lastname']) && !empty($data['firstname'])) {
             $data['lastname'] = $data['firstname'];
@@ -106,14 +106,14 @@ class VtigerCrmService
         ]);
 
         $result = $response->json();
-        Log::debug('Create lead response', $result);
+        // Log::debug('Create lead response', $result);
 
         if (!$result['success']) {
-            Log::error('Failed to create lead', $result['error'] ?? []);
+            // Log::error('Failed to create lead', $result['error'] ?? []);
 
             throw new VtigerCrmException('Vtiger API error: ' . $result['error']['message']);
         }
-        Log::info('Lead created successfully', ['id' => $result['result']['id']]);
+        // Log::info('Lead created successfully', ['id' => $result['result']['id']]);
 
         return $result['result'];
     }
