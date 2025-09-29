@@ -6272,3 +6272,158 @@ Stack trace:
 [stacktrace]
 #0 {main}
 "} 
+[2025-09-29 16:30:42] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /media/yf/Work/aqar-town/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /media/yf/Work/aqar-town/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(46): App\\Exceptions\\Handler->report()
+#7 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(183): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report()
+#8 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(231): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException()
+#9 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#10 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#11 {main}
+"} 
+[2025-09-29 16:30:42] laravel.ERROR: Uncaught ReflectionException: Class "App\Policies\ModelPolicy" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"App\\Policies\\ModelPolicy\" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown at Command line code:1)
+[stacktrace]
+#0 {main}
+"} 
+[2025-09-29 16:31:32] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /media/yf/Work/aqar-town/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /media/yf/Work/aqar-town/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(46): App\\Exceptions\\Handler->report()
+#7 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(183): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report()
+#8 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(231): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException()
+#9 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#10 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#11 {main}
+"} 
+[2025-09-29 16:31:32] laravel.ERROR: Uncaught ReflectionException: Class "App\Policies\ModelPolicy" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"App\\Policies\\ModelPolicy\" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown at Command line code:1)
+[stacktrace]
+#0 {main}
+"} 
+[2025-09-29 16:31:54] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /media/yf/Work/aqar-town/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /media/yf/Work/aqar-town/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(46): App\\Exceptions\\Handler->report()
+#7 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(183): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report()
+#8 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(231): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException()
+#9 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#10 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#11 {main}
+"} 
+[2025-09-29 16:31:54] laravel.ERROR: Uncaught ReflectionException: Class "App\Policies\ModelPolicy" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"App\\Policies\\ModelPolicy\" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown at Command line code:1)
+[stacktrace]
+#0 {main}
+"} 
+[2025-09-29 16:32:49] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /media/yf/Work/aqar-town/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /media/yf/Work/aqar-town/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(46): App\\Exceptions\\Handler->report()
+#7 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(183): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report()
+#8 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(231): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException()
+#9 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#10 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#11 {main}
+"} 
+[2025-09-29 16:32:49] laravel.ERROR: Uncaught ReflectionException: Class "App\Policies\ModelPolicy" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"App\\Policies\\ModelPolicy\" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown at Command line code:1)
+[stacktrace]
+#0 {main}
+"} 
+[2025-09-29 16:33:49] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php:212)
+[stacktrace]
+#0 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(137): Illuminate\\Log\\LogManager->resolve()
+#1 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(124): Illuminate\\Log\\LogManager->get()
+#2 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(681): Illuminate\\Log\\LogManager->driver()
+#3 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(317): Illuminate\\Log\\LogManager->error()
+#4 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(278): Illuminate\\Foundation\\Exceptions\\Handler->reportThrowable()
+#5 /media/yf/Work/aqar-town/app/Exceptions/Handler.php(35): Illuminate\\Foundation\\Exceptions\\Handler->report()
+#6 /media/yf/Work/aqar-town/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(46): App\\Exceptions\\Handler->report()
+#7 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(183): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report()
+#8 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(231): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException()
+#9 /media/yf/Work/aqar-town/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleShutdown()
+#10 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}()
+#11 {main}
+"} 
+[2025-09-29 16:33:49] laravel.ERROR: Uncaught ReflectionException: Class "App\Policies\ModelPolicy" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ReflectionException: Class \"App\\Policies\\ModelPolicy\" does not exist in Command line code:1
+Stack trace:
+#0 Command line code(1): ReflectionClass->__construct()
+#1 [internal function]: {closure}()
+#2 Command line code(1): array_map()
+#3 {main}
+  thrown at Command line code:1)
+[stacktrace]
+#0 {main}
+"} 
