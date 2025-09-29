@@ -120,7 +120,7 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('admin-prod-index') }}">{{ __('All products') }}</a>
+                            <a href="{{ route('admin-prod-index') }}">{{ __('All products') }} 0000</a>
                         </li>
 
                         <li>
