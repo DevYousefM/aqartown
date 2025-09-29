@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\Contact;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+
 
 
 
