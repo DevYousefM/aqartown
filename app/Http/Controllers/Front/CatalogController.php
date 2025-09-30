@@ -187,6 +187,7 @@ class CatalogController extends Controller
             $q->where('slug', '!=', $slug)->orwhere('slug_ar', '!=', $slug);
         })->where('status', '=', 1)->inRandomOrder()->take(4)->get();
 
+        $productt->load('galleries');
         return view('front.event-detail', compact('productt', 'curr', 'vendors'));
     }
 
