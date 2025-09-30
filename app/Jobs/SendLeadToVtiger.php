@@ -19,7 +19,7 @@ class SendLeadToVtiger implements ShouldQueue
     public $backoff = [60, 120];
 
     protected $name;
-    protected $email;
+    protected $email = null;
     protected $phone;
     protected $message;
 
@@ -31,7 +31,7 @@ class SendLeadToVtiger implements ShouldQueue
      * @param string $phone
      * @param string $message
      */
-    public function __construct(string $name, string $email, string $phone, string $message)
+    public function __construct(string $name, ?string $email = null, string $phone, string $message)
     {
         $this->name = $name;
         $this->email = $email;
@@ -59,7 +59,7 @@ class SendLeadToVtiger implements ShouldQueue
 
             $leadData = [
                 'lastname' => $this->name,
-                'email' => $this->email,
+                'email' => $this->email ?? '',
                 'phone' => $this->phone,
                 'mobile' => $this->phone,
                 'leadsource' => 'Web site',
