@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Info;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendLeadToVtiger;
 use App\Models\InfoArea;
 use App\Models\InfoBudget;
 use App\Models\InfoRequests;
@@ -60,6 +61,12 @@ class InfoRequestController extends Controller
             'phone' => $request->phone,
             'notes' => $request->notes,
         ]);
+        // protected $name;
+        // protected $email = null;
+        // protected $phone;
+        // protected $message;
+        $vtigerMessage = "$request->notes \n المنطقة: $area->name_ar \n الميزانية: $budget->name_ar \n وقت التواصل: $request->time_to_call";
+        SendLeadToVtiger::dispatchSync($request->name, null, $request->phone, $vtigerMessage);
         return response()->json(['status' => true, 'msg' => $lang == 'ar' ? 'تم ارسال طلبك بنجاح' : 'Your request has been sent'], 200);
     }
     public function info_areas(Request $request)
