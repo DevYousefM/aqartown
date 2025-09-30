@@ -59,7 +59,7 @@
 
     <section class="services-single-section">
         <div class="container">
-            <div class="row flex-lg-row flex-md-column-reverse flex-sm-column-reverse">
+            <div class="d-flex flex-column-reverse flex-lg-row">
                 <div class="widgets-column col-lg-4 col-md-8 col-12">
                     <div class="inner-column">
                         <aside class="single-side-box feature">
@@ -237,95 +237,95 @@
                         </div>
                         <!-- <div class="min-details border-no">
 
-                                                                                        <h3>Gallery</h3>
+                                                                                                <h3>Gallery</h3>
 
-                                                                                        <div class="min-gallery-i row">
+                                                                                                <div class="min-gallery-i row">
 
-                                                                                            <div class="col-md-5">
+                                                                                                    <div class="col-md-5">
 
-                                                                                                <span class="pl-5gallery">
+                                                                                                        <span class="pl-5gallery">
 
-                                                                                                    <a href="images/p-g1.png" class="image-popup-vertical-fit">
+                                                                                                            <a href="images/p-g1.png" class="image-popup-vertical-fit">
 
-                                                                                                        <img src="images/p-g1.png" alt="" class="min-gallery-i img-fluid">
+                                                                                                                <img src="images/p-g1.png" alt="" class="min-gallery-i img-fluid">
 
-                                                                                                    </a>
+                                                                                                            </a>
 
-                                                                                                </span>
+                                                                                                        </span>
 
-                                                                                                <span class="pl-5gallery wi-50-img p-r-5 p-l-0">
+                                                                                                        <span class="pl-5gallery wi-50-img p-r-5 p-l-0">
 
-                                                                                                    <a href="images/p-g2.png" class="image-popup-vertical-fit">
+                                                                                                            <a href="images/p-g2.png" class="image-popup-vertical-fit">
 
-                                                                                                        <img src="images/p-g2.png" alt="" class="min-gallery-i img-fluid">
+                                                                                                                <img src="images/p-g2.png" alt="" class="min-gallery-i img-fluid">
 
-                                                                                                    </a>
+                                                                                                            </a>
 
-                                                                                                </span>
+                                                                                                        </span>
 
-                                                                                                <span class="pl-5gallery wi-50-img p-r-5 p-r-0">
+                                                                                                        <span class="pl-5gallery wi-50-img p-r-5 p-r-0">
 
-                                                                                                    <a href="images/p-g3.png" class="image-popup-vertical-fit">
+                                                                                                            <a href="images/p-g3.png" class="image-popup-vertical-fit">
 
-                                                                                                        <img src="images/p-g3.png" alt="" class="min-gallery-i img-fluid">
+                                                                                                                <img src="images/p-g3.png" alt="" class="min-gallery-i img-fluid">
 
-                                                                                                    </a>
+                                                                                                            </a>
 
-                                                                                                </span>
+                                                                                                        </span>
 
-                                                                                            </div>
+                                                                                                    </div>
 
-                                                                                            <div class="col-md-3">
+                                                                                                    <div class="col-md-3">
 
-                                                                                                <span class="pl-5gallery">
+                                                                                                        <span class="pl-5gallery">
 
-                                                                                                    <a href="images/p-g4.png" class="image-popup-vertical-fit">
+                                                                                                            <a href="images/p-g4.png" class="image-popup-vertical-fit">
 
-                                                                                                        <img src="images/p-g4.png" alt="" class="min-gallery-i img-fluid">
+                                                                                                                <img src="images/p-g4.png" alt="" class="min-gallery-i img-fluid">
 
-                                                                                                    </a>
+                                                                                                            </a>
 
-                                                                                                </span>
+                                                                                                        </span>
 
-                                                                                            </div>
+                                                                                                    </div>
 
-                                                                                            <div class="col-md-4">
+                                                                                                    <div class="col-md-4">
 
-                                                                                                <span class="pl-5gallery">
+                                                                                                        <span class="pl-5gallery">
 
-                                                                                                    <a href="images/p-g5.png" class="image-popup-vertical-fit">
+                                                                                                            <a href="images/p-g5.png" class="image-popup-vertical-fit">
 
-                                                                                                        <img src="images/p-g5.png" alt="" class="min-gallery-i img-fluid">
+                                                                                                                <img src="images/p-g5.png" alt="" class="min-gallery-i img-fluid">
 
-                                                                                                    </a>
+                                                                                                            </a>
 
-                                                                                                </span>
+                                                                                                        </span>
 
-                                                                                                <span class="pl-5gallery  wi-50-img p-r-5 p-l-0">
+                                                                                                        <span class="pl-5gallery  wi-50-img p-r-5 p-l-0">
 
-                                                                                                    <a href="images/p-g6.png" class="image-popup-vertical-fit">
+                                                                                                            <a href="images/p-g6.png" class="image-popup-vertical-fit">
 
-                                                                                                        <img src="images/p-g6.png" alt="" class="min-gallery-i img-fluid">
+                                                                                                                <img src="images/p-g6.png" alt="" class="min-gallery-i img-fluid">
 
-                                                                                                    </a>
+                                                                                                            </a>
 
-                                                                                                </span>
+                                                                                                        </span>
 
-                                                                                                <span class="pl-5gallery  wi-50-img p-r-5 p-r-0">
+                                                                                                        <span class="pl-5gallery  wi-50-img p-r-5 p-r-0">
 
-                                                                                                    <a href="images/p-g7.png" class="image-popup-vertical-fit">
+                                                                                                            <a href="images/p-g7.png" class="image-popup-vertical-fit">
 
-                                                                                                        <img src="images/p-g7.png" alt="" class="min-gallery-i img-fluid">
+                                                                                                                <img src="images/p-g7.png" alt="" class="min-gallery-i img-fluid">
 
-                                                                                                    </a>
+                                                                                                            </a>
 
-                                                                                                </span>
+                                                                                                        </span>
 
-                                                                                            </div>
+                                                                                                    </div>
 
-                                                                                        </div>
+                                                                                                </div>
 
-                                                                                    </div> -->
+                                                                                            </div> -->
 
                     </div>
                 </div>
